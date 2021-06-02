@@ -1,5 +1,5 @@
 ## TÍTULO:  
-*Práctica elaboración de un proyecto de genómica aplicada*
+#*Práctica para la elaboración de un proyecto de genómica aplicada*
 
 ## AUTOR:  
 **Jacqueline Vásquez Navarrete**
