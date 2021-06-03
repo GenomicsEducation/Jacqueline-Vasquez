@@ -1,6 +1,7 @@
 ## TÍTULO: *Práctica para la elaboración de un proyecto de genómica aplicada*
 
 ### AUTOR:  
+
 **Jacqueline Vásquez Navarrete**
 - Magíster en Ciencias Biológicas, mención Neurociencias. Universidad de Valparaíso.  
 - Licenciatura en Ciencias, Mención Biología. Universidad de Valparaíso.  
@@ -10,7 +11,9 @@
 ### SELECCIÓN DE LA ESPECIE
 Ovis orientalis aries (sheep)
 
-![](https://es.wikipedia.org/wiki/Ovis_orientalis_aries#/media/Archivo:Flock_of_sheep.jpg){width=width height=height}
+
+![Ovis aries](https://es.wikipedia.org/wiki/Ovis_orientalis_aries#/media/Archivo:Flock_of_sheep.jpg){width=80%}
+
 
 
 
@@ -28,7 +31,8 @@ Ovis orientalis aries (sheep)
 1-Para sistema operativo windows descargar e instalar [PuTTY](https://www.putty.org/)
 2- Configuración 
 
-![PuTTY 1.png](setwd("C:/Users/ASUS/Desktop/GENETICA Y GENOMICA EN PRODUCCION ANIMAL/proyecto de genomica/IMAGENES")
+![PuTTY1](PuTTY 1.png)
+![PuTTY2](PuTTY 2.png)
 
 
 ## ACCESO REMOTO A SERVIDOR POMEO
