@@ -10,7 +10,9 @@
 ### SELECCIÓN DE LA ESPECIE
 Ovis orientalis aries (sheep)
 
-![](https://commons.wikimedia.org/wiki/File:Flock_of_sheep.jpg)
+![](https://es.wikipedia.org/wiki/Ovis_orientalis_aries#/media/Archivo:Flock_of_sheep.jpg)
+
+
 
 ## INFORMACIÓN DEL GENOMA 
 
