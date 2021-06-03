@@ -1,14 +1,16 @@
 ## TÍTULO: *Práctica para la elaboración de un proyecto de genómica aplicada*
 
-## AUTOR:  
+### AUTOR:  
 **Jacqueline Vásquez Navarrete**
 - Magíster en Ciencias Biológicas, mención Neurociencias. Universidad de Valparaíso.  
 - Licenciatura en Ciencias, Mención Biología. Universidad de Valparaíso.  
 
-### DESCRIPCIÓN: clase 8 BASE DE DATOS NCBI
+### **CLASE 8.**
 
-## SELECCIÓN DE LA ESPECIE
-Ovis aries (sheep)
+### SELECCIÓN DE LA ESPECIE
+Ovis orientalis aries (sheep)
+
+![](https://commons.wikimedia.org/wiki/File:Flock_of_sheep.jpg)
 
 ## INFORMACIÓN DEL GENOMA 
 
