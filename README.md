@@ -12,5 +12,21 @@ Ovis aries (sheep)
 
 ### INFORMACIÓN GENOMICA DE LA ESPECIE 
 
+*Assembly
+- Organism name: Ovis aries (sheep)
+- Sex: female
+- Assembly level: Chromosome
+- Assembly method: celera v. 8.2; Phase PGA v. 1.0; PBJelly2 v. 14.9.9; Pilon v. 1.8; Chromosomer v. 0.1.4
+- Sequencing technology: HiSeq X Ten; PacBio RS II
+
+
+
+
+*Refseq
+
+
+*link
 https://www.ncbi.nlm.nih.gov/assembly/GCF_002742125.1
+
+
 
