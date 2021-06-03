@@ -19,14 +19,27 @@ Ovis aries (sheep)
 - Assembly method: celera v. 8.2; Phase PGA v. 1.0; PBJelly2 v. 14.9.9; Pilon v. 1.8; Chromosomer v. 0.1.4
 - Sequencing technology: HiSeq X Ten; PacBio RS II
 
-
-
+![Global statistics](https://user-images.githubusercontent.com/84527634/120576488-d51dcf00-c3f0-11eb-98df-fbdb2636c033.png)
 
 *Refseq
 
 
+
+
 *link
 https://www.ncbi.nlm.nih.gov/assembly/GCF_002742125.1
+
+### BIOPROYECTOS EN SRA
+
+### INSTALACIÓN Y CONFIGURACIÓN DE SOFTWARE.
+ 1. DESCARGAR E INSTALAR PuTTY <br />
+-Para un sistema operativo windows se puede descargar del siguiente link [PuTTY](https://www.putty.org/).<br />
+-Para la configuración seguir los siguientes pasos:<br />
+
+ 
+ 
+ 2. DESCARGAR E INSTALAR WinSCP
+
 
 
 
