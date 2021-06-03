@@ -1,33 +1,48 @@
 ## TÍTULO: *Práctica para la elaboración de un proyecto de genómica aplicada*
 
-### AUTOR:  
-
+#### AUTOR:  
 **Jacqueline Vásquez Navarrete**
 - Magíster en Ciencias Biológicas, mención Neurociencias. Universidad de Valparaíso.  
 - Licenciatura en Ciencias, Mención Biología. Universidad de Valparaíso.  
+------------------------------------------------------------------------------------------------------------------------------------------------------
+### 1. SELECCIÓN DE UNA ESPECIE DE IMPORTANCIA ECONÓMICA EN PRODUCCIÓN ANIMAL. 
 
-### SELECCIÓN DE ESPECIE
-Ovis aries (sheep)
-![Ovis aries (sheep)](https://user-images.githubusercontent.com/84527634/120573851-47d87b80-c3ec-11eb-8dc0-ac59380fc317.jpg)
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flock_of_sheep.jpg/245px-Flock_of_sheep.jpg" width="200" height="200" align="center" />
+<p> Ovis aries (sheep)</p>
+</div>
 
-### INFORMACIÓN GENOMICA DE LA ESPECIE 
+### 2. INFORMACIÓN GENÓMICA DE LA ESPECIE 
 
-*Assembly
-- Organism name: Ovis aries (sheep)
-- Sex: female
-- Assembly level: Chromosome
-- Assembly method: celera v. 8.2; Phase PGA v. 1.0; PBJelly2 v. 14.9.9; Pilon v. 1.8; Chromosomer v. 0.1.4
-- Sequencing technology: HiSeq X Ten; PacBio RS II
+***ENSAMBLAJE DEL GENOMA (Assembly)***
+- Nombre del organismo: Ovis aries (sheep)
+- Sexo: Hembra
+- Nivel de ensamblaje: Cromosoma
+- Método de ensamblaje: celera v. 8.2; Phase PGA v. 1.0; PBJelly2 v. 14.9.9; Pilon v. 1.8; Chromosomer v. 0.1.4
+- Tecnología de secuenciación: HiSeq X Ten; PacBio RS II
 
-![Global statistics](https://user-images.githubusercontent.com/84527634/120576488-d51dcf00-c3f0-11eb-98df-fbdb2636c033.png)
-
-*Refseq
-
-
-
+|ESTADÍSTICA GLOBAL DEL GENOMA|                  |
+|--------------------------------|----------------|
+|Longuitud total de la secuencia | 2,869,914,396 |
+|Longuitud total sin gaps        | 2,869,531,333 |
+|Gaps entre "scaffolds"          | 0             |
+|Número de "scaffolds"           | 2,641         |
+|"scaffolds" N50                 | 107,697,089   |
+|"scaffolds" L50                 | 8             |
+|Número de "contigs"             | 7,486         |
+|"contigs" N50                     | 2,572,683     |
+|"contigs" L50                     | 313           |
+|Número total de cromosomas y plasmidos | 28     |
 
 *link
 https://www.ncbi.nlm.nih.gov/assembly/GCF_002742125.1
+
+***SECUENCIAS DE REFERENCIA COMPLETA, INTEGRADA Y NO REDUNDANTE DEL GENOMA (Refseq)***
+- Número de acceso del ensamble RefSeq: GCF_002742125.1
+- 
+
+
+
+
 
 ### BIOPROYECTOS EN SRA
 
