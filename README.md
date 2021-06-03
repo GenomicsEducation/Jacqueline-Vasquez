@@ -73,6 +73,8 @@ Ovis aries[Taxonomy ID: 9940]
 - [Link de todas las muestras](https://www.ncbi.nlm.nih.gov/sra?term=SRP320117)
 - [Link de SRA run selector](https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP320117&o=acc_s%3Aa)
 
+[METADATA DE LAS MUESTRA](https://trace.ncbi.nlm.nih.gov/Traces/study/?acc=SRP320117&o=acc_s%3Aa)
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 ## DESCRIPCIÓN: CONEXIÓN REMOTA A UN SERVIDOR LINUX
 
