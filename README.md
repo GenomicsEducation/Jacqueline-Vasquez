@@ -1,3 +1,5 @@
+setwd("C:/Users/ASUS/Desktop/GENETICA Y GENOMICA EN PRODUCCION ANIMAL/proyecto de genomica/IMAGENES")
+
 ## TÍTULO: *Práctica para la elaboración de un proyecto de genómica aplicada*
 
 ### AUTOR:  
@@ -28,8 +30,8 @@ Ovis orientalis aries (sheep)
 ## DESCARGA E INSTALACIÓN DE SOFTWARE.
 
  **Instalar el sofware para acceso remoto SSH.** 
-1-Para sistema operativo windows descargar e instalar [PuTTY](https://www.putty.org/)
-2- Configuración 
+ 1- Para sistema operativo windows descargar e instalar [PuTTY](https://www.putty.org/).
+ 2- Configuración 
 
 ![PuTTY1](PuTTY 1.png)
 ![PuTTY2](PuTTY 2.png)
