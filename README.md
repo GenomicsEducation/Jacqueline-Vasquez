@@ -59,7 +59,7 @@ Ovis aries[Taxonomy ID: 9940]
 |----------------------|-------------------|
 | BIOMUESTRAS | 7,897 públicas|
 |BIOPROYECTOS | 363 públicos|
-* link https://www.ncbi.nlm.nih.gov/sra/?term=(Ovis+aries)+AND+%22Ovis+aries%22%5Borgn%3A__txid9940%5D
+* Busqueda de biomuestras en [NCBI](https://www.ncbi.nlm.nih.gov/sra/?term=(Ovis+aries)+AND+%22Ovis+aries%22%5Borgn%3A__txid9940%5D)
 
 [EJEMPLO DE LA BIOMUESTRA SRX10911446: RNA-Seq de Ovis aries: Glándulas adrenales de hembra adulta](https://www.ncbi.nlm.nih.gov/sra/SRX10911446[accn])<br />
 - Diseño: glándulas suprarrenales
