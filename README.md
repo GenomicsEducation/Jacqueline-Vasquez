@@ -39,8 +39,7 @@
 |"contigs" L50                     | 313           |
 |Número total de cromosomas y plásmidos | 28     |
 
-*link
-https://www.ncbi.nlm.nih.gov/assembly/GCF_002742125.1
+* [Link de acceso a genoma](https://www.ncbi.nlm.nih.gov/assembly/GCF_002742125.1)
 
 ***SECUENCIAS DE REFERENCIA COMPLETA, INTEGRADA Y NO REDUNDANTE DEL GENOMA ("Refseq")*** <br />
 Información del cromosoma 1 del Ovis aries cepa OAR_USU_Benz2616 <br />
@@ -49,8 +48,7 @@ Información del cromosoma 1 del Ovis aries cepa OAR_USU_Benz2616 <br />
 - [Biomuestras](https://www.ncbi.nlm.nih.gov/biosample/SAMEA104496890)
 - [Ensamblaje](https://www.ncbi.nlm.nih.gov/assembly/GCF_002742125.1)
 
-*link
-https://www.ncbi.nlm.nih.gov/nuccore/NC_040252.1
+* [Link de acceso a cromosoma 1](https://www.ncbi.nlm.nih.gov/nuccore/NC_040252.1)
 
 ***BIOPROYECTOS Y BIOMUESTRAS DE LA BASE DE DATOS SRA DE NCBI***
 
