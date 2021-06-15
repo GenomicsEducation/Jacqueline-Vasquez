@@ -136,12 +136,190 @@ Es una herramienta de línea de comandos rápida y de multiproceso que se puede 
   Las muestras que serán analizadas provienen de la base de datos [SRA de NCBI](https://www.ncbi.nlm.nih.gov/sra) y corresponden a lecturas crudas del salmón del Atlántico *Salmo salar* en formato fastq, obtenidas por secuenciación de extremos emparejados con un secuenciador Illumina HiSeq2000.<br />
   
 ### ETAPAS DEL ANÁLISIS DE CONTROL DE CALIDAD, FILTRADO Y PODA.
-  1. CONECCIÓN REMOTA AL SERVIDOR POMEO
-  2. CONFIGURACIÓN DE BIOCONDA E INSTALACIÓN DE SOFTWARE
-  3. DESCARGAR BIOMUESTRA DESDE SRA
-  4. COMPROBACIÓN DE LA INTEGRIDAD DE LOS ARCHIVOS
-  5. ANÁLISIS DEL CONTROL DE CALIDAD DE LAS SECUENCIAS fastq
-  6. FILTRADO Y PODA
+
+  **1. CONEXIÓN REMOTA AL SERVIDOR POMEO**
+  
+  PRIMERO ABRIR PuTTY 
+![CONECTAR CON EL SERVIDOR POMEO](https://user-images.githubusercontent.com/84527634/122123050-86fac980-cdfb-11eb-8294-9d2ed06d41bc.png)
+ SEGUNDO 
+![usuario y contraseña](https://user-images.githubusercontent.com/84527634/122123842-844ca400-cdfc-11eb-84dd-e1f942bf16ce.png)
+
+  **2. CONFIGURACIÓN DE BIOCONDA E INSTALACIÓN DE SOFTWARE**<br />
+  Para configurar el canal bioconda se debe ejecutar el siguiente comando
+  
+  ```
+  conda config --add channels bioconda
+  ```
+  Para buscar el software en bioconda antes de instalar ejecute el siguiente comando.
+  ```
+  conda search -c bioconda fast-qc
+  conda search -c bioconda fastqc
+  conda search -c bioconda trimmomatic
+  ```
+  **Note que si escribe el nombre de forma errada no encontrará el software**
+  
+  Para la instalación de los software proceda a ejecutar los siguientes comandos en la terminal:
+  ```
+  conda install -c bioconda fastqc
+  ```
+  ```
+  conda install -c bioconda trimmomatic
+   ```
+ Usando el comando mkdir cree un directorio llamado SRA_sample
+ ```
+ mkdir SRA_samples
+ ```
+ Acceda a este directorio con el comando
+ ```
+ cd SRA_samples 
+ ```
+ **3. DESCARGAR BIOMUESTRA DESDE SRA**
+ 
+Para esta práctica se trabajará con la biomuestra **SRR2006763** proveniente de la cepa Aquagen de *Salmo salar* y a partir de la que se obtendrán los dos archivos fastq, ya que los datos provienen de secuenciación pair-end.
+Biomuestra 1:SRR2006763_1.fastq Biomuestra 2:SRR2006763_2.fastq
+
+Crear un archivo ejecutable (.sh) con nano denominado download.sh
+```
+nano download.sh
+```
+Se abrira la venta de NANO
+
+![llamar a NANO](https://user-images.githubusercontent.com/84527634/122129316-ed83e580-ce03-11eb-9ad4-d5f79edd84e2.png)
+
+Una vez dentro de NANO Introducir y guardar la información del script como se detalla a continuación, cambiando en la segunda y tercera línea por su nombre de usuario. Note que el script solo tiene 4 líneas.
+```
+ #!/bin/bash
+ #SBATCH -J prefetch_usuario
+ /home2/usuario/sratoolkit.2.11.0-centos_linux64/bin/prefetch --max-size 100G SRR2006763 -O /home2/usuario/SRA_samples/
+ /home2/usuario/sratoolkit.2.11.0-centos_linux64/bin/vdb-validate /home2/usuario/SRA_samples/SRR2006763/SRR2006763.sra
+  ```
+ Este script contiene las instrucciones necesarias para la descarga de la secuencia con el comando prefetch que es parte del kit de herramientas de SRA y su función es descargar archivos de secuencia en formato SRA comprimido. Además, incluye un segundo comando llamado vdb-validate que realiza varios chequeos luego de la descarga para hacegurar que esta se ha desarrollado correctamente. La descarga y chequeo demorará alrededor de dos minutos.
+ 
+  ![INSTRUCCIONES PARA DESCARGAR ARCHIVOS DE SECUENIAS EN FORMATO SRA COMPRIMIDO](https://user-images.githubusercontent.com/84527634/122129388-05f40000-ce04-11eb-822d-49bc9594c9f0.png)
+
+guardar el script con el nombre “download.sh” usando **Ctrl+O**, luego salga de nano usando **Ctrl+X.**
+
+Correr el script mediante el siguiente comando
+```
+ bash download.sh
+```
+Al finalizar la ejecución listar la carpeta SRA_samples para comprobar que se creó el directorio de la secuencia descargada con el nombre SRR2006763 y, dentro de este directorio deberá haberse generado el archivo SRR2006763.sra
+
+```
+ls -l -h 
+```
+Acceder a la carpeta SRR2006763 y crear el siguiente script (nano fdump.sh) que permitirá obtener los archivos fastq de la muestra SRR2006763
+
+```
+nano fdump.sh
+```
+**Se abrira nuevamente la venta de NANO** y se debe escribir el siguiente codigo 
+```
+ #!/bin/bash
+ #SBATCH - J fdump_usuario
+ /home2/usuario/sratoolkit.2.11.0-centos_linux64/bin/fasterq-dump /home2/usuario/SRA_samples/SRR2006763/*.sra -O /home2/usuario/SRA_samples/SRR2006763/
+```
+- **Recordar cambiar usuario por jacqueline.vasquez**
+- **Recordar guardar el script usando** **Ctrl+O**, luego salir de nano usando **Ctrl+X.**
+
+Correr el script mediante el siguiente comando
+
+```
+ bash fdump.sh
+```
+Al finalizar, además de extraer los archivos fastq debería indicarle el total de read leidos y escritos.
+spots read : 2,856,007 reads read : 5,712,014 reads written : 5,712,014
+Biomuestra 1:SRR2006763_1.fastq Biomuestra 2:SRR2006763_2.fastq
+
+**4. COMPROBACIÓN DE LA INTEGRIDAD DE LOS ARCHIVOS**
+
+md5sum es un algoritmo empleado para evitar algún daño que pudo generarse por algún motivo durante el proceso de descarga
+Busque el código Md5 de las muestras y direccione la información a un archivo md5_samples, con el siguiente comando:
+
+```
+md5sum SRR2006763_1.fastq SRR2006763_2.fastq > md5_samples
+```
+Verificar la salida generada
+
+```
+cat md5_samples
+```
+Contendrá los valores md5 de las muestras como se describe a continuación
+```
+dd0bdf8c722226ea34611941f2391774  SRR2006763_1.fastq
+1c63ca4a6e14de4f93f7621e3e990ec9  SRR2006763_2.fastq
+```
+Compruebe la integridad de ambas biomuestras usando md5sum o similar.
+```
+md5sum -c md5_samples
+```
+El comando dará como resultado el siguiente mensaje
+```
+SRR2006763_1.fastq: La suma coincide
+SRR2006763_2.fastq: La suma coincide
+```
+Con lo que se comprueba la integridad de los archivos descargados.
+
+**5. ANÁLISIS DEL CONTROL DE CALIDAD DE LAS SECUENCIAS fastq**
+
+Para el análisis de control de calidad de secuencias fastq que provienen de secuenciadores NGS, en el directorio SRR2006763 crear y correr el siguiente script (nano fastqc.sh)
+- **cambiar usuario por jacqueline.vasquez**
+- **guardar el script usando** **Ctrl+O**, luego salir de nano usando **Ctrl+X.**
+
+```
+  #!/bin/bash
+  #SBATCH - J fastqc_usuario
+  fastqc /home2/usuario/SRA_samples/SRR2006763/*.fastq
+```
+La salida resultante de la ejecución del script anterior serán dos archivos:
+
+ 1. archivo HTML
+ 2. archivo .zip
+Transferir archivos mediante protocolo FTP desde Servidor a Cliente, puede usar cualquier cliente o la línea de comandos.
+- Para Windows mediante Winscp u otro
+- Para MAC: se puede crear un directorio temporal para la descarga de archivos
+```
+cd tmp
+mkdir download
+cd download
+scp usuario@200.54.220.141:/home2/usuario/SRA_samples/SRR2006763/*.html .
+```
+- Se solicitará el ingreso de su clave
+- Se concluirá la descarga al computador local y se la puede revisar con open.
+
+Adicionalmente, POMEO tiene instalado Rstudio server por lo que es posible acceder sus archivos directamente ingresando al servidor a traves del puerto 8787.
+
+[Rstudio de POMEO](http://200.54.220.141:8787/auth-sign-in)
+
+Visualizar archivos generados
+
+**6. FILTRADO Y PODA**
+
+Entrar a la carpeta donde constan los archivos fastq (SRR2006763/) llamar a NANO con:
+```
+nano filtrado.sh
+```
+ejecutar el siguiente script cambiando usuario
+```
+#!/bin/bash
+#SBATCH - J trimm_usuario
+trimmomatic PE SRR2006763_1.fastq SRR2006763_2.fastq -baseout SRR20067634_filtered.fastq.gz SLIDINGWINDOW:5:25 MINLEN:60
+```
+De la ejecución anterior, resultarán 4 archivos comprimidos como se detalla a continuación
+```
+SRR20067634_filtered_1P.fastq.gz
+SRR20067634_filtered_1U.fastq.gz
+SRR20067634_filtered_2P.fastq.gz
+SRR20067634_filtered_2U.fastq.gz
+```
+Descomprimir los archivos con
+
+```
+gunzip SRR20067634_filtered_1P.fastq.gz
+```
+
+Volver a realizar un análisis de calidad de las muestras y comparar con el reporte de calidad inicial (en un script o directamente en la terminal)
+
 
 ### REFERENCIAS DE INTERÉS 
 
