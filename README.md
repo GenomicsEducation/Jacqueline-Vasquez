@@ -97,7 +97,53 @@ Ovis aries[Taxonomy ID: 9940]
  
  3. [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc)
   
+  --------------------------------------------------------------------------------------------------------------------------------------------------------
+  ## PRÁCTICA 3: INTRODUCCIÓN AL ANÁLISIS DE SECUENCIAS NGS.
   
+  ### INTRODUCCIÓN 
+Las tecnologías de secuenciación de próxima generación han evolucionado significativamente para proporcionar una mayor producción de datos [(Taishan et al., 2021)](https://www.sciencedirect.com/science/article/abs/pii/S0198885921000628). Sin embargo, las plataformas son suceptibles a una amplia gama de fallas químicas e instrumentales [(Stephan et al., 2014)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3956068/) y los datos obtenidos pueden tener un fuerte ruido de fondo, contaminación de los adaptadores, baja calidad de secuenciación, entre otros [(He et al., 2020)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7409520/), lo que posteriomente representa problemas significativos en la precisión de la detección de variantes o regiones genómicas objeto de estudio.
+De acuerdo a esto, el control de calidad en el procesamiento de datos se torna esencial para contar con datos limpios y de esta forma evitar errores en posteriores análisis.
+
+**FORMATO FASTQ**</div>
+ Tal como se muestra en la figura 1. el archivo fastq contiene las lecturas de secuenciación.
+ Una lectura de secuenciación tiene 4 líneas:
+  - línea 1: representa el encabezdo de la lectura e inicia siempre con un @ y contiene los datos informativos como, el número de serie del secuenciador y de carril, el swath que representa una región del carril, las posiciones x e y dentro de cada swath y la direccion de las lecturas indicando una secuenciación, que en este caso corresponde a una secuenciación pareada.
+  - línea 2: corresponde a la secuencia de bases 
+  - línea 3: signo + 
+  - línea 4: corresponde a las calidades, donde hay una correspondiente entre la base y su valor de calidad representado por un caracter alfanumérico codificadas para un determinado Phred score (números o letras). 
+  - Las secuencias deben tener un QFRED mayor a 30.
+  
+![formato fastq](https://user-images.githubusercontent.com/84527634/122121183-5154e100-cdf9-11eb-991c-6c8d4adfc731.png)
+
+ **SOFTWARES DE BIOINFORMATICA** 
+ 
+ 1. [FastQC](https://kbase.us/applist/apps/kb_fastqc/runFastQC/release?gclid=CjwKCAjwn6GGBhADEiwAruUcKr1RfYthyztKRytwjVi-aS4-LyMXuRJLADqig_Q8iwP6Sl_FXjLHpBoCJbYQAvD_BwE)
+Este software es una herramienta bioinformática que permite efectuar análisis de control de calidad [(Andrews S., 2010)](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/). Es compatible con las principales plataformas de secuenciación, pero se usa preferentemente con datos de secuenciación Illumina. 
+Este software tiene como objetivo proporcionar un conjunto mudular de análisis adicionales. FastQC resume la calidad de lectura por posición, informa al usuario del contenido del adaptador en secuencias, sobre las frecuencias de tetrámeros y muchos otros aspectos que uno esperaría obtener de los datos de secuencia sin procesar [(Brown et al., 2017)](https://pubmed.ncbi.nlm.nih.gov/28605449/).
+ * En este trabajo la versión de FastQC utilizada es 0.11.9. 
+
+ 2. [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
+Este software permite filtrar y podar datos NGS desde secuenciadores Illumina.
+Es una herramienta de línea de comandos rápida y de multiproceso que se puede utilizar para filtrar y recortar datos de Illumina (FASTQ), así como para eliminar adaptadores. Trabaja con archivos FASTQ utilizando puntuaciones de calidad phred + 33 o + 64, dependiendo de la tubería de Illumina utilizada [(Bolger et al.,2014)](https://academic.oup.com/bioinformatics/article/30/15/2114/2390096).</div> 
+* En este trabajo se emplea la versión 0.39.
+* El manual de uso del software se puede descargar [aquí](http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf)
+ 
+### OBJETIVOS DEL TRABAJO PRÁCTICO
+  - Realizar un análisis integral de control de calidad de secuencias NGS con fastqc.<br />
+  - Filtrar y podar las secuencias con el software trimmomatic.<br />
+  
+### ORIGEN DE LAS MUESTRAS 
+  Las muestras que serán analizadas provienen de la base de datos [SRA de NCBI](https://www.ncbi.nlm.nih.gov/sra) y corresponden a lecturas crudas del salmón del Atlántico *Salmo salar* en formato fastq, obtenidas por secuenciación de extremos emparejados con un secuenciador Illumina HiSeq2000.<br />
+  
+### ETAPAS DEL ANÁLISIS DE CONTROL DE CALIDAD, FILTRADO Y PODA.
+  1. CONECCIÓN REMOTA AL SERVIDOR POMEO
+  2. CONFIGURACIÓN DE BIOCONDA E INSTALACIÓN DE SOFTWARE
+  3. DESCARGAR BIOMUESTRA DESDE SRA
+  4. COMPROBACIÓN DE LA INTEGRIDAD DE LOS ARCHIVOS
+  5. ANÁLISIS DEL CONTROL DE CALIDAD DE LAS SECUENCIAS fastq
+  6. FILTRADO Y PODA
+
+### REFERENCIAS DE INTERÉS 
 
 
 
