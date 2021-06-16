@@ -505,6 +505,12 @@ Adicionalmente, POMEO tiene instalado Rstudio server por lo que es posible acced
 [Rstudio de POMEO](http://200.54.220.141:8787/auth-sign-in)
 
 Visualizar archivos generados
+![VISUALIZAR ARCHIVOS GENERADOS](https://user-images.githubusercontent.com/84527634/122154295-ac56fa00-ce32-11eb-8838-66b2f45163f2.png)
+
+DESCARGA DE ARCHIVOS
+[SRR2006763_1](file:///C:/Users/ASUS/Desktop/GENETICA%20Y%20GENOMICA%20EN%20PRODUCCION%20ANIMAL/proyecto%20de%20genomica/ARCHIVOS%20GENERADOS/SRR2006763_1_fastqc.html)
+[SRR2006763_2](file:///C:/Users/ASUS/Desktop/GENETICA%20Y%20GENOMICA%20EN%20PRODUCCION%20ANIMAL/proyecto%20de%20genomica/ARCHIVOS%20GENERADOS/SRR2006763_2_fastqc.html)
+
 
 **6. FILTRADO Y PODA**
 
