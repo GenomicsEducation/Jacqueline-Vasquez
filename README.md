@@ -98,7 +98,8 @@ Ovis aries[Taxonomy ID: 9940]
 - [Link de todas las muestras](https://www.ncbi.nlm.nih.gov/sra?term=SRP320117)
 - [Link de SRA run selector](https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP320117&o=acc_s%3Aa)
 
- * Link para el [METADATA DE LAS MUESTRA](https://trace.ncbi.nlm.nih.gov/Traces/study/?acc=SRP320117&o=acc_s%3Aa)
+ * Link DE NCBI DONDE DESCARGAR LA METADATA DE LAS MUESTRA [AQUÍ](https://trace.ncbi.nlm.nih.gov/Traces/study/?acc=SRP320117&o=acc_s%3Aa)
+ * Link DE LA METADATA DE LA MUESTRA DESCARGADA [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/f5603881a6908290d88e28076ef1c47d4dcd5717/PR%C3%81CTICA%201/metadata%20original.txt)
 
 ### REFERENCIAS Y LINK DE INTERÉS
 
@@ -149,7 +150,7 @@ Las ventajas de nano son: <br />
 
 link [NANO](https://www.nano-editor.org/)
  
-link  [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc)
+link [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc)
 
 ### OBJETIVOS 
 1. Establecer conexión remota a un servidor y ejecutar multitareas
@@ -238,7 +239,9 @@ Instalación de editor de texto nano
 ```
 conda install -c conda-forge nano
 ```
-### 4. CREACIÓN DE SCRIPT USANDO EL EDITOR DE TEXTO NANO. 
+* LINK DEL EJEMPLO EN LA TERMINAL [AQUÍ]
+
+### 4. APRENDER A CREAR UN SCRIPT USANDO EL EDITOR DE TEXTO NANO. 
 Usando nano crearemos un script denominado script1.sh. En este script ejecutaremos una simple impresión de la frase “Curso de Genomica” usando la función echo. La primera linea del script debe contener la siguiente instrucción #!/bin/sh a veces denominada shebang. Esta instrucción indica que se debe ejecutar, desde el directorio bin, el script actual usando la Shell.
 
 Ejecute entonces el siguiente código para llamar a nano en la terminal 
@@ -253,7 +256,7 @@ escriba el siguiente script
 ```
 # !/bin/bash
 # Mi primer script
-echo Curso de Bioinformática
+echo Curso de genomica
 ```
 **Guardar el script con el nombre “script1.sh” usando Ctrl+O, luego salga de nano usando Ctrl+X.**
 
@@ -261,11 +264,13 @@ Ejecute el script desde la terminal usando
 ```
 bash script1.sh
 ```
-## 5. DESCARGA DE SECUENCIAS NGS COMPRIMIDAS EN FORMATO SRA
+* LINK DE EJEMPLO EN LA TERMINAL [AQUÍ]
+* 
+## 5. SCRIPT PARA DESCARGAR SECUENCIAS NGS COMPRIMIDAS EN FORMATO SRA
 SRA Toolkit es una herramienta que permite descargar y convertir automáticamente archivos en formato .SRA en otros formatos usando un interprete de comandos y de manera automática. Es compatible con Linux, Windows y Mac. Usé el comando wget y tar para descargar y descomprimir SRA Toolkit.<br />
 **Antiguo protocolo 2020**
 ```
-nano script1.sh
+nano script2.sh
 ```
 ```
 # !/bin/bash
@@ -273,19 +278,9 @@ nano script1.sh
 wget http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz
 tar -xzf sratoolkit.current-centos_linux64.tar.gz
 ```
-Luego muevase al directorio /sratoolkit.2.10.5-centos_linux64 y configure SRAtoolkit para trabajar en la nube.
+Luego muevase al directorio /sratoolkit.2.10.5-centos_linux64 y configure SRAtoolkit para trabajar en la nube y ejecutar el comando 
 ```
-bin/vdb-config --interactive
-```
-Cuando se ejecute aparecerá una ventana, simplemente salga con exit.<br />
-
-**Nuevo protocolo Disponible en github para instalar SRA Toolkit en su cuenta del servidor POMEO.**<br />
-**Test de SRAtoolkit**<br />
-Investigue el origen del archivo SRR390728 en SRA Run selector
-Ejecute el siguiente comando para probar que SRAToolkit está trabajando correctamente.
-
-```
-fastq-dump --stdout SRR390728 | head -n 8
+bin/fastq-dump --stdout SRR390728 | head -n 8
 ```
 Si todo va bien con esta muestra continue con los siguientes comandos, alternativamente agregue bin/ al inicio del comando.
 El primero descarga y muestra el contenido de las 5 primeras secuencias del archivo SRR6019464.
@@ -304,6 +299,8 @@ fastq-dump -X 5 SRR6019464
 ```
 zcat SRR6019464.fastq.gz | echo $((`wc -l`/4))
 ```
+* LINK DEL EJEMPLO EN LA TERMINAL [AQUÍ]
+
  ### REFERENCIAS Y LINK DE INTERÉS
  
  1. Grüning, B., Dale, R., Sjödin, A. et al. Bioconda: sustainable and comprehensive software distribution for the life sciences. Nat Methods 15, 475–476 (2018). https://doi.org/10.1038/s41592-018-0046-7
