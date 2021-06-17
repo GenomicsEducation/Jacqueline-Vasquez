@@ -343,8 +343,10 @@ Es una herramienta de línea de comandos rápida y de multiproceso que se puede 
 * El manual de uso del software se puede descargar [aquí](http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf)
  
 ### OBJETIVOS DEL TRABAJO PRÁCTICO
-  1. Realizar un análisis integral de control de calidad de secuencias NGS con fastqc.<br />
-  2. Filtrar y podar las secuencias con el software trimmomatic.<br />
+  1. Comprobar la integridad de las descarga de los archivos usando md5sum.
+  2. Realizar un análisis integral de control de calidad de secuencias NGS con fastqc.<br />
+  3. Filtrar y podar las secuencias con el software trimmomatic.<br />
+  4. Transferir archivos mediante protocolo FTP desde el Servidor a nuestros computadores. 
   
 ### ORIGEN DE LAS MUESTRAS 
   Las muestras que serán analizadas provienen de la base de datos [SRA de NCBI](https://www.ncbi.nlm.nih.gov/sra) y corresponden a lecturas crudas del salmón del Atlántico *Salmo salar* en formato fastq, obtenidas por secuenciación de extremos emparejados con un secuenciador Illumina HiSeq2000.<br />
@@ -549,6 +551,9 @@ fastqc  *.fastq
 * EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt)
 
 ### INTERPRETACIÓN DE RESULTADOS 
+
+![SECUENCIAS](https://user-images.githubusercontent.com/84527634/122330912-fb1f9500-cf01-11eb-93b6-a75775b5cb74.png)
+
 SECUENCIAS NGS GENERADAS 
 - [SRR2006763_1_fastqc.html](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SECUENCIAS%20NGS%20GENERADAS/SRR2006763_1_fastqc.html)
 - [SRR2006763_2_fastqc.html](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SECUENCIAS%20NGS%20GENERADAS/SRR2006763_2_fastqc.html)
@@ -556,6 +561,16 @@ SECUENCIAS NGS GENERADAS
 - [SRR20067634_filtered_2P_fastqc.html](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SECUENCIAS%20NGS%20GENERADAS/SRR20067634_filtered_2P_fastqc.html)
 - [SRR20067634_filtered_1U_fastqc.html](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SECUENCIAS%20NGS%20GENERADAS/SRR20067634_filtered_1U_fastqc.html)
 - [SRR20067634_filtered_2U_fastqc.html](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SECUENCIAS%20NGS%20GENERADAS/SRR20067634_filtered_2U_fastqc.html)
+
+Tal como se muestra en la figura flujo de trabajos de secuencias Paired-en.
+Es posible observar que a nuestro análisis entraron dos secuencias una forward y una reverse (SRR2006763_1_fastqc.html y SRR2006763_2_fastqc.html, respectivamente) y después del análisis salieron 4 archivos filtrados donde:
+- SRR20067634_filtered_1P_fastqc.html y SRR20067634_filtered_2P_fastqc.html representa que las dos muestras quedaron apareadas
+- SRR20067634_filtered_1U_fastqc.html quedo desapareada el forward 
+- SRR20067634_filtered_2U_fastqc.html quedo despareado el reverse 
+
+En relación con la calidad es posible observar que a pesar de que las dos secuencias que ingresaron al análisis tenian buena calidad, después del filtrado esa calidad mejoró aún más tal como se muestra en los gráficos de box plot.  
+
+Se cumplen casí todos los criterios de control de calidad de la secuenciación menos el "Sequence length Distribution", pero esto se debe a que existen algunas secuencias cortas, pero la mayoría están en el largo adecuado y despues del filtrado se eliminaron fragmentos inferiores a 60bp, reduciendo el rango de 43-98pb a 60-98pb.
 
 
 ### REFERENCIAS DE INTERÉS 
