@@ -258,6 +258,8 @@ escriba el siguiente script
 # Mi primer script
 echo Curso de genomica
 ```
+PUEDES VER EL SCRIPT1 [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/02468059e878cf61345dff37c9fc668bd5d53345/PR%C3%81CTICA%202/SCRIPT.sh/script1.sh)
+
 **Guardar el script con el nombre “script1.sh” usando Ctrl+O, luego salga de nano usando Ctrl+X.**
 
 Ejecute el script desde la terminal usando
@@ -278,6 +280,8 @@ nano script2.sh
 wget http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz
 tar -xzf sratoolkit.current-centos_linux64.tar.gz
 ```
+PUEDES VER EL SCRIPT2 [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/02468059e878cf61345dff37c9fc668bd5d53345/PR%C3%81CTICA%202/SCRIPT.sh/script2.sh)
+
 Luego muevase al directorio /sratoolkit.2.10.5-centos_linux64 y configure SRAtoolkit para trabajar en la nube y ejecutar el comando 
 ```
 bin/fastq-dump --stdout SRR390728 | head -n 8
