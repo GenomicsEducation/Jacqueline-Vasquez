@@ -1,11 +1,17 @@
-## TÍTULO: *Práctica para la elaboración de un proyecto de genómica aplicada*
+## TÍTULO: *PRÁCTICAS PARA LA ELABORACIÓN DE UN PROYECTO DE GENÓMICA APLICADA*
 
-#### AUTOR:  
-**Jacqueline Vásquez Navarrete**
+#### AUTOR: **Jacqueline Vásquez Navarrete**
 - Estudiante de Doctorado en Biotecnología. [UTFSM](https://www.usm.cl/)/[PUCV](https://www.pucv.cl/)
 - Magíster en Ciencias Biológicas, mención Neurociencias. [Universidad de Valparaíso](https://www.uv.cl/)  
 - Licenciatura en Ciencias, Mención Biología. [Universidad de Valparaíso](https://www.uv.cl/)  
 ------------------------------------------------------------------------------------------------------------------------------------------------------
+**ÍNDICE**
+1. [PRÁCTICA 1. INTRODUCCIÓN A BASES DE DATOS GENÓMICOS: ASSEMBLY Y SRA DE NCBI (#id1)
+2. [PRÁCTICA 2. INTRODUCCIÓN A LINUX PARA GENÓMICA](#id2)
+3. [PRÁCTICA 3. INTRODUCCIÓN AL ANÁLISIS DE SECUENCIAS NGS](#id3)
+4. [PRÁCTICA 4](#id4)
+<div id='id1' />
+
 
 ## PRÁCTICA 1: INTRODUCCIÓN A BASES DE DATOS GENÓMICOS : ASSEMBLY Y SRA DE [NCBI](https://www.ncbi.nlm.nih.gov/)
 
