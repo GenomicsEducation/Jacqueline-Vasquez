@@ -387,7 +387,7 @@ Es una herramienta de línea de comandos rápida y de multiproceso que se puede 
  ```
  cd SRA_samples 
  ```
- EJEMPLO EN LA TERMINAL [AQUÍ]
+* EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt)
  
  **3. DESCARGAR BIOMUESTRA DESDE SRA**
  
@@ -403,6 +403,7 @@ Se abrira la venta de NANO
 ![llamar a NANO](https://user-images.githubusercontent.com/84527634/122129316-ed83e580-ce03-11eb-9ad4-d5f79edd84e2.png)
 
 Una vez dentro de NANO Introducir y guardar la información del script como se detalla a continuación, cambiando en la segunda y tercera línea por su nombre de usuario. Note que el script solo tiene 4 líneas.
+* PUEDES VER EL SCRIPT dowload.sh [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SCRIPT.sh/download.sh)
 ```
  #!/bin/bash
  #SBATCH -J prefetch_usuario
@@ -437,6 +438,7 @@ nano fdump.sh
 ```
 - **Recordar cambiar usuario por jacqueline.vasquez**
 - **Recordar guardar el script usando** **Ctrl+O**, luego salir de nano usando **Ctrl+X.**
+- PUEDES VER EL SCRIPT fdump.sh [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SCRIPT.sh/fdump.sh) 
 
 Correr el script mediante el siguiente comando
 
@@ -447,7 +449,7 @@ Al finalizar, además de extraer los archivos fastq debería indicarle el total 
 spots read : 2,856,007 reads read : 5,712,014 reads written : 5,712,014
 Biomuestra 1:SRR2006763_1.fastq Biomuestra 2:SRR2006763_2.fastq
 
-EJEMPLO EN LA TERMINAL [AQUÍ]
+* EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt) 
 
 **4. COMPROBACIÓN DE LA INTEGRIDAD DE LOS ARCHIVOS**
 
@@ -478,14 +480,14 @@ SRR2006763_2.fastq: La suma coincide
 ```
 Con lo que se comprueba la integridad de los archivos descargados.
 
-EJEMPLO EN LA TERMINAL [AQUÍ]
+* EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt)
 
 **5. ANÁLISIS DEL CONTROL DE CALIDAD DE LAS SECUENCIAS fastq**
 
 Para el análisis de control de calidad de secuencias fastq que provienen de secuenciadores NGS, en el directorio SRR2006763 crear y correr el siguiente script (nano fastqc.sh)
 - **cambiar usuario por jacqueline.vasquez**
 - **guardar el script usando** **Ctrl+O**, luego salir de nano usando **Ctrl+X.**
-
+- PUEDES VER EL SCRIPT fastqc.sh [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SCRIPT.sh/fastqc.sh) 
 ```
   #!/bin/bash
   #SBATCH - J fastqc_usuario
@@ -518,7 +520,7 @@ DESCARGA DE ARCHIVOS
 [SRR2006763_1](file:///C:/Users/ASUS/Desktop/GENETICA%20Y%20GENOMICA%20EN%20PRODUCCION%20ANIMAL/proyecto%20de%20genomica/ARCHIVOS%20GENERADOS/SRR2006763_1_fastqc.html)
 [SRR2006763_2](file:///C:/Users/ASUS/Desktop/GENETICA%20Y%20GENOMICA%20EN%20PRODUCCION%20ANIMAL/proyecto%20de%20genomica/ARCHIVOS%20GENERADOS/SRR2006763_2_fastqc.html)
 
-EJEMPLO EN LA TERMINAL [AQUÍ]
+EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt)
 
 **6. FILTRADO Y PODA**
 
@@ -532,6 +534,8 @@ ejecutar el siguiente script cambiando usuario
 #SBATCH - J trimm_usuario
 trimmomatic PE SRR2006763_1.fastq SRR2006763_2.fastq -baseout SRR20067634_filtered.fastq.gz SLIDINGWINDOW:5:25 MINLEN:60
 ```
+* PUEDES VER EL SCRIPT filtado.sh [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SCRIPT.sh/filtrado.sh)
+
 De la ejecución anterior, resultarán 4 archivos comprimidos como se detalla a continuación
 ```
 SRR20067634_filtered_1P.fastq.gz
@@ -549,10 +553,17 @@ Volver a realizar un análisis de calidad de las muestras y comparar con el repo
 ```
 fastqc  *.fastq
 ```
-EJEMPLO EN LA TERMINAL [AQUÍ]
+* EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt)
 
 ### INTERPRETACIÓN DE RESULTADOS 
-SECUENCIAS NGS GENERADAS [AQUÍ]
+SECUENCIAS NGS GENERADAS 
+- [SRR2006763_1_fastqc.html](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SECUENCIAS%20NGS%20GENERADAS/SRR2006763_1_fastqc.html)
+- [SRR2006763_2_fastqc.html](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SECUENCIAS%20NGS%20GENERADAS/SRR2006763_2_fastqc.html)
+- [SRR20067634_filtered_1P_fastqc.html](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SECUENCIAS%20NGS%20GENERADAS/SRR20067634_filtered_1P_fastqc.htm)
+- [SRR20067634_filtered_2P_fastqc.html](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SECUENCIAS%20NGS%20GENERADAS/SRR20067634_filtered_2P_fastqc.html)
+- [SRR20067634_filtered_1U_fastqc.html](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SECUENCIAS%20NGS%20GENERADAS/SRR20067634_filtered_1U_fastqc.html)
+- [SRR20067634_filtered_2U_fastqc.html](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SECUENCIAS%20NGS%20GENERADAS/SRR20067634_filtered_2U_fastqc.html)
+
 
 ### REFERENCIAS DE INTERÉS 
 - Grüning, B., Dale, R., Sjödin, A. et al. Bioconda: sustainable and comprehensive software distribution for the life sciences. Nat Methods 15, 475–476 (2018). https://doi.org/10.1038/s41592-018-0046-7
@@ -562,4 +573,4 @@ SECUENCIAS NGS GENERADAS [AQUÍ]
 - He, B., Shu, R., Yang, H., Lu, Q., Wang, W., Song, L., . . . Lang, J. (2020). Assessing the Impact of Data Preprocessing on Analyzing Next Generation Sequencing . Frontiers in Bioengineering and Biotechnology, 1-12 .
 - Bolger AM, Lohse M, Usadel B. Trimmomatic: a flexible trimmer for Illumina sequence data. Bioinformatics. 2014;30(15):2114-2120. doi:10.1093/bioinformatics/btu170
 
-d
+
