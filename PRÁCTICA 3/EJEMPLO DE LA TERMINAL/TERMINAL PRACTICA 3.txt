@@ -1,0 +1,445 @@
+
+### 2. CONFIGURACIÓN DE BIOCONDA E INSTALACIÓN DE SOFTWARE
+
+(base) [jacqueline.vasquez@test-pomeo ~]$ conda config --add channels bioconda
+Warning: 'bioconda' already in 'channels' list, moving to the top
+(base) [jacqueline.vasquez@test-pomeo ~]$ conda search -c bioconda fast-qc
+Loading channels: done
+No match found for: fast-qc. Search: *fast-qc*
+
+PackagesNotFoundError: The following packages are not available from current channels:
+
+  - fast-qc
+
+Current channels:
+
+  - https://conda.anaconda.org/bioconda/linux-64
+  - https://conda.anaconda.org/bioconda/noarch
+  - https://repo.anaconda.com/pkgs/main/linux-64
+  - https://repo.anaconda.com/pkgs/main/noarch
+  - https://repo.anaconda.com/pkgs/r/linux-64
+  - https://repo.anaconda.com/pkgs/r/noarch
+
+To search for alternate channels that may provide the conda package you're
+looking for, navigate to
+
+    https://anaconda.org
+
+and use the search bar at the top of the page.
+
+
+(base) [jacqueline.vasquez@test-pomeo ~]$ conda search -c bioconda fastqc
+Loading channels: done
+# Name                       Version           Build  Channel
+fastqc                        0.10.1               0  bioconda
+fastqc                        0.10.1               1  bioconda
+fastqc                        0.11.2               1  bioconda
+fastqc                        0.11.2      pl5.22.0_0  bioconda
+fastqc                        0.11.3               0  bioconda
+fastqc                        0.11.3               1  bioconda
+fastqc                        0.11.4               0  bioconda
+fastqc                        0.11.4               1  bioconda
+fastqc                        0.11.4               2  bioconda
+fastqc                        0.11.5               1  bioconda
+fastqc                        0.11.5               4  bioconda
+fastqc                        0.11.5      hdfd78af_5  bioconda
+fastqc                        0.11.5      pl5.22.0_2  bioconda
+fastqc                        0.11.5      pl5.22.0_3  bioconda
+fastqc                        0.11.6               2  bioconda
+fastqc                        0.11.6      pl5.22.0_0  bioconda
+fastqc                        0.11.6      pl5.22.0_1  bioconda
+fastqc                        0.11.7               4  bioconda
+fastqc                        0.11.7               5  bioconda
+fastqc                        0.11.7               6  bioconda
+fastqc                        0.11.7      hdfd78af_7  bioconda
+fastqc                        0.11.7      pl5.22.0_0  bioconda
+fastqc                        0.11.7      pl5.22.0_2  bioconda
+fastqc                        0.11.8               0  bioconda
+fastqc                        0.11.8               1  bioconda
+fastqc                        0.11.8               2  bioconda
+fastqc                        0.11.9               0  bioconda
+fastqc                        0.11.9      hdfd78af_1  bioconda
+(base) [jacqueline.vasquez@test-pomeo ~]$ conda search -c bioconda trimmomatic
+Loading channels: done
+# Name                       Version           Build  Channel
+trimmomatic                     0.32               0  bioconda
+trimmomatic                     0.32               1  bioconda
+trimmomatic                     0.32               2  bioconda
+trimmomatic                     0.32               3  bioconda
+trimmomatic                     0.32      hdfd78af_4  bioconda
+trimmomatic                     0.33               0  bioconda
+trimmomatic                     0.33               1  bioconda
+trimmomatic                     0.33               2  bioconda
+trimmomatic                     0.33      hdfd78af_3  bioconda
+trimmomatic                     0.35               1  bioconda
+trimmomatic                     0.35               2  bioconda
+trimmomatic                     0.35               3  bioconda
+trimmomatic                     0.35               6  bioconda
+trimmomatic                     0.35      hdfd78af_7  bioconda
+trimmomatic                     0.36               1  bioconda
+trimmomatic                     0.36               3  bioconda
+trimmomatic                     0.36               4  bioconda
+trimmomatic                     0.36               5  bioconda
+trimmomatic                     0.36               6  bioconda
+trimmomatic                     0.38               1  bioconda
+trimmomatic                     0.39               0  bioconda
+trimmomatic                     0.39               1  bioconda
+trimmomatic                     0.39      hdfd78af_2  bioconda
+(base) [jacqueline.vasquez@test-pomeo ~]$ conda install -c bioconda fastqc
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /home2/jacqueline.vasquez/miniconda3
+
+  added / updated specs:
+    - fastqc
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    certifi-2021.5.30          |   py38h06a4308_0         138 KB
+    conda-4.10.1               |   py38h06a4308_1         2.9 MB
+    fastqc-0.11.9              |       hdfd78af_1         9.7 MB  bioconda
+    font-ttf-dejavu-sans-mono-2.37|       h6964260_0         335 KB
+    fontconfig-2.13.1          |       h6c09931_0         250 KB
+    freetype-2.10.4            |       h5ab3b9f_0         596 KB
+    icu-58.2                   |       he6710b0_3        10.5 MB
+    libpng-1.6.37              |       hbc83047_0         278 KB
+    libuuid-1.0.3              |       h1bed415_2          15 KB
+    libxml2-2.9.10             |       hb55368b_3         1.2 MB
+    openjdk-8.0.152            |       h7b6447c_3        57.4 MB
+    perl-5.26.2                |       h14c3975_0        10.5 MB
+    ------------------------------------------------------------
+                                           Total:        93.7 MB
+
+The following NEW packages will be INSTALLED:
+
+  fastqc             bioconda/noarch::fastqc-0.11.9-hdfd78af_1
+  font-ttf-dejavu-s~ pkgs/main/noarch::font-ttf-dejavu-sans-mono-2.37-h6964260_0
+  fontconfig         pkgs/main/linux-64::fontconfig-2.13.1-h6c09931_0
+  freetype           pkgs/main/linux-64::freetype-2.10.4-h5ab3b9f_0
+  icu                pkgs/main/linux-64::icu-58.2-he6710b0_3
+  libpng             pkgs/main/linux-64::libpng-1.6.37-hbc83047_0
+  libuuid            pkgs/main/linux-64::libuuid-1.0.3-h1bed415_2
+  libxml2            pkgs/main/linux-64::libxml2-2.9.10-hb55368b_3
+  openjdk            pkgs/main/linux-64::openjdk-8.0.152-h7b6447c_3
+  perl               pkgs/main/linux-64::perl-5.26.2-h14c3975_0
+
+The following packages will be UPDATED:
+
+  conda              conda-forge::conda-4.10.1-py38h578d9b~ --> pkgs/main::conda-4.10.1-py38h06a4308_1
+
+The following packages will be SUPERSEDED by a higher-priority channel:
+
+  certifi            conda-forge::certifi-2021.5.30-py38h5~ --> pkgs/main::certifi-2021.5.30-py38h06a4308_0
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+fontconfig-2.13.1    | 250 KB    | ################################################################################################################################################## | 100%
+fastqc-0.11.9        | 9.7 MB    | ################################################################################################################################################## | 100%
+icu-58.2             | 10.5 MB   | ################################################################################################################################################## | 100%
+perl-5.26.2          | 10.5 MB   | ################################################################################################################################################## | 100%
+libpng-1.6.37        | 278 KB    | ################################################################################################################################################## | 100%
+libuuid-1.0.3        | 15 KB     | ################################################################################################################################################## | 100%
+font-ttf-dejavu-sans | 335 KB    | ################################################################################################################################################## | 100%
+libxml2-2.9.10       | 1.2 MB    | ################################################################################################################################################## | 100%
+freetype-2.10.4      | 596 KB    | ################################################################################################################################################## | 100%
+openjdk-8.0.152      | 57.4 MB   | ################################################################################################################################################## | 100%
+certifi-2021.5.30    | 138 KB    | ################################################################################################################################################## | 100%
+conda-4.10.1         | 2.9 MB    | ################################################################################################################################################## | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(base) [jacqueline.vasquez@test-pomeo ~]$ conda install -c bioconda trimmomatic
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /home2/jacqueline.vasquez/miniconda3
+
+  added / updated specs:
+    - trimmomatic
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    trimmomatic-0.39           |       hdfd78af_2         144 KB  bioconda
+    ------------------------------------------------------------
+                                           Total:         144 KB
+
+The following NEW packages will be INSTALLED:
+
+  trimmomatic        bioconda/noarch::trimmomatic-0.39-hdfd78af_2
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+trimmomatic-0.39     | 144 KB    | ################################################################################################################################################## | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(base) [jacqueline.vasquez@test-pomeo ~]$ mkdir SRA_samples
+(base) [jacqueline.vasquez@test-pomeo ~]$ cd SRA_samples
+
+
+### 3. DESCARGAR BIOMUSTRA DESDE SRA
+
+
+(base) [jacqueline.vasquez@test-pomeo SRA_samples]$ nano download.sh
+(base) [jacqueline.vasquez@test-pomeo SRA_samples]$ bash download.sh
+
+2021-06-17T09:29:05 prefetch.2.11.0: 1) Downloading 'SRR2006763'...
+2021-06-17T09:29:05 prefetch.2.11.0:  Downloading via HTTPS...
+2021-06-17T09:30:00 prefetch.2.11.0:  HTTPS download succeed
+2021-06-17T09:30:02 prefetch.2.11.0:  'SRR2006763' is valid
+2021-06-17T09:30:02 prefetch.2.11.0: 1) 'SRR2006763' was downloaded successfully
+2021-06-17T09:30:02 prefetch.2.11.0: 'SRR2006763' has 0 unresolved dependencies
+2021-06-17T09:30:02 vdb-validate.2.11.0 info: Database 'SRR2006763.sra' metadata: md5 ok
+2021-06-17T09:30:02 vdb-validate.2.11.0 info: Table 'SEQUENCE' metadata: md5 ok
+2021-06-17T09:30:02 vdb-validate.2.11.0 info: Column 'QUALITY': checksums ok
+2021-06-17T09:30:02 vdb-validate.2.11.0 info: Column 'READ': checksums ok
+2021-06-17T09:30:02 vdb-validate.2.11.0 info: Column 'READ_LEN': checksums ok
+2021-06-17T09:30:02 vdb-validate.2.11.0 info: Column 'READ_START': checksums ok
+2021-06-17T09:30:02 vdb-validate.2.11.0 info: Column 'SPOT_GROUP': checksums ok
+2021-06-17T09:30:02 vdb-validate.2.11.0 info: Database '/home2/jacqueline.vasquez/SRA_samples/SRR2006763/SRR2006763.sra' contains only unaligned reads
+2021-06-17T09:30:02 vdb-validate.2.11.0 info: Database 'SRR2006763.sra' is consistent
+(base) [jacqueline.vasquez@test-pomeo SRA_samples]$ ls -l -h
+total 8,0K
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  336 jun 17 05:28 download.sh
+drwxrwxr-x 2 jacqueline.vasquez jacqueline.vasquez 4,0K jun 17 05:30 SRR2006763
+(base) [jacqueline.vasquez@test-pomeo SRA_samples]$ cd SRR2006763
+(base) [jacqueline.vasquez@test-pomeo SRR2006763]$ LS
+-bash: LS: no se encontró la orden
+(base) [jacqueline.vasquez@test-pomeo SRR2006763]$ ls
+SRR2006763.sra
+(base) [jacqueline.vasquez@test-pomeo SRR2006763]$ nano fdump.sh
+(base) [jacqueline.vasquez@test-pomeo SRR2006763]$ bash fdump.sh
+spots read      : 2,856,007
+reads read      : 5,712,014
+reads written   : 5,712,014
+
+### 4. COMPROBACIÓN DE LA INTEGRIDAD DE LOS ARCHIVOS
+
+(base) [jacqueline.vasquez@test-pomeo SRR2006763]$ md5sum SRR2006763_1.fastq SRR2006763_2.fastq > md5_samples
+(base) [jacqueline.vasquez@test-pomeo SRR2006763]$ cat md5_samples
+dd0bdf8c722226ea34611941f2391774  SRR2006763_1.fastq
+1c63ca4a6e14de4f93f7621e3e990ec9  SRR2006763_2.fastq
+(base) [jacqueline.vasquez@test-pomeo SRR2006763]$ md5sum -c md5_samples
+SRR2006763_1.fastq: La suma coincide
+SRR2006763_2.fastq: La suma coincide
+
+### 5. ANÁLISIS DEL CONTROL DE CALIDAD
+
+(base) [jacqueline.vasquez@test-pomeo SRR2006763]$ nano fastqc.sh
+(base) [jacqueline.vasquez@test-pomeo SRR2006763]$ bash fastqc.sh
+Started analysis of SRR2006763_1.fastq
+Approx 5% complete for SRR2006763_1.fastq
+Approx 10% complete for SRR2006763_1.fastq
+Approx 15% complete for SRR2006763_1.fastq
+Approx 20% complete for SRR2006763_1.fastq
+Approx 25% complete for SRR2006763_1.fastq
+Approx 30% complete for SRR2006763_1.fastq
+Approx 35% complete for SRR2006763_1.fastq
+Approx 40% complete for SRR2006763_1.fastq
+Approx 45% complete for SRR2006763_1.fastq
+Approx 50% complete for SRR2006763_1.fastq
+Approx 55% complete for SRR2006763_1.fastq
+Approx 60% complete for SRR2006763_1.fastq
+Approx 65% complete for SRR2006763_1.fastq
+Approx 70% complete for SRR2006763_1.fastq
+Approx 75% complete for SRR2006763_1.fastq
+Approx 80% complete for SRR2006763_1.fastq
+Approx 85% complete for SRR2006763_1.fastq
+Approx 90% complete for SRR2006763_1.fastq
+Approx 95% complete for SRR2006763_1.fastq
+Approx 100% complete for SRR2006763_1.fastq
+Analysis complete for SRR2006763_1.fastq
+Started analysis of SRR2006763_2.fastq
+Approx 5% complete for SRR2006763_2.fastq
+Approx 10% complete for SRR2006763_2.fastq
+Approx 15% complete for SRR2006763_2.fastq
+Approx 20% complete for SRR2006763_2.fastq
+Approx 25% complete for SRR2006763_2.fastq
+Approx 30% complete for SRR2006763_2.fastq
+Approx 35% complete for SRR2006763_2.fastq
+Approx 40% complete for SRR2006763_2.fastq
+Approx 45% complete for SRR2006763_2.fastq
+Approx 50% complete for SRR2006763_2.fastq
+Approx 55% complete for SRR2006763_2.fastq
+Approx 60% complete for SRR2006763_2.fastq
+Approx 65% complete for SRR2006763_2.fastq
+Approx 70% complete for SRR2006763_2.fastq
+Approx 75% complete for SRR2006763_2.fastq
+Approx 80% complete for SRR2006763_2.fastq
+Approx 85% complete for SRR2006763_2.fastq
+Approx 90% complete for SRR2006763_2.fastq
+Approx 95% complete for SRR2006763_2.fastq
+Approx 100% complete for SRR2006763_2.fastq
+Analysis complete for SRR2006763_2.fastq
+(base) [jacqueline.vasquez@test-pomeo SRR2006763]$ ls
+fastqc.sh  md5_samples         SRR2006763_1_fastqc.html  SRR2006763_2.fastq        SRR2006763_2_fastqc.zip
+fdump.sh   SRR2006763_1.fastq  SRR2006763_1_fastqc.zip   SRR2006763_2_fastqc.html  SRR2006763.sra
+
+### 6. FILTRADO Y PODA
+
+(base) [jacqueline.vasquez@test-pomeo SRR2006763]$ ls
+fastqc.sh  filtrato.sh  SRR2006763_1.fastq        SRR2006763_1_fastqc.zip  SRR2006763_2_fastqc.html  SRR2006763.sra
+fdump.sh   md5_samples  SRR2006763_1_fastqc.html  SRR2006763_2.fastq       SRR2006763_2_fastqc.zip
+(base) [jacqueline.vasquez@test-pomeo SRR2006763]$ nano filtrado.sh
+(base) [jacqueline.vasquez@test-pomeo SRR2006763]$ bash filtrado.sh
+TrimmomaticPE: Started with arguments:
+ SRR2006763_1.fastq SRR2006763_2.fastq -baseout SRR20067634_filtered.fastq.gz SLIDINGWINDOW:5:25 MINLEN:60
+Using templated Output files: SRR20067634_filtered_1P.fastq.gz SRR20067634_filtered_1U.fastq.gz SRR20067634_filtered_2P.fastq.gz SRR20067634_filtered_2U.fastq.gz
+Quality encoding detected as phred33
+Input Read Pairs: 2856007 Both Surviving: 2125561 (74,42%) Forward Only Surviving: 333935 (11,69%) Reverse Only Surviving: 277952 (9,73%) Dropped: 118559 (4,15%)
+TrimmomaticPE: Completed successfully
+(base) [jacqueline.vasquez@test-pomeo SRR2006763]$ ls
+fastqc.sh  filtrado.sh  SRR2006763_1.fastq        SRR2006763_1_fastqc.zip  SRR2006763_2_fastqc.html  SRR20067634_filtered_1P.fastq.gz  SRR20067634_filtered_2P.fastq.gz  SRR2006763.sra
+fdump.sh   md5_samples  SRR2006763_1_fastqc.html  SRR2006763_2.fastq       SRR2006763_2_fastqc.zip   SRR20067634_filtered_1U.fastq.gz  SRR20067634_filtered_2U.fastq.gz
+(base) [jacqueline.vasquez@test-pomeo SRR2006763]$ gunzip SRR20067634_filtered_1P.fastq.gz
+(base) [jacqueline.vasquez@test-pomeo SRR2006763]$ gunzip SRR20067634_filtered_1U.fastq.gz
+(base) [jacqueline.vasquez@test-pomeo SRR2006763]$ gunzip SRR20067634_filtered_2U.fastq.gz
+(base) [jacqueline.vasquez@test-pomeo SRR2006763]$ gunzip SRR20067634_filtered_2P.fastq.gz
+
+(base) [jacqueline.vasquez@test-pomeo SRR2006763]$ fastqc  *.fastq
+Started analysis of SRR2006763_1.fastq
+Approx 5% complete for SRR2006763_1.fastq
+Approx 10% complete for SRR2006763_1.fastq
+Approx 15% complete for SRR2006763_1.fastq
+Approx 20% complete for SRR2006763_1.fastq
+Approx 25% complete for SRR2006763_1.fastq
+Approx 30% complete for SRR2006763_1.fastq
+Approx 35% complete for SRR2006763_1.fastq
+Approx 40% complete for SRR2006763_1.fastq
+Approx 45% complete for SRR2006763_1.fastq
+Approx 50% complete for SRR2006763_1.fastq
+Approx 55% complete for SRR2006763_1.fastq
+Approx 60% complete for SRR2006763_1.fastq
+Approx 65% complete for SRR2006763_1.fastq
+Approx 70% complete for SRR2006763_1.fastq
+Approx 75% complete for SRR2006763_1.fastq
+Approx 80% complete for SRR2006763_1.fastq
+Approx 85% complete for SRR2006763_1.fastq
+Approx 90% complete for SRR2006763_1.fastq
+Approx 95% complete for SRR2006763_1.fastq
+Approx 100% complete for SRR2006763_1.fastq
+Analysis complete for SRR2006763_1.fastq
+Started analysis of SRR2006763_2.fastq
+Approx 5% complete for SRR2006763_2.fastq
+Approx 10% complete for SRR2006763_2.fastq
+Approx 15% complete for SRR2006763_2.fastq
+Approx 20% complete for SRR2006763_2.fastq
+Approx 25% complete for SRR2006763_2.fastq
+Approx 30% complete for SRR2006763_2.fastq
+Approx 35% complete for SRR2006763_2.fastq
+Approx 40% complete for SRR2006763_2.fastq
+Approx 45% complete for SRR2006763_2.fastq
+Approx 50% complete for SRR2006763_2.fastq
+Approx 55% complete for SRR2006763_2.fastq
+Approx 60% complete for SRR2006763_2.fastq
+Approx 65% complete for SRR2006763_2.fastq
+Approx 70% complete for SRR2006763_2.fastq
+Approx 75% complete for SRR2006763_2.fastq
+Approx 80% complete for SRR2006763_2.fastq
+Approx 85% complete for SRR2006763_2.fastq
+Approx 90% complete for SRR2006763_2.fastq
+Approx 95% complete for SRR2006763_2.fastq
+Approx 100% complete for SRR2006763_2.fastq
+Analysis complete for SRR2006763_2.fastq
+Started analysis of SRR20067634_filtered_1P.fastq
+Approx 5% complete for SRR20067634_filtered_1P.fastq
+Approx 10% complete for SRR20067634_filtered_1P.fastq
+Approx 15% complete for SRR20067634_filtered_1P.fastq
+Approx 20% complete for SRR20067634_filtered_1P.fastq
+Approx 25% complete for SRR20067634_filtered_1P.fastq
+Approx 30% complete for SRR20067634_filtered_1P.fastq
+Approx 35% complete for SRR20067634_filtered_1P.fastq
+Approx 40% complete for SRR20067634_filtered_1P.fastq
+Approx 45% complete for SRR20067634_filtered_1P.fastq
+Approx 50% complete for SRR20067634_filtered_1P.fastq
+Approx 55% complete for SRR20067634_filtered_1P.fastq
+Approx 60% complete for SRR20067634_filtered_1P.fastq
+Approx 65% complete for SRR20067634_filtered_1P.fastq
+Approx 70% complete for SRR20067634_filtered_1P.fastq
+Approx 75% complete for SRR20067634_filtered_1P.fastq
+Approx 80% complete for SRR20067634_filtered_1P.fastq
+Approx 85% complete for SRR20067634_filtered_1P.fastq
+Approx 90% complete for SRR20067634_filtered_1P.fastq
+Approx 95% complete for SRR20067634_filtered_1P.fastq
+Analysis complete for SRR20067634_filtered_1P.fastq
+Started analysis of SRR20067634_filtered_1U.fastq
+Approx 5% complete for SRR20067634_filtered_1U.fastq
+Approx 10% complete for SRR20067634_filtered_1U.fastq
+Approx 15% complete for SRR20067634_filtered_1U.fastq
+Approx 20% complete for SRR20067634_filtered_1U.fastq
+Approx 25% complete for SRR20067634_filtered_1U.fastq
+Approx 30% complete for SRR20067634_filtered_1U.fastq
+Approx 35% complete for SRR20067634_filtered_1U.fastq
+Approx 40% complete for SRR20067634_filtered_1U.fastq
+Approx 45% complete for SRR20067634_filtered_1U.fastq
+Approx 50% complete for SRR20067634_filtered_1U.fastq
+Approx 55% complete for SRR20067634_filtered_1U.fastq
+Approx 60% complete for SRR20067634_filtered_1U.fastq
+Approx 65% complete for SRR20067634_filtered_1U.fastq
+Approx 70% complete for SRR20067634_filtered_1U.fastq
+Approx 75% complete for SRR20067634_filtered_1U.fastq
+Approx 80% complete for SRR20067634_filtered_1U.fastq
+Approx 85% complete for SRR20067634_filtered_1U.fastq
+Approx 90% complete for SRR20067634_filtered_1U.fastq
+Approx 95% complete for SRR20067634_filtered_1U.fastq
+Analysis complete for SRR20067634_filtered_1U.fastq
+Started analysis of SRR20067634_filtered_2P.fastq
+Approx 5% complete for SRR20067634_filtered_2P.fastq
+Approx 10% complete for SRR20067634_filtered_2P.fastq
+Approx 15% complete for SRR20067634_filtered_2P.fastq
+Approx 20% complete for SRR20067634_filtered_2P.fastq
+Approx 25% complete for SRR20067634_filtered_2P.fastq
+Approx 30% complete for SRR20067634_filtered_2P.fastq
+Approx 35% complete for SRR20067634_filtered_2P.fastq
+Approx 40% complete for SRR20067634_filtered_2P.fastq
+Approx 45% complete for SRR20067634_filtered_2P.fastq
+Approx 50% complete for SRR20067634_filtered_2P.fastq
+Approx 55% complete for SRR20067634_filtered_2P.fastq
+Approx 60% complete for SRR20067634_filtered_2P.fastq
+Approx 65% complete for SRR20067634_filtered_2P.fastq
+Approx 70% complete for SRR20067634_filtered_2P.fastq
+Approx 75% complete for SRR20067634_filtered_2P.fastq
+Approx 80% complete for SRR20067634_filtered_2P.fastq
+Approx 85% complete for SRR20067634_filtered_2P.fastq
+Approx 90% complete for SRR20067634_filtered_2P.fastq
+Approx 95% complete for SRR20067634_filtered_2P.fastq
+Analysis complete for SRR20067634_filtered_2P.fastq
+Started analysis of SRR20067634_filtered_2U.fastq
+Approx 5% complete for SRR20067634_filtered_2U.fastq
+Approx 10% complete for SRR20067634_filtered_2U.fastq
+Approx 15% complete for SRR20067634_filtered_2U.fastq
+Approx 20% complete for SRR20067634_filtered_2U.fastq
+Approx 25% complete for SRR20067634_filtered_2U.fastq
+Approx 30% complete for SRR20067634_filtered_2U.fastq
+Approx 35% complete for SRR20067634_filtered_2U.fastq
+Approx 40% complete for SRR20067634_filtered_2U.fastq
+Approx 45% complete for SRR20067634_filtered_2U.fastq
+Approx 50% complete for SRR20067634_filtered_2U.fastq
+Approx 55% complete for SRR20067634_filtered_2U.fastq
+Approx 60% complete for SRR20067634_filtered_2U.fastq
+Approx 65% complete for SRR20067634_filtered_2U.fastq
+Approx 70% complete for SRR20067634_filtered_2U.fastq
+Approx 75% complete for SRR20067634_filtered_2U.fastq
+Approx 80% complete for SRR20067634_filtered_2U.fastq
+Approx 85% complete for SRR20067634_filtered_2U.fastq
+Approx 90% complete for SRR20067634_filtered_2U.fastq
+Approx 95% complete for SRR20067634_filtered_2U.fastq
+Analysis complete for SRR20067634_filtered_2U.fastq
+(base) [jacqueline.vasquez@test-pomeo SRR2006763]$
