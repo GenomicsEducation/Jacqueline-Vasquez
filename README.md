@@ -239,7 +239,7 @@ Instalación de editor de texto nano
 ```
 conda install -c conda-forge nano
 ```
-* LINK DEL EJEMPLO EN LA TERMINAL [AQUÍ]
+* LINK DEL EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/43bbeb5202abe65bbc1e51b534456f00b41ecb7f/PR%C3%81CTICA%202/EJEMPLOS%20DE%20LA%20TERMINAL/terminal%20practica%202.txt)
 
 ### 4. APRENDER A CREAR UN SCRIPT USANDO EL EDITOR DE TEXTO NANO. 
 Usando nano crearemos un script denominado script1.sh. En este script ejecutaremos una simple impresión de la frase “Curso de Genomica” usando la función echo. La primera linea del script debe contener la siguiente instrucción #!/bin/sh a veces denominada shebang. Esta instrucción indica que se debe ejecutar, desde el directorio bin, el script actual usando la Shell.
@@ -264,8 +264,8 @@ Ejecute el script desde la terminal usando
 ```
 bash script1.sh
 ```
-* LINK DE EJEMPLO EN LA TERMINAL [AQUÍ]
-* 
+* LINK DE EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/43bbeb5202abe65bbc1e51b534456f00b41ecb7f/PR%C3%81CTICA%202/EJEMPLOS%20DE%20LA%20TERMINAL/terminal%20practica%202.txt) 
+
 ## 5. SCRIPT PARA DESCARGAR SECUENCIAS NGS COMPRIMIDAS EN FORMATO SRA
 SRA Toolkit es una herramienta que permite descargar y convertir automáticamente archivos en formato .SRA en otros formatos usando un interprete de comandos y de manera automática. Es compatible con Linux, Windows y Mac. Usé el comando wget y tar para descargar y descomprimir SRA Toolkit.<br />
 **Antiguo protocolo 2020**
@@ -299,7 +299,7 @@ fastq-dump -X 5 SRR6019464
 ```
 zcat SRR6019464.fastq.gz | echo $((`wc -l`/4))
 ```
-* LINK DEL EJEMPLO EN LA TERMINAL [AQUÍ]
+* LINK DEL EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/43bbeb5202abe65bbc1e51b534456f00b41ecb7f/PR%C3%81CTICA%202/EJEMPLOS%20DE%20LA%20TERMINAL/terminal%20practica%202.txt) 
 
  ### REFERENCIAS Y LINK DE INTERÉS
  
