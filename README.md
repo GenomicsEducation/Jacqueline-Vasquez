@@ -387,6 +387,8 @@ Es una herramienta de línea de comandos rápida y de multiproceso que se puede 
  ```
  cd SRA_samples 
  ```
+ EJEMPLO EN LA TERMINAL [AQUÍ]
+ 
  **3. DESCARGAR BIOMUESTRA DESDE SRA**
  
 Para esta práctica se trabajará con la biomuestra **SRR2006763** proveniente de la cepa Aquagen de *Salmo salar* y a partir de la que se obtendrán los dos archivos fastq, ya que los datos provienen de secuenciación pair-end.
@@ -445,6 +447,8 @@ Al finalizar, además de extraer los archivos fastq debería indicarle el total 
 spots read : 2,856,007 reads read : 5,712,014 reads written : 5,712,014
 Biomuestra 1:SRR2006763_1.fastq Biomuestra 2:SRR2006763_2.fastq
 
+EJEMPLO EN LA TERMINAL [AQUÍ]
+
 **4. COMPROBACIÓN DE LA INTEGRIDAD DE LOS ARCHIVOS**
 
 md5sum es un algoritmo empleado para evitar algún daño que pudo generarse por algún motivo durante el proceso de descarga
@@ -473,6 +477,8 @@ SRR2006763_1.fastq: La suma coincide
 SRR2006763_2.fastq: La suma coincide
 ```
 Con lo que se comprueba la integridad de los archivos descargados.
+
+EJEMPLO EN LA TERMINAL [AQUÍ]
 
 **5. ANÁLISIS DEL CONTROL DE CALIDAD DE LAS SECUENCIAS fastq**
 
@@ -512,6 +518,7 @@ DESCARGA DE ARCHIVOS
 [SRR2006763_1](file:///C:/Users/ASUS/Desktop/GENETICA%20Y%20GENOMICA%20EN%20PRODUCCION%20ANIMAL/proyecto%20de%20genomica/ARCHIVOS%20GENERADOS/SRR2006763_1_fastqc.html)
 [SRR2006763_2](file:///C:/Users/ASUS/Desktop/GENETICA%20Y%20GENOMICA%20EN%20PRODUCCION%20ANIMAL/proyecto%20de%20genomica/ARCHIVOS%20GENERADOS/SRR2006763_2_fastqc.html)
 
+EJEMPLO EN LA TERMINAL [AQUÍ]
 
 **6. FILTRADO Y PODA**
 
@@ -540,8 +547,13 @@ gunzip SRR20067634_filtered_1P.fastq.gz
 
 Volver a realizar un análisis de calidad de las muestras y comparar con el reporte de calidad inicial (en un script o directamente en la terminal)
 ```
-fastqc  *.fastq.gz
+fastqc  *.fastq
 ```
+EJEMPLO EN LA TERMINAL [AQUÍ]
+
+### INTERPRETACIÓN DE RESULTADOS 
+SECUENCIAS NGS GENERADAS [AQUÍ]
+
 ### REFERENCIAS DE INTERÉS 
 - Grüning, B., Dale, R., Sjödin, A. et al. Bioconda: sustainable and comprehensive software distribution for the life sciences. Nat Methods 15, 475–476 (2018). https://doi.org/10.1038/s41592-018-0046-7
 - Brown, J., Pirrung, M., & McCue, L. (2017). FQC Dashboard: integrates FastQC results into a web-based, interactive, and extensible FASTQ quality control tool. Bioinformatics, 3137–3139.
