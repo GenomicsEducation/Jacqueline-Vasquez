@@ -6,7 +6,7 @@
 - Licenciatura en Ciencias, Mención Biología. [Universidad de Valparaíso](https://www.uv.cl/)  
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 **ÍNDICE:**
-1. [PRÁCTICA 1. INTRODUCCIÓN A BASES DE DATOS GENÓMICOS: ASSEMBLY Y SRA DE NCBI](https://github.com/GenomicsEducation/Jacqueline-Vasquez/issues/3#issue-925079206)
+1. [PRÁCTICA 1. INTRODUCCIÓN A BASES DE DATOS GENÓMICOS: ASSEMBLY Y SRA DE NCBI](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/7ac4055b4f8a939632cc074e6e243ea79a3b0930/PR%C3%81CTICA%201/DESCRIPCI%C3%93N%20COMPLETA%20PR%C3%81CTICA%201.md)
 2. [PRÁCTICA 2. INTRODUCCIÓN A LINUX PARA GENÓMICA](#id2)
 3. [PRÁCTICA 3. INTRODUCCIÓN AL ANÁLISIS DE SECUENCIAS NGS](#id3)
 4. [PRÁCTICA 4](#id4)
