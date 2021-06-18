@@ -1,17 +1,25 @@
-## TÍTULO: *PRÁCTICAS PARA LA ELABORACIÓN DE UN PROYECTO DE GENÓMICA APLICADA*
+## BIENVENIDO! A LAS PRÁCTICAS DE ELABORACIÓN DE UN PROYECTO DE GENÓMICA APLICADA
 
 #### AUTOR: **Jacqueline Vásquez Navarrete**
 - Estudiante de Doctorado en Biotecnología. [UTFSM](https://www.usm.cl/)/[PUCV](https://www.pucv.cl/)
 - Magíster en Ciencias Biológicas, mención Neurociencias. [Universidad de Valparaíso](https://www.uv.cl/)  
 - Licenciatura en Ciencias, Mención Biología. [Universidad de Valparaíso](https://www.uv.cl/)  
 ------------------------------------------------------------------------------------------------------------------------------------------------------
-**ÍNDICE**
-1. [PRÁCTICA 1. INTRODUCCIÓN A BASES DE DATOS GENÓMICOS: ASSEMBLY Y SRA DE NCBI (#id1)
+**ÍNDICE:**
+1. [PRÁCTICA 1. INTRODUCCIÓN A BASES DE DATOS GENÓMICOS: ASSEMBLY Y SRA DE NCBI](#id1)
 2. [PRÁCTICA 2. INTRODUCCIÓN A LINUX PARA GENÓMICA](#id2)
 3. [PRÁCTICA 3. INTRODUCCIÓN AL ANÁLISIS DE SECUENCIAS NGS](#id3)
 4. [PRÁCTICA 4](#id4)
 <div id='id1' />
 
+**DESCRIPCIÓN:**
+Proyecto basado en la investigación reproducible, que consiste en diferentes prácticas que permitirán ir construyendo un proyecto de genómica aplicada a través de la toma de datos depositados en bases de datos públicas, manipulación de estos a través de diferentes líneas de código que permitirán realizar un analisis de datos integrados con texto y finalmente reportar tanto los análisis como interpretaciones generadas utilizando por ejemplo :
+
+![repositorios, sotware y lenguajes de programación](https://user-images.githubusercontent.com/84527634/122594001-741f0980-d034-11eb-8083-12c5d7777dc5.png)
+
+* Si te interesa ver el detalle de cada práctica, sólo tienes que hacer click en la práctica respectiva en el índice.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## PRÁCTICA 1: INTRODUCCIÓN A BASES DE DATOS GENÓMICOS : ASSEMBLY Y SRA DE [NCBI](https://www.ncbi.nlm.nih.gov/)
 
