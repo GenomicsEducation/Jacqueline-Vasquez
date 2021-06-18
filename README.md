@@ -1,4 +1,6 @@
-## BIENVENIDO! A LAS PRÁCTICAS DE ELABORACIÓN DE UN PROYECTO DE GENÓMICA APLICADA
+
+## BIENVENIDO! A LAS PRÁCTICAS DE ELABORACIÓN DE UN PROYECTO DE GENÓMICA APLICADA :+1:
+
 
 #### AUTOR: **Jacqueline Vásquez Navarrete**
 - Estudiante de Doctorado en Biotecnología. [UTFSM](https://www.usm.cl/)/[PUCV](https://www.pucv.cl/)
