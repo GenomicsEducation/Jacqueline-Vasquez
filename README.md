@@ -20,5 +20,5 @@ Este proyecto está basado en la investigación reproducible, donde a través de
 
 ![repositorios, sotware y lenguajes de programación](https://user-images.githubusercontent.com/84527634/122594001-741f0980-d034-11eb-8083-12c5d7777dc5.png)
 
-:pushpin:**Si te interesa ver el detalle de cada práctica, sólo tienes que hacer click en el índice.**
+:pushpin:**Si te interesa ver el detalle de cada práctica, sólo tienes que hacer clic en el índice.**
 
