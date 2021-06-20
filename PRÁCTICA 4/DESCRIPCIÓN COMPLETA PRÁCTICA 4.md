@@ -24,6 +24,10 @@ Puedes tener más información sobre este programa [Aquí](https://www.htslib.or
 ### TRABAJO PRÁCTICO
 
 ### 1. Conectar a servidor Pomeo
+Para Windows es posible conectarse con el software PuTTy utilizando usuario y contraseña correspondiente, tal como se detallo en las prácticas 2 y 3
+haz clic [aquí para recordar](https://user-images.githubusercontent.com/84527634/122123050-86fac980-cdfb-11eb-8294-9d2ed06d41bc.png)
+
+
 
 ### 2. Configurar bioconda e instalar programas para análisis
 
