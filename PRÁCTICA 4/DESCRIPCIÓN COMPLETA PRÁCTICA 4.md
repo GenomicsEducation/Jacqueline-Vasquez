@@ -34,6 +34,18 @@ Puedes tener más información sobre este programa [Aquí](https://www.htslib.or
 
 ### 5. Indexación del genoma de referencia
 ### 6. Alineamiento
+-	Obtener secuencias Fastq
+-	Descarga genoma mitocondrial
+-	Subir genoma a POMEO con software de acceso remoto
+-	Indexación genoma mitocondrial
+-	Alineamiento de secuencias contra genoma mitocondrial
+-	Conversión SAM a BAM
+-	Orden de lecturas alineadas por posición
+-	Indexación con Samtools 
+-	Exploración de archivos de salida en cada etapa
+
+**6.1. 	BWA**
+**6.2. 	Samtools**
 
 
 ### REFERENCIAS Y LINK DE INTERÉS
