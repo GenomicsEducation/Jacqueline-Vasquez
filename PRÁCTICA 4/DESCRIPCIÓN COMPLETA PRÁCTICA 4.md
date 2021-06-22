@@ -1,4 +1,4 @@
-## PRÁCTICA 4: Introducción al análisis de secuencias NGS - Alineamiento
+## PRÁCTICA 4: INTRODUCCIÓN AL ANÁLISIS DE SECUENCIAS NGS-ALINEAMIENTO
 
 ### INTRODUCCIÓN
 El alineamiento o mapeo de las secuencias cortas reads que se obtiene de la secuenciacion NGS con un genoma de referencia se considera una parte integral de los análisis de genomas [(Pham-Quoc et al., 2019)](https://onlinelibrary.wiley.com/doi/abs/10.1002/cpe.5328). 
@@ -28,8 +28,12 @@ Para Windows es posible conectarse con el software PuTTy utilizando usuario y co
 haz clic [aquí para recordar la conexión remota con el servidor POMEO](https://user-images.githubusercontent.com/84527634/122123050-86fac980-cdfb-11eb-8294-9d2ed06d41bc.png)<br />
 haz clic [aquí para recordar el ingreso para trabajar en la terminal](https://user-images.githubusercontent.com/84527634/122123842-844ca400-cdfc-11eb-84dd-e1f942bf16ce.png)<br />
 
-### 2. Configurar bioconda e instalar programas para análisis
+### 2. Instalación y configuración de software.
+Para configurar el canal bioconda se debe ejecutar el siguiente comando
 
+conda config --add channels bioconda
+
+Instalar los software bwa
 
 ### 3. Verificar directorios de instalación
 
