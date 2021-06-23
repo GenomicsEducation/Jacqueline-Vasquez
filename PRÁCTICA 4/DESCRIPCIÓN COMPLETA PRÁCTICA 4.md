@@ -61,7 +61,7 @@ whereis sratoolkit
  ```
  /home2/usuario/miniconda3/bin/bwa
   ```
-PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ]
+PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/0c980d5580e3915d5bb8a1ce0e4f16903acef194/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/3.%20Verificar%20directorios%20de%20instalaci%C3%B3n)
  
 ### 4. ETAPAS DE ALINEAMIENTO
 
@@ -80,6 +80,8 @@ Para listar debes ejecutar el siguiente comando
 ```
 ls
 ```
+PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/e79bb127fc765a9d7f93babfb6cfb5cb3c55ab49/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/4.1%20Creaci%C3%B3n%20de%20directorio%20de%20trabajo%20y%20Obtenci%C3%B3n%20de%20las%20secuencias%20Fastq)
+
 #### **4.2 Descargar genoma mitocondrial desde NCBI**
 Para descargar el genoma de referencia de la mitocondria de *Salmo salar* lo puedes hacer a través del siguiente link
 [genoma mitocondrial del *Salmo salar*](https://www.ncbi.nlm.nih.gov/genome/?term=salmo+salar)
@@ -108,12 +110,16 @@ Al conectar te volverá a pedir tu contraseña como se muestra en la siguiente i
 
 Alternativamente puedes cargar el genoma iniciando sesión online en el servidor POMEO a través de [Rstudio server](http://200.54.220.141:8787/auth-sign-in)
 
+PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/e79bb127fc765a9d7f93babfb6cfb5cb3c55ab49/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/4.3%20comprobar%20que%20el%20genoma%20descargado%20este%20en%20la%20carpeta%20alineamiento%20desde%20la%20terminal)
+
 #### **4.4 Indexación del genoma Mitocondrial.**
 Una vez que incluiste en tu carpeta de alineamiento todos los archivos descritos en pasos anteriores podemos proceder a la etapa inicial del alineamiento, que corresponde a la indexación del genoma de referencia con BWA usando el siguiente comando:
 ```
 bwa index mt.fasta
 ```
 La salida del comando dará como resultado 5 archivos con extensiones “amb”,“ann”,“bwt”,“pac” y “sa”
+
+PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/e79bb127fc765a9d7f93babfb6cfb5cb3c55ab49/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/4.4%20Indexaci%C3%B3n%20del%20genoma%20Mitocondrial)
 
 #### **4.5 Alineamiento de las secuencias contra el genoma mitocondrial**
 Para el alineamiento tendremos las siguientes etapas:
@@ -164,6 +170,8 @@ también puedes realizar un análisis estadístico estandar con los siguientes c
 ```
 samtools flagstat SRR2006763.bam > muestra_stat.txt
 ```
+PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL UTILIZANDO EL SCRIPT HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/e79bb127fc765a9d7f93babfb6cfb5cb3c55ab49/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/4.5%20Alineamiento%20de%20las%20secuencias%20contra%20el%20genoma%20mitocondrial)
+
 ### 5. Exploración de archivos de salida en cada etapa**
 Para explorar el alineamiento con samtools puedes ejecutar los siguientes comandos.
  |                  COMANDOS                      |                FUNCIÓN             |
