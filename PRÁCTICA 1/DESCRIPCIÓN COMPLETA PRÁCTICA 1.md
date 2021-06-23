@@ -55,7 +55,7 @@ Dentro de las bases de datos se encuentran por ejemplo: <br />
 |"contigs" L50                     | 313           |
 |Número total de cromosomas y plásmidos | 28     |
 
-* [Link de acceso al genoma](https://www.ncbi.nlm.nih.gov/assembly/GCF_002742125.1)
+* [Link de acceso al genoma de Ovis aries (sheep)](https://www.ncbi.nlm.nih.gov/assembly/GCF_002742125.1)
 
 ***SECUENCIAS DE REFERENCIA COMPLETA, INTEGRADA Y NO REDUNDANTE DEL GENOMA ("Refseq")*** <br />
 Información del cromosoma 1 del Ovis aries cepa OAR_USU_Benz2616 <br />
@@ -64,7 +64,7 @@ Información del cromosoma 1 del Ovis aries cepa OAR_USU_Benz2616 <br />
 - [Biomuestras](https://www.ncbi.nlm.nih.gov/biosample/SAMEA104496890)
 - [Ensamblaje](https://www.ncbi.nlm.nih.gov/assembly/GCF_002742125.1)
 
-* [Link de acceso al cromosoma 1](https://www.ncbi.nlm.nih.gov/nuccore/NC_040252.1)
+* [Link de acceso al cromosoma 1 de Ovis aries (sheep)](https://www.ncbi.nlm.nih.gov/nuccore/NC_040252.1)
 
 ### 3. INFORMACIÓN DE BIOPROYECTOS Y BIOMUESTRAS
 
