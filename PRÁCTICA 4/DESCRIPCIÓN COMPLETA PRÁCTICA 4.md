@@ -138,7 +138,7 @@ Para ejecutar todas las etapas anteriores en ese orden se debe crear un script c
 ```
 nano aln_mt.sh
 ```
-Para ver el script puedes hacer clic [Aquí]
+Para ver el script puedes hacer clic [Aquí](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/835441c873495740402d0612091c80f38e61ae9c/PR%C3%81CTICA%204/SCRIPT/aln_mt.sh)
 
 En el script coloca las siguientes instrucciones:
 ```
