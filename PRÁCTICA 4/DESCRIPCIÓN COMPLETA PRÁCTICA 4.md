@@ -194,7 +194,7 @@ Para explorar el alineamiento del formato SAM es posible con samtools a través 
  |samtools flags 99                               | Reverse de un read 1 adecuadamente emparejado |
  |samtools view -f 66 SRR2006763.bam  head -n 10  | Busca solo reads emparejados en el archivo bam |
  
- PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL UTILIZANDO EL SCRIPT HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/24f02f41a75e21962647b0827aeba03bf13cc741/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/5.%20Exploraci%C3%B3n%20de%20archivos%20de%20salida%20con%20los%20comandos%20samtools)
+ PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/24f02f41a75e21962647b0827aeba03bf13cc741/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/5.%20Exploraci%C3%B3n%20de%20archivos%20de%20salida%20con%20los%20comandos%20samtools)
 
 ### 6. Visualizar alineamiento con IGV.
 Para visualizar los alineamientos, debemos descargar el software IGV en el siguiente [link](https://software.broadinstitute.org/software/igv/download) y posteriormente instalarlo. 
