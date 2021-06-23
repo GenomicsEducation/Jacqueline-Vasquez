@@ -28,16 +28,88 @@ Para Windows es posible conectarse con el software PuTTy utilizando usuario y co
 haz clic [aquí para recordar la conexión remota con el servidor POMEO](https://user-images.githubusercontent.com/84527634/122123050-86fac980-cdfb-11eb-8294-9d2ed06d41bc.png)<br />
 haz clic [aquí para recordar el ingreso para trabajar en la terminal](https://user-images.githubusercontent.com/84527634/122123842-844ca400-cdfc-11eb-84dd-e1f942bf16ce.png)<br />
 
-### 2. Instalación y configuración de software.
+### 2. Instalación y configuración de softwares BWA -	Samtools
 Para configurar el canal bioconda se debe ejecutar el siguiente comando
-
+```
 conda config --add channels bioconda
+```
+Para Instalar el software BWA ejecutar el siguiente comando
+```
+conda install -c bioconda bwa
+```
+Para Instalar samtools se requiere un proceso de instalación un poco más largo, para ello ejecute los siguientes comandos uno por uno. 
+```
+conda install -c bioconda samtools
 
-Instalar los software bwa
+conda config --add channels bioconda 
+
+conda config --add channels conda-forge 
+
+conda install samtools==1.11
+```
+PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ]
 
 ### 3. Verificar directorios de instalación
+Si desea constatar la ruta de instalación de un programa determinado puedes colocar el comando “whereis” en la terminal más el programa del que desea obtener la ruta.
+En este caso constataremos la instalación de sratoolkit, samtools y BWA. 
+```
+whereis sratoolkit 
+ whereis samtools
+ whereis bwa 
+ ```
+ La salida de cada comando indicará la ruta de instalación como sigue, para cada programa del que desees obtener información.EJEMPLO:
+ ```
+ /home2/usuario/miniconda3/bin/bwa
+  ```
+PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ]
+ 
+### 4. ETAPAS DE ALINEAMIENTO
+## 4.1 Creación de directorio de trabajo y Obtención de las secuencias Fastq
+Considerando que nuestras secuencias fastq originales (Obtenidas en la práctica 3), tuvieron muy buena calidad, es posible trabajar directamente con ellas. Para ambos casos debes trasladar los archivos a una nueva carpeta, y para ello debes crear una carpeta denominada en tu usuario de home2. En este caso crearemos la carpeta de alineamiento ejecutando el siguiente comando:
+```
+mkdir alineamiento
+```
+Luego Ingresar a la carpeta “alineamiento” y transferir a esa carpeta los archivos de la práctica 3 (SRR2006763_1.fastq y SRR2006763/SRR2006763_2.fastq), colocando los siguientes comandos en la terminal:
+```
+mv /home2/usuario/SRA_samples/SRR2006763/SRR2006763_1.fastq /home2/usuario/alineamiento/
+mv /home2/usuario/SRA_samples/SRR2006763/SRR2006763_2.fastq /home2/usuario/alineamiento/
+```
+Lista tu carpeta de alineamiento para verificar que tienes lo necesario para el alineamiento, hasta ahora deben constar tus dos secuencias “SRR2006763_1.fastq” y “SRR2006763_2.fastq”
+Para listar debes ejecutar el siguiente comando
+```
+ls
+```
+## 4.2 Descargar genoma mitocondrial desde NCBI
+Para descargar el genoma de referencia de la mitocondria de *Salmo salar* lo puedes hacer a través del siguiente link
+[genoma mitocondrial del *Salmo salar*](https://www.ncbi.nlm.nih.gov/genome/?term=salmo+salar)
 
-### 4. Creación de directorio de trabajo y descarga de datos para alineamiento
+Entraras a la siguiente página web
+![genoma de la mitocondria](https://user-images.githubusercontent.com/84527634/123015501-8d0e1e80-d396-11eb-8039-c4968cfc6224.png)
+
+Al bajar dentro de la página, encontrarás una tabla con el listado del genoma de referencia donde se incluyen todos los cromosomas y el genoma de la mitocondria cuyo identificardor RefSeq NC_001960.1 donde debes hacer clic, tal como se muestra en la siguiente imagen. 
+![genoma de la mitocondria 2](https://user-images.githubusercontent.com/84527634/123015776-17ef1900-d397-11eb-80c1-e6eadd282d8a.png)
+
+Posteriormente se abrira la siguiente página, donde deberás hacer clic en la opción FASTA localizada bajo el título e identificador RefSeq de la referencia.
+![genoma de la mitocondria 3](https://user-images.githubusercontent.com/84527634/123015900-71efde80-d397-11eb-896c-a17da450a58d.png)
+
+Posteriormente para descargar la secuencia FASTA debes seguir las instrucciones de la siguiente imagen:
+![genoma de la mitocondria 4](https://user-images.githubusercontent.com/84527634/123016198-0fe3a900-d398-11eb-8563-59828506a684.png)
+
+Luego debes ir a tu carpeta de descargas en tu computador y encontrarás el archivo denominado “sequence.fasta” al que debes renombrar como “mt.fasta” y subirlo a POMEO en tu carpeta de alineamiento.
+
+## 4.3 Subir genoma mitocondrila a POMEO con software de acceso remoto WINSCP.
+Para subir el archivo a POMEO trabajaremos con el software WINSCP, para ello debes abrirlo e iniciar sesión, guardar tus datos y conectarte como se indica en la siguiente imagen. 
+![WINSCP](https://user-images.githubusercontent.com/84527634/123017475-a87b2880-d39a-11eb-9352-febe01e1a497.png)
+
+Al conectar te volverá a pedir tu contraseña como se muestra en la siguiente imagen y posteriormente se abrirá la interfaz de tu servidor con las carpetas que tienes creadas, aquí ingresarás en tu carpeta de alineamiento y arrastrarás el archivo descagado del genoma mitocondrial a la misma. 
+
+![agregar genoma mitocondrial](https://user-images.githubusercontent.com/84527634/123017895-87ff9e00-d39b-11eb-8998-dbd45f8c2f22.png)
+
+Alternativamente puedes cargar el genoma iniciando sesión online en el servidor POMEO a través de Rstudio server.
+
+
+
+
 
 ### 5. Indexación del genoma de referencia
 ### 6. Alineamiento
