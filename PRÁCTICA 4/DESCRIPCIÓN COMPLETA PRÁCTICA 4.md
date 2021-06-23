@@ -121,9 +121,11 @@ La salida del comando dará como resultado 5 archivos con extensiones “amb”,
 
 PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/e79bb127fc765a9d7f93babfb6cfb5cb3c55ab49/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/4.4%20Indexaci%C3%B3n%20del%20genoma%20Mitocondrial)
 
-#### **4.5 Alineamiento de las secuencias contra el genoma mitocondrial**
-Para el alineamiento tendremos las siguientes etapas:
-**1. Alineamiento de las secuencias contra el genoma mitocondrial**
+#### **4.5 Alineamiento de las secuencias contra el genoma mitocondrial** <br />
+
+Para el alineamiento tendremos las siguientes etapas:<br />
+
+**1. Alineamiento de las secuencias contra el genoma mitocondrial**<br />
 Ejecutar el siguiente comando
 ```
 bwa mem mt.fasta SRR2006763_1.fastq SRR2006763_2.fastq > SRR2006763.sam
@@ -172,9 +174,18 @@ samtools flagstat SRR2006763.bam > muestra_stat.txt
 ```
 PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL UTILIZANDO EL SCRIPT HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/e79bb127fc765a9d7f93babfb6cfb5cb3c55ab49/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/4.5%20Alineamiento%20de%20las%20secuencias%20contra%20el%20genoma%20mitocondrial)
 
-### 5. Exploración de archivos de salida en cada etapa**
-Para explorar el alineamiento con samtools puedes ejecutar los siguientes comandos.
- |                  COMANDOS                      |                FUNCIÓN             |
+### **5. Exploración de archivos de salida en cada etapa**
+El analisis de alineamiento entregará un archivo en formato SAM, el cual consta de un encabezado que comienza con el símbolo @ y una sección de alineamiento que contiene la información de cada uno de los reads que alineo al genoma de referencia. Para conocer más acerca del formato SAM puedes revisar el paper que describe el formato o simplmente en wikipedia. Los archivos SAM se pueden analizar y editar con el software SAMtools. 
+A continuación se muestra un ejemplo del formato SAM con los 11 campos obligatorios del alineamiento y 1 campo opcional.
+![FORMATO SAM](https://user-images.githubusercontent.com/84527634/123136376-dc992c80-d420-11eb-8927-2c3f7162510f.png)
+
+En la terminal el formato SAM se verá de la siguiente forma:
+
+![formato sam desde la terminal](https://user-images.githubusercontent.com/84527634/123136097-8a580b80-d420-11eb-8743-e2e6232cc349.png)
+
+Para explorar el alineamiento del formato SAM es posible con samtools a través de los siguientes comandos.
+ |                  COMANDOS  
+                    |                FUNCIÓN             |
  |------------------------------------------------|------------------------------------|
  |samtools flags unmap                            | proporciona los reads no mapeados  |
  |samtools flags 77                               | read 1 - emparejado no mapeado |
