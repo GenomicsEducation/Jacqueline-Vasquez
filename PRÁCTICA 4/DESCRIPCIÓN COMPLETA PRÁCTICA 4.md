@@ -106,7 +106,8 @@ Para subir el archivo a POMEO trabajaremos con el software WINSCP, para ello deb
 
 Al conectar te volverá a pedir tu contraseña como se muestra en la siguiente imagen y posteriormente se abrirá la interfaz de tu servidor con las carpetas que tienes creadas, aquí ingresarás en tu carpeta de alineamiento y arrastrarás el archivo descagado del genoma mitocondrial a la misma. 
 
-![agregar genoma mitocondrial](https://user-images.githubusercontent.com/84527634/123017895-87ff9e00-d39b-11eb-8998-dbd45f8c2f22.png)
+![agregar genoma mitocondrial](https://user-images.githubusercontent.com/84527634/123137772-54b42200-d422-11eb-93ac-7d20e49da5b4.png)
+
 
 Alternativamente puedes cargar el genoma iniciando sesión online en el servidor POMEO a través de [Rstudio server](http://200.54.220.141:8787/auth-sign-in)
 
@@ -181,7 +182,8 @@ A continuación se muestra un ejemplo del formato SAM con los 11 campos obligato
 
 En la terminal el formato SAM se verá de la siguiente forma:
 
-![formato sam desde la terminal](https://user-images.githubusercontent.com/84527634/123136746-444f7780-d421-11eb-9b9a-cefb9c67e18f.png)
+![formato sam desde la terminal](https://user-images.githubusercontent.com/84527634/123137859-71505a00-d422-11eb-8536-b5bf32fb46d7.png)
+
 
 Para explorar el alineamiento del formato SAM es posible con samtools a través de los siguientes comandos.<br />
  |                  COMANDOS                      |                FUNCIÓN             |
