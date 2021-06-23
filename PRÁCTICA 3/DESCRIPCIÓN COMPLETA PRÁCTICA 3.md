@@ -221,7 +221,7 @@ fastqc  *.fastq
 ```
 * EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt)
 
-**7. TRANSFERIR ARCHIVOS DE CONTROL DE CALIDAD MEDIANTE PROTOCOLO FTP DESDE EL SERVIDOR AL COMPUTADOR DEL USUARIO.
+**7. TRANSFERIR ARCHIVOS DE CONTROL DE CALIDAD MEDIANTE PROTOCOLO FTP DESDE EL SERVIDOR AL COMPUTADOR DEL USUARIO.**<br />
 Para Transferir archivos mediante protocolo FTP desde Servidor al usuario, se puede seralizar de las siguientes maneras:
 - Para Windows se puede hacer medante el software WINSCP u otro similar tal como se muestra en la siguiente imagen
 ![WINSCP](https://user-images.githubusercontent.com/84527634/123025274-60630280-d3a8-11eb-82a1-84791dd8d876.png)
