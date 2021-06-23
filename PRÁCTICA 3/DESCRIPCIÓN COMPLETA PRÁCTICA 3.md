@@ -46,7 +46,7 @@ Es una herramienta de línea de comandos rápida y de multiproceso que se puede 
  SEGUNDO 
 ![usuario y contraseña](https://user-images.githubusercontent.com/84527634/122123842-844ca400-cdfc-11eb-84dd-e1f942bf16ce.png)
 
-  **2. INSTALACIÓN Y CONFIGURACIÓN DE SOFTWARE PARA EL CONTROL DE CALIDAD:FastQC y Trimmomatic **<br />
+  **2. INSTALACIÓN Y CONFIGURACIÓN DE SOFTWARE PARA EL CONTROL DE CALIDAD: FastQC y Trimmomatic** <br />
   Para configurar el canal bioconda se debe ejecutar el siguiente comando
   
   ```
@@ -185,21 +185,6 @@ La salida resultante de la ejecución del script anterior serán dos archivos:
 
  1. archivo HTML
  2. archivo .zip
-Transferir archivos mediante protocolo FTP desde Servidor a Cliente, puede usar cualquier cliente o la línea de comandos.
-- Para Windows mediante Winscp u otro
-- Para MAC: se puede crear un directorio temporal para la descarga de archivos
-```
-cd tmp
-mkdir download
-cd download
-scp usuario@200.54.220.141:/home2/usuario/SRA_samples/SRR2006763/*.html .
-```
-- Se solicitará el ingreso de su clave
-- Se concluirá la descarga al computador local y se la puede revisar con open.
-
-Adicionalmente, POMEO tiene instalado Rstudio server por lo que es posible acceder sus archivos directamente ingresando al servidor a traves del puerto 8787.
-
-[Rstudio de POMEO](http://200.54.220.141:8787/auth-sign-in)
 
 * EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt)
 
@@ -235,6 +220,26 @@ Volver a realizar un análisis de calidad de las muestras y comparar con el repo
 fastqc  *.fastq
 ```
 * EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt)
+
+**7. TRANSFERIR ARCHIVOS DE CONTROL DE CALIDAD MEDIANTE PROTOCOLO FTP DESDE EL SERVIDOR AL COMPUTADOR DEL USUARIO.
+Para Transferir archivos mediante protocolo FTP desde Servidor al usuario, se puede seralizar de las siguientes maneras:
+- Para Windows se puede hacer medante el software WINSCP u otro similar tal como se muestra en la siguiente imagen
+![WINSCP](https://user-images.githubusercontent.com/84527634/123025274-60630280-d3a8-11eb-82a1-84791dd8d876.png)
+
+- Para MAC: se puede crear un directorio temporal para la descarga de archivos
+```
+cd tmp
+mkdir download
+cd download
+scp usuario@200.54.220.141:/home2/usuario/SRA_samples/SRR2006763/*.html .
+```
+- Se solicitará el ingreso de su clave
+- Se concluirá la descarga al computador local y se la puede revisar con open.
+
+Adicionalmente, POMEO tiene instalado Rstudio server por lo que es posible acceder sus archivos directamente ingresando al servidor a traves del puerto 8787 al cual podrás ingresar utilizando tu usuario y contraseña 
+
+[Rstudio de POMEO](http://200.54.220.141:8787/auth-sign-in)
+
 
 ### INTERPRETACIÓN DE RESULTADOS 
 
