@@ -1,0 +1,7 @@
+### 3. Verificar directorios de instalación
+
+(base) [jacqueline.vasquez@test-pomeo ~]$  whereis sratoolkit
+sratoolkit:(base) [jacqueline.vasquez@test-pomeo ~]$ whereis samtools
+samtools: /home2/jacqueline.vasquez/miniconda3/bin/samtools /home2/jacqueline.vasquez/miniconda3/bin/samtools.pl
+(base) [jacqueline.vasquez@test-pomeo ~]$ whereis bwa
+bwa: /home2/jacqueline.vasquez/miniconda3/bin/bwa

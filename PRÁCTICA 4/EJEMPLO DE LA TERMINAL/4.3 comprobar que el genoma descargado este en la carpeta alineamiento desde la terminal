@@ -1,0 +1,4 @@
+CARGAR EL GENOMA DE LA MITOCONDRIA EN POMEO Y COMPROBARLO DESDE LA TERMINAL CON ls
+
+(base) [jacqueline.vasquez@test-pomeo alineamiento]$ ls
+mt.fasta.fasta  SRR2006763_1.fastq  SRR2006763_2.fastq

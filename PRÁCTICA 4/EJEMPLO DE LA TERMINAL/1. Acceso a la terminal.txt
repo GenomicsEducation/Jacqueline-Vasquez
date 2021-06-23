@@ -1,0 +1,4 @@
+### 1. ACCESO A LA TERMINAL CON NOMBRE Y USUARIO CORRESPONDIENTE 
+
+login as: jacqueline.vasquez
+jacqueline.vasquez@200.54.220.141's password:

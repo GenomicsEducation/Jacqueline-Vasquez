@@ -1,0 +1,23 @@
+### 4.1 Creación de directorio de trabajo y Obtención de las secuencias Fastq
+
+(base) [jacqueline.vasquez@test-pomeo ~]$ cd ..
+(base) [jacqueline.vasquez@test-pomeo home2]$ ls
+bdgenomica        chenriquez     cristobal.dominguez  erebolledo  gsilva   jacqueline.vasquez  jgallardo   marie.fernandez  paula.valenzuela   pomeo2   vgallardo
+carlos.gutierrez  chernandez     csmar                ffonturbel  gsoto    jaqueline.flores    jota        marturof         pmg_trucha_andina  pveloso
+cfigueroa         cristal.munoz  dtorrealba           fguisado    jacosta  jbento              lost+found  mrivera          pomeo              sftp
+(base) [jacqueline.vasquez@test-pomeo home2]$ cd jacqueline.vasquez
+(base) [jacqueline.vasquez@test-pomeo ~]$ ls
+miniconda3  Miniconda3-latest-Linux-x86_64.sh  script1.sh  script2.sh  SRA_samples  sratoolkit.2.11.0-centos_linux64  sratoolkit.current-centos_linux64.tar.gz
+(base) [jacqueline.vasquez@test-pomeo ~]$ mkdir alineamiento
+(base) [jacqueline.vasquez@test-pomeo ~]$ ls
+alineamiento  miniconda3  Miniconda3-latest-Linux-x86_64.sh  script1.sh  script2.sh  SRA_samples  sratoolkit.2.11.0-centos_linux64  sratoolkit.current-centos_linux64.tar.gz
+(base) [jacqueline.vasquez@test-pomeo ~]$ cd alineamiento
+(base) [jacqueline.vasquez@test-pomeo alineamiento]$ ls
+(base) [jacqueline.vasquez@test-pomeo alineamiento]$ mv /home2/usuario/SRA_samples/SRR2006763/SRR2006763_1.fastq /home2/usuario/alineamiento/
+mv: no se puede efectuar `stat' sobre «/home2/usuario/SRA_samples/SRR2006763/SRR2006763_1.fastq»: No existe el fichero o el directorio
+(base) [jacqueline.vasquez@test-pomeo alineamiento]$ mv /home2/jacqueline.vasquez/SRA_samples/SRR2006763/SRR2006763_1.fastq /home2/jacqueline.vasquez/alineamiento/
+(base) [jacqueline.vasquez@test-pomeo alineamiento]$ ls
+SRR2006763_1.fastq
+(base) [jacqueline.vasquez@test-pomeo alineamiento]$ mv /home2/jacqueline.vasquez/SRA_samples/SRR2006763/SRR2006763_2.fastq /home2/jacqueline.vasquez/alineamiento/
+(base) [jacqueline.vasquez@test-pomeo alineamiento]$ ls
+SRR2006763_1.fastq  SRR2006763_2.fastq
