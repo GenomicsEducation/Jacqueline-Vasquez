@@ -46,7 +46,7 @@ Es una herramienta de línea de comandos rápida y de multiproceso que se puede 
  SEGUNDO 
 ![usuario y contraseña](https://user-images.githubusercontent.com/84527634/122123842-844ca400-cdfc-11eb-84dd-e1f942bf16ce.png)
 
-  **2. CONFIGURACIÓN DE BIOCONDA E INSTALACIÓN DE SOFTWARE**<br />
+  **2. INSTALACIÓN Y CONFIGURACIÓN DE SOFTWARE PARA EL CONTROL DE CALIDAD:FastQC y Trimmomatic **<br />
   Para configurar el canal bioconda se debe ejecutar el siguiente comando
   
   ```
@@ -60,7 +60,7 @@ Es una herramienta de línea de comandos rápida y de multiproceso que se puede 
   ```
   **Note que si escribe el nombre de forma errada no encontrará el software**
   
-  Para la instalación de los software proceda a ejecutar los siguientes comandos en la terminal:
+    Para la instalación de los software proceda a ejecutar los siguientes comandos en la terminal:
   ```
   conda install -c bioconda fastqc
   ```
@@ -77,7 +77,7 @@ Es una herramienta de línea de comandos rápida y de multiproceso que se puede 
  ```
 * EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt)
  
- **3. DESCARGAR BIOMUESTRA DESDE SRA**
+ **3. DESCARGAR SECUENCIAS NGS USANDO SRA toolkit**
  
 Para esta práctica se trabajará con la biomuestra **SRR2006763** proveniente de la cepa Aquagen de *Salmo salar* y a partir de la que se obtendrán los dos archivos fastq, ya que los datos provienen de secuenciación pair-end.
 Biomuestra 1:SRR2006763_1.fastq Biomuestra 2:SRR2006763_2.fastq
@@ -170,7 +170,7 @@ Con lo que se comprueba la integridad de los archivos descargados.
 
 * EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt)
 
-**5. ANÁLISIS DEL CONTROL DE CALIDAD DE LAS SECUENCIAS fastq**
+**5. REALIZAR ANÁLISIS DEL CONTROL DE CALIDAD**
 
 Para el análisis de control de calidad de secuencias fastq que provienen de secuenciadores NGS, en el directorio SRR2006763 crear y correr el siguiente script (nano fastqc.sh)
 - **cambiar usuario por jacqueline.vasquez**
@@ -203,7 +203,7 @@ Adicionalmente, POMEO tiene instalado Rstudio server por lo que es posible acced
 
 * EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt)
 
-**6. FILTRADO Y PODA**
+**6. REALIZAR FILTRADO Y PODA DE LAS SECUENCIAS**
 
 Entrar a la carpeta donde constan los archivos fastq (SRR2006763/) llamar a NANO con:
 ```
