@@ -117,12 +117,23 @@ La salida del comando dará como resultado 5 archivos con extensiones “amb”,
 
 #### **4.5 Alineamiento de las secuencias contra el genoma mitocondrial**
 Para el alineamiento tendremos las siguientes etapas:
-1. Alineamiento de las secuencias contra el genoma de referencia, cuya salida será un archivo con extensión “.sam”
-2. Conversión del archivo SAM a BAM
-3. Inspeccionar el archivo .sam de salida
-4. Ordenar lecturas alineadas por posición
-5. Indexación con Samtools
-6. Exploración de datos con Samtools
+**1. Alineamiento de las secuencias contra el genoma mitocondrial**
+Ejecutar el siguiente comando
+```
+bwa mem mt.fasta SRR2006763_1.fastq SRR2006763_2.fastq > SRR2006763.sam
+```
+**2. Conversión del archivo SAM a BAM**
+```
+samtools view -Sb -q 30 SRR2006763.sam > SRR2006763.bam
+```
+**3. Ordenar las lecturas alineadas por posición**
+```
+samtools sort SRR2006763.bam -o SRR2006763.sort.bam
+```
+**4. Indexación con Samtools**
+```
+samtools index SRR2006763.sort.bam
+```
 Para ejecutar todas las etapas anteriores en ese orden se debe crear un script con nano denominado aln_mt.sh
 ```
 nano aln_mt.sh
@@ -153,31 +164,17 @@ también puedes realizar un análisis estadístico estandar con los siguientes c
 ```
 samtools flagstat SRR2006763.bam > muestra_stat.txt
 ```
-**Algunas observaciones adicionales**
-- BWA-MEM se recomienda para secuencias de más de ~70 pb, ya que, generalmente BWA-MEM es más tolerante con los errores dadas las secuencias más largas.
-- Si quieres ver lo que sucede en cada etapa de alineamiento, puedes colocar en la terminal cada comando del script de forma individual, por ejemplo:
-- Para alinear tus dos secuencias fastq al genoma mitocondrial
-```
-bwa mem mt.fasta SRR2006763_1.fastq SRR2006763_2.fastq > SRR2006763.sam
-```
-Para Transformar tu archivo sam a bam
-```
-samtools view -Sb -q 30 SRR2006763.sam > SRR2006763.bam
-```
-Para ordenar tu archivo binario bam
-```
-samtools sort SRR2006763.bam -o SRR2006763.sort.bam
-```
-Para indexar tu archivo bam
-```
-samtools index SRR2006763.sort.bam
-```
-- El archivo bam no se puede visualizar directamente porque está comprimido y en binario.
-- Procura listar tu carpeta cada vez que realices un trabajo, una descarga, o ejecutes un script para comprobar tus salidas.
-- Si quieres comprobar los tamaños de tus archivos al mismo tiempo que los listas, puedes hacerlo con
-```
-ls -l -h
-```
+**5.-	Exploración de archivos de salida en cada etapa**
+Para explorar el alineamiento con samtools puedes ejecutar los siguientes comandos.
+ |                  COMANDOS                      |                FUNCIÓN             |
+ |------------------------------------------------|------------------------------------|
+ |samtools flags unmap                            | proporciona los reads no mapeados  |
+ |samtools flags 77                               | read 1 - emparejado no mapeado |
+ |samtools flags 141                              | read 2 - emparejado no mapeado  |
+ |samtools flags 99                               | Reverse de un read 1 adecuadamente emparejado |
+ |samtools view -f 66 SRR2006763.bam  head -n 10  | Busca solo reads emparejados en el archivo bam |
+
+
 
 ### REFERENCIAS Y LINK DE INTERÉS
 1. Pham-Quoc, C., Kieu-Do, B., & Thinh, T. N. (2019). A high-performance FPGA-based BWA-MEM DNA sequence alignment. Wiley, 1-12.
