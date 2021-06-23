@@ -64,7 +64,8 @@ whereis sratoolkit
 PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ]
  
 ### 4. ETAPAS DE ALINEAMIENTO
-## 4.1 Creación de directorio de trabajo y Obtención de las secuencias Fastq
+
+#### **4.1 Creación de directorio de trabajo y Obtención de las secuencias Fastq**
 Considerando que nuestras secuencias fastq originales (Obtenidas en la práctica 3), tuvieron muy buena calidad, es posible trabajar directamente con ellas. Para ambos casos debes trasladar los archivos a una nueva carpeta, y para ello debes crear una carpeta denominada en tu usuario de home2. En este caso crearemos la carpeta de alineamiento ejecutando el siguiente comando:
 ```
 mkdir alineamiento
@@ -79,7 +80,7 @@ Para listar debes ejecutar el siguiente comando
 ```
 ls
 ```
-## 4.2 Descargar genoma mitocondrial desde NCBI
+#### **4.2 Descargar genoma mitocondrial desde NCBI**
 Para descargar el genoma de referencia de la mitocondria de *Salmo salar* lo puedes hacer a través del siguiente link
 [genoma mitocondrial del *Salmo salar*](https://www.ncbi.nlm.nih.gov/genome/?term=salmo+salar)
 
@@ -97,7 +98,7 @@ Posteriormente para descargar la secuencia FASTA debes seguir las instrucciones 
 
 Luego debes ir a tu carpeta de descargas en tu computador y encontrarás el archivo denominado “sequence.fasta” al que debes renombrar como “mt.fasta” y subirlo a POMEO en tu carpeta de alineamiento.
 
-## 4.3 Subir genoma mitocondrila a POMEO con software de acceso remoto WINSCP.
+#### **4.3 Subir genoma mitocondrila a POMEO con software de acceso remoto WINSCP.**
 Para subir el archivo a POMEO trabajaremos con el software WINSCP, para ello debes abrirlo e iniciar sesión, guardar tus datos y conectarte como se indica en la siguiente imagen. 
 ![WINSCP](https://user-images.githubusercontent.com/84527634/123017475-a87b2880-d39a-11eb-9352-febe01e1a497.png)
 
@@ -105,27 +106,78 @@ Al conectar te volverá a pedir tu contraseña como se muestra en la siguiente i
 
 ![agregar genoma mitocondrial](https://user-images.githubusercontent.com/84527634/123017895-87ff9e00-d39b-11eb-8998-dbd45f8c2f22.png)
 
-Alternativamente puedes cargar el genoma iniciando sesión online en el servidor POMEO a través de Rstudio server.
+Alternativamente puedes cargar el genoma iniciando sesión online en el servidor POMEO a través de [Rstudio server](http://200.54.220.141:8787/auth-sign-in)
 
+#### **4.4 Indexación del genoma Mitocondrial.**
+Una vez que incluiste en tu carpeta de alineamiento todos los archivos descritos en pasos anteriores podemos proceder a la etapa inicial del alineamiento, que corresponde a la indexación del genoma de referencia con BWA usando el siguiente comando:
+```
+bwa index mt.fasta
+```
+La salida del comando dará como resultado 5 archivos con extensiones “amb”,“ann”,“bwt”,“pac” y “sa”
 
+#### **4.5 Alineamiento de las secuencias contra el genoma mitocondrial**
+Para el alineamiento tendremos las siguientes etapas:
+1. Alineamiento de las secuencias contra el genoma de referencia, cuya salida será un archivo con extensión “.sam”
+2. Conversión del archivo SAM a BAM
+3. Inspeccionar el archivo .sam de salida
+4. Ordenar lecturas alineadas por posición
+5. Indexación con Samtools
+6. Exploración de datos con Samtools
+Para ejecutar todas las etapas anteriores en ese orden se debe crear un script con nano denominado aln_mt.sh
+```
+nano aln_mt.sh
+```
+Para ver el script puedes hacer clic [Aquí]
 
-
-
-### 5. Indexación del genoma de referencia
-### 6. Alineamiento
--	Obtener secuencias Fastq
--	Descarga genoma mitocondrial
--	Subir genoma a POMEO con software de acceso remoto
--	Indexación genoma mitocondrial
--	Alineamiento de secuencias contra genoma mitocondrial
--	Conversión SAM a BAM
--	Orden de lecturas alineadas por posición
--	Indexación con Samtools 
--	Exploración de archivos de salida en cada etapa
-
-**6.1. 	BWA**
-**6.2. 	Samtools**
-
+En el script coloca las siguientes instrucciones:
+```
+#!/bin/bash -l
+# para alinear tus dos secuencias fastq al genoma mitocondrial
+bwa mem mt.fasta SRR2006763_1.fastq SRR2006763_2.fastq > SRR2006763.sam 
+# Transformar tu archivo sam a bam
+samtools view -Sb -q 30 SRR2006763.sam > SRR2006763.bam 
+# ordenar tu archivo binario bam
+samtools sort SRR2006763.bam -o SRR2006763.sort.bam 
+# indexar tu archivo bam
+samtools index SRR2006763.sort.bam 
+```
+Ejecuta tu script con bash
+```
+bash aln_mt.sh
+```
+Ahora que ya tienes tus archivos SAM/BAM puedes observar tu archivo sam con el comando less de linux (recuerda que es un archivo de texto plano)
+```
+less SRR2006763.sam
+```
+también puedes realizar un análisis estadístico estandar con los siguientes comandos
+```
+samtools flagstat SRR2006763.bam > muestra_stat.txt
+```
+**Algunas observaciones adicionales**
+- BWA-MEM se recomienda para secuencias de más de ~70 pb, ya que, generalmente BWA-MEM es más tolerante con los errores dadas las secuencias más largas.
+- Si quieres ver lo que sucede en cada etapa de alineamiento, puedes colocar en la terminal cada comando del script de forma individual, por ejemplo:
+- Para alinear tus dos secuencias fastq al genoma mitocondrial
+```
+bwa mem mt.fasta SRR2006763_1.fastq SRR2006763_2.fastq > SRR2006763.sam
+```
+Para Transformar tu archivo sam a bam
+```
+samtools view -Sb -q 30 SRR2006763.sam > SRR2006763.bam
+```
+Para ordenar tu archivo binario bam
+```
+samtools sort SRR2006763.bam -o SRR2006763.sort.bam
+```
+Para indexar tu archivo bam
+```
+samtools index SRR2006763.sort.bam
+```
+- El archivo bam no se puede visualizar directamente porque está comprimido y en binario.
+- Procura listar tu carpeta cada vez que realices un trabajo, una descarga, o ejecutes un script para comprobar tus salidas.
+- Si quieres comprobar los tamaños de tus archivos al mismo tiempo que los listas, puedes hacerlo con
+```
+ls -l -h
+```
 
 ### REFERENCIAS Y LINK DE INTERÉS
 1. Pham-Quoc, C., Kieu-Do, B., & Thinh, T. N. (2019). A high-performance FPGA-based BWA-MEM DNA sequence alignment. Wiley, 1-12.
