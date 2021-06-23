@@ -181,11 +181,10 @@ A continuación se muestra un ejemplo del formato SAM con los 11 campos obligato
 
 En la terminal el formato SAM se verá de la siguiente forma:
 
-![formato sam desde la terminal](https://user-images.githubusercontent.com/84527634/123136097-8a580b80-d420-11eb-8743-e2e6232cc349.png)
+![formato sam desde la terminal](https://user-images.githubusercontent.com/84527634/123136746-444f7780-d421-11eb-9b9a-cefb9c67e18f.png)
 
-Para explorar el alineamiento del formato SAM es posible con samtools a través de los siguientes comandos.
- |                  COMANDOS  
-                    |                FUNCIÓN             |
+Para explorar el alineamiento del formato SAM es posible con samtools a través de los siguientes comandos.<br />
+ |                  COMANDOS                      |                FUNCIÓN             |
  |------------------------------------------------|------------------------------------|
  |samtools flags unmap                            | proporciona los reads no mapeados  |
  |samtools flags 77                               | read 1 - emparejado no mapeado |
