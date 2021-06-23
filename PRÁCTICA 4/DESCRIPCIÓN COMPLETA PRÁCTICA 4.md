@@ -164,7 +164,7 @@ también puedes realizar un análisis estadístico estandar con los siguientes c
 ```
 samtools flagstat SRR2006763.bam > muestra_stat.txt
 ```
-**5.-	Exploración de archivos de salida en cada etapa**
+### 5. Exploración de archivos de salida en cada etapa**
 Para explorar el alineamiento con samtools puedes ejecutar los siguientes comandos.
  |                  COMANDOS                      |                FUNCIÓN             |
  |------------------------------------------------|------------------------------------|
@@ -173,6 +173,9 @@ Para explorar el alineamiento con samtools puedes ejecutar los siguientes comand
  |samtools flags 141                              | read 2 - emparejado no mapeado  |
  |samtools flags 99                               | Reverse de un read 1 adecuadamente emparejado |
  |samtools view -f 66 SRR2006763.bam  head -n 10  | Busca solo reads emparejados en el archivo bam |
+
+### 6. Visualizar alineamiento con IGV.
+Para visualizar los alineamientos, debemos descargar el software IGV en el siguiente [link](https://software.broadinstitute.org/software/igv/download) y posteriormente instalarlo. 
 
 
 
