@@ -2,7 +2,7 @@
 
 ### INTRODUCCIÓN 
 **SHELL DE UNIX**
-Una Shell de Unix o también shell, es el término usado en informática para referirse a un intérprete de comandos, el cual consiste en la interfaz de usuario tradicional de los sistemas operativos basados en Unix y similares, como GNU/Linux (https://es.wikipedia.org/wiki/Shell_de_Unix).<br />
+Una Shell de Unix o también shell, es el término usado en informática para referirse a un intérprete de comandos, el cual consiste en la interfaz de usuario tradicional de los sistemas operativos basados en Unix y similares, como GNU/Linux. [Para más información haz clic Aquí](https://es.wikipedia.org/wiki/Shell_de_Unix).<br />
 Este interprete de comandos es el ambiente de trabajo base de la bioinformática y por lo tanto, de todos los científicos y profesionales que trabajan en genética y genómica aplicada.<br />
 En términos simples Shell permite controlar un ordenador y ejecutar un programa (software, paquete o librería) basado en una interfaz de texto. <br />
 
@@ -45,20 +45,19 @@ link [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolki
 
 ### PRÁCTICA: CONEXIÓN VÍA SSH A UN SERVIDOR LINUX
 
-### 1. INSTALACIÓN Y CONFIGURACIÓN DE SOFTWARE.
+#### **1. INSTALACIÓN Y CONFIGURACIÓN DE SOFTWARE.**
  1. DESCARGAR E INSTALAR PuTTY <br />
  - Para un sistema operativo windows se puede descargar del siguiente link [PuTTY](https://www.putty.org/).<br />
  
  2. DESCARGAR E INSTALAR WinSCP
  - Para un sistema operativo windows se puede descargar del siguiente link [WinSCP](https://winscp.net/eng/download.php).<br />
  
-### 2.ACCESO REMOTO AL SERVIDOR POMEO
+#### **2. ACCESO REMOTO AL SERVIDOR POMEO**
 En esta práctica accedermos al servidor POMEO de la Escuela de Ciencias del Mar usando nombres de usuario y password respectivos.
 Para lo susuarios de windows usaremos PuTTy aproximadamente como se muestra en la siguiente copia de pantalla.
 
-![PuTTY 1](https://user-images.githubusercontent.com/84527634/120576528-e8309f00-c3f0-11eb-9835-79c49c65060d.png)
-
-![PuTTY 2](https://user-images.githubusercontent.com/84527634/120576541-eff04380-c3f0-11eb-9687-0ed1653073f8.png)
+![primera vez que se conecta al servidor pomeo](https://user-images.githubusercontent.com/84527634/123120891-b076af00-d412-11eb-8a5b-f1ae90df4ba0.png)
+![segundo paso de la primera vez de coneccion con pomeo](https://user-images.githubusercontent.com/84527634/123121157-ef0c6980-d412-11eb-821d-1acdfcfc03a4.png)
 
 Una vez dentro de la terminal agregar nombre de usuario y contraseña correspondiente.
 
@@ -98,8 +97,8 @@ Ejecutar los siguientes comandos en la terminal:
   |ctrl-C | Copiaar y pegar en la terminal con click derecho del mouse |
    | exit  | es un comando para cerrar la sesión. |
 
-### 3. INSTALACIÓN Y CONFIGURACIÓN DE CONDA, NANO Y SRA TOOLKIT 
-Accede nuevamente al servidor POMEO con tu cuenta de usuario y clave de acceso. Ahora instalaremos algunos software clave para el trabajo de genómica incluyendo el gestor de sogtware Miniconda, el editor nano, entre otros.
+#### **3. INSTALACIÓN Y CONFIGURACIÓN DE CONDA, NANO Y SRA TOOLKIT**
+Accede nuevamente al servidor POMEO con tu cuenta de usuario y clave de acceso. Ahora instalaremos algunos software clave para el trabajo de genómica incluyendo el gestor de software Miniconda y el editor nano, entre otros.
 
 Ejecutar los siguientes comandos en la terminal:
 
@@ -108,15 +107,15 @@ Para instalar Miniconda primero lo descargaremos del repositorio de anaconda con
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 ```
-Activacion de miniconda
+Activación de miniconda
 ```
 source ~/.bashrc
 ```
-Revision del contenido de conda
+Revisión del contenido de conda
 ```
 conda list
 ```
-Revision de version de conda
+Revisión de la version de conda
 ```
 conda --version
 ```
@@ -126,8 +125,8 @@ conda install -c conda-forge nano
 ```
 * LINK DEL EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/43bbeb5202abe65bbc1e51b534456f00b41ecb7f/PR%C3%81CTICA%202/EJEMPLOS%20DE%20LA%20TERMINAL/terminal%20practica%202.txt)
 
-### 4. APRENDER A CREAR UN SCRIPT USANDO EL EDITOR DE TEXTO NANO. 
-Usando nano crearemos un script denominado script1.sh. En este script ejecutaremos una simple impresión de la frase “Curso de Genomica” usando la función echo. La primera linea del script debe contener la siguiente instrucción #!/bin/sh a veces denominada shebang. Esta instrucción indica que se debe ejecutar, desde el directorio bin, el script actual usando la Shell.
+#### **4. APRENDER A CREAR UN SCRIPT USANDO EL EDITOR DE TEXTO NANO.**
+Usando nano crearemos un script denominado script1.sh. En este script ejecutaremos una simple impresión de la frase “Curso de Genomica” usando la función echo. La primera línea del script debe contener la siguiente instrucción #!/bin/sh a veces denominada shebang. Esta instrucción indica que se debe ejecutar, desde el directorio bin, el script actual usando la Shell.
 
 Ejecute entonces el siguiente código para llamar a nano en la terminal 
 ```
@@ -153,8 +152,9 @@ bash script1.sh
 ```
 * LINK DE EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/43bbeb5202abe65bbc1e51b534456f00b41ecb7f/PR%C3%81CTICA%202/EJEMPLOS%20DE%20LA%20TERMINAL/terminal%20practica%202.txt) 
 
-## 5. SCRIPT PARA DESCARGAR SECUENCIAS NGS COMPRIMIDAS EN FORMATO SRA
+#### **5. SCRIPT PARA DESCARGAR SECUENCIAS NGS COMPRIMIDAS EN FORMATO SRA**
 SRA Toolkit es una herramienta que permite descargar y convertir automáticamente archivos en formato .SRA en otros formatos usando un interprete de comandos y de manera automática. Es compatible con Linux, Windows y Mac. Usé el comando wget y tar para descargar y descomprimir SRA Toolkit.<br />
+
 **Antiguo protocolo 2020**
 ```
 nano script2.sh
