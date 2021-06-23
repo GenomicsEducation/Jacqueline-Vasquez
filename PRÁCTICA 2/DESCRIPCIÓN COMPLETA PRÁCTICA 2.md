@@ -61,7 +61,7 @@ Para lo susuarios de windows usaremos PuTTy aproximadamente como se muestra en l
 
 Una vez dentro de la terminal agregar nombre de usuario y contraseña correspondiente.
 
-![usuario y contraseña](https://user-images.githubusercontent.com/84527634/122140161-8886ba80-ce18-11eb-964e-19e3c2935022.png)
+![usuario y contraseña](https://user-images.githubusercontent.com/84527634/123138222-c7bd9880-d422-11eb-827e-d4c4bd926f4e.png)
 
 Existen varios comandos básicos que son útiles para trabajar en proyectos de genómica. Aquí revisaremos algunos relacionados a la revisión del espacio libre disponible para almacenar datos, crearemos directorios de trabajo y archivos de texto plano usando el editor nano, entre otros.
 
