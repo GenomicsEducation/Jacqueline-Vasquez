@@ -47,7 +47,7 @@ conda config --add channels conda-forge
 
 conda install samtools==1.11
 ```
-PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ]
+PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/0c980d5580e3915d5bb8a1ce0e4f16903acef194/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/2.%20Instalaci%C3%B3n%20y%20configuraci%C3%B3n%20de%20softwares%20BWA%20-%20Samtools)
 
 ### 3. Verificar directorios de instalación
 Si desea constatar la ruta de instalación de un programa determinado puedes colocar el comando “whereis” en la terminal más el programa del que desea obtener la ruta.
