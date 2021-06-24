@@ -40,32 +40,97 @@ Recordar que como estamos trabajando con Windows , usamos el software PuTTy para
 haz clic [aquí para recordar la conexión remota con el servidor POMEO](https://user-images.githubusercontent.com/84527634/122123050-86fac980-cdfb-11eb-8294-9d2ed06d41bc.png)<br />
 haz clic [aquí para recordar el ingreso para trabajar en la terminal](https://user-images.githubusercontent.com/84527634/123138222-c7bd9880-d422-11eb-827e-d4c4bd926f4e.png)<br />
 
-### 2. Configurar bioconda e instalar programas para análisis
+### 2. Configurar bioconda e instalar programas para los análisis
 Para configurar el canal bioconda se debe ejecutar el siguiente comando:
-
+```
 conda config --add channels bioconda
-
+```
 Para Instalar el software gatk4, se deje ejecutar el siguiente comando:
+
+```
 conda install -c bioconda gatk4
-
-
-
-### 3. Crear directorio de trabajo “variant_call” y preparar archivos para el llamado de variantes
-
+```
 Para Instalar picard tools, ejecutar el siguiente comando:
-
+```
 wget https://github.com/broadinstitute/picard/releases/download/2.8.1/picard.jar
+```
+Para Instalar los software vcftools
+```
+conda install -c bioconda vcftools
+```
+**Cabe señalar que en esa práctica también se utilizará Samtools (que fue instalado en la práctica anterior)**
 
+PARA VER EJEMPLO EN LA TERMINAL HACER CLIC [AQUÍ]
 
+### 3. Directorio de trabajo “variant_call” y preparación de los archivos para el llamado de variantes
+El directorio y los archivos necesarios para ejecutar esta práctica fueron creados e instalados en el directorio personal previamente. Es por ello, que solo es necesario ingresar al directorio “variant_call” y explorar los archivos de trabajo.
+
+Para ingresar al directorio de trabajo variant_call, se debe ejecutar el siguiente comando:
+```
+cd variant_call
+```
+Posteriormente para listar los archivos contenidos en el, podemos usar el comando:
+```
+ls -l -h
+```
+El directorio de trabajo variant_call contiene los siguientes archivos necesarios para efectuar el llamado de variantes:
+- "SRR2006763.sort.bam": previamente obtenido con las prácticas anteriores.
+- ref_genome.fna: genoma de referencia de _Salmo salar_ en formato FASTA
+- ref_genome.fna.fai: archivo indexado del genoma de referencia con 5 columna que corresponden a columnas 1= contig, 2 = tamaño, 3= ubicación, 4= basesPerLine y 5= bytesPerLine.
+
+Para explorar los archivos “ref_genome.fna” y “ref_genome.fna.bai” se pueden utilizar los comandos less, head, tail.
+```
+less ref_genome.fna
+```
+```
+less ref_genome.fna.fai
+```
+```
+head -n 20 ref_genome.fna
+```
+```
+head -n 30 ref_genome.fna.fai 
+```
+```
+tail -n 20 ref_genome.fna
+```
+```
+tail -n 20 ref_genome.fna.fai
+```
+ Para investigar ahora los cromosomas del salmón, se pueden usar los siguientes comandos.
+ ```
+ grep 'NC_' ref_genome.fna
+ ```
+ ```
+grep -c 'NC_' ref_genome.fna
+```
+```
+grep 'NC_' ref_genome.fna.fai
+```
+```
+grep -c 'NC_' ref_genome.fna.fai
+```
+Para Investigar ahora los contigs no mapeados del salmón usar los siguientes comandos.
+```
+grep -c 'NW_' ref_genome.fna
+```
+```
+grep -c 'NW_' ref_genome.fna.fai
+```
+**Note que en todos los casos el comando trabaja más rápido en el archivo indexado .fai**
 
 ### 4.  Llamado de variantes
-4.1  Descarga de secuencia y genoma de referencia
-4.2 Indexación del genoma de referencia
-4.3 Descarga, filtrado y alineamiento de secuencia de estudio (Secuencia sort.bam)
-4.4 Añadir grupos de lectura al archivo “bam”
-4.5 Indexación del archivo obtenido al añadir los grupos de lectura
-4.6 Identificación de variantes con HaplotypeCaller de GATK
-4.7 Análisis de variantes con linux y vcftools
-4.8 Visualización de variantes con IGV
+#### 4.1  Descarga de secuencia y genoma de referencia
+
+#### 4.2 Indexación del genoma de referencia
+
+#### 4.3 Descarga, filtrado y alineamiento de secuencia de estudio (Secuencia sort.bam)
+
+#### 4.4 Añadir grupos de lectura al archivo “bam”
+
+#### 4.5 Indexación del archivo obtenido al añadir los grupos de lectura
+#### 4.6 Identificación de variantes con HaplotypeCaller de GATK
+#### 4.7 Análisis de variantes con linux y vcftools
+#### 4.8 Visualización de variantes con IGV
 
 ### REFERENCIAS Y LINK DE INTERÉS
