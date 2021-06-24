@@ -199,7 +199,10 @@ Para explorar el alineamiento del formato SAM es posible con samtools a través 
 ### 6. Visualizar alineamiento con IGV.
 Para visualizar los alineamientos, debemos descargar el software IGV en el siguiente [link](https://software.broadinstitute.org/software/igv/download) y posteriormente instalarlo. 
 
-
+Para Cargar el genoma de referencia en IGV se deben seguir los siguientes pasos
+![cargar genoma de salmo salar](https://user-images.githubusercontent.com/84527634/123189657-38d56e00-d46c-11eb-8a66-dbe6857815a6.png)
+![cargar el genoma de la mitocondria](https://user-images.githubusercontent.com/84527634/123189797-720dde00-d46c-11eb-997f-8ba1b7a9b89e.png)
+![genoma cargado](https://user-images.githubusercontent.com/84527634/123189809-776b2880-d46c-11eb-8209-851737c734f9.png)
 
 ### REFERENCIAS Y LINK DE INTERÉS
 1. Pham-Quoc, C., Kieu-Do, B., & Thinh, T. N. (2019). A high-performance FPGA-based BWA-MEM DNA sequence alignment. Wiley, 1-12.
