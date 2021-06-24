@@ -23,17 +23,42 @@ El presente trabajo tiene por objeto realizar el llamado de variantes y la anota
 ### ORIGEN DE LAS MUESTRAS UTILIZADAS
 Las muestras SRR2009653.fastq_1, SRR2009653.fastq_2. Provienen de un set de 45 secuencias de salmón del atlántico obtenidas por secuenciación de extremos emparejados con Illumina HiSeq2000 para analizar la resistencia a la necrosis pancreática infecciosa (IPN), con el fin de identificar polimorfismos que mostraban un gran contraste entre peces resistentes o susceptibles al IPN.
 
+### ETAPAS DEL LLAMADO DE VARIANTES 
+1. Descarga de secuencia y genoma de referencia
+2. Indexación del genoma de referencia
+3. Descarga, filtrado y alineamiento de secuencia de estudio (Secuencia sort.bam)
+4. Añadir grupos de lectura al archivo “bam”
+5. Indexación del archivo obtenido al añadir los grupos de lectura
+6. Identificación de variantes con HaplotypeCaller de GATK
+7. Análisis de variantes con linux y vcftools
+8. Visualización de variantes con IGV
 
 ### TRABAJO PRÁCTICO
 
-### 1.
-
-### 2. 
+### 1. Conectar a servidor Pomeo
 
 
 
+### 2. Configurar bioconda e instalar programas para análisis
 
-### 3. INFORMACIÓN DE BIOPROYECTOS Y BIOMUESTRAS
 
+
+
+### 3. Crear directorio de trabajo “variant_call” y preparar archivos para el llamado de variantes
+
+
+
+
+
+
+### 4.  Llamado de variantes
+4.1  Descarga de secuencia y genoma de referencia
+4.2 Indexación del genoma de referencia
+4.3 Descarga, filtrado y alineamiento de secuencia de estudio (Secuencia sort.bam)
+4.4 Añadir grupos de lectura al archivo “bam”
+4.5 Indexación del archivo obtenido al añadir los grupos de lectura
+4.6 Identificación de variantes con HaplotypeCaller de GATK
+4.7 Análisis de variantes con linux y vcftools
+4.8 Visualización de variantes con IGV
 
 ### REFERENCIAS Y LINK DE INTERÉS
