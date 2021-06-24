@@ -36,18 +36,25 @@ Las muestras SRR2009653.fastq_1, SRR2009653.fastq_2. Provienen de un set de 45 s
 ### TRABAJO PRÁCTICO
 
 ### 1. Conectar a servidor Pomeo
-
-
+Recordar que como estamos trabajando con Windows , usamos el software PuTTy para hacer la conexión con el servidor Pomeo, utilizando el usuario y contraseña correspondiente.  <br />
+haz clic [aquí para recordar la conexión remota con el servidor POMEO](https://user-images.githubusercontent.com/84527634/122123050-86fac980-cdfb-11eb-8294-9d2ed06d41bc.png)<br />
+haz clic [aquí para recordar el ingreso para trabajar en la terminal](https://user-images.githubusercontent.com/84527634/123138222-c7bd9880-d422-11eb-827e-d4c4bd926f4e.png)<br />
 
 ### 2. Configurar bioconda e instalar programas para análisis
+Para configurar el canal bioconda se debe ejecutar el siguiente comando:
 
+conda config --add channels bioconda
+
+Para Instalar el software gatk4, se deje ejecutar el siguiente comando:
+conda install -c bioconda gatk4
 
 
 
 ### 3. Crear directorio de trabajo “variant_call” y preparar archivos para el llamado de variantes
 
+Para Instalar picard tools, ejecutar el siguiente comando:
 
-
+wget https://github.com/broadinstitute/picard/releases/download/2.8.1/picard.jar
 
 
 
