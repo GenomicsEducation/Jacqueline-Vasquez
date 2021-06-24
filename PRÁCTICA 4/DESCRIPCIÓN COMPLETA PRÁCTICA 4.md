@@ -100,7 +100,7 @@ Posteriormente para descargar la secuencia FASTA debes seguir las instrucciones 
 
 Luego debes ir a tu carpeta de descargas en tu computador y encontrarás el archivo denominado “sequence.fasta” al que debes renombrar como “mt.fasta” y subirlo a POMEO en tu carpeta de alineamiento.
 
-#### **4.3 Subir genoma mitocondrila a POMEO con software de acceso remoto WINSCP.**
+#### **4.3 Subir genoma mitocondrial a POMEO con software de acceso remoto WINSCP.**
 Para subir el archivo a POMEO trabajaremos con el software WINSCP, para ello debes abrirlo e iniciar sesión, guardar tus datos y conectarte como se indica en la siguiente imagen. 
 ![WINSCP](https://user-images.githubusercontent.com/84527634/123017475-a87b2880-d39a-11eb-9352-febe01e1a497.png)
 
