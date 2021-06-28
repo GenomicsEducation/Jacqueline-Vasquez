@@ -97,7 +97,7 @@ tail -n 20 ref_genome.fna
 ```
 tail -n 20 ref_genome.fna.fai
 ```
- Para investigar ahora los cromosomas del salmón, se pueden usar los siguientes comandos.
+ Para investigar los cromosomas del salmón, se pueden usar los siguientes comandos.
  ```
  grep 'NC_' ref_genome.fna
  ```
@@ -110,7 +110,7 @@ grep 'NC_' ref_genome.fna.fai
 ```
 grep -c 'NC_' ref_genome.fna.fai
 ```
-Para Investigar ahora los contigs no mapeados del salmón usar los siguientes comandos.
+Para Investigar los contigs no mapeados del salmón usar los siguientes comandos.
 ```
 grep -c 'NW_' ref_genome.fna
 ```
@@ -120,17 +120,112 @@ grep -c 'NW_' ref_genome.fna.fai
 **Note que en todos los casos el comando trabaja más rápido en el archivo indexado .fai**
 
 ### 4.  Llamado de variantes
-#### 4.1  Descarga de secuencia y genoma de referencia
+Para realizar el llamado de variantes debe obtener primero un archivo que representará un “diccionario de referencias” del genoma de referencia, para ello deberá ejecutar el siguiente comando
+```
+java -jar picard.jar CreateSequenceDictionary R=ref_genome.fna O=ref_genome.dict
+```
+La salidad del comando anterior será un archivo con extensión .dict, explorero con less o head.
+```
+less ref_genome.dict
+```
+```
+head ref_genome.dict
+```
+Añadir grupos de reads al archivo sort bam
+```
+java -jar picard.jar AddOrReplaceReadGroups I=SRR2006763.sort.bam O=SSRR2006763_sorted_RG.bam ID=sample LB=Paired-end PL=Illumina PU=Unknown SM=sample
+```
+Indexar archivo generado con Read groups con el comando
+```
+samtools index SSRR2006763_sorted_RG.bam
+```
+Finalmente, para el llamado de variantes se debe ejecutar el comando HaplotypeCaller del sofatware GATK. Ejecutar el siguiente comando para el llamado de variantes, debe considerar que este proceso demorará al menos una hora
+```
+gatk HaplotypeCaller -R ref_genome.fna -I SSRR2006763_sorted_RG.bam -O raw_variants.vcf
+```
+Al culminar la ejecución del comando liste su directorio con ls y verifique que se ha creado su archivo de salida
+```
+raw_variants.vcf
+```
+ Explore el archivo de llamado raw_variants con los comandos less, head, tail
+ ```
+ less raw_variants.vcf
+head -n 30 raw_variants.vcf
+tail -n 30 raw_variants.vcf
+```
+Note que la mayoría corresponde a los cromosomas y contigs, por lo que las variantes están muy abajo en el archivo y solo podemos ver algunas variantes del genoma mitocondrial cuando usamos el comando tail.
+Use grep para contar el numero de lineas en el “vcf header”.
+ ```
+grep "^#" -c  raw_variants.vcf
+```
+Ahora, use grep para contar el número de variantes detectadas
+```
+grep "^#" -c -v raw_variants.vcf
+```
+El llamado de variantes lo hemos hecho con una sola biomuestra, por lo que podríamos listar el nombre de esta muestra usando el siguiente comando
 
-#### 4.2 Indexación del genoma de referencia
+```
+grep "^#CHROM" raw_variants.vcf | cut -f 10-
+```
+¿Cómo entender la codificación de los archivos vcf?
 
-#### 4.3 Descarga, filtrado y alineamiento de secuencia de estudio (Secuencia sort.bam)
+La principal complejidad de los archivos vcf radica en la forma en que está codificada la información contenida en el. Afortunadamente en el mismo archivo podemos encontrar alguna información para poder comprender de mejor forma como interpretar las variantes encontradas.
 
-#### 4.4 Añadir grupos de lectura al archivo “bam”
+Primero, ejecute el siguiente comando para imprimir el nombre de las columnas del llamado de variantes
+```
+grep "^#CHROM" raw_variants.vcf
+```
+Luego, ejecute el siguiente comando para listar las 10 primeras variantes.
+```
+grep "^#" -v raw_variants.vcf | head
+```
+Finalmente, ejecute estos comandos para entender la codificación de la columna INFO y FORMAT que contine la información del genotipo de la muestra para las primeras 10 variantes
+```
+grep "##INFO" raw_variants.vcf
+grep "##FORMAT" raw_variants.vcf
+```
+Extraer variantes con alta calidad
+Ya hemos determinado que existen cera de 50.000 variantes, pero no todas ellas tienen alta calidad, lo que está determinado básicamente por el numero de reads sobre los cuales se han identificado las variantes. En terminos muy básicos la mayor calidad estará dada por un alto número de reads. Use el siguiente comando para extraer las variantes con calidad mayor a 100.
 
-#### 4.5 Indexación del archivo obtenido al añadir los grupos de lectura
-#### 4.6 Identificación de variantes con HaplotypeCaller de GATK
-#### 4.7 Análisis de variantes con linux y vcftools
-#### 4.8 Visualización de variantes con IGV
+Note que el comando se divide en tres partes, la primera extrae solo las variantes del archivo .vcf, luego con una tubería y el comando awk de linux extraemos e imprimimos solo las filas con calidad mayor a 100 (en la columna 6 está la calidad) y finalmente llevamos el print a un fichero denominado hq_variant.txt (variantes de alta calidad) el cual podemos explorar.
+```
+grep -v "#" raw_variants.vcf | awk '{if ($6 > 100 ) print }' > hq_variant.txt
+
+grep "NC_" -c -v hq_variant.txt
+grep "NW_" -c -v hq_variant.txt
+```
+#### 5. Análisis de variantes con linux y vcftools
+
+vcftools es una potente herramienta de análisis de archivos vcf, lo que nos permite simplificar esta tarea.
+Para contar individuos y variantes de un archivo .vcf ejecute el siguiente comando
+ ```
+ vcftools --vcf raw_variants.vcf
+ ```
+ Para determinar las frecuencias de todos los alelos ejecute el siguiente comando
+ ```
+ vcftools --vcf raw_variants.vcf --freq -c > hq.freqs.txt
+ ```
+ También es posible filtrar por algún cromosoma particular incluyendo el argumento –chr, o podemos excluir por ejemplo el genoma mitocondrial con –not-chr
+ ```
+ vcftools --vcf raw_variants.vcf --chr NC_027300.1
+vcftools --vcf raw_variants.vcf --freq -c --chr NC_027300.1
+
+vcftools --vcf raw_variants.vcf –not-chr NC_001960.1
+vcftools --vcf raw_variants.vcf --freq -c --not-chr NC_001960.1
+  ```
+ Finalmente podemos extraer solo los INDELS con el argumento –keep-only-indel o solo los SNP –remove-indels
+  ```
+ vcftools --vcf raw_variants.vcf --freq -c --chr NC_027300.1 --keep-only-indel
+vcftools --vcf raw_variants.vcf --freq -c --chr NC_027300.1 --remove-indel
+ ```
+ #### 4.8 Visualización de variantes con IGV
+Descargue el archivo raw_variants.vcf generado en su directorio “variant_call” y explore con el software IGV.
+
 
 ### REFERENCIAS Y LINK DE INTERÉS
+1. Danecek, P., Auton, A., Abecasis, G., Albers, C., Banks, E., DePristo, M., . . . Durbin, R. (2011). The variant call format and VCFtools. Bioinformatics, 2156–2158.
+2. Deatherage, E. (2020). Genome Analysis Toolkit (GATK). Obtenido de https://wikis.utexas.edu/display/bioiteam/Genome+Analysis+Toolkit+%28GATK%29+.+--+GVA2020
+3. Cingolani, P., Platts, A., Wang, L., Coon, M., Nguyen, T., Wang, L., . . . Ruden, D. (2012). A program for annotating and predicting the effects of single nucleotide polymorphisms, SnpEff. Fly, 80-92.
+4. Liu, X., White, S., Peng, B., Johnson, A., Brody, J., Li, A., . . . Klein, B. E. (2015). WGSA: an annotation pipeline for human genome sequencing studies. JMG, 1-3.
+5. McCormick, R., Truong, S., & Mullet, J. (2015). RIG: Recalibration and Interrelation of Genomic Sequence Data with the GATK. G3: Genes, Genomes, Genetics, 655 - 665.
+6. Tan, Y., Zhang, Y., Yang, H., & Yin, Z. (2020). FPfilter: A false-positive-specific filter for whole-genome sequencing variant calling from GATK. bioRxiv, 1-16.
