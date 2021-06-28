@@ -118,6 +118,7 @@ grep -c 'NW_' ref_genome.fna
 grep -c 'NW_' ref_genome.fna.fai
 ```
 **Note que en todos los casos el comando trabaja más rápido en el archivo indexado .fai**
+PARA VER EJEMPLO EN LA TERMINAL HACER CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/b57166f67a05c3ef25e05ded28d2ae838d76fabf/PR%C3%81CTICA%205/EJEMPLOS%20EN%20LA%20TERMINAL/3.%20Directorio%20de%20trabajo%20%E2%80%9Cvariant_call%E2%80%9D%20y%20preparaci%C3%B3n%20de%20los%20archivos%20para%20el%20llamado%20de%20variantes.txt)
 
 ### 4.  Llamado de variantes
 Para realizar el llamado de variantes debe obtener primero un archivo que representará un “diccionario de referencias” del genoma de referencia, para ello deberá ejecutar el siguiente comando
@@ -154,6 +155,7 @@ head -n 30 raw_variants.vcf
 tail -n 30 raw_variants.vcf
 ```
 Note que la mayoría corresponde a los cromosomas y contigs, por lo que las variantes están muy abajo en el archivo y solo podemos ver algunas variantes del genoma mitocondrial cuando usamos el comando tail.
+
 Use grep para contar el numero de lineas en el “vcf header”.
  ```
 grep "^#" -c  raw_variants.vcf
@@ -185,9 +187,7 @@ grep "##INFO" raw_variants.vcf
 grep "##FORMAT" raw_variants.vcf
 ```
 Extraer variantes con alta calidad
-Ya hemos determinado que existen cera de 50.000 variantes, pero no todas ellas tienen alta calidad, lo que está determinado básicamente por el numero de reads sobre los cuales se han identificado las variantes. En terminos muy básicos la mayor calidad estará dada por un alto número de reads. Use el siguiente comando para extraer las variantes con calidad mayor a 100.
-
-Note que el comando se divide en tres partes, la primera extrae solo las variantes del archivo .vcf, luego con una tubería y el comando awk de linux extraemos e imprimimos solo las filas con calidad mayor a 100 (en la columna 6 está la calidad) y finalmente llevamos el print a un fichero denominado hq_variant.txt (variantes de alta calidad) el cual podemos explorar.
+Ya hemos determinado que existen cera de 50.000 variantes, pero no todas ellas tienen alta calidad, lo que está determinado básicamente por el número de reads sobre los cuales se han identificado las variantes. En terminos muy básicos la mayor calidad estará dada por un alto número de reads. El siguiente comando permitirá extraer las variantes con calidad mayor a 100. Note que el comando se divide en tres partes, la primera extrae solo las variantes del archivo .vcf, luego con una tubería y el comando awk de linux extraemos e imprimimos solo las filas con calidad mayor a 100 (en la columna 6 está la calidad) y finalmente llevamos el print a un fichero denominado hq_variant.txt (variantes de alta calidad) el cual podemos explorar.
 ```
 grep -v "#" raw_variants.vcf | awk '{if ($6 > 100 ) print }' > hq_variant.txt
 
