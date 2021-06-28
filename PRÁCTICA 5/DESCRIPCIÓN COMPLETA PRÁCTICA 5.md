@@ -226,7 +226,7 @@ vcftools --vcf raw_variants.vcf --freq -c --chr NC_027300.1 --remove-indels
  ### 6. Visualización de variantes con IGV
 Posteriormente se descargo el arrchivo raw_variants.vcf iniciando sesión online en el servidor POMEO a través de [Rstudio server](http://200.54.220.141:8787/auth-sign-in) 
 y sse exploro con el software IGV.<br />
-Para ver el archivo raw_variants.vcf descargado haz clic [AQUÍ]
+Para ver el archivo raw_variants.vcf descargado haz clic [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/a5c7b0094229665fe51daedd9953e51bf8218aa0/PR%C3%81CTICA%205/ARCHIVOS%20DESCARGADOS/raw_variants.vcf)
 ![ARCHIVO RAW_VARIANTS VCF CARGADO EN IGV](https://user-images.githubusercontent.com/84527634/123698125-c37eea00-d82b-11eb-9078-abd5c7f53b87.png)
 
 
