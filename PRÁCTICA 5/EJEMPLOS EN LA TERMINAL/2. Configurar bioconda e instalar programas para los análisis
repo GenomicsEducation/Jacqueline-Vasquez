@@ -1,0 +1,94 @@
+login as: 
+jacqueline.vasquez@200.54.220.141's password:
+
+2. Configurar bioconda e instalar programas para los análisis.
+
+(base) [jacqueline.vasquez@test-pomeo ~]$ ls
+alineamiento  Miniconda3-latest-Linux-x86_64.sh  script1.sh  SRA_samples                       sratoolkit.current-centos_linux64.tar.gz
+miniconda3    R                                  script2.sh  sratoolkit.2.11.0-centos_linux64  variant_call
+
+(base) [jacqueline.vasquez@test-pomeo ~]$ conda config --add channels bioconda
+Warning: 'bioconda' already in 'channels' list, moving to the top
+(base) [jacqueline.vasquez@test-pomeo ~]$ conda install -c bioconda gatk4
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /home2/jacqueline.vasquez/miniconda3
+
+  added / updated specs:
+    - gatk4
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    gatk4-4.2.0.0              |       hdfd78af_1       276.8 MB  bioconda
+    ------------------------------------------------------------
+                                           Total:       276.8 MB
+
+The following NEW packages will be INSTALLED:
+
+  gatk4              bioconda/noarch::gatk4-4.2.0.0-hdfd78af_1
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+gatk4-4.2.0.0        | 276.8 MB  | ################################################################################################################################################## | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+(base) [jacqueline.vasquez@test-pomeo ~]$ wget https://github.com/broadinstitute/picard/releases/download/2.8.1/picard.jar
+--2021-06-24 20:18:49--  https://github.com/broadinstitute/picard/releases/download/2.8.1/picard.jar
+Resolviendo github.com (github.com)... 140.82.112.3
+Conectando con github.com (github.com)[140.82.112.3]:443... conectado.
+Petición HTTP enviada, esperando respuesta... 302 Found
+Localización: https://github-releases.githubusercontent.com/18225913/39276fda-c796-11e6-88c5-30c9d791d3b5?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210624%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210624T162000Z&X-Amz-Expires=300&X-Amz-Signature=9bba09583ff683a308209dbaf8fd76d6de74b6acc42a1bfc468564dc05216a13&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=18225913&response-content-disposition=attachment%3B%20filename%3Dpicard.jar&response-content-type=application%2Foctet-stream [siguiendo]
+--2021-06-24 20:18:50--  https://github-releases.githubusercontent.com/18225913/39276fda-c796-11e6-88c5-30c9d791d3b5?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210624%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210624T162000Z&X-Amz-Expires=300&X-Amz-Signature=9bba09583ff683a308209dbaf8fd76d6de74b6acc42a1bfc468564dc05216a13&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=18225913&response-content-disposition=attachment%3B%20filename%3Dpicard.jar&response-content-type=application%2Foctet-stream
+Resolviendo github-releases.githubusercontent.com (github-releases.githubusercontent.com)... 185.199.110.154, 185.199.108.154, 185.199.111.154, ...
+Conectando con github-releases.githubusercontent.com (github-releases.githubusercontent.com)[185.199.110.154]:443... conectado.
+Petición HTTP enviada, esperando respuesta... 200 OK
+Longitud: 33290359 (32M) [application/octet-stream]
+Grabando a: “picard.jar”
+
+100%[===================================================================================================================================================>] 33.290.359  11,0MB/s   en 2,9s
+
+2021-06-24 20:18:53 (11,0 MB/s) - “picard.jar” guardado [33290359/33290359]
+
+(base) [jacqueline.vasquez@test-pomeo ~]$ conda install -c bioconda vcftools
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /home2/jacqueline.vasquez/miniconda3
+
+  added / updated specs:
+    - vcftools
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    vcftools-0.1.16            |       he513fc3_4         355 KB  bioconda
+    ------------------------------------------------------------
+                                           Total:         355 KB
+
+The following NEW packages will be INSTALLED:
+
+  vcftools           bioconda/linux-64::vcftools-0.1.16-he513fc3_4
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+vcftools-0.1.16      | 355 KB    | ################################################################################################################################################## | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done

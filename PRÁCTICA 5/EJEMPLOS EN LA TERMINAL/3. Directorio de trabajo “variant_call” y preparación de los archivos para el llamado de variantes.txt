@@ -1,0 +1,184 @@
+login as: 
+jacqueline.vasquez@200.54.220.141's password:
+
+3. Entrar al directoro "variant_call" y preprar archivos para el llamdo de variantes.
+
+(base) [jacqueline.vasquez@test-pomeo ~]$ ls
+alineamiento                       script2.sh
+miniconda3                         SRA_samples
+Miniconda3-latest-Linux-x86_64.sh  sratoolkit.2.11.0-centos_linux64
+R                                  sratoolkit.current-centos_linux64.tar.gz
+script1.sh                         variant_call
+(base) [jacqueline.vasquez@test-pomeo ~]$ cd variant_call
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ ls
+ref_genome.fna      SRR2006763.sort.bam
+ref_genome.fna.fai  SRR2006763.sort.bam.bai
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ less ref_genome.fna
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ less ref_genome.fna.fai
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ less SRR2006763.sort.bam.bai
+"SRR2006763.sort.bam.bai" may be a binary file.  See it anyway?
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ head -n 20 ref_genome.fna
+>NC_027300.1 Salmo salar isolate Sally breed double haploid chromosome ssa01, ICSASG_v2, whole genome shotgun sequence
+CGGACCTACACAGAGCACAACACCACCAGCCACATACACACCCCCACCCCAACCAATTAACACCCCCCCAAGTCAACCAT
+GCCCACACACAATTTAGGCCCCTTCAGATCAGACCTATGCCCCTCCTTCCCACCCCATGCACCCCCGAAAAAAAGGGCCT
+CAACATGGAAGACACACATACGCCCAGGCCGTGAGCAGCCAAACAGGCCCAACCCCCACTCTGACACTAGCCCAAGCCAA
+TGGCATGTACCAGATGCTCAGCAGGCTCTGCTCACACTTACTGGCCTGAATCCAAACCACACGACTTACAACATTGGACA
+CTTTATGAAACACAAAACCTTCACTATCTCATCCTGGAATATCCAAGGCCTGAGGTCATCTGCCTTTGGCCTAAAGGGCA
+GGAACCTGGACTTCAACAAAGAAATCAGGAATACAGACATTGTCAACCTACACGAAAAATGGTATAGAGGAGACGGACCC
+ACTGGTTTCCCTTGTAGGTTACAGGGAGCTGGTAGTCCCATCCACCAAACTACCAGGTGTGAAACAGGAAAGAGACTCAG
+GGGGTATGCTCATTTGATATAGAGCAGACCTAAACCACAATCAAAACAGGAACATTTTACATTTGGCTAGAAATTAAAAA
+GGAAATGATCTTAACAGAAATTCAAATTTGTCTCAACAGAGAAAAATGTCCTCCTGTGTGCTATCTATATCCCCCCACTA
+GAATCCCCATAATTTAATGAAGACATCTTCTCCATCTTAGAGGGCGAAATCAATCATTTCCAGGCCCAGGGACAAGTAAT
+AGTCCGTGGCGACCTAAATGCCAGACCTGGACAAGAACCTGACAAACTCAGCACACAGGGGGACAAACACCTACCTGGAG
+GTGACAGCATTCTCTCCACCATACGCCCCCCTGGACACAACTATGACAACATAACCAACAAAAACATGTCACAACTCCTG
+CAGCTCTGTCACACACTGGGTCTGTACATAGTCAATGGTAGGCTTCGAAGGTACTCCTATGGTAGGTACACCTATAGCTC
+ATCTCTTGGCAGTAGGACTGTAGACTACTTTATCACTGACCTCAACCCAGAGTCTCTCAGAGCGTTCACAGTCAGTCCAC
+TGACCCCCCTATCAGATCACAGCAAAATCACAGTCTACTTGAACAGAGCAATACTCAATCATGAGGCATCAAACCCAACG
+GAACTGAATAATATTAAGAAATGCTATAGATGGAAGGAAAGTAGTGTGGAAACCTACCAAAATACAATTAGGCCACAACA
+ATTTCAATCCCTTTCAGACAACTACCTGGACAAAATGTTCCACTGTAATAGTGAAGGTGTAAACTTGGCAGTAGGAAAGC
+TAAACAGTATATTTGGCCTCTCAGCTTCAATATCAAATCTAAAAATGTTAAGCAGACAACATAAGAAAATTAACAACAAT
+GACAAATGGTTTGATGAAGAATGCAAAAACCTAAGAAAGAAATTGAGAAACCTGTCCAACCAAAAACATAGAGACCCAGA
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ head -n 30 ref_genome.fna.fai
+NC_027300.1     159038749       119     80      81
+NC_027301.1     72943711        161026972       80      81
+NC_027302.1     92503428        234882599       80      81
+NC_027303.1     82398023        328542439       80      81
+NC_027304.1     80503876        411970557       80      81
+NC_027305.1     87043187        493480851       80      81
+NC_027306.1     58785265        581612197       80      81
+NC_027307.1     26434011        641132397       80      81
+NC_027308.1     141712163       667896953       80      81
+NC_027309.1     116138521       811380638       80      81
+NC_027310.1     93888508        928971010       80      81
+NC_027311.1     91880962        1024033244      80      81
+NC_027312.1     107758822       1117062838      80      81
+NC_027313.1     93901823        1226168765      80      81
+NC_027314.1     103963436       1321244480      80      81
+NC_027315.1     87796322        1426507578      80      81
+NC_027316.1     57682537        1515401474      80      81
+NC_027317.1     70695409        1573805162      80      81
+NC_027318.1     82978132        1645384383      80      81
+NC_027319.1     86795997        1729399861      80      81
+NC_027320.1     58021487        1817280927      80      81
+NC_027321.1     63420196        1876027802      80      81
+NC_027322.1     49854004        1940240870      80      81
+NC_027323.1     48650976        1990718169      80      81
+NC_027324.1     51481326        2039977402      80      81
+NC_027325.1     47900953        2092102364      80      81
+NC_027326.1     43943985        2140602198      80      81
+NC_027327.1     39600944        2185095602      80      81
+NC_027328.1     42488238        2225191677      80      81
+NW_012341867.1  84119   2268211175      80      81
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ tail -n 20 ref_genome.fna
+GCATCCCCCCCAAATAAATTAAAAATAATACCAAAGACAAGAAAGACCCCCCGTAACCCACCAAAACTCCGCAACCTACA
+CCTGCTGCCACAACCAAACCCAAAGCAGCAAAGTAAGGCGCAGGGTTAGATGCAACAGCCACAAGCCCTAAAACCAACCC
+TAAAAGAAATAAAGACACAATATAAGTCATAATTCCTGCTCGGACTTTAACCGAAACTAATGACTTGAAAAACCACCGTT
+GTTATTCAACTACAAGAACCTTAATGGCCAACCTCCGAAAAACTCACCCGCTCCTAAAAATTGCTAATGACGCACTAGTC
+GATCTCCCAGCACCATCTAACATCTCAGTTTGATGAAACTTTGGCTCACTCTTAGGCCTATGTCTAGCCACCCAAATCCT
+TACCGGGCTCTTCCTAGCCATACACTACACCTCCGATATCTCAACAGCTTTTTCCTCTGTTTGCCACATTTGCCGAGATG
+TTAGCTATGGCTGACTCATCCGTAACATTCACGCTAACGGAGCATCTTTCTTCTTTATCTGTATTTATATACACATCGCC
+CGAGGACTTTATTATGGTTCCTATCTATATAAAGAAACCTGAAATATCGGAGTTGTACTTCTACTTCTCACTATAATAAC
+TGCCTTCGTAGGCTACGTTCTTCCATGAGGACAAATATCCTTCTGAGGAGCCACTGTAATTACAAACCTCCTCTCCGCTG
+TCCCCTACGTAGGAGGCGCCCTTGTACAATGAATTTGAGGAGGATTTTCTGTAGACAACGCCACCCTAACACGATTTTTC
+GCCTTCCACTTCCTATTCCCATTCGTTATTGCAGCTGCCACAGTACTCCATCTTCTATTTTTACATGAAACCGGGTCTAA
+TAACCCAGCAGGCATCAACTCCGATGCCGATAAAATCTCATTCCACCCTTACTTCTCATATAAAGACCTCCTCGGATTTG
+TAGCCATACTACTTGGCCTAACATCCTTAGCTCTATTCGCACCCAACCTCCTCGGGGACCCAGACAATTTTACACCTGCC
+AACCCCCTAGTTACTCCACCTCATATCAAGCCTGAATGATACTTCCTATTCGCCTACGCAATCCTACGCTCCATTCCTAA
+CAAACTAGGCGGAGTACTCGCCCTCTTATTCTCGATCCTGGTCCTTATAGTCGTCCCCATCCTCCATACCTCTAAACAAC
+GAGGACTGACCTTTCGCCCACTCACCCAATTCTTATTCTGGACCCTGGTAGCGGACATACTAATCCTTACCTGAATTGGA
+GGCATACCCGTGGAACACCCATTCATTATCATTGGTCAAATTGCCTCTGTAATTTACTTTACTATCTTCCTAGTCCTTGC
+CCCCCTGGCTGGCTGAGCTGAAAATAAAGCTCTTGAATGAACCTGCCCTAGTAGCTCAGCGCCAGAGCGCCGGTCTTGTA
+ATCCGGAGGCCGGAGGTTAAAACCCTCCCTAGTGCTCAGAGAAAGGAGATTTTAACTCCCACCCTTAACTCCCAAAGCTA
+AGATTCTAAATTAAACTATCCTCTG
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ tail -n 20 ref_genome.fna.fai
+NW_012392322.1  2413    3039524069      80      81
+NW_012566436.1  1029    3039526666      80      81
+NW_012341884.1  44131   3039527865      80      81
+NW_012403267.1  1951    3039572701      80      81
+NW_012526228.1  1221    3039574830      80      81
+NW_012538775.1  1209    3039576220      80      81
+NW_012510185.1  1236    3039577598      80      81
+NW_012355637.1  9521    3039579003      80      81
+NW_012367147.1  4896    3039588797      80      81
+NW_012414766.1  1710    3039593908      80      81
+NW_012543257.1  1204    3039595793      80      81
+NW_012554585.1  1129    3039597166      80      81
+NW_012550955.1  1174    3039598463      80      81
+NW_012473295.1  1310    3039599805      80      81
+NW_012506647.1  1240    3039601285      80      81
+NW_012416322.1  1687    3039602694      80      81
+NW_012361141.1  6602    3039604556      80      81
+NW_012498597.1  1251    3039611394      80      81
+NW_012561447.1  1060    3039612814      80      81
+NC_001960.1     16665   3039613944      80      81
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ grep 'NC_' ref_genome.fna
+>NC_027300.1 Salmo salar isolate Sally breed double haploid chromosome ssa01, ICSASG_v2, whole genome shotgun sequence
+>NC_027301.1 Salmo salar isolate Sally breed double haploid chromosome ssa02, ICSASG_v2, whole genome shotgun sequence
+>NC_027302.1 Salmo salar isolate Sally breed double haploid chromosome ssa03, ICSASG_v2, whole genome shotgun sequence
+>NC_027303.1 Salmo salar isolate Sally breed double haploid chromosome ssa04, ICSASG_v2, whole genome shotgun sequence
+>NC_027304.1 Salmo salar isolate Sally breed double haploid chromosome ssa05, ICSASG_v2, whole genome shotgun sequence
+>NC_027305.1 Salmo salar isolate Sally breed double haploid chromosome ssa06, ICSASG_v2, whole genome shotgun sequence
+>NC_027306.1 Salmo salar isolate Sally breed double haploid chromosome ssa07, ICSASG_v2, whole genome shotgun sequence
+>NC_027307.1 Salmo salar isolate Sally breed double haploid chromosome ssa08, ICSASG_v2, whole genome shotgun sequence
+>NC_027308.1 Salmo salar isolate Sally breed double haploid chromosome ssa09, ICSASG_v2, whole genome shotgun sequence
+>NC_027309.1 Salmo salar isolate Sally breed double haploid chromosome ssa10, ICSASG_v2, whole genome shotgun sequence
+>NC_027310.1 Salmo salar isolate Sally breed double haploid chromosome ssa11, ICSASG_v2, whole genome shotgun sequence
+>NC_027311.1 Salmo salar isolate Sally breed double haploid chromosome ssa12, ICSASG_v2, whole genome shotgun sequence
+>NC_027312.1 Salmo salar isolate Sally breed double haploid chromosome ssa13, ICSASG_v2, whole genome shotgun sequence
+>NC_027313.1 Salmo salar isolate Sally breed double haploid chromosome ssa14, ICSASG_v2, whole genome shotgun sequence
+>NC_027314.1 Salmo salar isolate Sally breed double haploid chromosome ssa15, ICSASG_v2, whole genome shotgun sequence
+>NC_027315.1 Salmo salar isolate Sally breed double haploid chromosome ssa16, ICSASG_v2, whole genome shotgun sequence
+>NC_027316.1 Salmo salar isolate Sally breed double haploid chromosome ssa17, ICSASG_v2, whole genome shotgun sequence
+>NC_027317.1 Salmo salar isolate Sally breed double haploid chromosome ssa18, ICSASG_v2, whole genome shotgun sequence
+>NC_027318.1 Salmo salar isolate Sally breed double haploid chromosome ssa19, ICSASG_v2, whole genome shotgun sequence
+>NC_027319.1 Salmo salar isolate Sally breed double haploid chromosome ssa20, ICSASG_v2, whole genome shotgun sequence
+>NC_027320.1 Salmo salar isolate Sally breed double haploid chromosome ssa21, ICSASG_v2, whole genome shotgun sequence
+>NC_027321.1 Salmo salar isolate Sally breed double haploid chromosome ssa22, ICSASG_v2, whole genome shotgun sequence
+>NC_027322.1 Salmo salar isolate Sally breed double haploid chromosome ssa23, ICSASG_v2, whole genome shotgun sequence
+>NC_027323.1 Salmo salar isolate Sally breed double haploid chromosome ssa24, ICSASG_v2, whole genome shotgun sequence
+>NC_027324.1 Salmo salar isolate Sally breed double haploid chromosome ssa25, ICSASG_v2, whole genome shotgun sequence
+>NC_027325.1 Salmo salar isolate Sally breed double haploid chromosome ssa26, ICSASG_v2, whole genome shotgun sequence
+>NC_027326.1 Salmo salar isolate Sally breed double haploid chromosome ssa27, ICSASG_v2, whole genome shotgun sequence
+>NC_027327.1 Salmo salar isolate Sally breed double haploid chromosome ssa28, ICSASG_v2, whole genome shotgun sequence
+>NC_027328.1 Salmo salar isolate Sally breed double haploid chromosome ssa29, ICSASG_v2, whole genome shotgun sequence
+>NC_001960.1 Salmo salar mitochondrion, complete genome
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ grep -c 'NC_' ref_genome.fna
+30
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ grep 'NC_' ref_genome.fna.fai
+NC_027300.1     159038749       119     80      81
+NC_027301.1     72943711        161026972       80      81
+NC_027302.1     92503428        234882599       80      81
+NC_027303.1     82398023        328542439       80      81
+NC_027304.1     80503876        411970557       80      81
+NC_027305.1     87043187        493480851       80      81
+NC_027306.1     58785265        581612197       80      81
+NC_027307.1     26434011        641132397       80      81
+NC_027308.1     141712163       667896953       80      81
+NC_027309.1     116138521       811380638       80      81
+NC_027310.1     93888508        928971010       80      81
+NC_027311.1     91880962        1024033244      80      81
+NC_027312.1     107758822       1117062838      80      81
+NC_027313.1     93901823        1226168765      80      81
+NC_027314.1     103963436       1321244480      80      81
+NC_027315.1     87796322        1426507578      80      81
+NC_027316.1     57682537        1515401474      80      81
+NC_027317.1     70695409        1573805162      80      81
+NC_027318.1     82978132        1645384383      80      81
+NC_027319.1     86795997        1729399861      80      81
+NC_027320.1     58021487        1817280927      80      81
+NC_027321.1     63420196        1876027802      80      81
+NC_027322.1     49854004        1940240870      80      81
+NC_027323.1     48650976        1990718169      80      81
+NC_027324.1     51481326        2039977402      80      81
+NC_027325.1     47900953        2092102364      80      81
+NC_027326.1     43943985        2140602198      80      81
+NC_027327.1     39600944        2185095602      80      81
+NC_027328.1     42488238        2225191677      80      81
+NC_001960.1     16665   3039613944      80      81
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ grep -c 'NC_' ref_genome.fna.fai
+30
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ grep -c 'NW_' ref_genome.fna
+232125
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ grep -c 'NW_' ref_genome.fna.fai
+232125
+(base) [jacqueline.vasquez@test-pomeo variant_call]$
