@@ -218,8 +218,8 @@ vcftools --vcf raw_variants.vcf --freq -c --not-chr NC_001960.1
   ```
  Finalmente podemos extraer solo los INDELS con el argumento –keep-only-indel o solo los SNP –remove-indels
   ```
- vcftools --vcf raw_variants.vcf --freq -c --chr NC_027300.1 --keep-only-indel
-vcftools --vcf raw_variants.vcf --freq -c --chr NC_027300.1 --remove-indel
+ vcftools --vcf raw_variants.vcf --freq -c --chr NC_027300.1 --keep-only-indels
+vcftools --vcf raw_variants.vcf --freq -c --chr NC_027300.1 --remove-indels
  ```
  PARA VER EJEMPLO EN LA TERMINAL HACER CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/aed60cf01e1b33bca58941b037571b62839aa25e/PR%C3%81CTICA%205/EJEMPLOS%20EN%20LA%20TERMINAL/5%20.%20An%C3%A1lisis%20de%20variantes%20con%20vcftools.txt)
  
