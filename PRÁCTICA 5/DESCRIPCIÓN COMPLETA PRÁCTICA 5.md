@@ -60,7 +60,7 @@ conda install -c bioconda vcftools
 ```
 **Cabe señalar que en esa práctica también se utilizará Samtools (que fue instalado en la práctica anterior)**
 
-PARA VER EJEMPLO EN LA TERMINAL HACER CLIC [AQUÍ]
+PARA VER EJEMPLO EN LA TERMINAL HACER CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/e9ead1405d9be40f12b25204429870da3e0c9cfd/PR%C3%81CTICA%205/EJEMPLOS%20EN%20LA%20TERMINAL/2.%20Configurar%20bioconda%20e%20instalar%20programas%20para%20los%20an%C3%A1lisis)
 
 ### 3. Directorio de trabajo “variant_call” y preparación de los archivos para el llamado de variantes
 El directorio y los archivos necesarios para ejecutar esta práctica fueron creados e instalados en el directorio personal previamente. Es por ello, que solo es necesario ingresar al directorio “variant_call” y explorar los archivos de trabajo.
