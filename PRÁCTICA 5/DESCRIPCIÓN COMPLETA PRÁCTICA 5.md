@@ -117,7 +117,7 @@ grep -c 'NW_' ref_genome.fna
 ```
 grep -c 'NW_' ref_genome.fna.fai
 ```
-**Note que en todos los casos el comando trabaja más rápido en el archivo indexado .fai**
+**Note que en todos los casos el comando trabaja más rápido en el archivo indexado .fai** <br />
 PARA VER EJEMPLO EN LA TERMINAL HACER CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/b57166f67a05c3ef25e05ded28d2ae838d76fabf/PR%C3%81CTICA%205/EJEMPLOS%20EN%20LA%20TERMINAL/3.%20Directorio%20de%20trabajo%20%E2%80%9Cvariant_call%E2%80%9D%20y%20preparaci%C3%B3n%20de%20los%20archivos%20para%20el%20llamado%20de%20variantes.txt)
 
 ### 4.  Llamado de variantes
@@ -224,7 +224,7 @@ vcftools --vcf raw_variants.vcf --freq -c --chr NC_027300.1 --remove-indel
  PARA VER EJEMPLO EN LA TERMINAL HACER CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/aed60cf01e1b33bca58941b037571b62839aa25e/PR%C3%81CTICA%205/EJEMPLOS%20EN%20LA%20TERMINAL/5%20.%20An%C3%A1lisis%20de%20variantes%20con%20vcftools.txt)
  
  #### 4.8 Visualización de variantes con IGV
-Posteriormente se descargo el arrchivo raw_variants.vcf se exploro con el software IGV.
+Posteriormente se descargo el arrchivo raw_variants.vcf se exploro con el software IGV.<br />
 Para ver el archivo raw_variants.vcf descargado haz clic [AQUÍ]
 ![ARCHIVO RAW_VARIANTS VCF CARGADO EN IGV](https://user-images.githubusercontent.com/84527634/123698125-c37eea00-d82b-11eb-9078-abd5c7f53b87.png)
 
