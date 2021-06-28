@@ -194,6 +194,9 @@ grep -v "#" raw_variants.vcf | awk '{if ($6 > 100 ) print }' > hq_variant.txt
 grep "NC_" -c -v hq_variant.txt
 grep "NW_" -c -v hq_variant.txt
 ```
+
+PARA VER EJEMPLO EN LA TERMINAL HACER CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/aed60cf01e1b33bca58941b037571b62839aa25e/PR%C3%81CTICA%205/EJEMPLOS%20EN%20LA%20TERMINAL/4.%20LLamado%20de%20variantes.txt)
+
 #### 5. Análisis de variantes con linux y vcftools
 
 vcftools es una potente herramienta de análisis de archivos vcf, lo que nos permite simplificar esta tarea.
@@ -218,8 +221,14 @@ vcftools --vcf raw_variants.vcf --freq -c --not-chr NC_001960.1
  vcftools --vcf raw_variants.vcf --freq -c --chr NC_027300.1 --keep-only-indel
 vcftools --vcf raw_variants.vcf --freq -c --chr NC_027300.1 --remove-indel
  ```
+ PARA VER EJEMPLO EN LA TERMINAL HACER CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/aed60cf01e1b33bca58941b037571b62839aa25e/PR%C3%81CTICA%205/EJEMPLOS%20EN%20LA%20TERMINAL/5%20.%20An%C3%A1lisis%20de%20variantes%20con%20vcftools.txt)
+ 
  #### 4.8 Visualización de variantes con IGV
-Descargue el archivo raw_variants.vcf generado en su directorio “variant_call” y explore con el software IGV.
+Posteriormente se descargo el arrchivo raw_variants.vcf se exploro con el software IGV.
+Para ver el archivo raw_variants.vcf descargado haz clic [AQUÍ]
+![ARCHIVO RAW_VARIANTS VCF CARGADO EN IGV](https://user-images.githubusercontent.com/84527634/123698125-c37eea00-d82b-11eb-9078-abd5c7f53b87.png)
+
+
 
 
 ### REFERENCIAS Y LINK DE INTERÉS
