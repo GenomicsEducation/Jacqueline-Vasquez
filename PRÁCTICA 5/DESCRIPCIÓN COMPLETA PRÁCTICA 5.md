@@ -197,7 +197,7 @@ grep "NW_" -c -v hq_variant.txt
 
 PARA VER EJEMPLO EN LA TERMINAL HACER CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/aed60cf01e1b33bca58941b037571b62839aa25e/PR%C3%81CTICA%205/EJEMPLOS%20EN%20LA%20TERMINAL/4.%20LLamado%20de%20variantes.txt)
 
-#### 5. Análisis de variantes con linux y vcftools
+### 5. Análisis de variantes con linux y vcftools
 
 vcftools es una potente herramienta de análisis de archivos vcf, lo que nos permite simplificar esta tarea.
 Para contar individuos y variantes de un archivo .vcf ejecute el siguiente comando
@@ -223,7 +223,7 @@ vcftools --vcf raw_variants.vcf --freq -c --chr NC_027300.1 --remove-indels
  ```
  PARA VER EJEMPLO EN LA TERMINAL HACER CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/aed60cf01e1b33bca58941b037571b62839aa25e/PR%C3%81CTICA%205/EJEMPLOS%20EN%20LA%20TERMINAL/5%20.%20An%C3%A1lisis%20de%20variantes%20con%20vcftools.txt)
  
- #### 4.8 Visualización de variantes con IGV
+ ### 6. Visualización de variantes con IGV
 Posteriormente se descargo el arrchivo raw_variants.vcf iniciando sesión online en el servidor POMEO a través de [Rstudio server](http://200.54.220.141:8787/auth-sign-in) 
 y sse exploro con el software IGV.<br />
 Para ver el archivo raw_variants.vcf descargado haz clic [AQUÍ]
