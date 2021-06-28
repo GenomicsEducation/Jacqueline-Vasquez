@@ -1,0 +1,540 @@
+login as: 
+jacqueline.vasquez@200.54.220.141's password:
+
+4. LLamado de variantes 
+
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ ls
+picard.jar  ref_genome.dict  ref_genome.fna  ref_genome.fna.fai  SRR2006763.sort.bam  SRR2006763.sort.bam.bai
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ ref_genome.dict
+-bash: ref_genome.dict: no se encontró la orden
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ less ref_genome.dict
+
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ java -jar picard.jar AddOrReplaceReadGroups I=SRR2006763.sort.bam O=SSRR2006763_sorted_RG.bam ID=sample LB=Paired-end PL=Illumina PU=Unknown SM=sample
+[Thu Jun 24 20:24:10 CLT 2021] picard.sam.AddOrReplaceReadGroups INPUT=SRR2006763.sort.bam OUTPUT=SSRR2006763_sorted_RG.bam RGID=sample RGLB=Paired-end RGPL=Illumina RGPU=Unknown RGSM=sample    VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json
+[Thu Jun 24 20:24:10 CLT 2021] Executing as jacqueline.vasquez@test-pomeo.pucv.cl on Linux 3.10.0-327.18.2.el7.x86_64 amd64; OpenJDK 64-Bit Server VM 1.8.0_152-release-1056-b12; Picard version: 2.8.1-SNAPSHOT
+INFO    2021-06-24 20:24:13     AddOrReplaceReadGroups  Created read group ID=sample PL=Illumina LB=Paired-end SM=sample
+
+INFO    2021-06-24 20:24:47     AddOrReplaceReadGroups  Processed     1.000.000 records.  Elapsed time: 00:00:31s.  Time for last 1.000.000:   31s.  Last rea                                d position: NC_027307.1:13.305.024
+INFO    2021-06-24 20:25:18     AddOrReplaceReadGroups  Processed     2.000.000 records.  Elapsed time: 00:01:01s.  Time for last 1.000.000:   30s.  Last rea                                d position: NC_027313.1:60.859.123
+INFO    2021-06-24 20:25:47     AddOrReplaceReadGroups  Processed     3.000.000 records.  Elapsed time: 00:01:31s.  Time for last 1.000.000:   29s.  Last rea                                d position: NC_027321.1:58.109.610
+[Thu Jun 24 20:26:11 CLT 2021] picard.sam.AddOrReplaceReadGroups done. Elapsed time: 2,02 minutes.
+Runtime.totalMemory()=5732040704
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ samtools index SSRR2006763_sorted_RG.bam
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ gatk HaplotypeCaller -R ref_genome.fna -I SSRR2006763_sorted_RG.bam -O raw_variants.vcf
+Using GATK jar /home2/jacqueline.vasquez/miniconda3/share/gatk4-4.2.0.0-1/gatk-package-4.2.0.0-local.jar
+Running:
+    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_l                                evel=2 -jar /home2/jacqueline.vasquez/miniconda3/share/gatk4-4.2.0.0-1/gatk-package-4.2.0.0-local.jar HaplotypeCaller -R ref_genome.fna -I SSRR2006763_sorted                                _RG.bam -O raw_variants.vcf
+20:31:54.138 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home2/jacqueline.vasquez/miniconda3/share/gatk4-4.2.0.0-1/gatk-package-                                4.2.0.0-local.jar!/com/intel/gkl/native/libgkl_compression.so
+Jun 24, 2021 8:31:54 PM shaded.cloud_nio.com.google.auth.oauth2.ComputeEngineCredentials runningOnComputeEngine
+INFO: Failed to detect whether we are running on Google Compute Engine.
+20:31:54.432 INFO  HaplotypeCaller - ------------------------------------------------------------
+20:31:54.433 INFO  HaplotypeCaller - The Genome Analysis Toolkit (GATK) v4.2.0.0
+20:31:54.433 INFO  HaplotypeCaller - For support and documentation go to https://software.broadinstitute.org/gatk/
+20:31:54.433 INFO  HaplotypeCaller - Executing as jacqueline.vasquez@test-pomeo.pucv.cl on Linux v3.10.0-327.18.2.el7.x86_64 amd64
+20:31:54.433 INFO  HaplotypeCaller - Java runtime: OpenJDK 64-Bit Server VM v1.8.0_152-release-1056-b12
+20:31:54.434 INFO  HaplotypeCaller - Start Date/Time: 24 de junio de 2021 20:31:53 CLT
+20:31:54.434 INFO  HaplotypeCaller - ------------------------------------------------------------
+20:31:54.434 INFO  HaplotypeCaller - ------------------------------------------------------------
+20:31:54.435 INFO  HaplotypeCaller - HTSJDK Version: 2.24.0
+20:31:54.435 INFO  HaplotypeCaller - Picard Version: 2.25.0
+20:31:54.435 INFO  HaplotypeCaller - Built for Spark Version: 2.4.5
+20:31:54.435 INFO  HaplotypeCaller - HTSJDK Defaults.COMPRESSION_LEVEL : 2
+20:31:54.435 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
+20:31:54.435 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
+20:31:54.435 INFO  HaplotypeCaller - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
+20:31:54.435 INFO  HaplotypeCaller - Deflater: IntelDeflater
+20:31:54.436 INFO  HaplotypeCaller - Inflater: IntelInflater
+20:31:54.436 INFO  HaplotypeCaller - GCS max retries/reopens: 20
+20:31:54.436 INFO  HaplotypeCaller - Requester pays: disabled
+20:31:54.436 INFO  HaplotypeCaller - Initializing engine
+20:32:21.137 INFO  HaplotypeCaller - Done initializing engine
+20:32:28.748 INFO  HaplotypeCallerEngine - Disabling physical phasing, which is supported only for reference-model confidence output
+20:32:28.778 INFO  NativeLibraryLoader - Loading libgkl_utils.so from jar:file:/home2/jacqueline.vasquez/miniconda3/share/gatk4-4.2.0.0-1/gatk-package-4.2.0.                                0-local.jar!/com/intel/gkl/native/libgkl_utils.so
+20:32:28.801 INFO  NativeLibraryLoader - Loading libgkl_pairhmm_omp.so from jar:file:/home2/jacqueline.vasquez/miniconda3/share/gatk4-4.2.0.0-1/gatk-package-                                4.2.0.0-local.jar!/com/intel/gkl/native/libgkl_pairhmm_omp.so
+20:32:28.871 INFO  IntelPairHmm - Flush-to-zero (FTZ) is enabled when running PairHMM
+20:32:28.872 INFO  IntelPairHmm - Available threads: 12
+20:32:28.872 INFO  IntelPairHmm - Requested threads: 4
+20:32:28.872 INFO  PairHMM - Using the OpenMP multi-threaded AVX-accelerated native PairHMM implementation
+20:32:31.150 INFO  ProgressMeter - Starting traversal
+20:32:31.151 INFO  ProgressMeter -        Current Locus  Elapsed Minutes     Regions Processed   Regions/Minute
+20:32:32.316 WARN  InbreedingCoeff - InbreedingCoeff will not be calculated at position NC_027300.1:46680 and possibly subsequent; at least 10 samples must h                                ave called genotypes
+20:32:41.152 INFO  ProgressMeter -  NC_027300.1:2862573              0.2                 10020          60114.0
+20:32:51.152 INFO  ProgressMeter -  NC_027300.1:7958579              0.3                 27840          83515.8
+20:33:03.296 INFO  ProgressMeter - NC_027300.1:12334260              0.5                 43030          80317.3
+20:33:13.296 INFO  ProgressMeter - NC_027300.1:18306310              0.7                 63890          90957.4
+20:33:23.296 INFO  ProgressMeter - NC_027300.1:24336897              0.9                 84890          97677.6
+20:33:33.304 INFO  ProgressMeter - NC_027300.1:27505696              1.0                 95920          92597.3
+20:33:43.305 INFO  ProgressMeter - NC_027300.1:33584504              1.2                117050          97334.8
+20:33:53.312 INFO  ProgressMeter - NC_027300.1:38831991              1.4                135440          98908.2
+20:34:03.333 INFO  ProgressMeter - NC_027300.1:43693357              1.5                152490          99254.7
+20:34:13.343 INFO  ProgressMeter - NC_027300.1:50172130              1.7                174870         102671.4
+20:34:23.343 INFO  ProgressMeter - NC_027300.1:55767813              1.9                194430         103980.7
+20:34:33.348 INFO  ProgressMeter - NC_027300.1:61576533              2.0                214610         105375.7
+20:34:43.348 INFO  ProgressMeter - NC_027300.1:67321647              2.2                234570         106463.8
+20:34:53.350 INFO  ProgressMeter - NC_027300.1:74287153              2.4                258620         109123.1
+20:35:03.364 INFO  ProgressMeter - NC_027300.1:81970638              2.5                285080         112374.8
+20:35:13.363 INFO  ProgressMeter - NC_027300.1:88310459              2.7                307060         113577.3
+20:35:23.363 INFO  ProgressMeter - NC_027300.1:94854088              2.9                329720         114877.0
+20:35:33.365 INFO  ProgressMeter - NC_027300.1:102387922              3.0                355730         117135.9
+20:35:43.365 INFO  ProgressMeter - NC_027300.1:109990916              3.2                381970         119232.7
+20:35:53.365 INFO  ProgressMeter - NC_027300.1:116713624              3.4                405230         120238.0
+20:36:03.374 INFO  ProgressMeter - NC_027300.1:122926042              3.5                426800         120666.1
+20:36:13.373 INFO  ProgressMeter - NC_027300.1:129145457              3.7                448350         121054.6
+20:36:23.377 INFO  ProgressMeter - NC_027300.1:135322599              3.9                469830         121390.6
+20:36:33.381 INFO  ProgressMeter - NC_027300.1:141663011              4.0                491920         121847.8
+20:36:43.398 INFO  ProgressMeter - NC_027300.1:148179513              4.2                514430         122363.4
+20:36:53.401 INFO  ProgressMeter - NC_027300.1:154887371              4.4                537910         123068.1
+20:37:03.401 INFO  ProgressMeter -  NC_027301.1:1720097              4.5                558430         123070.0
+20:37:13.401 INFO  ProgressMeter -  NC_027301.1:8562382              4.7                582040         123728.6
+20:37:23.401 INFO  ProgressMeter - NC_027301.1:15541348              4.9                606240         124463.3
+20:37:33.414 INFO  ProgressMeter - NC_027301.1:21765073              5.0                627860         124631.9
+20:37:43.420 INFO  ProgressMeter - NC_027301.1:27470763              5.2                647650         124440.8
+20:37:53.423 INFO  ProgressMeter - NC_027301.1:34642733              5.4                672460         125197.3
+20:38:03.423 INFO  ProgressMeter - NC_027301.1:42505398              5.5                699450         126303.1
+20:38:13.423 INFO  ProgressMeter - NC_027301.1:48793581              5.7                721390         126459.1
+20:38:23.431 INFO  ProgressMeter - NC_027301.1:56451949              5.9                747920         127385.0
+20:38:33.431 INFO  ProgressMeter - NC_027301.1:64315160              6.0                775160         128380.3
+20:38:43.431 INFO  ProgressMeter -  NC_027302.1:1914239              6.2                811680         130817.7
+20:38:53.439 INFO  ProgressMeter -  NC_027302.1:9042005              6.4                836640         131310.8
+20:39:03.438 INFO  ProgressMeter - NC_027302.1:16924966              6.5                864150         132171.1
+20:39:13.441 INFO  ProgressMeter - NC_027302.1:25154723              6.7                892640         133133.8
+20:39:23.441 INFO  ProgressMeter - NC_027302.1:32443837              6.9                918060         133604.0
+20:39:33.452 INFO  ProgressMeter - NC_027302.1:40127889              7.0                944770         134231.7
+20:39:43.453 INFO  ProgressMeter - NC_027302.1:47458079              7.2                970150         134649.2
+20:39:53.455 INFO  ProgressMeter - NC_027302.1:53999345              7.4                992930         134694.2
+20:40:03.457 INFO  ProgressMeter - NC_027302.1:60579504              7.5               1015920         134765.4
+20:40:13.458 INFO  ProgressMeter - NC_027302.1:67323850              7.7               1039430         134901.3
+20:40:23.465 INFO  ProgressMeter - NC_027302.1:74949173              7.9               1065760         135388.2
+20:40:33.464 INFO  ProgressMeter - NC_027302.1:82574513              8.0               1092160         135865.3
+20:40:43.465 INFO  ProgressMeter - NC_027302.1:91592696              8.2               1123210         136889.5
+20:40:53.475 INFO  ProgressMeter -  NC_027303.1:7075973              8.4               1151140         137497.7
+20:41:03.476 INFO  ProgressMeter - NC_027303.1:15936814              8.5               1181960         138423.1
+20:41:13.479 INFO  ProgressMeter - NC_027303.1:22893650              8.7               1206150         138550.9
+20:41:23.479 INFO  ProgressMeter - NC_027303.1:31485123              8.9               1235610         139268.6
+20:41:33.483 INFO  ProgressMeter - NC_027303.1:37797352              9.0               1257700         139143.6
+20:41:43.484 INFO  ProgressMeter - NC_027303.1:44893952              9.2               1282330         139299.7
+20:41:53.491 INFO  ProgressMeter - NC_027303.1:51976116              9.4               1306940         139446.8
+20:42:03.492 INFO  ProgressMeter - NC_027303.1:59332624              9.5               1332380         139676.9
+20:42:13.493 INFO  ProgressMeter - NC_027303.1:66818876              9.7               1358260         139944.8
+20:42:23.501 INFO  ProgressMeter - NC_027303.1:76476391              9.9               1391820         140979.5
+20:42:33.502 INFO  ProgressMeter -  NC_027304.1:1558288             10.0               1418150         141261.5
+20:42:43.502 INFO  ProgressMeter -  NC_027304.1:9339430             10.2               1445260         141610.9
+20:42:53.510 INFO  ProgressMeter - NC_027304.1:18034082             10.4               1475310         142230.8
+20:43:03.515 INFO  ProgressMeter - NC_027304.1:25919184             10.5               1502570         142566.9
+20:43:13.516 INFO  ProgressMeter - NC_027304.1:33246563             10.7               1527990         142721.9
+20:43:23.515 INFO  ProgressMeter - NC_027304.1:40262697             10.9               1552410         142780.1
+20:43:33.609 INFO  ProgressMeter - NC_027304.1:49882904             11.0               1585580         143608.8
+20:43:43.621 INFO  ProgressMeter - NC_027304.1:57136708             11.2               1610990         143737.9
+20:43:53.621 INFO  ProgressMeter - NC_027304.1:64582907             11.4               1636820         143902.6
+20:44:03.622 INFO  ProgressMeter - NC_027304.1:71844204             11.5               1662010         144006.9
+20:44:13.624 INFO  ProgressMeter - NC_027304.1:80341018             11.7               1691520         144477.0
+20:44:23.641 INFO  ProgressMeter -  NC_027305.1:8137498             11.9               1720370         144875.3
+20:44:33.649 INFO  ProgressMeter - NC_027305.1:14890566             12.0               1743930         144825.0
+20:44:43.660 INFO  ProgressMeter - NC_027305.1:23146983             12.2               1772390         145176.9
+20:44:53.663 INFO  ProgressMeter - NC_027305.1:30284690             12.4               1797160         145222.7
+20:45:03.664 INFO  ProgressMeter - NC_027305.1:37188581             12.5               1821190         145208.8
+20:45:13.663 INFO  ProgressMeter - NC_027305.1:44128280             12.7               1845350         145205.6
+20:45:23.664 INFO  ProgressMeter - NC_027305.1:52791245             12.9               1875080         145634.8
+20:45:33.670 INFO  ProgressMeter - NC_027305.1:60067268             13.0               1900430         145716.5
+20:45:43.669 INFO  ProgressMeter - NC_027305.1:67718320             13.2               1927070         145894.7
+20:45:53.670 INFO  ProgressMeter - NC_027305.1:75163814             13.4               1952990         146014.5
+20:46:03.673 INFO  ProgressMeter - NC_027305.1:83299188             13.5               1981220         146301.7
+20:46:13.673 INFO  ProgressMeter -  NC_027306.1:3907237             13.7               2007950         146472.7
+20:46:23.683 INFO  ProgressMeter - NC_027306.1:13183459             13.9               2040370         147048.0
+20:46:33.689 INFO  ProgressMeter - NC_027306.1:19953457             14.0               2063970         146982.3
+20:46:43.704 INFO  ProgressMeter - NC_027306.1:25824932             14.2               2084630         146709.7
+20:46:53.704 INFO  ProgressMeter - NC_027306.1:34340375             14.4               2113870         147042.8
+20:47:03.705 INFO  ProgressMeter - NC_027306.1:40704782             14.5               2136250         146896.4
+20:47:13.708 INFO  ProgressMeter - NC_027306.1:47028583             14.7               2158440         146740.0
+20:47:23.718 INFO  ProgressMeter - NC_027306.1:56023269             14.9               2189910         147209.8
+20:47:33.733 INFO  ProgressMeter -  NC_027307.1:4600777             15.0               2215570         147282.1
+20:47:43.741 INFO  ProgressMeter - NC_027307.1:11976889             15.2               2241120         147346.8
+20:47:53.742 INFO  ProgressMeter - NC_027307.1:19243218             15.4               2266370         147391.6
+20:48:03.749 INFO  ProgressMeter - NC_027307.1:26105495             15.5               2290410         147356.9
+20:48:13.750 INFO  ProgressMeter -  NC_027308.1:6265937             15.7               2313440         147259.4
+20:48:23.752 INFO  ProgressMeter - NC_027308.1:12513434             15.9               2335300         147089.9
+20:48:33.753 INFO  ProgressMeter - NC_027308.1:19687797             16.0               2360250         147116.9
+20:48:43.763 INFO  ProgressMeter - NC_027308.1:26448301             16.2               2383810         147056.2
+20:48:53.763 INFO  ProgressMeter - NC_027308.1:36791096             16.4               2419420         147734.0
+20:49:03.764 INFO  ProgressMeter - NC_027308.1:47602405             16.5               2456580         148491.7
+20:49:13.770 INFO  ProgressMeter - NC_027308.1:58444429             16.7               2493680         149230.0
+20:49:23.770 INFO  ProgressMeter - NC_027308.1:66202287             16.9               2520500         149345.4
+20:49:33.777 INFO  ProgressMeter - NC_027308.1:73361712             17.0               2545470         149349.0
+20:49:43.778 INFO  ProgressMeter - NC_027308.1:81168815             17.2               2572570         149477.2
+20:49:53.788 INFO  ProgressMeter - NC_027308.1:90398306             17.4               2604260         149865.8
+20:50:03.803 INFO  ProgressMeter - NC_027308.1:94840858             17.5               2620050         149340.0
+20:50:13.803 INFO  ProgressMeter - NC_027308.1:98433527             17.7               2632900         148660.1
+20:50:23.821 INFO  ProgressMeter - NC_027308.1:100220545             17.9               2639740         147654.4
+20:50:33.822 INFO  ProgressMeter - NC_027308.1:107425665             18.0               2664650         147670.9
+20:50:43.823 INFO  ProgressMeter - NC_027308.1:114586592             18.2               2689510         147684.4
+20:50:53.830 INFO  ProgressMeter - NC_027308.1:122526623             18.4               2716940         147836.7
+20:51:03.837 INFO  ProgressMeter - NC_027308.1:131410611             18.5               2747760         148169.0
+20:51:13.849 INFO  ProgressMeter - NC_027308.1:138949628             18.7               2774090         148254.8
+20:51:23.851 INFO  ProgressMeter -  NC_027309.1:4720837             18.9               2800140         148325.6
+20:51:33.860 INFO  ProgressMeter - NC_027309.1:12314676             19.0               2826560         148413.8
+20:51:43.863 INFO  ProgressMeter - NC_027309.1:19033179             19.2               2849980         148344.8
+20:51:53.864 INFO  ProgressMeter - NC_027309.1:26230895             19.4               2874940         148356.8
+20:52:03.872 INFO  ProgressMeter - NC_027309.1:35633144             19.5               2907430         148753.2
+20:52:13.876 INFO  ProgressMeter - NC_027309.1:45770190             19.7               2942470         149272.4
+20:52:23.876 INFO  ProgressMeter - NC_027309.1:57423895             19.9               2982480         150033.6
+20:52:33.887 INFO  ProgressMeter - NC_027309.1:67194309             20.0               3016200         150466.9
+20:52:43.889 INFO  ProgressMeter - NC_027309.1:76155242             20.2               3047220         150760.7
+20:52:53.893 INFO  ProgressMeter - NC_027309.1:85359252             20.4               3079100         151091.6
+20:53:03.927 INFO  ProgressMeter - NC_027309.1:93190045             20.5               3106530         151196.8
+20:53:13.931 INFO  ProgressMeter - NC_027309.1:101786624             20.7               3136390         151421.3
+20:53:23.931 INFO  ProgressMeter - NC_027309.1:109019741             20.9               3161550         151417.6
+20:53:33.938 INFO  ProgressMeter - NC_027309.1:115972547             21.0               3185990         151379.0
+20:53:43.940 INFO  ProgressMeter -  NC_027310.1:7506597             21.2               3212570         151442.5
+20:53:53.944 INFO  ProgressMeter - NC_027310.1:13461714             21.4               3233460         151238.4
+20:54:03.945 INFO  ProgressMeter - NC_027310.1:20676035             21.5               3258490         151230.1
+20:54:13.961 INFO  ProgressMeter - NC_027310.1:29744739             21.7               3289700         151504.8
+20:54:23.966 INFO  ProgressMeter - NC_027310.1:37870319             21.9               3317850         151636.8
+20:54:33.967 INFO  ProgressMeter - NC_027310.1:46516702             22.0               3347780         151848.0
+20:54:43.967 INFO  ProgressMeter - NC_027310.1:54975761             22.2               3376830         152016.3
+20:54:53.971 INFO  ProgressMeter - NC_027310.1:62284158             22.4               3402170         152016.1
+20:55:03.974 INFO  ProgressMeter - NC_027310.1:69923576             22.5               3428560         152062.5
+20:55:13.974 INFO  ProgressMeter - NC_027310.1:78336440             22.7               3457780         152233.1
+20:55:23.974 INFO  ProgressMeter - NC_027310.1:88607103             22.9               3493310         152677.1
+20:55:33.983 INFO  ProgressMeter -  NC_027311.1:4459501             23.0               3527270         153045.5
+20:55:43.986 INFO  ProgressMeter - NC_027311.1:14450169             23.2               3561860         153436.4
+20:55:53.987 INFO  ProgressMeter - NC_027311.1:24333430             23.4               3595970         153801.4
+20:56:03.991 INFO  ProgressMeter - NC_027311.1:35023147             23.5               3632630         154269.3
+20:56:13.993 INFO  ProgressMeter - NC_027311.1:44598047             23.7               3665640         154576.8
+20:56:23.997 INFO  ProgressMeter - NC_027311.1:51939789             23.9               3691020         154560.4
+20:56:33.997 INFO  ProgressMeter - NC_027311.1:60458264             24.0               3720520         154715.9
+20:56:43.999 INFO  ProgressMeter - NC_027311.1:67095451             24.2               3743620         154604.7
+20:56:54.002 INFO  ProgressMeter - NC_027311.1:74560222             24.4               3769480         154608.2
+20:57:04.009 INFO  ProgressMeter - NC_027311.1:83401825             24.5               3800170         154808.0
+20:57:14.016 INFO  ProgressMeter -   NC_027312.1:393646             24.7               3831160         155017.2
+20:57:24.024 INFO  ProgressMeter -  NC_027312.1:9952190             24.9               3864510         155318.4
+20:57:34.027 INFO  ProgressMeter - NC_027312.1:18044914             25.0               3892800         155414.0
+20:57:44.031 INFO  ProgressMeter - NC_027312.1:25510006             25.2               3918820         155418.4
+20:57:54.034 INFO  ProgressMeter - NC_027312.1:33780779             25.4               3947230         155516.7
+20:58:04.034 INFO  ProgressMeter - NC_027312.1:43155591             25.5               3979600         155769.2
+20:58:14.041 INFO  ProgressMeter - NC_027312.1:51013593             25.7               4006620         155809.8
+20:58:24.040 INFO  ProgressMeter - NC_027312.1:58336139             25.9               4031890         155782.8
+20:58:34.041 INFO  ProgressMeter - NC_027312.1:66779505             26.0               4060910         155900.0
+20:58:44.044 INFO  ProgressMeter - NC_027312.1:75750114             26.2               4091810         156087.3
+20:58:54.045 INFO  ProgressMeter - NC_027312.1:82649295             26.4               4115760         156009.0
+20:59:04.044 INFO  ProgressMeter - NC_027312.1:91600771             26.5               4146670         156193.9
+20:59:14.046 INFO  ProgressMeter - NC_027312.1:99892526             26.7               4175560         156300.8
+20:59:24.046 INFO  ProgressMeter -   NC_027313.1:459240             26.9               4204800         156419.4
+20:59:34.046 INFO  ProgressMeter -  NC_027313.1:8420123             27.0               4232510         156480.0
+20:59:44.047 INFO  ProgressMeter - NC_027313.1:16298843             27.2               4260040         156533.2
+20:59:54.048 INFO  ProgressMeter - NC_027313.1:23459571             27.4               4284910         156488.6
+21:00:04.048 INFO  ProgressMeter - NC_027313.1:30840109             27.5               4310520         156471.5
+21:00:14.049 INFO  ProgressMeter - NC_027313.1:39125115             27.7               4339020         156558.8
+21:00:24.048 INFO  ProgressMeter - NC_027313.1:49041514             27.9               4373170         156847.8
+21:00:34.048 INFO  ProgressMeter - NC_027313.1:59726430             28.0               4409730         157219.2
+21:00:44.049 INFO  ProgressMeter - NC_027313.1:67233891             28.2               4435790         157214.1
+21:00:54.050 INFO  ProgressMeter - NC_027313.1:74748822             28.4               4461770         157206.2
+21:01:04.055 INFO  ProgressMeter - NC_027313.1:84487016             28.5               4495610         157473.3
+21:01:14.063 INFO  ProgressMeter - NC_027313.1:92448501             28.7               4523550         157531.6
+21:01:24.084 INFO  ProgressMeter -  NC_027314.1:6530003             28.9               4551560         157590.4
+21:01:34.084 INFO  ProgressMeter - NC_027314.1:17013423             29.0               4587890         157936.9
+21:01:44.084 INFO  ProgressMeter - NC_027314.1:25374359             29.2               4616980         158031.6
+21:01:54.084 INFO  ProgressMeter - NC_027314.1:32832589             29.4               4642950         158019.1
+21:02:04.119 INFO  ProgressMeter - NC_027314.1:41169686             29.5               4671740         158099.0
+21:02:14.121 INFO  ProgressMeter - NC_027314.1:48997627             29.7               4698710         158119.7
+21:02:24.122 INFO  ProgressMeter - NC_027314.1:57631947             29.9               4728310         158228.2
+21:02:34.123 INFO  ProgressMeter - NC_027314.1:66304424             30.0               4758240         158346.6
+21:02:44.126 INFO  ProgressMeter - NC_027314.1:75666859             30.2               4790420         158537.9
+21:02:54.127 INFO  ProgressMeter - NC_027314.1:83723603             30.4               4818140         158580.5
+21:03:04.138 INFO  ProgressMeter - NC_027314.1:91795002             30.5               4846040         158627.6
+21:03:14.145 INFO  ProgressMeter - NC_027314.1:101613416             30.7               4880200         158878.4
+21:03:24.151 INFO  ProgressMeter -  NC_027315.1:6183689             30.9               4909760         158977.7
+21:03:34.160 INFO  ProgressMeter - NC_027315.1:13831628             31.1               4936230         158976.0
+21:03:44.160 INFO  ProgressMeter - NC_027315.1:21781384             31.2               4963930         159014.6
+21:03:54.161 INFO  ProgressMeter - NC_027315.1:31067137             31.4               4996080         159194.5
+21:04:04.161 INFO  ProgressMeter - NC_027315.1:40583340             31.6               5028880         159393.1
+21:04:14.161 INFO  ProgressMeter - NC_027315.1:50256293             31.7               5062230         159607.0
+21:04:24.161 INFO  ProgressMeter - NC_027315.1:60230823             31.9               5096540         159848.8
+21:04:34.161 INFO  ProgressMeter - NC_027315.1:70249483             32.1               5131010         160093.1
+21:04:44.162 INFO  ProgressMeter - NC_027315.1:78547059             32.2               5159620         160152.8
+21:04:54.163 INFO  ProgressMeter - NC_027315.1:87015258             32.4               5189030         160236.7
+21:05:04.165 INFO  ProgressMeter -  NC_027316.1:6688583             32.6               5214970         160213.1
+21:05:14.164 INFO  ProgressMeter - NC_027316.1:13398249             32.7               5238410         160113.4
+21:05:24.164 INFO  ProgressMeter - NC_027316.1:23570331             32.9               5273440         160367.1
+21:05:34.164 INFO  ProgressMeter - NC_027316.1:33759347             33.1               5308660         160624.1
+21:05:44.169 INFO  ProgressMeter - NC_027316.1:43386444             33.2               5341790         160815.1
+21:05:54.171 INFO  ProgressMeter - NC_027316.1:50893398             33.4               5367910         160794.6
+21:06:04.170 INFO  ProgressMeter -  NC_027317.1:1417579             33.6               5396530         160848.9
+21:06:14.170 INFO  ProgressMeter -  NC_027317.1:8381245             33.7               5420800         160773.6
+21:06:24.174 INFO  ProgressMeter - NC_027317.1:15276880             33.9               5444900         160693.7
+21:06:34.176 INFO  ProgressMeter - NC_027317.1:24144266             34.1               5475580         160808.0
+21:06:44.178 INFO  ProgressMeter - NC_027317.1:33229772             34.2               5507110         160946.1
+21:06:54.179 INFO  ProgressMeter - NC_027317.1:42617410             34.4               5539500         161107.8
+21:07:04.186 INFO  ProgressMeter - NC_027317.1:52457063             34.6               5573290         161308.1
+21:07:14.191 INFO  ProgressMeter - NC_027317.1:62606082             34.7               5608310         161542.1
+21:07:24.192 INFO  ProgressMeter - NC_027317.1:69902139             34.9               5633770         161500.1
+21:07:34.198 INFO  ProgressMeter -  NC_027318.1:6218883             35.1               5658140         161426.9
+21:07:44.202 INFO  ProgressMeter - NC_027318.1:14467813             35.2               5686860         161478.2
+21:07:54.206 INFO  ProgressMeter - NC_027318.1:23067571             35.4               5716570         161556.9
+21:08:04.210 INFO  ProgressMeter - NC_027318.1:31220850             35.6               5744600         161587.7
+21:08:14.213 INFO  ProgressMeter - NC_027318.1:42353752             35.7               5782810         161903.2
+21:08:24.219 INFO  ProgressMeter - NC_027318.1:52527686             35.9               5817860         162127.5
+21:08:34.225 INFO  ProgressMeter - NC_027318.1:62497780             36.1               5852150         162328.7
+21:08:44.230 INFO  ProgressMeter - NC_027318.1:72662494             36.2               5887240         162550.3
+21:08:54.237 INFO  ProgressMeter - NC_027318.1:81360496             36.4               5917700         162642.2
+21:09:04.237 INFO  ProgressMeter -  NC_027319.1:4994757             36.6               5940860         162534.3
+21:09:14.238 INFO  ProgressMeter - NC_027319.1:10393466             36.7               5960010         162318.0
+21:09:24.239 INFO  ProgressMeter - NC_027319.1:16837239             36.9               5982480         162193.6
+21:09:34.239 INFO  ProgressMeter - NC_027319.1:24492950             37.1               6009040         162180.9
+21:09:44.239 INFO  ProgressMeter - NC_027319.1:33491805             37.2               6040280         162294.0
+21:09:54.239 INFO  ProgressMeter - NC_027319.1:44119709             37.4               6076750         162546.0
+21:10:04.242 INFO  ProgressMeter - NC_027319.1:54365072             37.6               6112030         162763.9
+21:10:14.249 INFO  ProgressMeter - NC_027319.1:64158095             37.7               6145870         162941.3
+21:10:24.253 INFO  ProgressMeter - NC_027319.1:75530869             37.9               6185150         163261.0
+21:10:34.253 INFO  ProgressMeter - NC_027319.1:84637340             38.1               6216970         163382.2
+21:10:44.254 INFO  ProgressMeter -  NC_027320.1:7660013             38.2               6250850         163556.1
+21:10:54.265 INFO  ProgressMeter - NC_027320.1:16892760             38.4               6282870         163679.3
+21:11:04.269 INFO  ProgressMeter - NC_027320.1:24729606             38.6               6309990         163675.0
+21:11:14.271 INFO  ProgressMeter - NC_027320.1:34819823             38.7               6344630         163864.9
+21:11:24.284 INFO  ProgressMeter - NC_027320.1:44443962             38.9               6377790         164014.4
+21:11:34.295 INFO  ProgressMeter - NC_027320.1:53243798             39.1               6408410         164097.7
+21:11:44.304 INFO  ProgressMeter -  NC_027321.1:3351424             39.2               6436730         164121.8
+21:11:54.308 INFO  ProgressMeter -  NC_027321.1:9938309             39.4               6459900         164015.4
+21:12:04.310 INFO  ProgressMeter - NC_027321.1:16519795             39.6               6482880         163905.1
+21:12:14.310 INFO  ProgressMeter - NC_027321.1:24617438             39.7               6510910         163923.0
+21:12:24.315 INFO  ProgressMeter - NC_027321.1:31676239             39.9               6535410         163852.0
+21:12:34.315 INFO  ProgressMeter - NC_027321.1:40431966             40.1               6565680         163925.9
+21:12:44.317 INFO  ProgressMeter - NC_027321.1:49810625             40.2               6598000         164050.0
+21:12:54.319 INFO  ProgressMeter - NC_027321.1:57619961             40.4               6625120         164044.4
+21:13:04.319 INFO  ProgressMeter -  NC_027322.1:1568295             40.6               6650920         164006.4
+21:13:14.321 INFO  ProgressMeter -  NC_027322.1:9251309             40.7               6677600         163990.2
+21:13:24.325 INFO  ProgressMeter - NC_027322.1:16280049             40.9               6702040         163919.2
+21:13:34.329 INFO  ProgressMeter - NC_027322.1:22799735             41.1               6724760         163806.9
+21:13:44.332 INFO  ProgressMeter - NC_027322.1:30560063             41.2               6751760         163799.4
+21:13:54.344 INFO  ProgressMeter - NC_027322.1:38270513             41.4               6778630         163788.2
+21:14:04.358 INFO  ProgressMeter - NC_027322.1:46345171             41.6               6806780         163807.8
+21:14:14.360 INFO  ProgressMeter -  NC_027323.1:3192658             41.7               6830110         163712.5
+21:14:24.360 INFO  ProgressMeter -  NC_027323.1:8893926             41.9               6850060         163537.4
+21:14:34.369 INFO  ProgressMeter - NC_027323.1:16546520             42.1               6876650         163520.9
+21:14:44.369 INFO  ProgressMeter - NC_027323.1:24594118             42.2               6904530         163535.8
+21:14:54.374 INFO  ProgressMeter - NC_027323.1:34025196             42.4               6936720         163651.9
+21:15:04.373 INFO  ProgressMeter - NC_027323.1:42299330             42.6               6965460         163686.4
+21:15:14.376 INFO  ProgressMeter -  NC_027324.1:1153860             42.7               6991760         163663.3
+21:15:24.377 INFO  ProgressMeter -  NC_027324.1:9857623             42.9               7021790         163727.4
+21:15:34.377 INFO  ProgressMeter - NC_027324.1:17653284             43.1               7048940         163724.2
+21:15:44.377 INFO  ProgressMeter - NC_027324.1:25188979             43.2               7075070         163697.4
+21:15:54.377 INFO  ProgressMeter - NC_027324.1:33990004             43.4               7105360         163766.6
+21:16:04.377 INFO  ProgressMeter - NC_027324.1:42882427             43.6               7136080         163845.3
+21:16:14.381 INFO  ProgressMeter -   NC_027325.1:116655             43.7               7166460         163915.3
+21:16:24.384 INFO  ProgressMeter -  NC_027325.1:6796495             43.9               7189600         163819.9
+21:16:34.394 INFO  ProgressMeter - NC_027325.1:12996715             44.1               7211240         163690.7
+21:16:44.395 INFO  ProgressMeter - NC_027325.1:19798654             44.2               7234800         163606.5
+21:16:54.397 INFO  ProgressMeter - NC_027325.1:28459016             44.4               7264860         163669.3
+21:17:04.400 INFO  ProgressMeter - NC_027325.1:39240515             44.6               7302030         163891.1
+21:17:14.406 INFO  ProgressMeter -  NC_027326.1:1677566             44.7               7337930         164082.8
+21:17:24.420 INFO  ProgressMeter -  NC_027326.1:9301482             44.9               7364630         164067.5
+21:17:34.420 INFO  ProgressMeter - NC_027326.1:16932976             45.1               7391290         164052.3
+21:17:44.427 INFO  ProgressMeter - NC_027326.1:24373365             45.2               7417130         164018.6
+21:17:54.427 INFO  ProgressMeter - NC_027326.1:32804368             45.4               7446570         164065.0
+21:18:04.437 INFO  ProgressMeter - NC_027326.1:41659885             45.6               7477610         164145.6
+21:18:14.437 INFO  ProgressMeter -  NC_027327.1:6351932             45.7               7507690         164205.0
+21:18:24.444 INFO  ProgressMeter - NC_027327.1:13435597             45.9               7532490         164148.7
+21:18:34.450 INFO  ProgressMeter - NC_027327.1:21097826             46.1               7559230         164134.9
+21:18:44.452 INFO  ProgressMeter - NC_027327.1:28572732             46.2               7585500         164111.3
+21:18:54.454 INFO  ProgressMeter - NC_027327.1:37872969             46.4               7618030         164222.9
+21:19:04.455 INFO  ProgressMeter -  NC_027328.1:8136131             46.6               7652110         164366.9
+21:19:14.457 INFO  ProgressMeter - NC_027328.1:16997679             46.7               7682980         164441.1
+21:19:24.467 INFO  ProgressMeter - NC_027328.1:25877067             46.9               7713810         164513.5
+21:19:34.468 INFO  ProgressMeter - NC_027328.1:36238949             47.1               7749850         164696.8
+21:19:44.467 INFO  ProgressMeter - NW_012342623.1:21601             47.2               7790960         164986.0
+21:19:54.467 INFO  ProgressMeter -   NW_012525148.1:901             47.4               7829190         165212.5
+21:20:04.469 INFO  ProgressMeter -  NW_012344283.1:4435             47.6               7884210         165790.4
+21:20:14.468 INFO  ProgressMeter -     NW_012475660.1:1             47.7               7937120         166320.1
+21:20:24.469 INFO  ProgressMeter -  NW_012382916.1:1086             47.9               7989700         166839.2
+21:20:34.470 INFO  ProgressMeter -  NW_012364685.1:4501             48.1               8043970         167389.9
+21:20:44.478 INFO  ProgressMeter -  NW_012348712.1:8297             48.2               8096770         167905.7
+21:20:54.478 INFO  ProgressMeter -  NW_012359406.1:3001             48.4               8145560         168335.7
+21:21:04.482 INFO  ProgressMeter -   NW_012371628.1:468             48.6               8202300         168926.2
+21:21:14.482 INFO  ProgressMeter -   NW_012562425.1:301             48.7               8259270         169517.6
+21:21:24.485 INFO  ProgressMeter -   NW_012388227.1:901             48.9               8309460         169966.2
+21:21:34.486 INFO  ProgressMeter -   NW_012570843.1:301             49.1               8363450         170489.3
+21:21:44.487 INFO  ProgressMeter -  NW_012379681.1:2101             49.2               8410540         170868.6
+21:21:54.488 INFO  ProgressMeter -  NW_012362578.1:3901             49.4               8460400         171301.5
+21:22:04.489 INFO  ProgressMeter - NW_012345555.1:37500             49.6               8508040         171686.6
+21:22:14.502 INFO  ProgressMeter -     NW_012566688.1:1             49.7               8560070         172156.8
+21:22:24.502 INFO  ProgressMeter -   NW_012396034.1:901             49.9               8613940         172661.5
+21:22:34.504 INFO  ProgressMeter -  NW_012374101.1:1098             50.1               8671330         173233.0
+21:22:44.504 INFO  ProgressMeter -  NW_012365201.1:3301             50.2               8725650         173739.7
+21:22:54.510 INFO  ProgressMeter - NW_012348976.1:11727             50.4               8772620         174096.8
+21:23:04.511 INFO  ProgressMeter -  NW_012394575.1:1201             50.6               8816890         174398.5
+21:23:14.512 INFO  ProgressMeter - NW_012343296.1:30301             50.7               8859460         174664.7
+21:23:24.512 INFO  ProgressMeter -  NW_012352268.1:4201             50.9               8907750         175041.5
+21:23:34.512 INFO  ProgressMeter - NW_012348052.1:15383             51.1               8958380         175461.8
+21:23:44.512 INFO  ProgressMeter -  NW_012374379.1:1801             51.2               9005710         175814.9
+21:23:54.520 INFO  ProgressMeter -   NW_012432025.1:864             51.4               9059780         176296.4
+21:24:04.520 INFO  ProgressMeter -  NW_012354462.1:1201             51.6               9115810         176813.2
+21:24:14.520 INFO  ProgressMeter -   NW_012543603.1:301             51.7               9171410         177318.5
+21:24:24.523 INFO  ProgressMeter -  NW_012353714.1:9889             51.9               9211180         177515.2
+21:24:34.530 INFO  ProgressMeter -  NW_012356322.1:7319             52.1               9250600         177703.8
+21:24:44.529 INFO  ProgressMeter -   NW_012397004.1:601             52.2               9290590         177902.4
+21:24:54.543 INFO  ProgressMeter -   NW_012440357.1:901             52.4               9340160         178281.8
+21:25:04.543 INFO  ProgressMeter - NW_012348163.1:16201             52.6               9391470         178692.7
+21:25:14.546 INFO  ProgressMeter -     NW_012356453.1:1             52.7               9444510         179133.7
+21:25:24.546 INFO  ProgressMeter -  NW_012476203.1:1201             52.9               9497000         179561.6
+21:25:36.771 INFO  ProgressMeter - NW_012343198.1:142534             53.1               9555570         179975.7
+21:25:46.771 INFO  ProgressMeter -   NW_012390556.1:601             53.3               9574070         179759.9
+21:25:56.801 INFO  ProgressMeter -     NW_012371499.1:1             53.4               9631400         180270.5
+21:26:06.801 INFO  ProgressMeter -  NW_012424061.1:1201             53.6               9690020         180803.6
+21:26:16.801 INFO  ProgressMeter - NW_012343247.1:22201             53.8               9745810         181280.9
+21:26:26.801 INFO  ProgressMeter -     NW_012407538.1:1             53.9               9802000         181762.6
+21:26:36.805 INFO  ProgressMeter -    NW_012343806.1:45             54.1               9857520         182228.7
+21:26:46.805 INFO  ProgressMeter -   NW_012375894.1:901             54.3               9905140         182546.5
+21:26:57.002 INFO  ProgressMeter - NW_012343689.1:33004             54.4               9954220         182878.3
+21:27:07.004 INFO  ProgressMeter -   NW_012483465.1:901             54.6              10003800         183228.0
+21:27:17.004 INFO  ProgressMeter -   NW_012365489.1:601             54.8              10062460         183741.5
+21:27:27.004 INFO  ProgressMeter -   NW_012546084.1:301             54.9              10114470         184130.8
+21:27:37.023 INFO  ProgressMeter -  NW_012363170.1:5401             55.1              10175040         184672.1
+21:27:47.023 INFO  ProgressMeter -  NW_012360167.1:5701             55.3              10229080         185093.0
+21:27:57.025 INFO  ProgressMeter -   NW_012549981.1:828             55.4              10284180         185530.4
+21:28:07.026 INFO  ProgressMeter -  NW_012360450.1:4383             55.6              10341320         186002.0
+21:28:15.362 INFO  HaplotypeCaller - 0 read(s) filtered by: MappingQualityReadFilter
+0 read(s) filtered by: MappingQualityAvailableReadFilter
+0 read(s) filtered by: MappedReadFilter
+0 read(s) filtered by: NotSecondaryAlignmentReadFilter
+0 read(s) filtered by: NotDuplicateReadFilter
+0 read(s) filtered by: PassesVendorQualityCheckReadFilter
+0 read(s) filtered by: NonZeroReferenceLengthAlignmentReadFilter
+0 read(s) filtered by: GoodCigarReadFilter
+0 read(s) filtered by: WellformedReadFilter
+0 total reads filtered
+21:28:15.363 INFO  ProgressMeter -    NC_001960.1:15425             55.7              10381054         186251.1
+21:28:15.363 INFO  ProgressMeter - Traversal complete. Processed 10381054 total regions in 55.7 minutes.
+21:28:16.142 INFO  VectorLoglessPairHMM - Time spent in setup for JNI call : 0.190911622
+21:28:16.142 INFO  PairHMM - Total compute time in PairHMM computeLogLikelihoods() : 38.665259429
+21:28:16.142 INFO  SmithWatermanAligner - Total compute time in java Smith-Waterman : 54.32 sec
+21:28:16.142 INFO  HaplotypeCaller - Shutting down engine
+[24 de junio de 2021 21:28:16 CLT] org.broadinstitute.hellbender.tools.walkers.haplotypecaller.HaplotypeCaller done. Elapsed time: 56.37 minutes.
+Runtime.totalMemory()=4638900224
+
+(base) [jacqueline.vasquez@test-pomeo ~]$ ls
+alineamiento  Miniconda3-latest-Linux-x86_64.sh  R           script2.sh   sratoolkit.2.11.0-centos_linux64          variant_call
+miniconda3    picard.jar                         script1.sh  SRA_samples  sratoolkit.current-centos_linux64.tar.gz
+(base) [jacqueline.vasquez@test-pomeo ~]$ cd variant_call
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ ls -l -h
+total 3,7G
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  32M may 24  2017 picard.jar
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  19M jun 24 21:28 raw_variants.vcf
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 5,8M jun 24 21:28 raw_variants.vcf.idx
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  29M jun 24 20:09 ref_genome.dict
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 2,9G dic  4  2019 ref_genome.fna
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 8,3M jun 21 04:44 ref_genome.fna.fai
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 354M may  5 17:38 SRR2006763.sort.bam
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 6,8M may  5 17:38 SRR2006763.sort.bam.bai
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 355M jun 24 20:26 SSRR2006763_sorted_RG.bam
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 6,8M jun 24 20:27 SSRR2006763_sorted_RG.bam.bai
+
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ less raw_variants.vcf
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ head -n 30 raw_variants.vcf
+##fileformat=VCFv4.2
+##FILTER=<ID=LowQual,Description="Low quality">
+##FORMAT=<ID=AD,Number=R,Type=Integer,Description="Allelic depths for the ref and alt alleles in the order listed">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth (reads with MQ=255 or with bad mates are filtered)">
+##FORMAT=<ID=GQ,Number=1,Type=Integer,Description="Genotype Quality">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=PL,Number=G,Type=Integer,Description="Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification">
+##GATKCommandLine=<ID=HaplotypeCaller,CommandLine="HaplotypeCaller --output raw_variants.vcf --input SSRR2006763_sorted_RG.bam --reference ref_genome.fna --use-posteriors-to-calculate-qual false --dont-use-dragstr-priors false --use-new-qual-calculator true --annotate-with-num-discovered-alleles false --heterozygosity 0.001 --indel-heterozygosity 1.25E-4 --heterozygosity-stdev 0.01 --standard-min-confidence-threshold-for-calling 30.0 --max-alternate-alleles 6 --max-genotype-count 1024 --sample-ploidy 2 --num-reference-samples-if-no-call 0 --genotype-assignment-method USE_PLS_TO_ASSIGN --contamination-fraction-to-filter 0.0 --output-mode EMIT_VARIANTS_ONLY --all-site-pls false --gvcf-gq-bands 1 --gvcf-gq-bands 2 --gvcf-gq-bands 3 --gvcf-gq-bands 4 --gvcf-gq-bands 5 --gvcf-gq-bands 6 --gvcf-gq-bands 7 --gvcf-gq-bands 8 --gvcf-gq-bands 9 --gvcf-gq-bands 10 --gvcf-gq-bands 11 --gvcf-gq-bands 12 --gvcf-gq-bands 13 --gvcf-gq-bands 14 --gvcf-gq-bands 15 --gvcf-gq-bands 16 --gvcf-gq-bands 17 --gvcf-gq-bands 18 --gvcf-gq-bands 19 --gvcf-gq-bands 20 --gvcf-gq-bands 21 --gvcf-gq-bands 22 --gvcf-gq-bands 23 --gvcf-gq-bands 24 --gvcf-gq-bands 25 --gvcf-gq-bands 26 --gvcf-gq-bands 27 --gvcf-gq-bands 28 --gvcf-gq-bands 29 --gvcf-gq-bands 30 --gvcf-gq-bands 31 --gvcf-gq-bands 32 --gvcf-gq-bands 33 --gvcf-gq-bands 34 --gvcf-gq-bands 35 --gvcf-gq-bands 36 --gvcf-gq-bands 37 --gvcf-gq-bands 38 --gvcf-gq-bands 39 --gvcf-gq-bands 40 --gvcf-gq-bands 41 --gvcf-gq-bands 42 --gvcf-gq-bands 43 --gvcf-gq-bands 44 --gvcf-gq-bands 45 --gvcf-gq-bands 46 --gvcf-gq-bands 47 --gvcf-gq-bands 48 --gvcf-gq-bands 49 --gvcf-gq-bands 50 --gvcf-gq-bands 51 --gvcf-gq-bands 52 --gvcf-gq-bands 53 --gvcf-gq-bands 54 --gvcf-gq-bands 55 --gvcf-gq-bands 56 --gvcf-gq-bands 57 --gvcf-gq-bands 58 --gvcf-gq-bands 59 --gvcf-gq-bands 60 --gvcf-gq-bands 70 --gvcf-gq-bands 80 --gvcf-gq-bands 90 --gvcf-gq-bands 99 --floor-blocks false --indel-size-to-eliminate-in-ref-model 10 --disable-optimizations false --dragen-mode false --apply-bqd false --apply-frd false --disable-spanning-event-genotyping false --transform-dragen-mapping-quality false --mapping-quality-threshold-for-genotyping 20 --max-effective-depth-adjustment-for-frd 0 --just-determine-active-regions false --dont-genotype false --do-not-run-physical-phasing false --do-not-correct-overlapping-quality false --use-filtered-reads-for-annotations false --adaptive-pruning false --do-not-recover-dangling-branches false --recover-dangling-heads false --kmer-size 10 --kmer-size 25 --dont-increase-kmer-sizes-for-cycles false --allow-non-unique-kmers-in-ref false --num-pruning-samples 1 --min-dangling-branch-length 4 --recover-all-dangling-branches false --max-num-haplotypes-in-population 128 --min-pruning 2 --adaptive-pruning-initial-error-rate 0.001 --pruning-lod-threshold 2.302585092994046 --pruning-seeding-lod-threshold 9.210340371976184 --max-unpruned-variants 100 --linked-de-bruijn-graph false --disable-artificial-haplotype-recovery false --enable-legacy-graph-cycle-detection false --debug-assembly false --debug-graph-transformations false --capture-assembly-failure-bam false --num-matching-bases-in-dangling-end-to-recover -1 --error-correction-log-odds -Infinity --error-correct-reads false --kmer-length-for-read-error-correction 25 --min-observations-for-kmer-to-be-solid 20 --base-quality-score-threshold 18 --dragstr-het-hom-ratio 2 --dont-use-dragstr-pair-hmm-scores false --pair-hmm-gap-continuation-penalty 10 --expected-mismatch-rate-for-read-disqualification 0.02 --pair-hmm-implementation FASTEST_AVAILABLE --pcr-indel-model CONSERVATIVE --phred-scaled-global-read-mismapping-rate 45 --disable-symmetric-hmm-normalizing false --disable-cap-base-qualities-to-map-quality false --enable-dynamic-read-disqualification-for-genotyping false --dynamic-read-disqualification-threshold 1.0 --native-pair-hmm-threads 4 --native-pair-hmm-use-double-precision false --bam-writer-type CALLED_HAPLOTYPES --dont-use-soft-clipped-bases false --min-base-quality-score 10 --smith-waterman JAVA --emit-ref-confidence NONE --max-mnp-distance 0 --force-call-filtered-alleles false --soft-clip-low-quality-ends false --allele-informative-reads-overlap-margin 2 --min-assembly-region-size 50 --max-assembly-region-size 300 --active-probability-threshold 0.002 --max-prob-propagation-distance 50 --force-active false --assembly-region-padding 100 --padding-around-indels 75 --padding-around-snps 20 --padding-around-strs 75 --max-extension-into-assembly-region-padding-legacy 25 --max-reads-per-alignment-start 50 --enable-legacy-assembly-region-trimming false --interval-set-rule UNION --interval-padding 0 --interval-exclusion-padding 0 --interval-merging-rule ALL --read-validation-stringency SILENT --seconds-between-progress-updates 10.0 --disable-sequence-dictionary-validation false --create-output-bam-index true --create-output-bam-md5 false --create-output-variant-index true --create-output-variant-md5 false --lenient false --add-output-sam-program-record true --add-output-vcf-command-line true --cloud-prefetch-buffer 40 --cloud-index-prefetch-buffer -1 --disable-bam-index-caching false --sites-only-vcf-output false --help false --version false --showHidden false --verbosity INFO --QUIET false --use-jdk-deflater false --use-jdk-inflater false --gcs-max-retries 20 --gcs-project-for-requester-pays  --disable-tool-default-read-filters false --minimum-mapping-quality 20 --disable-tool-default-annotations false --enable-all-annotations false --allow-old-rms-mapping-quality-annotation-data false",Version="4.2.0.0",Date="24 de junio de 2021 20:32:28 CLT">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes, for each ALT allele, in the same order as listed">
+##INFO=<ID=AF,Number=A,Type=Float,Description="Allele Frequency, for each ALT allele, in the same order as listed">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=BaseQRankSum,Number=1,Type=Float,Description="Z-score from Wilcoxon rank sum test of Alt Vs. Ref base qualities">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth; some reads may have been filtered">
+##INFO=<ID=ExcessHet,Number=1,Type=Float,Description="Phred-scaled p-value for exact test of excess heterozygosity">
+##INFO=<ID=FS,Number=1,Type=Float,Description="Phred-scaled p-value using Fisher's exact test to detect strand bias">
+##INFO=<ID=InbreedingCoeff,Number=1,Type=Float,Description="Inbreeding coefficient as estimated from the genotype likelihoods per-sample when compared against the Hardy-Weinberg expectation">
+##INFO=<ID=MLEAC,Number=A,Type=Integer,Description="Maximum likelihood expectation (MLE) for the allele counts (not necessarily the same as the AC), for each ALT allele, in the same order as listed">
+##INFO=<ID=MLEAF,Number=A,Type=Float,Description="Maximum likelihood expectation (MLE) for the allele frequency (not necessarily the same as the AF), for each ALT allele, in the same order as listed">
+##INFO=<ID=MQ,Number=1,Type=Float,Description="RMS Mapping Quality">
+##INFO=<ID=MQRankSum,Number=1,Type=Float,Description="Z-score From Wilcoxon rank sum test of Alt vs. Ref read mapping qualities">
+##INFO=<ID=QD,Number=1,Type=Float,Description="Variant Confidence/Quality by Depth">
+##INFO=<ID=ReadPosRankSum,Number=1,Type=Float,Description="Z-score from Wilcoxon rank sum test of Alt vs. Ref read position bias">
+##INFO=<ID=SOR,Number=1,Type=Float,Description="Symmetric Odds Ratio of 2x2 contingency table to detect strand bias">
+##contig=<ID=NC_027300.1,length=159038749>
+##contig=<ID=NC_027301.1,length=72943711>
+##contig=<ID=NC_027302.1,length=92503428>
+##contig=<ID=NC_027303.1,length=82398023>
+##contig=<ID=NC_027304.1,length=80503876>
+##contig=<ID=NC_027305.1,length=87043187>
+##contig=<ID=NC_027306.1,length=58785265>
+
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ tail -n 30 raw_variants.vcf
+NC_001960.1     6402    .       CT      C       735.03  .       AC=2;AF=1.00;AN=2;DP=20;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=29.33;SOR=2.093        GT:AD:DP:GQ:PL  1/1:0,20:20:60:749,60,0
+NC_001960.1     6970    .       C       T       650.06  .       AC=2;AF=1.00;AN=2;DP=19;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=32.52;SOR=2.712        GT:AD:DP:GQ:PL  1/1:0,17:17:51:664,51,0
+NC_001960.1     6982    .       T       G       685.06  .       AC=2;AF=1.00;AN=2;DP=19;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=30.08;SOR=2.303        GT:AD:DP:GQ:PL  1/1:0,18:18:54:699,54,0
+NC_001960.1     7060    .       A       G       660.06  .       AC=2;AF=1.00;AN=2;DP=17;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=26.46;SOR=0.804        GT:AD:DP:GQ:PL  1/1:0,17:17:51:674,51,0
+NC_001960.1     7153    .       G       A       763.06  .       AC=2;AF=1.00;AN=2;DP=20;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=34.57;SOR=4.615        GT:AD:DP:GQ:PL  1/1:0,20:20:60:777,60,0
+NC_001960.1     7210    .       C       T       845.06  .       AC=2;AF=1.00;AN=2;DP=23;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=28.11;SOR=1.329        GT:AD:DP:GQ:PL  1/1:0,22:22:66:859,66,0
+NC_001960.1     7285    .       T       C       372.06  .       AC=2;AF=1.00;AN=2;DP=20;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=33.48;SOR=4.804        GT:AD:DP:GQ:PL  1/1:0,10:10:30:386,30,0
+NC_001960.1     7390    .       T       C       344.06  .       AC=2;AF=1.00;AN=2;DP=11;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=34.41;SOR=4.804        GT:AD:DP:GQ:PL  1/1:0,10:10:30:358,30,0
+NC_001960.1     8106    .       T       C       1024.06 .       AC=2;AF=1.00;AN=2;DP=25;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=56.55;QD=30.90;SOR=1.358        GT:AD:DP:GQ:PL  1/1:0,25:25:75:1038,75,0
+NC_001960.1     9263    .       T       C       606.06  .       AC=2;AF=1.00;AN=2;DP=18;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=34.40;SOR=1.244        GT:AD:DP:GQ:PL  1/1:0,16:16:48:620,48,0
+NC_001960.1     9356    .       C       T       417.06  .       AC=2;AF=1.00;AN=2;DP=13;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=25.67;SOR=0.859        GT:AD:DP:GQ:PL  1/1:0,11:11:33:431,33,0
+NC_001960.1     9551    .       A       G       589.06  .       AC=2;AF=1.00;AN=2;DP=18;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=32.16;SOR=2.448        GT:AD:DP:GQ:PL  1/1:0,15:15:45:603,45,0
+NC_001960.1     9668    .       T       C       1122.06 .       AC=2;AF=1.00;AN=2;DP=32;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=25.14;SOR=2.621        GT:AD:DP:GQ:PL  1/1:0,30:30:84:1136,84,0
+NC_001960.1     9779    .       C       T       602.06  .       AC=2;AF=1.00;AN=2;DP=18;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=59.63;QD=27.74;SOR=2.049        GT:AD:DP:GQ:PL  1/1:0,16:16:48:616,48,0
+NC_001960.1     10828   .       C       T       550.06  .       AC=2;AF=1.00;AN=2;DP=14;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=32.21;SOR=1.329        GT:AD:DP:GQ:PL  1/1:0,14:14:42:564,42,0
+NC_001960.1     10879   .       T       C       985.06  .       AC=2;AF=1.00;AN=2;DP=26;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=30.34;SOR=3.442        GT:AD:DP:GQ:PL  1/1:0,24:24:72:999,72,0
+NC_001960.1     11154   .       A       G       1422.06 .       AC=2;AF=1.00;AN=2;DP=36;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=29.75;SOR=1.002        GT:AD:DP:GQ:PL  1/1:0,35:35:99:1436,105,0
+NC_001960.1     11196   .       C       T       1279.06 .       AC=2;AF=1.00;AN=2;DP=32;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=31.53;SOR=0.818        GT:AD:DP:GQ:PL  1/1:0,32:32:96:1293,96,0
+NC_001960.1     11253   .       A       G       847.06  .       AC=2;AF=1.00;AN=2;DP=25;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=33.88;SOR=1.609        GT:AD:DP:GQ:PL  1/1:0,25:25:75:861,75,0
+NC_001960.1     11420   .       G       A       1516.06 .       AC=2;AF=1.00;AN=2;DP=38;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=38.03;SOR=1.040        GT:AD:DP:GQ:PL  1/1:0,38:38:99:1530,114,0
+NC_001960.1     11489   .       A       G       981.06  .       AC=2;AF=1.00;AN=2;DP=29;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=27.22;SOR=1.609        GT:AD:DP:GQ:PL  1/1:0,25:25:75:995,75,0
+NC_001960.1     11937   .       A       G       233.97  .       AC=2;AF=1.00;AN=2;DP=6;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=27.74;SOR=2.303 GT:AD:DP:GQ:PL  1/1:0,6:6:18:248,18,0
+NC_001960.1     11988   .       G       T       472.06  .       AC=2;AF=1.00;AN=2;DP=14;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=27.99;SOR=0.836        GT:AD:DP:GQ:PL  1/1:0,13:13:36:486,36,0
+NC_001960.1     12751   .       G       GT      656.03  .       AC=2;AF=1.00;AN=2;DP=21;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=32.80;SOR=0.693        GT:AD:DP:GQ:PL  1/1:0,20:20:60:670,60,0
+NC_001960.1     12869   .       A       G       771.06  .       AC=2;AF=1.00;AN=2;DP=19;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=27.23;SOR=1.981        GT:AD:DP:GQ:PL  1/1:0,19:19:57:785,57,0
+NC_001960.1     13139   .       G       A       272.02  .       AC=2;AF=1.00;AN=2;DP=13;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=32.31;SOR=4.174        GT:AD:DP:GQ:PL  1/1:0,7:7:21:286,21,0
+NC_001960.1     13223   .       T       C       516.06  .       AC=2;AF=1.00;AN=2;DP=16;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=34.40;SOR=0.818        GT:AD:DP:GQ:PL  1/1:0,15:15:39:530,39,0
+NC_001960.1     13247   .       T       C       467.06  .       AC=2;AF=1.00;AN=2;DP=14;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=30.37;SOR=0.693        GT:AD:DP:GQ:PL  1/1:0,12:12:36:481,36,0
+NC_001960.1     14885   .       T       C       1301.06 .       AC=2;AF=1.00;AN=2;DP=41;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=25.74;SOR=0.941        GT:AD:DP:GQ:PL  1/1:0,34:34:99:1315,102,0
+NC_001960.1     14905   .       T       A       1403.06 .       AC=2;AF=1.00;AN=2;DP=35;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=60.00;QD=31.39;SOR=0.869        GT:AD:DP:GQ:PL  1/1:0,35:35:99:1417,105,0
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ grep "^#" -c  raw_variants.vcf
+232180
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ grep "^#" -c -v raw_variants.vcf
+57820
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ grep "^#CHROM" raw_variants.vcf | cut -f 10-
+sample
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ grep "^#CHROM" raw_variants.vcf
+#CHROM  POS     ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  sample
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ grep "^#" -v raw_variants.vcf | head
+NC_027300.1     46680   .       C       G       64.32   .       AC=2;AF=1.00;AN=2;DP=2;ExcessHet=3.0103;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=33.00;QD=32.16;SOR=2.303        GT:AD:DP:GQ:PL  1/1:0,2:2:6:76,6,0
+NC_027300.1     171465  .       G       T       64.32   .       AC=2;AF=1.00;AN=2;DP=2;ExcessHet=3.0103;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=32.16;SOR=2.303        GT:AD:DP:GQ:PL  1/1:0,2:2:6:76,6,0
+NC_027300.1     171683  .       G       T       70.32   .       AC=2;AF=1.00;AN=2;DP=2;ExcessHet=3.0103;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=25.36;SOR=2.303        GT:AD:DP:GQ:PL  1/1:0,2:2:6:82,6,0
+NC_027300.1     171721  .       T       TAC     76.28   .       AC=2;AF=1.00;AN=2;DP=2;ExcessHet=3.0103;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=28.73;SOR=2.303        GT:AD:DP:GQ:PL  1/1:0,2:2:6:88,6,0
+NC_027300.1     199485  .       T       A       85.84   .       AC=2;AF=1.00;AN=2;DP=3;ExcessHet=3.0103;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=28.61;SOR=2.833        GT:AD:DP:GQ:PL  1/1:0,3:3:9:99,9,0
+NC_027300.1     357206  .       C       A       68.32   .       AC=2;AF=1.00;AN=2;DP=2;ExcessHet=3.0103;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=40.00;QD=34.16;SOR=2.303        GT:AD:DP:GQ:PL  1/1:0,2:2:6:80,6,0
+NC_027300.1     445864  .       G       A       114.84  .       AC=2;AF=1.00;AN=2;DP=3;ExcessHet=3.0103;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=30.97;SOR=2.833        GT:AD:DP:GQ:PL  1/1:0,3:3:9:128,9,0
+NC_027300.1     455964  .       A       C       98.84   .       AC=2;AF=1.00;AN=2;DP=3;ExcessHet=3.0103;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=58.70;QD=32.95;SOR=1.179        GT:AD:DP:GQ:PL  1/1:0,3:3:9:112,9,0
+NC_027300.1     456172  .       G       A       69.32   .       AC=2;AF=1.00;AN=2;DP=2;ExcessHet=3.0103;FS=0.000;MLEAC=1;MLEAF=0.500;MQ=60.00;QD=34.66;SOR=2.303        GT:AD:DP:GQ:PL  1/1:0,2:2:6:81,6,0
+NC_027300.1     529712  .       TTA     T       166.10  .       AC=2;AF=1.00;AN=2;DP=4;ExcessHet=3.0103;FS=0.000;MLEAC=2;MLEAF=1.00;MQ=40.00;QD=27.24;SOR=3.258 GT:AD:DP:GQ:PL  1/1:0,4:4:12:180,12,0
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ grep "##INFO" raw_variants.vcf
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes, for each ALT allele, in the same order as listed">
+##INFO=<ID=AF,Number=A,Type=Float,Description="Allele Frequency, for each ALT allele, in the same order as listed">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=BaseQRankSum,Number=1,Type=Float,Description="Z-score from Wilcoxon rank sum test of Alt Vs. Ref base qualities">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth; some reads may have been filtered">
+##INFO=<ID=ExcessHet,Number=1,Type=Float,Description="Phred-scaled p-value for exact test of excess heterozygosity">
+##INFO=<ID=FS,Number=1,Type=Float,Description="Phred-scaled p-value using Fisher's exact test to detect strand bias">
+##INFO=<ID=InbreedingCoeff,Number=1,Type=Float,Description="Inbreeding coefficient as estimated from the genotype likelihoods per-sample when compared against the Hardy-Weinberg expectation">
+##INFO=<ID=MLEAC,Number=A,Type=Integer,Description="Maximum likelihood expectation (MLE) for the allele counts (not necessarily the same as the AC), for each ALT allele, in the same order as listed">
+##INFO=<ID=MLEAF,Number=A,Type=Float,Description="Maximum likelihood expectation (MLE) for the allele frequency (not necessarily the same as the AF), for each ALT allele, in the same order as listed">
+##INFO=<ID=MQ,Number=1,Type=Float,Description="RMS Mapping Quality">
+##INFO=<ID=MQRankSum,Number=1,Type=Float,Description="Z-score From Wilcoxon rank sum test of Alt vs. Ref read mapping qualities">
+##INFO=<ID=QD,Number=1,Type=Float,Description="Variant Confidence/Quality by Depth">
+##INFO=<ID=ReadPosRankSum,Number=1,Type=Float,Description="Z-score from Wilcoxon rank sum test of Alt vs. Ref read position bias">
+##INFO=<ID=SOR,Number=1,Type=Float,Description="Symmetric Odds Ratio of 2x2 contingency table to detect strand bias">
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ grep "##FORMAT" raw_variants.vcf
+##FORMAT=<ID=AD,Number=R,Type=Integer,Description="Allelic depths for the ref and alt alleles in the order listed">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Approximate read depth (reads with MQ=255 or with bad mates are filtered)">
+##FORMAT=<ID=GQ,Number=1,Type=Integer,Description="Genotype Quality">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=PL,Number=G,Type=Integer,Description="Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification">
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ grep -v "#" raw_variants.vcf | awk '{if ($6 > 100 ) print }' > hq_variant.txt
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ grep "NC_" -c -v hq_variant.txt
+1736
+(base) [jacqueline.vasquez@test-pomeo variant_call]$ grep "NW_" -c -v hq_variant.txt
+10669
+(base) [jacqueline.vasquez@test-pomeo variant_call]$
