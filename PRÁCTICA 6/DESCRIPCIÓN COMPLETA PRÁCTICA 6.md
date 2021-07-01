@@ -38,7 +38,7 @@ Para instalar el software admixture ejecute el siquiente comando
 ```
 conda install -c bioconda admixture
 ```
-PARA VER EL EJEMPLO EN LA TERMINAL [HACER CLIC AQUÍ]
+PARA VER EL EJEMPLO EN LA TERMINAL [HACER CLIC AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/49bec791af1034f77767a652dbb1adb3579c3430/PR%C3%81CTICA%206/EJEMPLOS%20EN%20LA%20TERMINAL/2.%20configurar%20bioconda%20e%20instalar%20programas%20para%20analisis.txt)
 
 ### 3. DIRECTORIO DE TRABAJO Y ARCHIVOS PARA EL ANÁLISIS POBLACIONAL CON PLINK Y ADMIXTURE.
 El directorio de trabajo population y los archivos necesarios para ejecutar esta práctica fueron creados previamente. 
@@ -58,7 +58,7 @@ El directorio population contiene los siguientes archivos necesarios para efectu
 * Norteamerica: GNB12-1, GNB12-10, GNB12-11.
 * Admixture_plot.R Script que contiene el codigo para crear una funciÓn llamada admixtureplot (), utilizada para realizar los diagramas de admixture.
 
-PARA VER EL EJEMPLO EN LA TERMINAL [HACER CLIC AQUÍ]
+PARA VER EL EJEMPLO EN LA TERMINAL [HACER CLIC AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/49bec791af1034f77767a652dbb1adb3579c3430/PR%C3%81CTICA%206/EJEMPLOS%20EN%20LA%20TERMINAL/3.%20Directorio%20de%20trabajo%20y%20archivos%20para%20el%20analisis%20poblacional.txt)
 
 ### 4. ANÁLISIS DE DIVERSIDAD
 4.1 - Estimar el número de sitios heterocigotos para cada individuo y la heterocigosidad observada y esperada para cada marcador ejecutando los siguientes comandos:
@@ -105,7 +105,7 @@ vcftools --vcf EU_OC_US.vcf --geno-r2 --chr 1 --ld-window-bp 100000 --min-r2 0.0
 ```
 vcftools --vcf EU_OC_US.vcf --geno-r2 --chr 1 --ld-window-bp 100000 --min-r2 0.001 --indv GNB12-1 --indv GNB12-10 --indv GNB12-11 --out US
 ```
-PARA VER EL EJEMPLO EN LA TERMINAL [HACER CLIC AQUÍ]
+PARA VER EL EJEMPLO EN LA TERMINAL [HACER CLIC AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/49bec791af1034f77767a652dbb1adb3579c3430/PR%C3%81CTICA%206/EJEMPLOS%20EN%20LA%20TERMINAL/4.%20Analisis%20de%20diversidad.txt)
 
 4.4 - Gráficos de heterogocidad individual, diversidad de nucleotidos y LD. <br />
 Los siguientes gráficos fueron hechos utilizando el lenguaje de programación R en [Rstudio](https://www.rstudio.com/)
@@ -142,7 +142,8 @@ plink --bfile EU_OC_US.FilteredPruned --keep EU_OC_US.FilteredPruned.rel.id --ma
 ```
 plink --bfile EU_OC_US.FilteredPrunedUnrel --pca 4 --out EU_OC_US.FilteredPrunedUnrel --allow-extra-chr --chr-set 29
 ```
-PARA VER EL EJEMPLO EN LA TERMINAL [HACER CLIC AQUÍ]
+PARA VER EL EJEMPLO EN LA TERMINAL [HACER CLIC AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/49bec791af1034f77767a652dbb1adb3579c3430/PR%C3%81CTICA%206/EJEMPLOS%20EN%20LA%20TERMINAL/5%20-%20Analisis%20de%20estructura%20poblacional.txt)
+
 5.7 - Gráficos de PCA con R
 
 ### 6. ANÁLISIS DE ADMIXTURE 
@@ -160,7 +161,8 @@ done
 ```
 ADMIXTURE genera 2 archivos: .Q que contiene asignaciones de grupos para cada individuo y .P que contiene para cada SNP las frecuencias alelicas de la poblacion
 
-PARA VER EL EJEMPLO EN LA TERMINAL [HACER CLIC AQUÍ]
+PARA VER EL EJEMPLO EN LA TERMINAL [HACER CLIC AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/49bec791af1034f77767a652dbb1adb3579c3430/PR%C3%81CTICA%206/EJEMPLOS%20EN%20LA%20TERMINAL/6%20-%20Analisis%20de%20admixture.txt)
+
 6.3 - Gráficos de ADMIXTURE para 2, 4 y 6 poblaciones
 
 ### REFERENCIAS Y LINK DE INTERÉS
