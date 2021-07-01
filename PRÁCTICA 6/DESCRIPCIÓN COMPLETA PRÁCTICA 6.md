@@ -21,7 +21,24 @@ LIBRERÍAS R
 
 ### 1. CONEXIÓN CON EL SERVIDOR POMEO
 
+haz clic [aquí para recordar la conexión remota con el servidor POMEO](https://user-images.githubusercontent.com/84527634/122123050-86fac980-cdfb-11eb-8294-9d2ed06d41bc.png)<br />
+haz clic [aquí para recordar el ingreso para trabajar en la terminal](https://user-images.githubusercontent.com/84527634/123138222-c7bd9880-d422-11eb-827e-d4c4bd926f4e.png)<br />
+
 ### 2. CONFIGURAR BIOCONDA E INSTALAR LOS SOFTWARE PLINK Y ADMIXTURE
+
+Para configurar el canal bioconda se debe ejecutar el siguiente comando
+
+conda config --add channels bioconda
+
+Para instalar el software plink ejecute el siguiente comando
+
+conda install -c bioconda plink
+
+Para instalar el software admixture ejecute el siquiente comando
+
+conda install -c bioconda admixture
+
+PARA VER EL EJEMPLO EN LA TERMINAL [HACER CLIC AQUÍ]
 
 ### 3. DIRECTORIO DE TRABAJO Y ARCHIVOS PARA EL ANÁLISIS POBLACIONAL 
 
