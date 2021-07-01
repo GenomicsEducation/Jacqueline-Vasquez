@@ -1,0 +1,343 @@
+login as: 
+jacqueline.vasquez@200.54.220.141's password:
+
+5. ANALISIS DE ESTRUCTURA POBLACIONAL 
+
+(base) [jacqueline.vasquez@test-pomeo ~]$ ls
+alineamiento                       script1.sh
+miniconda3                         script2.sh
+Miniconda3-latest-Linux-x86_64.sh  SRA_samples
+picard.jar                         sratoolkit.2.11.0-centos_linux64
+population                         sratoolkit.current-centos_linux64.tar.gz
+R                                  variant_call
+(base) [jacqueline.vasquez@test-pomeo ~]$ cd population
+(base) [jacqueline.vasquez@test-pomeo population]$ ls -l -h
+total 3,3M
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,8K jun 30 19:25 Admixture_p                                                                                                             lot.R
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 6,9K jul  1 20:11 EU.geno.ld
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  676 jul  1 20:11 EU.log
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  402 jul  1 19:55 EU_OC_US.he                                                                                                             t
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,4M jul  1 19:55 EU_OC_US.hw                                                                                                             e
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  513 jul  1 19:55 EU_OC_US.lo                                                                                                             g
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,5M jun 30 04:20 EU_OC_US.vc                                                                                                             f
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 159K jul  1 20:07 EU.windowed                                                                                                             .pi
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 3,6K jul  1 20:12 OC.geno.ld
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  634 jul  1 20:12 OC.log
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 106K jul  1 20:09 OC.windowed                                                                                                             .pi
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  11K jul  1 20:12 US.geno.ld
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  627 jul  1 20:12 US.log
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 152K jul  1 20:10 US.windowed                                                                                                             .pi
+
+5.1 GENERAR EL ARCHIVO DE ENTRADA EN FORMATO plink
+
+(base) [jacqueline.vasquez@test-pomeo population]$ plink --vcf EU_OC_US.vcf --recode --out EU_OC_US --double-id --allow-extra-chr --chr-set 29
+PLINK v1.90b6.21 64-bit (19 Oct 2020)          www.cog-genomics.org/plink/1.9/
+(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to EU_OC_US.log.
+Options in effect:
+  --allow-extra-chr
+  --chr-set 29
+  --double-id
+  --out EU_OC_US
+  --recode
+  --vcf EU_OC_US.vcf
+
+128660 MB RAM detected; reserving 64330 MB for main workspace.
+--vcf: EU_OC_US-temporary.bed + EU_OC_US-temporary.bim + EU_OC_US-temporary.fam
+written.
+21446 variants loaded from .bim file.
+9 samples (0 males, 0 females, 9 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to EU_OC_US.nosex .
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 9 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.750044.
+21446 variants and 9 samples pass filters and QC.
+Note: No phenotypes present.
+--recode ped to EU_OC_US.ped + EU_OC_US.map ... done.
+(base) [jacqueline.vasquez@test-pomeo population]$
+
+5.2 Generar el archivo de entrada en formato plink binario
+
+(base) [jacqueline.vasquez@test-pomeo population]$ plink --file EU_OC_US --make-bed --out EU_OC_US --allow-extra-chr --chr-set 29
+PLINK v1.90b6.21 64-bit (19 Oct 2020)          www.cog-genomics.org/plink/1.9/
+(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to EU_OC_US.log.
+Options in effect:
+  --allow-extra-chr
+  --chr-set 29
+  --file EU_OC_US
+  --make-bed
+  --out EU_OC_US
+
+128660 MB RAM detected; reserving 64330 MB for main workspace.
+.ped scan complete (for binary autoconversion).
+Performing single-pass .bed write (21446 variants, 9 samples).
+--file: EU_OC_US-temporary.bed + EU_OC_US-temporary.bim +
+EU_OC_US-temporary.fam written.
+21446 variants loaded from .bim file.
+9 samples (0 males, 0 females, 9 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to EU_OC_US.nosex .
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 9 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.750044.
+21446 variants and 9 samples pass filters and QC.
+Note: No phenotypes present.
+--make-bed to EU_OC_US.bed + EU_OC_US.bim + EU_OC_US.fam ... done.
+(base) [jacqueline.vasquez@test-pomeo population]$
+
+5.3 - Filtrar basado en equilibrio de Hardy-Weinberg y frecuencia del alelo menor
+(base) [jacqueline.vasquez@test-pomeo population]$ plink --bfile EU_OC_US --hwe 0.01 --maf 0.05 --make-bed --out EU_OC_US.Filtered --allow-extra-chr --chr-set 29
+PLINK v1.90b6.21 64-bit (19 Oct 2020)          www.cog-genomics.org/plink/1.9/
+(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to EU_OC_US.Filtered.log.
+Options in effect:
+  --allow-extra-chr
+  --bfile EU_OC_US
+  --chr-set 29
+  --hwe 0.01
+  --maf 0.05
+  --make-bed
+  --out EU_OC_US.Filtered
+
+128660 MB RAM detected; reserving 64330 MB for main workspace.
+21446 variants loaded from .bim file.
+9 samples (0 males, 0 females, 9 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to EU_OC_US.Filtered.nosex .
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 9 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.750044.
+Warning: --hwe observation counts vary by more than 10%.  Consider using
+--geno, and/or applying different p-value thresholds to distinct subsets of
+your data.
+--hwe: 1386 variants removed due to Hardy-Weinberg exact test.
+4776 variants removed due to minor allele threshold(s)
+(--maf/--max-maf/--mac/--max-mac).
+15284 variants and 9 samples pass filters and QC.
+Note: No phenotypes present.
+--make-bed to EU_OC_US.Filtered.bed + EU_OC_US.Filtered.bim +
+EU_OC_US.Filtered.fam ... done.
+(base) [jacqueline.vasquez@test-pomeo population]$
+
+5.4 - Filtrar y excluir marcadores por desequilibrio de ligamiento
+(base) [jacqueline.vasquez@test-pomeo population]$ plink --bfile EU_OC_US.Filtered --indep-pairwise 50 10 0.05 --make-bed --out EU_OC_US.Filtered --allow-extra-chr --chr-set 29
+
+plink --bfile EU_OC_US.Filtered --extract EU_OC_US.Filtered.prune.in --make-bed --out EU_OC_US.FilteredPruned --allow-extra-chr --chr-set 29PLINK v1.90b6.21 64-bit (19 Oct 2020)          www.cog-genomics.org/plink/1.9/
+(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to EU_OC_US.Filtered.log.
+Options in effect:
+  --allow-extra-chr
+  --bfile EU_OC_US.Filtered
+  --chr-set 29
+  --indep-pairwise 50 10 0.05
+  --make-bed
+  --out EU_OC_US.Filtered
+
+128660 MB RAM detected; reserving 64330 MB for main workspace.
+Warning: --make-bed input and output filenames match.  Appending '~' to input
+filenames.
+15284 variants loaded from .bim file.
+9 samples (0 males, 0 females, 9 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to EU_OC_US.Filtered.nosex .
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 9 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.827299.
+15284 variants and 9 samples pass filters and QC.
+Note: No phenotypes present.
+--make-bed to EU_OC_US.Filtered.bed + EU_OC_US.Filtered.bim +
+EU_OC_US.Filtered.fam ... done.
+Pruned 1045 variants from chromosome 1, leaving 28.
+Pruned 322 variants from chromosome 2, leaving 10.
+Pruned 542 variants from chromosome 3, leaving 17.
+Pruned 661 variants from chromosome 4, leaving 23.
+Pruned 660 variants from chromosome 5, leaving 21.
+Pruned 615 variants from chromosome 6, leaving 18.
+Pruned 500 variants from chromosome 7, leaving 11.
+Pruned 159 variants from chromosome 8, leaving 3.
+Pruned 752 variants from chromosome 9, leaving 21.
+Pruned 802 variants from chromosome 10, leaving 24.
+Pruned 694 variants from chromosome 11, leaving 16.
+Pruned 658 variants from chromosome 12, leaving 20.
+Pruned 675 variants from chromosome 13, leaving 17.
+Pruned 587 variants from chromosome 14, leaving 18.
+Pruned 593 variants from chromosome 15, leaving 15.
+Pruned 563 variants from chromosome 16, leaving 13.
+Pruned 267 variants from chromosome 17, leaving 11.
+Pruned 460 variants from chromosome 18, leaving 12.
+Pruned 610 variants from chromosome 19, leaving 18.
+Pruned 695 variants from chromosome 20, leaving 18.
+Pruned 301 variants from chromosome 21, leaving 7.
+Pruned 481 variants from chromosome 22, leaving 15.
+Pruned 357 variants from chromosome 23, leaving 10.
+Pruned 314 variants from chromosome 24, leaving 9.
+Pruned 350 variants from chromosome 25, leaving 11.
+Pruned 266 variants from chromosome 26, leaving 10.
+Pruned 439 variants from chromosome 27, leaving 10.
+Pruned 226 variants from chromosome 28, leaving 7.
+Pruned 264 variants from chromosome 29, leaving 13.
+Pruning complete.  14858 of 15284 variants removed.
+Marker lists written to EU_OC_US.Filtered.prune.in and
+EU_OC_US.Filtered.prune.out .
+
+(base) [jacqueline.vasquez@test-pomeo population]$ plink --bfile EU_OC_US.Filtered --extract EU_OC_US.Filtered.prune.in --make-bed --out EU_OC_US.FilteredPruned --allow-extra-chr --chr-set 29
+PLINK v1.90b6.21 64-bit (19 Oct 2020)          www.cog-genomics.org/plink/1.9/
+(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to EU_OC_US.FilteredPruned.log.
+Options in effect:
+  --allow-extra-chr
+  --bfile EU_OC_US.Filtered
+  --chr-set 29
+  --extract EU_OC_US.Filtered.prune.in
+  --make-bed
+  --out EU_OC_US.FilteredPruned
+
+128660 MB RAM detected; reserving 64330 MB for main workspace.
+15284 variants loaded from .bim file.
+9 samples (0 males, 0 females, 9 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to EU_OC_US.FilteredPruned.nosex .
+--extract: 426 variants remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 9 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.907407.
+426 variants and 9 samples pass filters and QC.
+Note: No phenotypes present.
+--make-bed to EU_OC_US.FilteredPruned.bed + EU_OC_US.FilteredPruned.bim +
+EU_OC_US.FilteredPruned.fam ... done.
+(base) [jacqueline.vasquez@test-pomeo population]$
+
+5.5 - Filtrar para remover individuos relacionados
+
+(base) [jacqueline.vasquez@test-pomeo population]$ plink --bfile EU_OC_US.FilteredPruned --rel-cutoff 0.4 --out EU_OC_US.FilteredPruned --allow-extra-chr --chr-set 29
+PLINK v1.90b6.21 64-bit (19 Oct 2020)          www.cog-genomics.org/plink/1.9/
+(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to EU_OC_US.FilteredPruned.log.
+Options in effect:
+  --allow-extra-chr
+  --bfile EU_OC_US.FilteredPruned
+  --chr-set 29
+  --out EU_OC_US.FilteredPruned
+  --rel-cutoff 0.4
+
+128660 MB RAM detected; reserving 64330 MB for main workspace.
+426 variants loaded from .bim file.
+9 samples (0 males, 0 females, 9 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to EU_OC_US.FilteredPruned.nosex .
+Using up to 11 threads (change this with --threads).
+Before main variant filters, 9 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.907407.
+426 variants and 9 samples pass filters and QC (before --rel-cutoff).
+Note: No phenotypes present.
+Relationship matrix calculation complete.
+4 samples excluded by --rel-cutoff.
+Remaining sample IDs written to EU_OC_US.FilteredPruned.rel.id .
+(base) [jacqueline.vasquez@test-pomeo population]$
+
+(base) [jacqueline.vasquez@test-pomeo population]$ plink --bfile EU_OC_US.FilteredPruned --keep EU_OC_US.FilteredPruned.rel.id --make-bed --out EU_OC_US.FilteredPrunedUnrel --allow-extra-chr --chr-set 29
+PLINK v1.90b6.21 64-bit (19 Oct 2020)          www.cog-genomics.org/plink/1.9/
+(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to EU_OC_US.FilteredPrunedUnrel.log.
+Options in effect:
+  --allow-extra-chr
+  --bfile EU_OC_US.FilteredPruned
+  --chr-set 29
+  --keep EU_OC_US.FilteredPruned.rel.id
+  --make-bed
+  --out EU_OC_US.FilteredPrunedUnrel
+
+128660 MB RAM detected; reserving 64330 MB for main workspace.
+426 variants loaded from .bim file.
+9 samples (0 males, 0 females, 9 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to EU_OC_US.FilteredPrunedUnrel.nosex .
+--keep: 5 samples remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 5 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.944601.
+426 variants and 5 samples pass filters and QC.
+Note: No phenotypes present.
+--make-bed to EU_OC_US.FilteredPrunedUnrel.bed +
+EU_OC_US.FilteredPrunedUnrel.bim + EU_OC_US.FilteredPrunedUnrel.fam ... done.
+(base) [jacqueline.vasquez@test-pomeo population]$
+
+5.6 - PCA (Principal Component Analysis)
+(base) [jacqueline.vasquez@test-pomeo population]$ plink --bfile EU_OC_US.FilteredPrunedUnrel --pca 4 --out EU_OC_US.FilteredPrunedUnrel --allow-extra-chr --chr-set 29
+PLINK v1.90b6.21 64-bit (19 Oct 2020)          www.cog-genomics.org/plink/1.9/
+(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to EU_OC_US.FilteredPrunedUnrel.log.
+Options in effect:
+  --allow-extra-chr
+  --bfile EU_OC_US.FilteredPrunedUnrel
+  --chr-set 29
+  --out EU_OC_US.FilteredPrunedUnrel
+  --pca 4
+
+128660 MB RAM detected; reserving 64330 MB for main workspace.
+426 variants loaded from .bim file.
+5 samples (0 males, 0 females, 5 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to EU_OC_US.FilteredPrunedUnrel.nosex .
+Using up to 11 threads (change this with --threads).
+Before main variant filters, 5 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.944601.
+426 variants and 5 samples pass filters and QC.
+Note: No phenotypes present.
+Relationship matrix calculation complete.
+--pca: Results saved to EU_OC_US.FilteredPrunedUnrel.eigenval and
+EU_OC_US.FilteredPrunedUnrel.eigenvec .
+(base) [jacqueline.vasquez@test-pomeo population]$
+
+
+(base) [jacqueline.vasquez@test-pomeo population]$ ls -l -h
+total 6,5M
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,8K jun 30 19:25 Admixture_plot.R
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 6,9K jul  1 20:11 EU.geno.ld
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  676 jul  1 20:11 EU.log
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  63K jul  1 21:14 EU_OC_US.bed
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 611K jul  1 21:14 EU_OC_US.bim
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  349 jul  1 21:14 EU_OC_US.fam
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  45K jul  1 21:15 EU_OC_US.Filtered.bed
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  45K jul  1 21:15 EU_OC_US.Filtered.bed~
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 435K jul  1 21:15 EU_OC_US.Filtered.bim
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 435K jul  1 21:15 EU_OC_US.Filtered.bim~
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  349 jul  1 21:15 EU_OC_US.Filtered.fam
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  349 jul  1 21:15 EU_OC_US.Filtered.fam~
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 2,7K jul  1 21:15 EU_OC_US.Filtered.log
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  268 jul  1 21:15 EU_OC_US.Filtered.nosex
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,3K jul  1 21:17 EU_OC_US.FilteredPruned.bed
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  13K jul  1 21:17 EU_OC_US.FilteredPruned.bim
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  349 jul  1 21:17 EU_OC_US.FilteredPruned.fam
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,1K jul  1 21:17 EU_OC_US.FilteredPruned.log
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  268 jul  1 21:17 EU_OC_US.FilteredPruned.nosex
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  124 jul  1 21:17 EU_OC_US.FilteredPruned.rel.id
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  855 jul  1 21:18 EU_OC_US.FilteredPrunedUnrel.bed
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  13K jul  1 21:18 EU_OC_US.FilteredPrunedUnrel.bim
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez   34 jul  1 21:18 EU_OC_US.FilteredPrunedUnrel.eigenval
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  316 jul  1 21:18 EU_OC_US.FilteredPrunedUnrel.eigenvec
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  169 jul  1 21:18 EU_OC_US.FilteredPrunedUnrel.fam
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1016 jul  1 21:18 EU_OC_US.FilteredPrunedUnrel.log
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  124 jul  1 21:18 EU_OC_US.FilteredPrunedUnrel.nosex
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 4,9K jul  1 21:15 EU_OC_US.Filtered.prune.in
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 168K jul  1 21:15 EU_OC_US.Filtered.prune.out
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  402 jul  1 19:55 EU_OC_US.het
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,4M jul  1 19:55 EU_OC_US.hwe
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,1K jul  1 21:14 EU_OC_US.log
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 527K jul  1 21:12 EU_OC_US.map
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  268 jul  1 21:14 EU_OC_US.nosex
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 755K jul  1 21:12 EU_OC_US.ped
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,5M jun 30 04:20 EU_OC_US.vcf
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 159K jul  1 20:07 EU.windowed.pi
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 3,6K jul  1 20:12 OC.geno.ld
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  634 jul  1 20:12 OC.log
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 106K jul  1 20:09 OC.windowed.pi
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  11K jul  1 20:12 US.geno.ld
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  627 jul  1 20:12 US.log
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 152K jul  1 20:10 US.windowed.pi
+(base) [jacqueline.vasquez@test-pomeo population]$
+
+
+

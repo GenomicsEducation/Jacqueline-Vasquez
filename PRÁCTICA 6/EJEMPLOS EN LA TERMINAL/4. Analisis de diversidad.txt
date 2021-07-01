@@ -1,0 +1,298 @@
+4. ANALISIS DE DIVERSIDAD 
+
+4.1 - Estimar el número de sitios heterocigotos para cada individuo y la heterocigosidad observada y esperada para cada marcador
+
+(base) [jacqueline.vasquez@test-pomeo population]$ vcftools --vcf EU_OC_US.vcf --het --out EU_OC_US
+
+VCFtools - 0.1.16
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+        --vcf EU_OC_US.vcf
+        --het
+        --out EU_OC_US
+
+Warning: Expected at least 2 parts in INFO entry: ID=PR,Number=0,Type=Flag,Description="Provisional reference allele, may not be based on real reference genome">
+After filtering, kept 9 out of 9 Individuals
+Outputting Individual Heterozygosity
+        Individual Heterozygosity: Only using biallelic SNPs.
+After filtering, kept 21446 out of a possible 21446 Sites
+Run Time = 0.00 seconds
+
+(base) [jacqueline.vasquez@test-pomeo population]$ vcftools --vcf EU_OC_US.vcf --hardy --out EU_OC_US
+
+VCFtools - 0.1.16
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+        --vcf EU_OC_US.vcf
+        --hardy
+        --out EU_OC_US
+
+Warning: Expected at least 2 parts in INFO entry: ID=PR,Number=0,Type=Flag,Description="Provisional reference allele, may not be based on real reference genome">
+After filtering, kept 9 out of 9 Individuals
+Outputting HWE statistics (but only for biallelic loci)
+        HWE: Only using biallelic SNPs.
+After filtering, kept 21446 out of a possible 21446 Sites
+Run Time = 0.00 seconds
+(base) [jacqueline.vasquez@test-pomeo population]$ ls -l -h
+total 2,9M
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,8K jun 30 19:25 Admixture_plot.R
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  402 jul  1 19:55 EU_OC_US.het
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,4M jul  1 19:55 EU_OC_US.hwe
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  513 jul  1 19:55 EU_OC_US.log
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,5M jun 30 04:20 EU_OC_US.vcf
+LL
+(base) [jacqueline.vasquez@test-pomeo population]$ head EU_OC_US.het
+INDV    O(HOM)  E(HOM)  N_SITES F
+2_WG0341511-DNA_A02_5408        8443    7747.4  12703   0.14037
+3_WG0341511-DNA_A03_5416        8209    7749.3  12708   0.09271
+5_WG0341511-DNA_A05_5450        8571    7749.3  12707   0.16575
+FR07958834      10157   7754.0  12715   0.48437
+FR07958842      10268   7757.0  12719   0.50604
+FR07958850      10301   7753.6  12713   0.51365
+GNB12-1 10618   9753.4  16669   0.12502
+GNB12-10        9860    9753.6  16669   0.01539
+GNB12-11        10299   9754.1  16670   0.07880
+(base) [jacqueline.vasquez@test-pomeo population]$ cat EU_OC_US.het
+INDV    O(HOM)  E(HOM)  N_SITES F
+2_WG0341511-DNA_A02_5408        8443    7747.4  12703   0.14037
+3_WG0341511-DNA_A03_5416        8209    7749.3  12708   0.09271
+5_WG0341511-DNA_A05_5450        8571    7749.3  12707   0.16575
+FR07958834      10157   7754.0  12715   0.48437
+FR07958842      10268   7757.0  12719   0.50604
+FR07958850      10301   7753.6  12713   0.51365
+GNB12-1 10618   9753.4  16669   0.12502
+GNB12-10        9860    9753.6  16669   0.01539
+GNB12-11        10299   9754.1  16670   0.07880
+
+(base) [jacqueline.vasquez@test-pomeo population]$less EU_OC_US
+INDV    O(HOM)  E(HOM)  N_SITES F
+2_WG0341511-DNA_A02_5408        8443    7747.4  12703   0.14037
+3_WG0341511-DNA_A03_5416        8209    7749.3  12708   0.09271
+5_WG0341511-DNA_A05_5450        8571    7749.3  12707   0.16575
+FR07958834      10157   7754.0  12715   0.48437
+FR07958842      10268   7757.0  12719   0.50604
+FR07958850      10301   7753.6  12713   0.51365
+GNB12-1 10618   9753.4  16669   0.12502
+GNB12-10        9860    9753.6  16669   0.01539
+GNB12-11        10299   9754.1  16670   0.07880
+
+
+(base) [jacqueline.vasquez@test-pomeo population]$ head EU_OC_US.hwe
+CHR     POS     OBS(HOM1/HET/HOM2)      E(HOM1/HET/HOM2)        ChiSq_HWE       P_HWE   P_HET_DEFICIT   P_HET_EXCESS
+1       60967   8/1/0   8.03/0.94/0.03  3.114187e-02    1.000000e+00    1.000000e+00    1.000000e+00
+1       168249  4/5/0   4.69/3.61/0.69  1.331361e+00    1.000000e+00    1.000000e+00    4.705882e-01
+1       197655  4/2/3   2.78/4.44/1.78  2.722500e+00    1.707116e-01    1.180584e-01    9.971205e-01
+1       202745  3/6/0   4.00/4.00/1.00  2.250000e+00    4.570136e-01    1.000000e+00    2.895928e-01
+1       851405  6/0/3   4.00/4.00/1.00  9.000000e+00    4.524887e-03    4.524887e-03    1.000000e+00
+1       1051810 0/3/0   0.75/1.50/0.75  3.000000e+00    4.000000e-01    1.000000e+00    4.000000e-01
+1       1055840 3/4/2   2.78/4.44/1.78  9.000000e-02    1.000000e+00    5.787742e-01    8.819416e-01
+1       1338917 5/1/3   3.36/4.28/1.36  5.284028e+00    3.167421e-02    3.167421e-02    1.000000e+00
+1       1682402 2/1/0   2.08/0.83/0.08  1.200000e-01    1.000000e+00    1.000000e+00    1.000000e+00
+
+(base) [jacqueline.vasquez@test-pomeo population]$ cat EU_OC_US.hwe
+
+24      8276694 8/1/0   8.03/0.94/0.03  3.114187e-02    1.000000e+00    1.000000e+00    1.000000e+00
+24      8335111 4/4/1   4.00/4.00/1.00  4.930381e-32    1.000000e+00    7.104072e-01    8.325792e-01
+24      8337665 1/2/0   1.33/1.33/0.33  7.500000e-01    1.000000e+00    1.000000e+00    8.000000e-01
+24      8382721 0/3/0   0.75/1.50/0.75  3.000000e+00    4.000000e-01    1.000000e+00    4.000000e-01
+24      8383135 1/2/0   1.33/1.33/0.33  7.500000e-01    1.000000e+00    1.000000e+00    8.000000e-01
+24      8383353 4/4/1   4.00/4.00/1.00  4.930381e-32    1.000000e+00    7.104072e-01    8.325792e-01
+24      8399474 4/5/0   4.69/3.61/0.69  1.331361e+00    1.000000e+00    1.000000e+00    4.705882e-01
+24      8527893 4/4/1   4.00/4.00/1.00  4.930381e-32    1.000000e+00    7.104072e-01    8.325792e-01
+24      8581397 3/4/2   2.78/4.44/1.78  9.000000e-02    1.000000e+00    5.787742e-01    8.819416e-01
+24      8624679 5/4/0   5.44/3.11/0.44  7.346939e-01    1.000000e+00    1.000000e+00    6.588235e-01
+24      8637074 6/3/0   6.25/2.50/0.25  3.600000e-01    1.000000e+00    1.000000e+00    8.235294e-01
+24      8683788 6/0/3   4.00/4.00/1.00  9.000000e+00    4.524887e-03    4.524887e-03    1.000000e+00
+24      8691214 7/2/0   7.11/1.78/0.11  1.406250e-01    1.000000e+00    1.000000e+00    9.411765e-01
+24      8758369 6/0/3   4.00/4.00/1.00  9.000000e+00    4.524887e-03    4.524887e-03    1.000000e+00
+24      8996552 8/1/0   8.03/0.94/0.03  3.114187e-02    1.000000e+00    1.000000e+00    1.000000e+00
+24      9001961 6/3/0   6.25/2.50/0.25  3.600000e-01    1.000000e+00    1.000000e+00    8.235294e-01
+24      9002025 6/3/0   6.25/2.50/0.25  3.600000e-01    1.000000e+00    1.000000e+00    8.235294e-01
+24      9150408 2/6/1   2.78/4.44/1.78  1.102500e+00    5.392842e-01    9.473468e-01    4.212258e-01
+24      9522734 6/3/0   6.25/2.50/0.25  3.600000e-01    1.000000e+00    1.000000e+00    8.235294e-01
+24      9769424 7/2/0   7.11/1.78/0.11  1.406250e-01    1.000000e+00    1.000000e+00    9.411765e-01
+24      9806837 1/7/1   2.25/4.50/2.25  2.777778e+00    2.259975e-01    9.894694e-01    2.000823e-01
+................
+
+(base) [jacqueline.vasquez@test-pomeo population]$ less  EU_OC_US.hwe
+CHR     POS     OBS(HOM1/HET/HOM2)      E(HOM1/HET/HOM2)        ChiSq_HWE       P_HWE   P_HET_DEFICIT   P_HET_EXCESS
+1       60967   8/1/0   8.03/0.94/0.03  3.114187e-02    1.000000e+00    1.000000e+00    1.000000e+00
+1       168249  4/5/0   4.69/3.61/0.69  1.331361e+00    1.000000e+00    1.000000e+00    4.705882e-01
+1       197655  4/2/3   2.78/4.44/1.78  2.722500e+00    1.707116e-01    1.180584e-01    9.971205e-01
+1       202745  3/6/0   4.00/4.00/1.00  2.250000e+00    4.570136e-01    1.000000e+00    2.895928e-01
+1       851405  6/0/3   4.00/4.00/1.00  9.000000e+00    4.524887e-03    4.524887e-03    1.000000e+00
+1       1051810 0/3/0   0.75/1.50/0.75  3.000000e+00    4.000000e-01    1.000000e+00    4.000000e-01
+1       1055840 3/4/2   2.78/4.44/1.78  9.000000e-02    1.000000e+00    5.787742e-01    8.819416e-01
+1       1338917 5/1/3   3.36/4.28/1.36  5.284028e+00    3.167421e-02    3.167421e-02    1.000000e+00
+1       1682402 2/1/0   2.08/0.83/0.08  1.200000e-01    1.000000e+00    1.000000e+00    1.000000e+00
+1       1827515 3/4/2   2.78/4.44/1.78  9.000000e-02    1.000000e+00    5.787742e-01    8.819416e-01
+1       2293243 4/4/1   4.00/4.00/1.00  4.930381e-32    1.000000e+00    7.104072e-01    8.325792e-01
+1       2374052 6/3/0   6.25/2.50/0.25  3.600000e-01    1.000000e+00    1.000000e+00    8.235294e-01
+1       2466320 0/3/0   0.75/1.50/0.75  3.000000e+00    4.000000e-01    1.000000e+00    4.000000e-01
+1       2956264 4/5/0   4.69/3.61/0.69  1.331361e+00    1.000000e+00    1.000000e+00    4.705882e-01
+1       3018927 6/0/3   4.00/4.00/1.00  9.000000e+00    4.524887e-03    4.524887e-03    1.000000e+00
+1       3045588 3/5/1   3.36/4.28/1.36  2.565357e-01    1.000000e+00    8.552036e-01    6.515837e-01
+1       3166572 0/3/0   0.75/1.50/0.75  3.000000e+00    4.000000e-01    1.000000e+00    4.000000e-01
+1       3223512 3/4/2   2.78/4.44/1.78  9.000000e-02    1.000000e+00    5.787742e-01    8.819416e-01
+1       3238550 6/3/0   6.25/2.50/0.25  3.600000e-01    1.000000e+00    1.000000e+00    8.235294e-01
+1       3302030 3/6/0   4.00/4.00/1.00  2.250000e+00    4.570136e-01    1.000000e+00    2.895928e-01
+1       3317525 3/5/1   3.36/4.28/1.36  2.565357e-01    1.000000e+00    8.552036e-01    6.515837e-01
+1       3333913 0/3/0   0.75/1.50/0.75  3.000000e+00    4.000000e-01    1.000000e+00    4.000000e-01
+1       3334297 2/6/1   2.78/4.44/1.78  1.102500e+00    5.392842e-01    9.473468e-01    4.212258e-01
+1       3358109 1/2/0   1.33/1.33/0.33  7.500000e-01    1.000000e+00    1.000000e+00    8.000000e-01
+
+4.2 - Calcular la diversidad en una ventana no superpuesta de 200 kb para cada individuo de las tres poblaciones.
+
+1) PARA LA POBLACIÓN DE EUROPA 
+
+(base) [jacqueline.vasquez@test-pomeo population]$ vcftools --vcf EU_OC_US.vcf --window-pi 200000 --indv 2_WG0341511-DNA_A02_5408 --indv 3_WG0341511-DNA_A03_5416 --indv 5_WG0341511-DNA_A05_5450 --out EU
+
+VCFtools - 0.1.16
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+        --vcf EU_OC_US.vcf
+        --out EU
+        --window-pi 200000
+        --indv 2_WG0341511-DNA_A02_5408
+        --indv 3_WG0341511-DNA_A03_5416
+        --indv 5_WG0341511-DNA_A05_5450
+
+Warning: Expected at least 2 parts in INFO entry: ID=PR,Number=0,Type=Flag,Description="Provisional reference allele, may not be based on real reference genome">
+Keeping individuals in 'keep' list
+After filtering, kept 3 out of 9 Individuals
+Outputting Windowed Nucleotide Diversity Statistics...
+After filtering, kept 21446 out of a possible 21446 Sites
+Run Time = 0.00 seconds
+(base) [jacqueline.vasquez@test-pomeo population]$
+
+2) PARA LA POBLACION DE OCEANÍA 
+
+(base) [jacqueline.vasquez@test-pomeo population]$ vcftools --vcf EU_OC_US.vcf --window-pi 200000 --indv FR07958834 --indv FR07958842 --indv FR07958850 --out OC
+
+VCFtools - 0.1.16
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+        --vcf EU_OC_US.vcf
+        --out OC
+        --window-pi 200000
+        --indv FR07958834
+        --indv FR07958842
+        --indv FR07958850
+
+Warning: Expected at least 2 parts in INFO entry: ID=PR,Number=0,Type=Flag,Description="Provisional reference allele, may not be based on real reference genome">
+Keeping individuals in 'keep' list
+After filtering, kept 3 out of 9 Individuals
+Outputting Windowed Nucleotide Diversity Statistics...
+After filtering, kept 21446 out of a possible 21446 Sites
+Run Time = 0.00 seconds
+(base) [jacqueline.vasquez@test-pomeo population]$
+
+3) PARA LA POBLACION DE NORTEAMERICA 
+
+(base) [jacqueline.vasquez@test-pomeo population]$ vcftools --vcf EU_OC_US.vcf --window-pi 200000 --indv GNB12-1 --indv GNB12-10 --indv GNB12-11 --out US
+
+VCFtools - 0.1.16
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+        --vcf EU_OC_US.vcf
+        --out US
+        --window-pi 200000
+        --indv GNB12-1
+        --indv GNB12-10
+        --indv GNB12-11
+
+Warning: Expected at least 2 parts in INFO entry: ID=PR,Number=0,Type=Flag,Description="Provisional reference allele, may not be based on real reference genome">
+Keeping individuals in 'keep' list
+After filtering, kept 3 out of 9 Individuals
+Outputting Windowed Nucleotide Diversity Statistics...
+After filtering, kept 21446 out of a possible 21446 Sites
+Run Time = 0.00 seconds
+(base) [jacqueline.vasquez@test-pomeo population]$
+
+4.3  Calcular el desequilibrio de ligamiento (LD) para las tres poblaciones
+
+1) PARA LA POBLACIÓN DE EUROPA 
+(base) [jacqueline.vasquez@test-pomeo population]$ vcftools --vcf EU_OC_US.vcf --geno-r2 --chr 1 --ld-window-bp 100000 --min-r2 0.001 --indv 2_WG0341511-DNA_A02_5408 --indv 3_WG0341511-DNA_A03_5416 --indv 5_WG0341511-DNA_A05_5450 --out EU
+
+VCFtools - 0.1.16
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+        --vcf EU_OC_US.vcf
+        --chr 1
+        --ld-window-bp 100000
+        --max-alleles 2
+        --min-alleles 2
+        --min-r2 0.001
+        --geno-r2
+        --out EU
+        --indv 2_WG0341511-DNA_A02_5408
+        --indv 3_WG0341511-DNA_A03_5416
+        --indv 5_WG0341511-DNA_A05_5450
+
+Warning: Expected at least 2 parts in INFO entry: ID=PR,Number=0,Type=Flag,Description="Provisional reference allele, may not be based on real reference genome">
+Keeping individuals in 'keep' list
+After filtering, kept 3 out of 9 Individuals
+Outputting Pairwise LD (bi-allelic only)
+After filtering, kept 1158 out of a possible 21446 Sites
+Run Time = 0.00 seconds
+(base) [jacqueline.vasquez@test-pomeo population]$
+
+2) PARA LA POBLACION DE OCEANÍA 
+(base) [jacqueline.vasquez@test-pomeo population]$ vcftools --vcf EU_OC_US.vcf --geno-r2 --chr 1 --ld-window-bp 100000 --min-r2 0.001 --indv FR07958834 --indv FR07958842 --indv FR07958850 --out OC
+
+VCFtools - 0.1.16
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+        --vcf EU_OC_US.vcf
+        --chr 1
+        --ld-window-bp 100000
+        --max-alleles 2
+        --min-alleles 2
+        --min-r2 0.001
+        --geno-r2
+        --out OC
+        --indv FR07958834
+        --indv FR07958842
+        --indv FR07958850
+
+Warning: Expected at least 2 parts in INFO entry: ID=PR,Number=0,Type=Flag,Description="Provisional reference allele, may not be based on real reference genome">
+Keeping individuals in 'keep' list
+After filtering, kept 3 out of 9 Individuals
+Outputting Pairwise LD (bi-allelic only)
+After filtering, kept 1158 out of a possible 21446 Sites
+Run Time = 0.00 seconds
+(base) [jacqueline.vasquez@test-pomeo population]$
+
+3) PARA LA POBLACION DE NORTEAMERICA 
+(base) [jacqueline.vasquez@test-pomeo population]$ vcftools --vcf EU_OC_US.vcf --geno-r2 --chr 1 --ld-window-bp 100000 --min-r2 0.001 --indv GNB12-1 --indv GNB12-10 --indv GNB12-11 --out US
+
+VCFtools - 0.1.16
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+        --vcf EU_OC_US.vcf
+        --chr 1
+        --ld-window-bp 100000
+        --max-alleles 2
+        --min-alleles 2
+        --min-r2 0.001
+        --geno-r2
+        --out US
+        --indv GNB12-1
+        --indv GNB12-10
+        --indv GNB12-11
+
+Warning: Expected at least 2 parts in INFO entry: ID=PR,Number=0,Type=Flag,Description="Provisional reference allele, may not be based on real reference genome">
+Keeping individuals in 'keep' list
+After filtering, kept 3 out of 9 Individuals
+Outputting Pairwise LD (bi-allelic only)
+After filtering, kept 1158 out of a possible 21446 Sites
+Run Time = 0.00 seconds
+(base) [jacqueline.vasquez@test-pomeo population]$

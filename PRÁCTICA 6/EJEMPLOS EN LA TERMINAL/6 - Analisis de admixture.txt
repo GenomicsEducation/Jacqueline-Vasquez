@@ -1,0 +1,293 @@
+6 - Analisis de admixture
+
+6.1 Seleccion al azar del 1% de los marcadores
+
+(base) [jacqueline.vasquez@test-pomeo population]$ plink --bfile EU_OC_US.FilteredPrunedUnrel --thin 0.01 --make-bed --out EU_OC_US.Thinned --allow-extra-chr --chr-set 29
+PLINK v1.90b6.21 64-bit (19 Oct 2020)          www.cog-genomics.org/plink/1.9/
+(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to EU_OC_US.Thinned.log.
+Options in effect:
+  --allow-extra-chr
+  --bfile EU_OC_US.FilteredPrunedUnrel
+  --chr-set 29
+  --make-bed
+  --out EU_OC_US.Thinned
+  --thin 0.01
+
+128660 MB RAM detected; reserving 64330 MB for main workspace.
+426 variants loaded from .bim file.
+5 samples (0 males, 0 females, 5 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to EU_OC_US.Thinned.nosex .
+--thin: 419 variants removed (7 remaining).
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 5 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+7 variants and 5 samples pass filters and QC.
+Note: No phenotypes present.
+--make-bed to EU_OC_US.Thinned.bed + EU_OC_US.Thinned.bim +
+EU_OC_US.Thinned.fam ... done.
+(base) [jacqueline.vasquez@test-pomeo population]$
+
+6.2 - Analisis de ancestria de 2 a 6 poblaciones
+(base) [jacqueline.vasquez@test-pomeo population]$ for K in `seq 2 6`;
+> do
+> admixture EU_OC_US.Thinned.bed $K;
+> done
+****                   ADMIXTURE Version 1.3.0                  ****
+****                    Copyright 2008-2015                     ****
+****           David Alexander, Suyash Shringarpure,            ****
+****                John  Novembre, Ken Lange                   ****
+****                                                            ****
+****                 Please cite our paper!                     ****
+****   Information at www.genetics.ucla.edu/software/admixture  ****
+
+Random seed: 43
+Point estimation method: Block relaxation algorithm
+Convergence acceleration algorithm: QuasiNewton, 3 secant conditions
+Point estimation will terminate when objective function delta < 0.0001
+Estimation of standard errors disabled; will compute point estimates only.
+Size of G: 5x7
+Performing five EM steps to prime main algorithm
+1 (EM)  Elapsed: 0      Loglikelihood: -47.8887 (delta): 11.0996
+2 (EM)  Elapsed: 0      Loglikelihood: -46.6424 (delta): 1.24638
+3 (EM)  Elapsed: 0      Loglikelihood: -45.8737 (delta): 0.768633
+4 (EM)  Elapsed: 0      Loglikelihood: -45.1306 (delta): 0.743088
+5 (EM)  Elapsed: 0      Loglikelihood: -44.2045 (delta): 0.926129
+Initial loglikelihood: -44.2045
+Starting main algorithm
+1 (QN/Block)    Elapsed: 0      Loglikelihood: -35.845  (delta): 8.35954
+2 (QN/Block)    Elapsed: 0      Loglikelihood: -35.5202 (delta): 0.324794
+3 (QN/Block)    Elapsed: 0      Loglikelihood: -35.5183 (delta): 0.0018537
+4 (QN/Block)    Elapsed: 0      Loglikelihood: -35.5183 (delta): 6.77988e-06
+Summary:
+Converged in 4 iterations (0.001 sec)
+Loglikelihood: -35.518317
+Fst divergences between estimated populations:
+        Pop0
+Pop0
+Pop1    0.651
+Writing output files.
+****                   ADMIXTURE Version 1.3.0                  ****
+****                    Copyright 2008-2015                     ****
+****           David Alexander, Suyash Shringarpure,            ****
+****                John  Novembre, Ken Lange                   ****
+****                                                            ****
+****                 Please cite our paper!                     ****
+****   Information at www.genetics.ucla.edu/software/admixture  ****
+
+Random seed: 43
+Point estimation method: Block relaxation algorithm
+Convergence acceleration algorithm: QuasiNewton, 3 secant conditions
+Point estimation will terminate when objective function delta < 0.0001
+Estimation of standard errors disabled; will compute point estimates only.
+Size of G: 5x7
+Performing five EM steps to prime main algorithm
+1 (EM)  Elapsed: 0      Loglikelihood: -46.7806 (delta): 13.0789
+2 (EM)  Elapsed: 0      Loglikelihood: -44.7755 (delta): 2.00508
+3 (EM)  Elapsed: 0      Loglikelihood: -43.1452 (delta): 1.63025
+4 (EM)  Elapsed: 0      Loglikelihood: -41.4201 (delta): 1.72516
+5 (EM)  Elapsed: 0      Loglikelihood: -39.7591 (delta): 1.661
+Initial loglikelihood: -39.7591
+Starting main algorithm
+1 (QN/Block)    Elapsed: 0      Loglikelihood: -34.0319 (delta): 5.72716
+2 (QN/Block)    Elapsed: 0      Loglikelihood: -31.9233 (delta): 2.10866
+3 (QN/Block)    Elapsed: 0      Loglikelihood: -31.7748 (delta): 0.148424
+4 (QN/Block)    Elapsed: 0      Loglikelihood: -31.7678 (delta): 0.00700969
+5 (QN/Block)    Elapsed: 0      Loglikelihood: -31.7629 (delta): 0.00496448
+6 (QN/Block)    Elapsed: 0      Loglikelihood: -31.7567 (delta): 0.00619708
+7 (QN/Block)    Elapsed: 0      Loglikelihood: -31.748  (delta): 0.00866308
+8 (QN/Block)    Elapsed: 0      Loglikelihood: -31.7361 (delta): 0.0119349
+9 (QN/Block)    Elapsed: 0      Loglikelihood: -31.7205 (delta): 0.0156025
+10 (QN/Block)   Elapsed: 0      Loglikelihood: -31.7022 (delta): 0.0182972
+11 (QN/Block)   Elapsed: 0      Loglikelihood: -31.6906 (delta): 0.0115653
+12 (QN/Block)   Elapsed: 0      Loglikelihood: -31.6905 (delta): 0.000126758
+13 (QN/Block)   Elapsed: 0      Loglikelihood: -31.6905 (delta): 4.00639e-06
+Summary:
+Converged in 13 iterations (0.003 sec)
+Loglikelihood: -31.690463
+Fst divergences between estimated populations:
+        Pop0    Pop1
+Pop0
+Pop1    0.664
+Pop2    0.349   0.404
+Writing output files.
+****                   ADMIXTURE Version 1.3.0                  ****
+****                    Copyright 2008-2015                     ****
+****           David Alexander, Suyash Shringarpure,            ****
+****                John  Novembre, Ken Lange                   ****
+****                                                            ****
+****                 Please cite our paper!                     ****
+****   Information at www.genetics.ucla.edu/software/admixture  ****
+
+Random seed: 43
+Point estimation method: Block relaxation algorithm
+Convergence acceleration algorithm: QuasiNewton, 3 secant conditions
+Point estimation will terminate when objective function delta < 0.0001
+Estimation of standard errors disabled; will compute point estimates only.
+Size of G: 5x7
+Performing five EM steps to prime main algorithm
+1 (EM)  Elapsed: 0      Loglikelihood: -45.402  (delta): 7.37232
+2 (EM)  Elapsed: 0      Loglikelihood: -44.0787 (delta): 1.32327
+3 (EM)  Elapsed: 0      Loglikelihood: -43.2315 (delta): 0.847269
+4 (EM)  Elapsed: 0      Loglikelihood: -42.4885 (delta): 0.742988
+5 (EM)  Elapsed: 0      Loglikelihood: -41.7269 (delta): 0.761621
+Initial loglikelihood: -41.7269
+Starting main algorithm
+1 (QN/Block)    Elapsed: 0      Loglikelihood: -32.3777 (delta): 9.34919
+2 (QN/Block)    Elapsed: 0      Loglikelihood: -31.0087 (delta): 1.36896
+3 (QN/Block)    Elapsed: 0      Loglikelihood: -30.6365 (delta): 0.372236
+4 (QN/Block)    Elapsed: 0      Loglikelihood: -30.5392 (delta): 0.0972297
+5 (QN/Block)    Elapsed: 0      Loglikelihood: -30.4375 (delta): 0.101746
+6 (QN/Block)    Elapsed: 0      Loglikelihood: -30.2778 (delta): 0.159655
+7 (QN/Block)    Elapsed: 0      Loglikelihood: -30.1336 (delta): 0.144207
+8 (QN/Block)    Elapsed: 0      Loglikelihood: -30.0393 (delta): 0.0942941
+9 (QN/Block)    Elapsed: 0      Loglikelihood: -29.9889 (delta): 0.0504664
+10 (QN/Block)   Elapsed: 0      Loglikelihood: -29.9759 (delta): 0.0129349
+11 (QN/Block)   Elapsed: 0      Loglikelihood: -29.9759 (delta): 1.02099e-07
+Summary:
+Converged in 11 iterations (0.003 sec)
+Loglikelihood: -29.975938
+Fst divergences between estimated populations:
+        Pop0    Pop1    Pop2
+Pop0
+Pop1    0.395
+Pop2    0.409   0.660
+Pop3    0.145   0.393   0.350
+Writing output files.
+****                   ADMIXTURE Version 1.3.0                  ****
+****                    Copyright 2008-2015                     ****
+****           David Alexander, Suyash Shringarpure,            ****
+****                John  Novembre, Ken Lange                   ****
+****                                                            ****
+****                 Please cite our paper!                     ****
+****   Information at www.genetics.ucla.edu/software/admixture  ****
+
+Random seed: 43
+Point estimation method: Block relaxation algorithm
+Convergence acceleration algorithm: QuasiNewton, 3 secant conditions
+Point estimation will terminate when objective function delta < 0.0001
+Estimation of standard errors disabled; will compute point estimates only.
+Size of G: 5x7
+Performing five EM steps to prime main algorithm
+1 (EM)  Elapsed: 0      Loglikelihood: -45.0916 (delta): 7.53341
+2 (EM)  Elapsed: 0      Loglikelihood: -41.7686 (delta): 3.32302
+3 (EM)  Elapsed: 0      Loglikelihood: -39.3229 (delta): 2.44572
+4 (EM)  Elapsed: 0      Loglikelihood: -37.3941 (delta): 1.92873
+5 (EM)  Elapsed: 0      Loglikelihood: -35.7988 (delta): 1.59531
+Initial loglikelihood: -35.7988
+Starting main algorithm
+1 (QN/Block)    Elapsed: 0      Loglikelihood: -29.9992 (delta): 5.79961
+2 (QN/Block)    Elapsed: 0      Loglikelihood: -29.5678 (delta): 0.431437
+3 (QN/Block)    Elapsed: 0      Loglikelihood: -29.5435 (delta): 0.0242517
+4 (QN/Block)    Elapsed: 0      Loglikelihood: -29.5422 (delta): 0.00125331
+5 (QN/Block)    Elapsed: 0      Loglikelihood: -29.5422 (delta): 1.86354e-06
+Summary:
+Converged in 5 iterations (0.002 sec)
+Loglikelihood: -29.542246
+Fst divergences between estimated populations:
+        Pop0    Pop1    Pop2    Pop3
+Pop0
+Pop1    0.657
+Pop2    0.548   0.421
+Pop3    0.442   0.665   0.655
+Pop4    0.306   0.368   0.325   0.469
+Writing output files.
+****                   ADMIXTURE Version 1.3.0                  ****
+****                    Copyright 2008-2015                     ****
+****           David Alexander, Suyash Shringarpure,            ****
+****                John  Novembre, Ken Lange                   ****
+****                                                            ****
+****                 Please cite our paper!                     ****
+****   Information at www.genetics.ucla.edu/software/admixture  ****
+
+Random seed: 43
+Point estimation method: Block relaxation algorithm
+Convergence acceleration algorithm: QuasiNewton, 3 secant conditions
+Point estimation will terminate when objective function delta < 0.0001
+Estimation of standard errors disabled; will compute point estimates only.
+Size of G: 5x7
+Performing five EM steps to prime main algorithm
+1 (EM)  Elapsed: 0      Loglikelihood: -42.9539 (delta): 6.02059
+2 (EM)  Elapsed: 0      Loglikelihood: -39.8649 (delta): 3.08898
+3 (EM)  Elapsed: 0      Loglikelihood: -37.4031 (delta): 2.46181
+4 (EM)  Elapsed: 0      Loglikelihood: -35.6097 (delta): 1.79343
+5 (EM)  Elapsed: 0      Loglikelihood: -34.3628 (delta): 1.24688
+Initial loglikelihood: -34.3628
+Starting main algorithm
+1 (QN/Block)    Elapsed: 0      Loglikelihood: -31.4894 (delta): 2.87341
+2 (QN/Block)    Elapsed: 0      Loglikelihood: -31.4894 (delta): 8.55587e-08
+Summary:
+Converged in 2 iterations (0.001 sec)
+Loglikelihood: -31.489383
+Fst divergences between estimated populations:
+        Pop0    Pop1    Pop2    Pop3    Pop4
+Pop0
+Pop1    0.254
+Pop2    0.208   0.438
+Pop3    0.580   0.695   0.444
+Pop4    0.511   0.651   0.314   0.178
+Pop5    0.468   0.606   0.354   0.544   0.493
+Writing output files.
+(base) [jacqueline.vasquez@test-pomeo population]$
+
+(base) [jacqueline.vasquez@test-pomeo population]$ ls -l -h
+total 6,5M
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,8K jun 30 19:25 Admixture_plot.R
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 6,9K jul  1 20:11 EU.geno.ld
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  676 jul  1 20:11 EU.log
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  63K jul  1 21:14 EU_OC_US.bed
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 611K jul  1 21:14 EU_OC_US.bim
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  349 jul  1 21:14 EU_OC_US.fam
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  45K jul  1 21:15 EU_OC_US.Filtered.bed
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  45K jul  1 21:15 EU_OC_US.Filtered.bed~
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 435K jul  1 21:15 EU_OC_US.Filtered.bim
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 435K jul  1 21:15 EU_OC_US.Filtered.bim~
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  349 jul  1 21:15 EU_OC_US.Filtered.fam
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  349 jul  1 21:15 EU_OC_US.Filtered.fam~
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 2,7K jul  1 21:15 EU_OC_US.Filtered.log
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  268 jul  1 21:15 EU_OC_US.Filtered.nosex
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,3K jul  1 21:17 EU_OC_US.FilteredPruned.bed
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  13K jul  1 21:17 EU_OC_US.FilteredPruned.bim
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  349 jul  1 21:17 EU_OC_US.FilteredPruned.fam
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,1K jul  1 21:17 EU_OC_US.FilteredPruned.log
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  268 jul  1 21:17 EU_OC_US.FilteredPruned.nosex
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  124 jul  1 21:17 EU_OC_US.FilteredPruned.rel.id
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  855 jul  1 21:18 EU_OC_US.FilteredPrunedUnrel.bed
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  13K jul  1 21:18 EU_OC_US.FilteredPrunedUnrel.bim
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez   34 jul  1 21:18 EU_OC_US.FilteredPrunedUnrel.eigenval
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  316 jul  1 21:18 EU_OC_US.FilteredPrunedUnrel.eigenvec
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  169 jul  1 21:18 EU_OC_US.FilteredPrunedUnrel.fam
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1016 jul  1 21:18 EU_OC_US.FilteredPrunedUnrel.log
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  124 jul  1 21:18 EU_OC_US.FilteredPrunedUnrel.nosex
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 4,9K jul  1 21:15 EU_OC_US.Filtered.prune.in
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 168K jul  1 21:15 EU_OC_US.Filtered.prune.out
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  402 jul  1 19:55 EU_OC_US.het
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,4M jul  1 19:55 EU_OC_US.hwe
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,1K jul  1 21:14 EU_OC_US.log
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 527K jul  1 21:12 EU_OC_US.map
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  268 jul  1 21:14 EU_OC_US.nosex
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 755K jul  1 21:12 EU_OC_US.ped
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  126 jul  1 21:21 EU_OC_US.Thinned.2.P
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez   90 jul  1 21:21 EU_OC_US.Thinned.2.Q
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  189 jul  1 21:21 EU_OC_US.Thinned.3.P
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  135 jul  1 21:21 EU_OC_US.Thinned.3.Q
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  252 jul  1 21:21 EU_OC_US.Thinned.4.P
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  180 jul  1 21:21 EU_OC_US.Thinned.4.Q
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  315 jul  1 21:21 EU_OC_US.Thinned.5.P
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  225 jul  1 21:21 EU_OC_US.Thinned.5.Q
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  378 jul  1 21:21 EU_OC_US.Thinned.6.P
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  270 jul  1 21:21 EU_OC_US.Thinned.6.Q
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez   17 jul  1 21:21 EU_OC_US.Thinned.bed
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  204 jul  1 21:21 EU_OC_US.Thinned.bim
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  169 jul  1 21:21 EU_OC_US.Thinned.fam
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  962 jul  1 21:21 EU_OC_US.Thinned.log
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  124 jul  1 21:21 EU_OC_US.Thinned.nosex
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,5M jun 30 04:20 EU_OC_US.vcf
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 159K jul  1 20:07 EU.windowed.pi
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 3,6K jul  1 20:12 OC.geno.ld
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  634 jul  1 20:12 OC.log
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 106K jul  1 20:09 OC.windowed.pi
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  11K jul  1 20:12 US.geno.ld
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  627 jul  1 20:12 US.log
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 152K jul  1 20:10 US.windowed.pi
+(base) [jacqueline.vasquez@test-pomeo population]$

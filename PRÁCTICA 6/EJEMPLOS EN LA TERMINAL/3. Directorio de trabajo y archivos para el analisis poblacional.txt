@@ -1,0 +1,18 @@
+3. INGRESAR AL DIRECTORIO DE TRABAJO population 
+
+(base) [jacqueline.vasquez@test-pomeo ~]$ ls
+alineamiento                       script1.sh
+miniconda3                         script2.sh
+Miniconda3-latest-Linux-x86_64.sh  SRA_samples
+picard.jar                         sratoolkit.2.11.0-centos_linux64
+population                         sratoolkit.current-centos_linux64.tar.gz
+R                                  variant_call
+(base) [jacqueline.vasquez@test-pomeo ~]$ cd population
+(base) [jacqueline.vasquez@test-pomeo population]$ ls -l -h
+total 2,9M
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,8K jun 30 19:25 Admixture_p                                                                                                             lot.R
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  402 jul  1 19:55 EU_OC_US.he                                                                                                             t
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,4M jul  1 19:55 EU_OC_US.hw                                                                                                             e
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez  513 jul  1 19:55 EU_OC_US.lo                                                                                                             g
+-rw-rw-r-- 1 jacqueline.vasquez jacqueline.vasquez 1,5M jun 30 04:20 EU_OC_US.vc                                                                                                             f
+(base) [jacqueline.vasquez@test-pomeo population]$
