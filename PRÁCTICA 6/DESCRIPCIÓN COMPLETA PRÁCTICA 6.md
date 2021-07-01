@@ -105,8 +105,12 @@ vcftools --vcf EU_OC_US.vcf --geno-r2 --chr 1 --ld-window-bp 100000 --min-r2 0.0
 ```
 vcftools --vcf EU_OC_US.vcf --geno-r2 --chr 1 --ld-window-bp 100000 --min-r2 0.001 --indv GNB12-1 --indv GNB12-10 --indv GNB12-11 --out US
 ```
-4.4 - Gráficos de heterogocidad individual, diversidad de nucleotidos y LD
+PARA VER EL EJEMPLO EN LA TERMINAL [HACER CLIC AQUÍ]
+
+4.4 - Gráficos de heterogocidad individual, diversidad de nucleotidos y LD. <br />
 Los siguientes gráficos fueron hechos utilizando el lenguaje de programación R en [Rstudio](https://www.rstudio.com/)
+Puedes ver el script [aquí]
+
 ![GRAFICOS DE ANALISIS DE DIVERSIDAD](https://user-images.githubusercontent.com/84527634/124191764-443f1f80-da92-11eb-83ce-01c331d17715.png)
 
 ### 5. ANÁLISIS DE ESTRUCTURA POBLACIONAL 
@@ -138,15 +142,16 @@ plink --bfile EU_OC_US.FilteredPruned --keep EU_OC_US.FilteredPruned.rel.id --ma
 ```
 plink --bfile EU_OC_US.FilteredPrunedUnrel --pca 4 --out EU_OC_US.FilteredPrunedUnrel --allow-extra-chr --chr-set 29
 ```
-5.7 - Graficos de PCA con R
+PARA VER EL EJEMPLO EN LA TERMINAL [HACER CLIC AQUÍ]
+5.7 - Gráficos de PCA con R
 
 ### 6. ANÁLISIS DE ADMIXTURE 
 
-6.1 Seleccion al azar del 1% de los marcadores
+6.1 Selección al azar del 1% de los marcadores
 ```
 plink --bfile EU_OC_US.FilteredPrunedUnrel --thin 0.01 --make-bed --out EU_OC_US.Thinned --allow-extra-chr --chr-set 29
 ```
-6.2 - Analisis de ancestria de 2 a 6 poblaciones
+6.2 - Análisis de ancestría de 2 a 6 poblaciones
 ```
 for K in `seq 2 6`;
 do
@@ -155,11 +160,10 @@ done
 ```
 ADMIXTURE genera 2 archivos: .Q que contiene asignaciones de grupos para cada individuo y .P que contiene para cada SNP las frecuencias alelicas de la poblacion
 
-6.3 - Graficos de ADMIXTURE para 2, 4 y 6 poblaciones
+PARA VER EL EJEMPLO EN LA TERMINAL [HACER CLIC AQUÍ]
+6.3 - Gráficos de ADMIXTURE para 2, 4 y 6 poblaciones
 
 ### REFERENCIAS Y LINK DE INTERÉS
-Marees A., de Kluiver H., Stringer S., Vorspan F., Curis E., Marie-Claire C., Derks E. (2018). A tutorial on conducting genome-wide association studies: Quality control and statistical analysis. International Journal of Methods in Psychiatric Research. 27. e1608. 10.1002/mpr.1608.
-
-A PLINK tutorial: https://zzz.bwh.harvard.edu/plink/tutorial.shtml
-
-Speciation & Population Genomics: a how-to-guide: https://speciationgenomics.github.io/ADMIXTURE/
+* Marees A., de Kluiver H., Stringer S., Vorspan F., Curis E., Marie-Claire C., Derks E. (2018). A tutorial on conducting genome-wide association studies: Quality control and statistical analysis. International Journal of Methods in Psychiatric Research. 27. e1608. 10.1002/mpr.1608.
+* A PLINK tutorial: https://zzz.bwh.harvard.edu/plink/tutorial.shtml
+* Speciation & Population Genomics: a how-to-guide: https://speciationgenomics.github.io/ADMIXTURE/
