@@ -1,6 +1,6 @@
 ## PRÁCTICA 1: INTRODUCCIÓN A LA GENÓMICA POBLACIONAL Y ANCESTRÍA 
 
-### INTRODUCCIÓN
+## INTRODUCCIÓN
 
 SOFTWARES DE BIOINFORMATICA
 * PLINK es un conjunto de herramientas de analisis de asociación de genoma completo de codigo abierto y gratuito, disenado para realizar una variedad de análisis genéticos básicos a gran escala de forma eficiente (https://www.cog-genomics.org/plink2).
