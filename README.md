@@ -17,7 +17,7 @@
 
 :white_check_mark:**DESCRIPCIÓN:**
 
-Este proyecto está basado en la investigación reproducible, donde a través de diferentes prácticas se irá construyendo un proyecto de genómica aplicada que consiste en tomar datos depositados en bases de datos públicas, manipular los datos mediante líneas de código que permitirán realizar un analisis de datos integrados con texto y finalmente reportar tanto los análisis como interpretaciones generadas utilizando por ejemplo :
+Este proyecto está basado en la investigación reproducible, donde a través de diferentes prácticas se irá construyendo un proyecto de genómica aplicada que consiste en tomar datos depositados en bases de datos públicas, manipularlos a través de líneas de código que permitirán realizar un análisis de datos integrados con texto y finalmente reportar tanto los análisis como interpretaciones generadas utilizando por ejemplo :
 
 ![repositorios, sotware y lenguajes de programación](https://user-images.githubusercontent.com/84527634/122594001-741f0980-d034-11eb-8083-12c5d7777dc5.png)
 
