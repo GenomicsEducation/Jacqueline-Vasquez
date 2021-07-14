@@ -1,6 +1,6 @@
  ## PRÁCTICA 3: INTRODUCCIÓN AL ANÁLISIS DE SECUENCIAS NGS.
   
-  ### INTRODUCCIÓN 
+  ## INTRODUCCIÓN 
 Las tecnologías de secuenciación de próxima generación han evolucionado significativamente para proporcionar una mayor producción de datos [(Taishan et al., 2021)](https://www.sciencedirect.com/science/article/abs/pii/S0198885921000628). Sin embargo, las plataformas son suceptibles a una amplia gama de fallas químicas e instrumentales [(Stephan et al., 2014)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3956068/) y los datos obtenidos pueden tener un fuerte ruido de fondo, contaminación de los adaptadores, baja calidad de secuenciación, entre otros [(He et al., 2020)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7409520/), lo que posteriomente representa problemas significativos en la precisión de la detección de variantes o regiones genómicas objeto de estudio.
 De acuerdo a esto, el control de calidad en el procesamiento de datos se torna esencial para contar con datos limpios y de esta forma evitar errores en posteriores análisis.
 
@@ -13,7 +13,10 @@ De acuerdo a esto, el control de calidad en el procesamiento de datos se torna e
   - línea 4: corresponde a las calidades, donde hay una correspondiente entre la base y su valor de calidad representado por un caracter alfanumérico codificadas para un determinado Phred score (números o letras). 
   - Las secuencias deben tener un QFRED mayor a 30.
   
-![formato fastq](https://user-images.githubusercontent.com/84527634/122121183-5154e100-cdf9-11eb-991c-6c8d4adfc731.png)
+<div align="center">
+<p>FORMATO fastq</p>
+<img src="https://user-images.githubusercontent.com/84527634/125660700-fd6ff03f-ff32-4561-a896-5d4ea7282e99.png" height="400">
+</div>
 
  **SOFTWARES DE BIOINFORMATICA** 
  
@@ -28,23 +31,28 @@ Es una herramienta de línea de comandos rápida y de multiproceso que se puede 
 * En este trabajo se emplea la versión 0.39.
 * El manual de uso del software se puede descargar [aquí](http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf)
  
-### OBJETIVOS DEL TRABAJO PRÁCTICO
+## OBJETIVOS DEL TRABAJO PRÁCTICO
   1. Comprobar la integridad de las descarga de los archivos usando md5sum.
   2. Realizar un análisis integral de control de calidad de secuencias NGS con fastqc.<br />
   3. Filtrar y podar las secuencias con el software trimmomatic.<br />
   4. Transferir archivos mediante protocolo FTP desde el Servidor a nuestros computadores. 
   
-### ORIGEN DE LAS MUESTRAS 
+## ORIGEN DE LAS MUESTRAS 
   Las muestras que serán analizadas provienen de la base de datos [SRA de NCBI](https://www.ncbi.nlm.nih.gov/sra) y corresponden a lecturas crudas del salmón del Atlántico *Salmo salar* en formato fastq, obtenidas por secuenciación de extremos emparejados con un secuenciador Illumina HiSeq2000.<br />
   
-### ETAPAS DEL ANÁLISIS DE CONTROL DE CALIDAD, FILTRADO Y PODA.
+## TRABAJO PRÁCTICO: ETAPAS DEL ANÁLISIS DE CONTROL DE CALIDAD, FILTRADO Y PODA.
 
   **1. CONEXIÓN REMOTA AL SERVIDOR POMEO**
   
-  PRIMERO ABRIR PuTTY 
-![CONECTAR CON EL SERVIDOR POMEO](https://user-images.githubusercontent.com/84527634/122123050-86fac980-cdfb-11eb-8294-9d2ed06d41bc.png)
- SEGUNDO 
-![usuario y contraseña](https://user-images.githubusercontent.com/84527634/122123842-844ca400-cdfc-11eb-84dd-e1f942bf16ce.png)
+<div align=" leftAlign ">
+<p>PASO 1. ABRIR PuTTY</p>
+<img src="https://user-images.githubusercontent.com/84527634/122123050-86fac980-cdfb-11eb-8294-9d2ed06d41bc.png" width="800" height="500">
+</div>
+
+<div align=" leftAlign ">
+<p>PASO 2. AGREGAR USUARIO Y CONTRASEÑA</p>
+<img src="https://user-images.githubusercontent.com/84527634/122123842-844ca400-cdfc-11eb-84dd-e1f942bf16ce.png" width="1000" height="400">
+</div>
 
   **2. INSTALACIÓN Y CONFIGURACIÓN DE SOFTWARE PARA EL CONTROL DE CALIDAD: FastQC y Trimmomatic** <br />
   Para configurar el canal bioconda se debe ejecutar el siguiente comando
@@ -88,7 +96,9 @@ nano download.sh
 ```
 Se abrira la venta de NANO
 
-![llamar a NANO](https://user-images.githubusercontent.com/84527634/122129316-ed83e580-ce03-11eb-9ad4-d5f79edd84e2.png)
+<div align=" leftAlign ">
+<img src="https://user-images.githubusercontent.com/84527634/122129316-ed83e580-ce03-11eb-9ad4-d5f79edd84e2.png" height="400">
+</div>
 
 Una vez dentro de NANO Introducir y guardar la información del script como se detalla a continuación, cambiando en la segunda y tercera línea por su nombre de usuario. Note que el script solo tiene 4 líneas.
 * PUEDES VER EL SCRIPT dowload.sh [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SCRIPT.sh/download.sh)
@@ -241,9 +251,12 @@ Adicionalmente, POMEO tiene instalado Rstudio server por lo que es posible acced
 [Rstudio de POMEO](http://200.54.220.141:8787/auth-sign-in)
 
 
-### INTERPRETACIÓN DE RESULTADOS 
+## INTERPRETACIÓN DE RESULTADOS 
 
-![SECUENCIAS](https://user-images.githubusercontent.com/84527634/122330912-fb1f9500-cf01-11eb-93b6-a75775b5cb74.png)
+<div align="center">
+<p>SECUENCIAS NGS</p>
+<img src="https://user-images.githubusercontent.com/84527634/122330912-fb1f9500-cf01-11eb-93b6-a75775b5cb74.png" height="400">
+</div>
 
 SECUENCIAS NGS GENERADAS 
 - [SRR2006763_1_fastqc.html](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SECUENCIAS%20NGS%20GENERADAS/SRR2006763_1_fastqc.html)
@@ -264,7 +277,7 @@ En relación con la calidad es posible observar que a pesar de que las dos secue
 Se cumplen casí todos los criterios de control de calidad de la secuenciación menos el "Sequence length Distribution", pero esto se debe a que existen algunas secuencias cortas, pero la mayoría están en el largo adecuado y despues del filtrado se eliminaron fragmentos inferiores a 60bp, reduciendo el rango de 43-98pb a 60-98pb.
 
 
-### REFERENCIAS DE INTERÉS 
+## REFERENCIAS DE INTERÉS 
 - Grüning, B., Dale, R., Sjödin, A. et al. Bioconda: sustainable and comprehensive software distribution for the life sciences. Nat Methods 15, 475–476 (2018). https://doi.org/10.1038/s41592-018-0046-7
 - Brown, J., Pirrung, M., & McCue, L. (2017). FQC Dashboard: integrates FastQC results into a web-based, interactive, and extensible FASTQ quality control tool. Bioinformatics, 3137–3139.
 - Stephan, P., Dander, A., Fischer, M., Snajder, R., Sperk, M., Efremova, M., . . . Trajanoski, Z. (2014). A survey of tools for variant analysis of next-generation genome sequencing data. Briefings in Bioinformatics, 256-278.
