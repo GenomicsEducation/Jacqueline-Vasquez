@@ -15,11 +15,21 @@ En esta práctica trabajaremos con datos de genotipos y fenotipos que fueron sim
 - **QTL y heredabilidad del rasgo pheno 1 QTLs**: 10, 1 por cromosoma.
 - **heredabilidad**: 0.5 <br />
 
-La importación de los datos y los análisis serán realizados con RStudio y las siguientes librerías<br />
+La importación de los datos y los análisis serán realizados con RStudio.cloud con las siguientes librerías<br />
 1. **utils**: Utilizada para importar big data usando la función read.delim().
 2. **rrBLUP**: Software for genomic prediction with the RR-BLUP mixed model [Endelman 2011](https://doi.org/10.3835/plantgenome2011.08.0024).
 3. **ggplot2**: Para realizar gráficas avanzadas. 
 4. 
+
+Para ver el reporte completo del análisis en formato html, haz clic [AQUÍ]
+
+### 1. CONEXIÓN CON RStudio.cloud
+
+### 2. IMPORTAR Y EXPLORAR ARCHIVOS DE GENOTIPOS Y FENOTIPOS
+
+### 3. GWAS
+
+### 4. QTLs
 
 ## REFERENCIAS Y LINK DE INTERÉS
 1. Jeffrey B. Endelman 2011. Ridge Regression and Other Kernels for Genomic Selection with R Package rrBLUP. https://doi.org/10.3835/plantgenome2011.08.0024
