@@ -21,15 +21,120 @@ La importación de los datos y los análisis serán realizados con RStudio.cloud
 3. **ggplot2**: Para realizar gráficas avanzadas. 
 4. 
 
-Para ver el reporte completo del análisis en formato html, haz clic [AQUÍ]
-
 ### 1. CONEXIÓN CON RStudio.cloud
 
-### 2. IMPORTAR Y EXPLORAR ARCHIVOS DE GENOTIPOS Y FENOTIPOS
+### 2. COMANDOS PARA SER EJECUTADOS EN R PARA EL ANÁLISIS 
+#### 2.1 IMPORTAR Y EXPLORAR ARCHIVOS DE GENOTIPOS Y FENOTIPOS
+a) Importe el archivo de genotipos geno.txt y fenotipos Pheno.txt usando la función read.delim.
+```
+geno <- read.delim("geno.txt", sep = "\t", dec = ",", header = T)
+pheno <- read.delim("pheno.txt", sep = "\t", dec = ",", header = T)
+```
+b) Luego realice un análisis exploratorio de ambos set de datos con las funciones head(), dim(). También realice un histograma de la variable cuantitativa y del archivo pheno, use la función hist().
+```
+dim(geno)
+```
+```
+dim(pheno)
+```
+```
+head(geno[1:6,1:6])
+```
+```
+head(pheno)
+```
+Para realizar el histograma use el siguiente comando:
+```
+hist(pheno$y)
+```
+#### 2.2 GWAS
+a) Investigue el uso de la función A.mat de la librería rrBLUP y calcule la matriz de parentesco genómico para el set de datos geno. Explore la matriz con las funciones dim(), head() y hist().
+```
+# Calcula y grafica matriz de parentesco genómico según método de Van Raden para los 200 animales
+A <- A.mat(geno[4:203]) 
+```
+```
+dim(A)
+```
+```
+head(A[1:6,1:6])
+```
+```
+hist(A)
+```
+b) Ahora, cree un objeto llamado endogamia con la diagonal de la matriz y grafique con hist(). Dado que la diagonal contiene el parentesco del individuo con sigo mismo (E(diagonal)= 1+f), según Endelman and Jannink, 2012 esto permite estimar el coeficiente de endogamia de la población.
+```
+endogamia <- diag(A)
+hist(endogamia, main = "Histograma de endogamia")
+```
+c) Investigue el uso de la función GWAS() de la librería rrBLUP y realice un análisis de asociación genómica GWAS. Incluya el argumento plot=TRUE. Almacene el resultado del GWAS en un objeto denominado score. 
+```
+score <- GWAS(pheno,geno, plot=TRUE)
+```
+```
+class(score)
+```
+### 2.3 QTLs
 
-### 3. GWAS
+Ahora exploraremos el efecto de los QTLs detectados por el GWAS
 
-### 4. QTLs
+a) Explore el objeto score con el comando head() y View().
+```
+# View(scores)
+head(score)
+```
+**Sugerencia** Extraiga el score de los SNP significativos (score>5) usando la función filter() de la librería **dplyr*
+```
+dplyr::filter(score, y > 5)
+```
+**Sugerencia** note que el score corresponde a -log(p), donde p es la probabilidad o significancia. Transforme el score a p usando exp()
+```
+# snp300
+exp(-7.5047236) 
+```
+```
+# pruebe calcular log(-0.000550478)
+# snp1000
+exp(-8.5080997)
+```
+```
+# pruebe calcular log(-0.000201827)
+```
+b) Realice un gráfico de regresión lineal de fenotipo en función de los genotipo para cada SNP significativo.
+
+**Sugerencia:** Transponga la matriz geno y cree un nuevo data.frame solo con los snp signiticativos, luego una al data.frame el rasgo cuantitativo.
+```
+t_geno_300 <- t(geno[300,4:203])+1
+t_geno_1000 <- t(geno[1000,4:203])+1
+qtl <- data.frame(t_geno_300,t_geno_1000,pheno$y)
+
+head(qtl)
+```
+```
+qtl.1 <- ggplot(qtl, aes(x = X300, y = pheno.y))
+qtl.1 + geom_point() + xlab("snp 300") +  ylab("Pheno")+ geom_smooth(method=lm)
+```
+```
+qtl.2 <- ggplot(qtl, aes(x = X1000, y = pheno.y))
+qtl.2 + geom_point() + xlab("snp 1000") +  ylab("Pheno")+ geom_smooth(method=lm)
+```
+c) Estime el efecto (beta o pendiente) de los QTLs con mayor score usando un modelo lineal lm().
+```
+lm.qtl.300 <- lm(pheno.y ~ X300, data = qtl)
+summary(lm.qtl.300)
+```
+```
+cat("El efecto del snp300 sobre el rasgo cuantitativo 1.8121")
+```
+```
+lm.qtl.1000 <- lm(pheno.y ~ X1000, data = qtl)
+summary(lm.qtl.1000)
+```
+```
+cat("El efecto del snp1000 sobre el rasgo cuantitativo 1.8549")
+```
+### 3. REPORTE COMPLETO DEL ANÁLISIS EN R E INTERPRETACIÓN DE LOS RESULTADOS 
+Para ver el reporte completo en formato html, haz clic [AQUÍ]
 
 ## REFERENCIAS Y LINK DE INTERÉS
 1. Jeffrey B. Endelman 2011. Ridge Regression and Other Kernels for Genomic Selection with R Package rrBLUP. https://doi.org/10.3835/plantgenome2011.08.0024
