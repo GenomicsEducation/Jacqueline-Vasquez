@@ -66,6 +66,15 @@ link [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolki
 
  **DESCARGAR E INSTALAR WinSCP**
  - Para un sistema operativo windows se puede descargar del siguiente link [WinSCP](https://winscp.net/eng/download.php).<br />
+<div align="leftAlign">
+<p>PASO 1 DESCARGA </p>
+<img src="https://user-images.githubusercontent.com/84527634/125658501-2d314eec-2f1d-48ec-84c0-3ff3a23391af.png" height="400">
+</div>
+
+<div align="leftAlign">
+<p>PASO 2 INSTALACIÓN </p>
+<img src="https://user-images.githubusercontent.com/84527634/125658506-91448f64-bec3-4a85-b724-cf17cc247966.png" height="400">
+</div>
  
 #### **2. ACCESO REMOTO AL SERVIDOR POMEO**
 En esta práctica accedermos al servidor POMEO de la Escuela de Ciencias del Mar usando nombres de usuario y password respectivos.
