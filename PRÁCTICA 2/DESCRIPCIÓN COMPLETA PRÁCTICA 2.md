@@ -1,6 +1,6 @@
 ## PRÁCTICA 2: INTRODUCCIÓN A LINUX PARA GENÓMICA
 
-### INTRODUCCIÓN 
+## INTRODUCCIÓN 
 **SHELL DE UNIX**
 Una Shell de Unix o también shell, es el término usado en informática para referirse a un intérprete de comandos, el cual consiste en la interfaz de usuario tradicional de los sistemas operativos basados en Unix y similares, como GNU/Linux. [Para más información haz clic Aquí](https://es.wikipedia.org/wiki/Shell_de_Unix).<br />
 Este interprete de comandos es el ambiente de trabajo base de la bioinformática y por lo tanto, de todos los científicos y profesionales que trabajan en genética y genómica aplicada.<br />
@@ -37,43 +37,52 @@ link [NANO](https://www.nano-editor.org/)
  
 link [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc)
 
-### OBJETIVOS 
+## OBJETIVOS 
 1. Establecer conexión remota a un servidor y ejecutar multitareas
 2. Ejecutar comandos en la terminal 
 3. Instalar MINICONDA Y NANO a través de comandos en la terminal
 4. crear scripts usando el editor de texto nano
 
-### PRÁCTICA: CONEXIÓN VÍA SSH A UN SERVIDOR LINUX
+## PRÁCTICA: CONEXIÓN VÍA SSH A UN SERVIDOR LINUX
 
 #### **1. INSTALACIÓN Y CONFIGURACIÓN DE SOFTWARE PARA ACCESO REMOTO Y TRANSFERENCIA DE ARCHIVOS**
- 1. DESCARGAR E INSTALAR PuTTY <br />
+**DESCARGAR E INSTALAR PuTTY** <br />
  - Para un sistema operativo windows se puede descargar del siguiente link [PuTTY](https://www.putty.org/).<br />
-
-<img src="https://user-images.githubusercontent.com/84527634/125650695-bb003e81-409f-4751-826d-16cd51faa72e.png" height="500"/>
-</div>
-
-<img src="https://user-images.githubusercontent.com/84527634/125651081-ff5932bd-ce23-44b0-b02e-71b197dd7652.png" height="500"/>
-</div>
-
-<img src="https://user-images.githubusercontent.com/84527634/125651451-7a700475-14f0-4581-9ff7-f691006bb537.png" height="400"/>
-</div>
  
- 2. DESCARGAR E INSTALAR WinSCP
+<div align="leftAlign">
+<p>PASO 1 PARA LA DESCARGA DE PuTTY</p>
+<img src="https://user-images.githubusercontent.com/84527634/125650695-bb003e81-409f-4751-826d-16cd51faa72e.png" height="400">
+</div>
+
+<div align="leftAlign">
+<p>PASO 2 PARA LA DESCARGA DE PuTTY</p>
+<img src="https://user-images.githubusercontent.com/84527634/125651081-ff5932bd-ce23-44b0-b02e-71b197dd7652.png" height="400">
+</div>
+
+<div align="leftAlign">
+<p> PASO 3 INSTALACIÓN DE PuTTY</p>
+<img src="https://user-images.githubusercontent.com/84527634/125651451-7a700475-14f0-4581-9ff7-f691006bb537.png" height="400">
+</div>
+
+ **DESCARGAR E INSTALAR WinSCP**
  - Para un sistema operativo windows se puede descargar del siguiente link [WinSCP](https://winscp.net/eng/download.php).<br />
  
 #### **2. ACCESO REMOTO AL SERVIDOR POMEO**
 En esta práctica accedermos al servidor POMEO de la Escuela de Ciencias del Mar usando nombres de usuario y password respectivos.
 Para lo susuarios de windows usaremos PuTTy aproximadamente como se muestra en la siguiente copia de pantalla.
-
+<p>PASO 1 </p>
 <img src="https://user-images.githubusercontent.com/84527634/123120891-b076af00-d412-11eb-8a5b-f1ae90df4ba0.png" height="400"/>
 </div>
 
+<p>PASO 2 </p>
 <img src="https://user-images.githubusercontent.com/84527634/123121157-ef0c6980-d412-11eb-821d-1acdfcfc03a4.png" height="400"/>
 </div>
 
 Una vez dentro de la terminal agregar nombre de usuario y contraseña correspondiente.
 
-![usuario y contraseña](https://user-images.githubusercontent.com/84527634/123138222-c7bd9880-d422-11eb-827e-d4c4bd926f4e.png)
+<p>PASO 3 </p>
+<img src="https://user-images.githubusercontent.com/84527634/123138222-c7bd9880-d422-11eb-827e-d4c4bd926f4e.png" height="400"/>
+</div>
 
 Existen varios comandos básicos que son útiles para trabajar en proyectos de genómica. Aquí revisaremos algunos relacionados a la revisión del espacio libre disponible para almacenar datos, crearemos directorios de trabajo y archivos de texto plano usando el editor nano, entre otros.
 
@@ -146,7 +155,10 @@ nano script1.sh
 ```
 Se abrirá la siguiente pantalla en la terminal 
 
-![llamar a NANO](https://user-images.githubusercontent.com/84527634/122142740-0c8f7100-ce1e-11eb-8815-e65c1034275b.png)
+<div align="leftAlign">
+<p>PANTALLA DE NANO</p>
+<img src="https://user-images.githubusercontent.com/84527634/122142740-0c8f7100-ce1e-11eb-8815-e65c1034275b.png" height="400">
+</div>
 
 escriba el siguiente script
 ```
@@ -201,7 +213,7 @@ zcat SRR6019464.fastq.gz | echo $((`wc -l`/4))
 ```
 * LINK DEL EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/43bbeb5202abe65bbc1e51b534456f00b41ecb7f/PR%C3%81CTICA%202/EJEMPLOS%20DE%20LA%20TERMINAL/terminal%20practica%202.txt) 
 
- ### REFERENCIAS Y LINK DE INTERÉS
+ ## REFERENCIAS Y LINK DE INTERÉS
  
  1. Grüning, B., Dale, R., Sjödin, A. et al. Bioconda: sustainable and comprehensive software distribution for the life sciences. Nat Methods 15, 475–476 (2018). https://doi.org/10.1038/s41592-018-0046-7
  2. Capítulo 10. Working with Sequence Data del libro Bioinformatics Data Skils.
