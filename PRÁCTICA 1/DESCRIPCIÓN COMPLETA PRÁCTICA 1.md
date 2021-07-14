@@ -3,7 +3,7 @@
 ### INTRODUCCIÓN
 
 El Centro Nacional para la Información Biotecnológica (en inglés: *National Center for Biotechnology Information* [NCBI]), es parte de la Biblioteca Nacional de Medicina de los Estados Unidos. Se encarga de almacenar y actualizar la información referente a secuencias genómicas en GenBank, un índice de artículos científicos rederentes a biomedicina, biotecnología, bioquímica, genética y genómica en PubMed, una recopilación de enfermedades genéticas humanas en OMIM, además de otros datos biotecnológicos de relevancia en diversas bases de datos.<br />
-Todas las bases de datos de NCBI estasn disponibles en línea de manera gratuita <br />
+Todas las bases de datos de NCBI estan disponibles en línea de manera gratuita <br />
 Dentro de las bases de datos se encuentran por ejemplo: <br />
 
 ![bases de datos de NCBI](https://user-images.githubusercontent.com/84527634/122137441-9fc2a980-ce12-11eb-94e5-a349897f193a.png)
