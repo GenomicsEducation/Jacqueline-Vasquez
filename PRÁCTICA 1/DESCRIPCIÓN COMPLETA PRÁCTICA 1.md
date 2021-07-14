@@ -1,12 +1,15 @@
 ## PRÁCTICA 1: INTRODUCCIÓN A BASES DE DATOS GENÓMICOS : ASSEMBLY Y SRA DE [NCBI](https://www.ncbi.nlm.nih.gov/)
 
-### INTRODUCCIÓN
+## INTRODUCCIÓN
 
 El Centro Nacional para la Información Biotecnológica (en inglés: *National Center for Biotechnology Information* [NCBI]), es parte de la Biblioteca Nacional de Medicina de los Estados Unidos. Se encarga de almacenar y actualizar la información referente a secuencias genómicas en GenBank, un índice de artículos científicos rederentes a biomedicina, biotecnología, bioquímica, genética y genómica en PubMed, una recopilación de enfermedades genéticas humanas en OMIM, además de otros datos biotecnológicos de relevancia en diversas bases de datos.<br />
 Todas las bases de datos de NCBI estan disponibles en línea de manera gratuita <br />
 Dentro de las bases de datos se encuentran por ejemplo: <br />
 
-![bases de datos de NCBI](https://user-images.githubusercontent.com/84527634/122137441-9fc2a980-ce12-11eb-94e5-a349897f193a.png)
+<div align="center">
+<p>BASE DE DATOS DE NCBI</p>
+<img src="https://user-images.githubusercontent.com/84527634/122137441-9fc2a980-ce12-11eb-94e5-a349897f193a.png" width="900" height="550">
+</div>
 
 * **Assembly:**	Contiene información sobre la	estructura de genomas ensamblados, nombres de ensamblados y otros metadatos (anotación de genes), informes estadísticos	y	enlaces	a	datos de secuencias	de genómas.	
 * **GenBank:** Base de datos redundante	de secuencias	genéticas	del	Nacional Institutes	of Health	(NIH), es una colección anotada de todas las secuencias de ADN disponibles públicamente. GenBank es parte del	INSDC.	
@@ -16,18 +19,18 @@ Dentro de las bases de datos se encuentran por ejemplo: <br />
 * **BioProject:** Este recurso describe	el alcance,	el material	y	los	objetivos de proyectos genómicos,	proporcionando un	mecanismo	para recuperar conjuntos de	datos	almacenados	en	diferentes bases de	datos.	
 * **BioSample:** Esta base de	datos	contiene descripciones de	materiales de origen biológico utilizados	en ensayos experimentales.
 
-### OBJETIVOS 
+## OBJETIVOS 
 
 1. Reconocer y utlizar las Bases de	datos	Assembly y SRA del NCBI
 2. Realizar	descarga manual	de metadata de una muestra seleccionada.	
 3. Registrar actividades en	el proyecto	de genómica	github.
 
-### TRABAJO PRÁCTICO
+## TRABAJO PRÁCTICO
 
 ### 1. SELECCIÓN DE UNA ESPECIE DE IMPORTANCIA ECONÓMICA EN PRODUCCIÓN ANIMAL. :sheep:
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flock_of_sheep.jpg/245px-Flock_of_sheep.jpg" width="200" height="200" align="center" />
-<p> Ovis aries (sheep)</p>
+<div align="center">
+<p>Ovis aries</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flock_of_sheep.jpg/245px-Flock_of_sheep.jpg" width="300" height="300">
 </div>
 
 ### 2. INFORMACIÓN GENÓMICA DE LA ESPECIE 
@@ -92,7 +95,7 @@ Ovis aries[Taxonomy ID: 9940]
  * Link DE NCBI DONDE DESCARGAR LA METADATA DE LAS MUESTRA [AQUÍ](https://trace.ncbi.nlm.nih.gov/Traces/study/?acc=SRP320117&o=acc_s%3Aa)
  * Link DE LA METADATA DE LA MUESTRA DESCARGADA [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/f5603881a6908290d88e28076ef1c47d4dcd5717/PR%C3%81CTICA%201/metadata%20original.txt)
 
-### REFERENCIAS Y LINK DE INTERÉS
+## REFERENCIAS Y LINK DE INTERÉS
 
 1. https://es.wikipedia.org/wiki/Centro_Nacional_para_la_Informaci%C3%B3n_Biotecnol%C3%B3gica
 2. https://youtu.be/fCd6B5HRaZ8 
