@@ -45,7 +45,7 @@ link [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolki
 
 ### PRÁCTICA: CONEXIÓN VÍA SSH A UN SERVIDOR LINUX
 
-#### **1. INSTALACIÓN Y CONFIGURACIÓN DE SOFTWARE.**
+#### **1. INSTALACIÓN Y CONFIGURACIÓN DE SOFTWARE PARA ACCESO REMOTO Y TRANSFERENCIA DE ARCHIVOS**
  1. DESCARGAR E INSTALAR PuTTY <br />
  - Para un sistema operativo windows se puede descargar del siguiente link [PuTTY](https://www.putty.org/).<br />
  
