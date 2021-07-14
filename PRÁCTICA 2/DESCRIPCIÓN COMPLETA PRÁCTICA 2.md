@@ -48,6 +48,15 @@ link [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolki
 #### **1. INSTALACIÓN Y CONFIGURACIÓN DE SOFTWARE PARA ACCESO REMOTO Y TRANSFERENCIA DE ARCHIVOS**
  1. DESCARGAR E INSTALAR PuTTY <br />
  - Para un sistema operativo windows se puede descargar del siguiente link [PuTTY](https://www.putty.org/).<br />
+
+<img src="https://user-images.githubusercontent.com/84527634/125650695-bb003e81-409f-4751-826d-16cd51faa72e.png" height="500"/>
+</div>
+
+<img src="https://user-images.githubusercontent.com/84527634/125651081-ff5932bd-ce23-44b0-b02e-71b197dd7652.png" height="500"/>
+</div>
+
+<img src="https://user-images.githubusercontent.com/84527634/125651451-7a700475-14f0-4581-9ff7-f691006bb537.png" height="400"/>
+</div>
  
  2. DESCARGAR E INSTALAR WinSCP
  - Para un sistema operativo windows se puede descargar del siguiente link [WinSCP](https://winscp.net/eng/download.php).<br />
@@ -56,8 +65,11 @@ link [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolki
 En esta práctica accedermos al servidor POMEO de la Escuela de Ciencias del Mar usando nombres de usuario y password respectivos.
 Para lo susuarios de windows usaremos PuTTy aproximadamente como se muestra en la siguiente copia de pantalla.
 
-![primera vez que se conecta al servidor pomeo](https://user-images.githubusercontent.com/84527634/123120891-b076af00-d412-11eb-8a5b-f1ae90df4ba0.png)
-![segundo paso de la primera vez de coneccion con pomeo](https://user-images.githubusercontent.com/84527634/123121157-ef0c6980-d412-11eb-821d-1acdfcfc03a4.png)
+<img src="https://user-images.githubusercontent.com/84527634/123120891-b076af00-d412-11eb-8a5b-f1ae90df4ba0.png" height="400"/>
+</div>
+
+<img src="https://user-images.githubusercontent.com/84527634/123121157-ef0c6980-d412-11eb-821d-1acdfcfc03a4.png" height="400"/>
+</div>
 
 Una vez dentro de la terminal agregar nombre de usuario y contraseña correspondiente.
 
