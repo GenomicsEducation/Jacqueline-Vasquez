@@ -97,7 +97,7 @@ Ejecutar los siguientes comandos en la terminal:
   |ctrl-C | Copiaar y pegar en la terminal con click derecho del mouse |
    | exit  | es un comando para cerrar la sesión. |
 
-#### **3. INSTALACIÓN Y CONFIGURACIÓN DE CONDA, NANO Y SRA TOOLKIT**
+#### **3. INSTALACIÓN Y CONFIGURACIÓN DE [CONDA](https://docs.conda.io/en/latest/), [NANO](https://www.nano-editor.org/) Y [SRA TOOLKIT](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc)**
 Accede nuevamente al servidor POMEO con tu cuenta de usuario y clave de acceso. Ahora instalaremos algunos software clave para el trabajo de genómica incluyendo el gestor de software Miniconda y el editor nano, entre otros.
 
 Ejecutar los siguientes comandos en la terminal:
