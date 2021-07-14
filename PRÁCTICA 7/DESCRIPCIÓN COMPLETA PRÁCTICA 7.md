@@ -138,6 +138,6 @@ Para ver el reporte completo en formato html, haz clic [AQUÍ]()
 
 ## REFERENCIAS Y LINK DE INTERÉS
 1. Jeffrey B. Endelman 2011. Ridge Regression and Other Kernels for Genomic Selection with R Package rrBLUP. https://doi.org/10.3835/plantgenome2011.08.0024
-2. Endelman and Jannink, 2012, (https://www.g3journal.org/content/2/11/1405)
+2. Endelman J.B and Jannink J-L. (2012). Shrinkage Estimation of the Realized Relationship Matrix. G3: GENES, GENOMES, GENETICS November 1, 2012 vol. 2 no. 11 1405-1413;(https://www.g3journal.org/content/2/11/1405)
 3. https://zzz.bwh.harvard.edu/plink/dataman.shtml
 4. https://support.illumina.com/bulletins/2016/06/simple-guidelines-for-identifying-topbottom-topbot-strand-and-ab-allele.html
