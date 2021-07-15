@@ -169,8 +169,9 @@ ADMIXTURE genera 2 archivos: .Q que contiene asignaciones de grupos para cada in
 PARA VER EL EJEMPLO EN LA TERMINAL [HACER CLIC AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/49bec791af1034f77767a652dbb1adb3579c3430/PR%C3%81CTICA%206/EJEMPLOS%20EN%20LA%20TERMINAL/6%20-%20Analisis%20de%20admixture.txt)
 
 6.3 - Gráficos de ADMIXTURE para 2, 4 y 6 poblaciones
+![grafico ADMIXTURE](https://user-images.githubusercontent.com/84527634/125709971-31036af0-de7a-4be8-83de-525162affefe.png)
 
-### REFERENCIAS Y LINK DE INTERÉS
-* Marees A., de Kluiver H., Stringer S., Vorspan F., Curis E., Marie-Claire C., Derks E. (2018). A tutorial on conducting genome-wide association studies: Quality control and statistical analysis. International Journal of Methods in Psychiatric Research. 27. e1608. 10.1002/mpr.1608.
-* A PLINK tutorial: https://zzz.bwh.harvard.edu/plink/tutorial.shtml
-* Speciation & Population Genomics: a how-to-guide: https://speciationgenomics.github.io/ADMIXTURE/
+## REFERENCIAS Y LINK DE INTERÉS
+1. Marees A., de Kluiver H., Stringer S., Vorspan F., Curis E., Marie-Claire C., Derks E. (2018). A tutorial on conducting genome-wide association studies: Quality control and statistical analysis. International Journal of Methods in Psychiatric Research. 27. e1608. 10.1002/mpr.1608.
+2. A PLINK tutorial: https://zzz.bwh.harvard.edu/plink/tutorial.shtml
+3. Speciation & Population Genomics: a how-to-guide: https://speciationgenomics.github.io/ADMIXTURE/
