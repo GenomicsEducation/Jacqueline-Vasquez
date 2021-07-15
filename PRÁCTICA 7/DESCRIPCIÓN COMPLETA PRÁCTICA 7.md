@@ -3,6 +3,7 @@
 ## :white_check_mark: INTRODUCCIÓN
 * Locus que afecta un rasgo cuantitativo (QTLs), es una región o segmento de un cromosoma (locus) cuya variación (alelos) explica la variacion de fenotipos de un rasgo cuantitativo. 
 * Polimorﬁsmo de nucleótido único (SNP), son marcadores genéticos usados para identificar QTL y para estimar Breeding value (valor genético aditivo o mejorante de un individuo)
+* Estudio de asociación de genoma completo (GWAS), es un enfoque utilizado en la investigación genética para asociar variaciones genéticas específicas con ciertas enfermedades. El método implica el análisis de los genomas de muchas personas diferentes y la búsqueda de marcadores genéticos que se pueden utilizar para predecir la presencia de una enfermedad. Una vez que dichos marcadores genéticos son identificados, se pueden utilizar para entender cómo los genes contribuyen a la enfermedad y desarrollar mejores estrategias de prevención y tratamiento.
 
 ## :white_check_mark: OBJETIVOS 
 1. Realizar un análisis de asociación genómico usando datos simulados de genotipos y fenotipos
@@ -19,13 +20,17 @@ La importación de los datos y los análisis serán realizados con RStudio.cloud
 1. **utils**: Utilizada para importar big data usando la función read.delim [Libreria utils](https://cran.r-project.org/web/packages/R.utils/R.utils.pdf).
 2. **rrBLUP**: Software for genomic prediction with the RR-BLUP mixed model [Endelman 2011](https://doi.org/10.3835/plantgenome2011.08.0024).
 3. **ggplot2**: Para realizar gráficas avanzadas. [librería ggplot2](https://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf)
-4. 
+4. **dplyr**: proporciona una "gramática" (particularmente verbos) para la manipulación y operaciones con data frames. Con esta gramática podemos comunicar mediante nuestro código que es lo que estamos haciendo en los data frames a otras personas (asumiendo que conozcan la gramática).[librería dplyr](https://cran.r-project.org/web/packages/dplyr/dplyr.pdf)
+5. **qqman**: Cree gráficos QQ y manhattan para datos GWAS a partir de resultados PLINK [librería qqman](https://cran.r-project.org/web/packages/qqman/qqman.pdf)
 
 ### 1. CONEXIÓN CON RStudio.cloud
 Si tienes cuenta en la nube de RStudio puedes conectarte usando el siguiente [link](https://www.rstudio.com/products/cloud/)<div/>
 Si no tienes cuenta, te recomiendo descargar RStudio en el siguiente [link](https://www.rstudio.com/products/rstudio/) e instalarla en tu computadora. <div/>
 
-### 2. COMANDOS PARA SER EJECUTADOS EN R PARA EL ANÁLISIS 
+### 2. COMANDOS PARA SER EJECUTADOS EN RStudio PARA EL ANÁLISIS
+* Aquí sólo se mencionarán los comados para ser ejecutados
+* Para ver la ejecucuón, graficas e interpretación de resultados puedes ver el reporte completo del punto 3 (REPORTE COMPLETO DEL ANÁLISIS EN R E INTERPRETACIÓN DE LOS RESULTADOS)
+
 #### 2.1 IMPORTAR Y EXPLORAR ARCHIVOS DE GENOTIPOS Y FENOTIPOS
 a) Importe el archivo de genotipos geno.txt y fenotipos Pheno.txt usando la función read.delim.
 ```
@@ -76,7 +81,7 @@ score <- GWAS(pheno,geno, plot=TRUE)
 ```
 class(score)
 ```
-### 2.3 QTLs
+### 2.3 Locus que afecta un rasgo cuantitativo (QTLs)
 
 Ahora exploraremos el efecto de los QTLs detectados por el GWAS
 
