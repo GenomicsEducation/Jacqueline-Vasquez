@@ -118,7 +118,7 @@ vcftools --vcf EU_OC_US.vcf --geno-r2 --chr 1 --ld-window-bp 100000 --min-r2 0.0
 
 4.4 - Gráficos de heterogocidad individual, diversidad de nucleotidos y LD. <br />
 Los siguientes gráficos fueron hechos utilizando el lenguaje de programación R en [Rstudio](https://www.rstudio.com/)<br />
-Puedes ver el reporte completo del trabajo en RStudio en formato html [aquí](https://0c1a926ea5a0431a92bdcbeecbbb2e10.app.rstudio.cloud/file_show?path=%2Fcloud%2Fproject%2FREPORTE-COMPLETO-PR%C3%81CTICA-6.html)
+:bar_chart: Puedes ver el reporte completo del trabajo en RStudio en formato html [aquí](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/df853944b99c7afc5c65ac6178ff7ef19a129695/PR%C3%81CTICA%206/REPORTE%20COMPLETO%20PRACTICA%206.pdf)
 
 ![GRAFICOS DE ANÁLISIS DE DIVERSIDAD](https://user-images.githubusercontent.com/84527634/124191764-443f1f80-da92-11eb-83ce-01c331d17715.png)
 
@@ -156,7 +156,7 @@ plink --bfile EU_OC_US.FilteredPrunedUnrel --pca 4 --out EU_OC_US.FilteredPruned
 5.7 - Gráfico de PCA con R
 ![grafico PCA](https://user-images.githubusercontent.com/84527634/125709415-afcf0903-5025-414e-996c-2c485ea1ed35.png)
 
-:bar_chart: Puedes ver el reporte completo del trabajo en RStudio en formato html [aquí](https://0c1a926ea5a0431a92bdcbeecbbb2e10.app.rstudio.cloud/file_show?path=%2Fcloud%2Fproject%2FREPORTE-COMPLETO-PR%C3%81CTICA-6.html)
+:bar_chart: Puedes ver el reporte completo del trabajo en RStudio en formato html [aquí](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/df853944b99c7afc5c65ac6178ff7ef19a129695/PR%C3%81CTICA%206/REPORTE%20COMPLETO%20PRACTICA%206.pdf)
 
 ### 6. ANÁLISIS DE ADMIXTURE 
 
@@ -178,7 +178,7 @@ ADMIXTURE genera 2 archivos: .Q que contiene asignaciones de grupos para cada in
 6.3 - Gráficos de ADMIXTURE para 2, 4 y 6 poblaciones
 ![grafico ADMIXTURE](https://user-images.githubusercontent.com/84527634/125709971-31036af0-de7a-4be8-83de-525162affefe.png)
 
-:bar_chart: Puedes ver el reporte completo del trabajo en RStudio en formato html [aquí](https://0c1a926ea5a0431a92bdcbeecbbb2e10.app.rstudio.cloud/file_show?path=%2Fcloud%2Fproject%2FREPORTE-COMPLETO-PR%C3%81CTICA-6.html)
+:bar_chart: Puedes ver el reporte completo del trabajo en RStudio en formato html [aquí](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/df853944b99c7afc5c65ac6178ff7ef19a129695/PR%C3%81CTICA%206/REPORTE%20COMPLETO%20PRACTICA%206.pdf)
 
 ## :white_check_mark: REFERENCIAS Y LINK DE INTERÉS
 1. Marees A., de Kluiver H., Stringer S., Vorspan F., Curis E., Marie-Claire C., Derks E. (2018). A tutorial on conducting genome-wide association studies: Quality control and statistical analysis. International Journal of Methods in Psychiatric Research. 27. e1608. 10.1002/mpr.1608.
