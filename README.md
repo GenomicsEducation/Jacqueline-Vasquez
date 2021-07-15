@@ -33,5 +33,5 @@ Este proyecto está basado en la investigación reproducible, donde a través de
 
 ###  2. DOCTORADO EN BIOTECNOLOGÍA :clap:
 -Programa conjunto entre la Universidad Técnica Federico Santa María y Pontificia Universidad Católica de Valparaíso
--http://www.doctoradoenbiotecnologia.cl/
+- http://www.doctoradoenbiotecnologia.cl/
 
