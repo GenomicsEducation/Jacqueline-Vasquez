@@ -152,6 +152,7 @@ PARA VER EL EJEMPLO EN LA TERMINAL [HACER CLIC AQUÍ](https://github.com/Genomic
 ![grafico PCA](https://user-images.githubusercontent.com/84527634/125709415-afcf0903-5025-414e-996c-2c485ea1ed35.png)
 
 Puedes ver el reporte completo del trabajo en RStudio en formato html [aquí](https://0c1a926ea5a0431a92bdcbeecbbb2e10.app.rstudio.cloud/file_show?path=%2Fcloud%2Fproject%2FREPORTE-COMPLETO-PR%C3%81CTICA-6.html)
+
 ### 6. ANÁLISIS DE ADMIXTURE 
 
 6.1 Selección al azar del 1% de los marcadores
