@@ -14,7 +14,6 @@ El formato SAM consta de un encabezado que comienza con el símbolo @ y una secc
 <img src="https://user-images.githubusercontent.com/84527634/125715781-427b9bae-3928-4a77-b629-29e146d22628.png" height="400">
 </div>
 
-
 **SOFTWARES DE BIOINFORMÁTICA**
 
 **1. BWA**
@@ -29,6 +28,9 @@ Puedes tener más información sobre este programa [Aquí](https://www.htslib.or
 
 1. Realizar el alineamiento de una muestra en formato .fastq a un genoma de referencia.
 
+## :white_check_mark: ORIGEN DE LAS MUESTRAS
+Para facilitar el proceso solo se utilizará una muestra la que provieme de la base de datos SRA del NCBI y corresponden a lecturas crudas del salmón del Atlántico Salmo salar en formato fastq, obtenidas por secuenciación de extremos emparejados con un secuenciador Illumina HiSeq2000.
+La muestra se alineará al genoma de la mitocondria del salmón del Atlántico puesto que dado que su pequeño tamaño, el alineamiento no debería tardar más de unos pocos minutos.
 
 ## :white_check_mark: TRABAJO PRÁCTICO
 
