@@ -1,13 +1,13 @@
 ## PRÁCTICA 7: INTRODUCCIÓN A LOS ESTUDIOS DE ASOCIACIÓN GENÓMICA
 
-## INTRODUCCIÓN
+## :white_check_mark: INTRODUCCIÓN
 
 
 
-## OBJETIVOS 
+## :white_check_mark: OBJETIVOS 
 1. Realizar un análisis de asociación genómico usando datos simulados de genotipos y fenotipos
 
-## TRABAJO PRÁCTICO
+## :white_check_mark: TRABAJO PRÁCTICO
 En esta práctica trabajaremos con datos de genotipos y fenotipos que fueron simulados de la siguiente manera:
 - **Genotipos geno**: Set de datos que contiene el genotipo de 200 animales endogámicos con 1000 SNP distribuidos en 10 cromosomas.
 - **geno_inbred**: Set de datos que contiene el genotipo de 200 animales no endogámicos con 1000 SNP distribuidos en 10 cromosomas.
@@ -136,8 +136,8 @@ cat("El efecto del snp1000 sobre el rasgo cuantitativo 1.8549")
 ### 3. REPORTE COMPLETO DEL ANÁLISIS EN R E INTERPRETACIÓN DE LOS RESULTADOS 
 Para ver el reporte completo en formato html, haz clic [AQUÍ](https://5ce0437b49a5499086d12f2cbc657f82.app.rstudio.cloud/file_show?path=%2Fcloud%2Fproject%2FGu%C3%ADa-Introducci%C3%B3n-a-los-estudios-de-asociaci%C3%B3n-gen%C3%B3mica.html#)
 
-## REFERENCIAS Y LINK DE INTERÉS
-1. Jeffrey B. Endelman 2011. Ridge Regression and Other Kernels for Genomic Selection with R Package rrBLUP. https://doi.org/10.3835/plantgenome2011.08.0024
+## :white_check_mark: REFERENCIAS Y LINK DE INTERES 
+1. B. Endelman 2011. Ridge Regression and Other Kernels for Genomic Selection with R Package rrBLUP. https://doi.org/10.3835/plantgenome2011.08.0024
 2. Endelman J.B and Jannink J-L. (2012). Shrinkage Estimation of the Realized Relationship Matrix. G3: GENES, GENOMES, GENETICS November 1, 2012 vol. 2 no. 11 1405-1413;(https://www.g3journal.org/content/2/11/1405)
 3. https://zzz.bwh.harvard.edu/plink/dataman.shtml
 4. https://support.illumina.com/bulletins/2016/06/simple-guidelines-for-identifying-topbottom-topbot-strand-and-ab-allele.html
