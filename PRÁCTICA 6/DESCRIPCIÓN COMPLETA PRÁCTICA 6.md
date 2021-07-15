@@ -12,11 +12,11 @@
 </div>
 
 **LIBRERÍAS de RStudio**
-* ggplot2
-* readr
-* dplyr
-* tidyverse
-* cowplot
+* [ggplot2](https://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf)
+* [readr](https://cran.r-project.org/web/packages/readr/readr.pdf)
+* [dplyr](https://cran.r-project.org/web/packages/dplyr/dplyr.pdf)
+* [tidyverse](https://cran.r-project.org/web/packages/tidyverse/tidyverse.pdf)
+* [cowplot](https://cran.r-project.org/web/packages/cowplot/cowplot.pdf)
 
 ## :white_check_mark: OBJETIVOS 
 
