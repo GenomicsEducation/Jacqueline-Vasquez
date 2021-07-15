@@ -1,6 +1,6 @@
  ## PRÁCTICA 3: INTRODUCCIÓN AL ANÁLISIS DE SECUENCIAS NGS.
   
-  ## INTRODUCCIÓN 
+  ## :white_check_mark: INTRODUCCIÓN 
 Las tecnologías de secuenciación de próxima generación han evolucionado significativamente para proporcionar una mayor producción de datos [(Taishan et al., 2021)](https://www.sciencedirect.com/science/article/abs/pii/S0198885921000628). Sin embargo, las plataformas son suceptibles a una amplia gama de fallas químicas e instrumentales [(Stephan et al., 2014)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3956068/) y los datos obtenidos pueden tener un fuerte ruido de fondo, contaminación de los adaptadores, baja calidad de secuenciación, entre otros [(He et al., 2020)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7409520/), lo que posteriomente representa problemas significativos en la precisión de la detección de variantes o regiones genómicas objeto de estudio.
 De acuerdo a esto, el control de calidad en el procesamiento de datos se torna esencial para contar con datos limpios y de esta forma evitar errores en posteriores análisis.
 
@@ -31,7 +31,7 @@ Es una herramienta de línea de comandos rápida y de multiproceso que se puede 
 * En este trabajo se emplea la versión 0.39.
 * El manual de uso del software se puede descargar [aquí](http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf)
  
-## OBJETIVOS DEL TRABAJO PRÁCTICO
+## :white_check_mark: OBJETIVOS 
   1. Comprobar la integridad de las descarga de los archivos usando md5sum.
   2. Realizar un análisis integral de control de calidad de secuencias NGS con fastqc.<br />
   3. Filtrar y podar las secuencias con el software trimmomatic.<br />
@@ -40,9 +40,9 @@ Es una herramienta de línea de comandos rápida y de multiproceso que se puede 
 ## ORIGEN DE LAS MUESTRAS 
   Las muestras que serán analizadas provienen de la base de datos [SRA de NCBI](https://www.ncbi.nlm.nih.gov/sra) y corresponden a lecturas crudas del salmón del Atlántico *Salmo salar* en formato fastq, obtenidas por secuenciación de extremos emparejados con un secuenciador Illumina HiSeq2000.<br />
   
-## TRABAJO PRÁCTICO: ETAPAS DEL ANÁLISIS DE CONTROL DE CALIDAD, FILTRADO Y PODA.
+## :white_check_mark: TRABAJO PRÁCTICO: ETAPAS DEL ANÁLISIS DE CONTROL DE CALIDAD, FILTRADO Y PODA.
 
-  **1. CONEXIÓN REMOTA AL SERVIDOR POMEO**
+ ### **1. CONEXIÓN REMOTA AL SERVIDOR POMEO**
   
 <div align=" leftAlign ">
 <p>PASO 1. ABRIR PuTTY</p>
@@ -54,7 +54,7 @@ Es una herramienta de línea de comandos rápida y de multiproceso que se puede 
 <img src="https://user-images.githubusercontent.com/84527634/122123842-844ca400-cdfc-11eb-84dd-e1f942bf16ce.png" width="1000" height="400">
 </div>
 
-  **2. INSTALACIÓN Y CONFIGURACIÓN DE SOFTWARE PARA EL CONTROL DE CALIDAD: FastQC y Trimmomatic** <br />
+ ### **2. INSTALACIÓN Y CONFIGURACIÓN DE SOFTWARE PARA EL CONTROL DE CALIDAD: FastQC y Trimmomatic** <br />
   Para configurar el canal bioconda se debe ejecutar el siguiente comando
   
   ```
@@ -83,9 +83,9 @@ Es una herramienta de línea de comandos rápida y de multiproceso que se puede 
  ```
  cd SRA_samples 
  ```
-* EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt)
+:green_book: EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt)
  
- **3. DESCARGAR SECUENCIAS NGS USANDO SRA toolkit**
+ ### **3. DESCARGAR SECUENCIAS NGS USANDO SRA toolkit**
  
 Para esta práctica se trabajará con la biomuestra **SRR2006763** proveniente de la cepa Aquagen de *Salmo salar* y a partir de la que se obtendrán los dos archivos fastq, ya que los datos provienen de secuenciación pair-end.
 Biomuestra 1:SRR2006763_1.fastq Biomuestra 2:SRR2006763_2.fastq
@@ -101,7 +101,8 @@ Se abrira la venta de NANO
 </div>
 
 Una vez dentro de NANO Introducir y guardar la información del script como se detalla a continuación, cambiando en la segunda y tercera línea por su nombre de usuario. Note que el script solo tiene 4 líneas.
-* PUEDES VER EL SCRIPT dowload.sh [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SCRIPT.sh/download.sh)
+
+:page_with_curl: PUEDES VER EL SCRIPT dowload.sh [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SCRIPT.sh/download.sh)
 ```
  #!/bin/bash
  #SBATCH -J prefetch_usuario
@@ -136,7 +137,7 @@ nano fdump.sh
 ```
 - **Recordar cambiar usuario por jacqueline.vasquez**
 - **Recordar guardar el script usando** **Ctrl+O**, luego salir de nano usando **Ctrl+X.**
-- PUEDES VER EL SCRIPT fdump.sh [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SCRIPT.sh/fdump.sh) 
+:page_with_curl: PUEDES VER EL SCRIPT fdump.sh [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SCRIPT.sh/fdump.sh) 
 
 Correr el script mediante el siguiente comando
 
@@ -147,9 +148,9 @@ Al finalizar, además de extraer los archivos fastq debería indicarle el total 
 spots read : 2,856,007 reads read : 5,712,014 reads written : 5,712,014
 Biomuestra 1:SRR2006763_1.fastq Biomuestra 2:SRR2006763_2.fastq
 
-* EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt) 
+:green_book: EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt) 
 
-**4. COMPROBACIÓN DE LA INTEGRIDAD DE LOS ARCHIVOS**
+### **4. COMPROBACIÓN DE LA INTEGRIDAD DE LOS ARCHIVOS**
 
 md5sum es un algoritmo empleado para evitar algún daño que pudo generarse por algún motivo durante el proceso de descarga
 Busque el código Md5 de las muestras y direccione la información a un archivo md5_samples, con el siguiente comando:
@@ -178,14 +179,14 @@ SRR2006763_2.fastq: La suma coincide
 ```
 Con lo que se comprueba la integridad de los archivos descargados.
 
-* EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt)
+:green_book: EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt)
 
-**5. REALIZAR ANÁLISIS DEL CONTROL DE CALIDAD**
+### **5. REALIZAR ANÁLISIS DEL CONTROL DE CALIDAD**
 
 Para el análisis de control de calidad de secuencias fastq que provienen de secuenciadores NGS, en el directorio SRR2006763 crear y correr el siguiente script (nano fastqc.sh)
 - **cambiar usuario por jacqueline.vasquez**
 - **guardar el script usando** **Ctrl+O**, luego salir de nano usando **Ctrl+X.**
-- PUEDES VER EL SCRIPT fastqc.sh [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SCRIPT.sh/fastqc.sh) 
+:page_with_curl: PUEDES VER EL SCRIPT fastqc.sh [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SCRIPT.sh/fastqc.sh) 
 ```
   #!/bin/bash
   #SBATCH - J fastqc_usuario
@@ -196,9 +197,9 @@ La salida resultante de la ejecución del script anterior serán dos archivos:
  1. archivo HTML
  2. archivo .zip
 
-* EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt)
+:green_book: EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt)
 
-**6. REALIZAR FILTRADO Y PODA DE LAS SECUENCIAS**
+### **6. REALIZAR FILTRADO Y PODA DE LAS SECUENCIAS**
 
 Entrar a la carpeta donde constan los archivos fastq (SRR2006763/) llamar a NANO con:
 ```
@@ -210,7 +211,7 @@ ejecutar el siguiente script cambiando usuario
 #SBATCH - J trimm_usuario
 trimmomatic PE SRR2006763_1.fastq SRR2006763_2.fastq -baseout SRR20067634_filtered.fastq.gz SLIDINGWINDOW:5:25 MINLEN:60
 ```
-* PUEDES VER EL SCRIPT filtado.sh [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SCRIPT.sh/filtrado.sh)
+:page_with_curl: PUEDES VER EL SCRIPT filtado.sh [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SCRIPT.sh/filtrado.sh)
 
 De la ejecución anterior, resultarán 4 archivos comprimidos como se detalla a continuación
 ```
@@ -229,9 +230,9 @@ Volver a realizar un análisis de calidad de las muestras y comparar con el repo
 ```
 fastqc  *.fastq
 ```
-* EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt)
+:green_book: EJEMPLO EN LA TERMINAL [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/EJEMPLO%20DE%20LA%20TERMINAL/TERMINAL%20PRACTICA%203.txt)
 
-**7. TRANSFERIR ARCHIVOS DE CONTROL DE CALIDAD MEDIANTE PROTOCOLO FTP DESDE EL SERVIDOR AL COMPUTADOR DEL USUARIO.**<br />
+### **7. TRANSFERIR ARCHIVOS DE CONTROL DE CALIDAD MEDIANTE PROTOCOLO FTP DESDE EL SERVIDOR AL COMPUTADOR DEL USUARIO.**<br />
 Para Transferir archivos mediante protocolo FTP desde Servidor al usuario, se puede seralizar de las siguientes maneras:
 - Para Windows se puede hacer medante el software WINSCP u otro similar tal como se muestra en la siguiente imagen
 ![WINSCP](https://user-images.githubusercontent.com/84527634/123025274-60630280-d3a8-11eb-82a1-84791dd8d876.png)
@@ -277,7 +278,7 @@ En relación con la calidad es posible observar que a pesar de que las dos secue
 Se cumplen casí todos los criterios de control de calidad de la secuenciación menos el "Sequence length Distribution", pero esto se debe a que existen algunas secuencias cortas, pero la mayoría están en el largo adecuado y despues del filtrado se eliminaron fragmentos inferiores a 60bp, reduciendo el rango de 43-98pb a 60-98pb.
 
 
-## REFERENCIAS DE INTERÉS 
+## :white_check_mark: REFERENCIAS DE INTERÉS 
 - Grüning, B., Dale, R., Sjödin, A. et al. Bioconda: sustainable and comprehensive software distribution for the life sciences. Nat Methods 15, 475–476 (2018). https://doi.org/10.1038/s41592-018-0046-7
 - Brown, J., Pirrung, M., & McCue, L. (2017). FQC Dashboard: integrates FastQC results into a web-based, interactive, and extensible FASTQ quality control tool. Bioinformatics, 3137–3139.
 - Stephan, P., Dander, A., Fischer, M., Snajder, R., Sperk, M., Efremova, M., . . . Trajanoski, Z. (2014). A survey of tools for variant analysis of next-generation genome sequencing data. Briefings in Bioinformatics, 256-278.
