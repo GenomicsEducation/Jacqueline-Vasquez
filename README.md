@@ -26,7 +26,11 @@ Este proyecto está basado en la investigación reproducible, donde a través de
 :pushpin:**Si te interesa ver el detalle de cada práctica, sólo tienes que hacer clic en el índice.**
 
 ## :white_check_mark:AGRADECIMIENTOS :clap:
-###  PROFESOR DEL CURSO: **Jose Gallardo Matus**
+###  1. PROFESOR DEL CURSO: **Jose Gallardo Matus**
 - Profesor de genética y genómica aplicada [PUCV](https://www.pucv.cl/)
 - https://github.com/DrJoseGallardo
 - jose.gallardo@pucv.cl
+
+###  2. DOCTORADO EN BIOTECNOLOGÍA (programa conjunto entre la Universidad Técnica Federico Santa María y Pontificia Universidad Católica de Valparaíso)
+http://www.doctoradoenbiotecnologia.cl/
+
