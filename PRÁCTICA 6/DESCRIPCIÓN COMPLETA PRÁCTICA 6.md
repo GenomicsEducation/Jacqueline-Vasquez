@@ -3,8 +3,8 @@
 ## INTRODUCCIÓN
 
 SOFTWARES DE BIOINFORMATICA
-* PLINK es un conjunto de herramientas de analisis de asociación de genoma completo de codigo abierto y gratuito, disenado para realizar una variedad de análisis genéticos básicos a gran escala de forma eficiente (https://www.cog-genomics.org/plink2).
-* ADMIXTURE es un software para estimar la maxima probabilidad de ancestria individual e inferir poblaciones a partir de un conjunto de datos de genotipos de multiples SNP. Utiliza el mismo modelo estadistico que el software STRUCTURE pero el algoritmo de optimizacion numerico que utiliza realiza estimaciones con mayor rapidez (https://bioinformaticshome.com/tools/descriptions/ADMIXTURE.html).
+* PLINK es un conjunto de herramientas de analisis de asociación de genoma completo de codigo abierto y gratuito, disenado para realizar una variedad de análisis genéticos básicos a gran escala de forma eficiente [(PLINK)](https://www.cog-genomics.org/plink2).
+* ADMIXTURE es un software para estimar la máxima probabilidad de ancestría individual e inferir poblaciones a partir de un conjunto de datos de genotipos de múltiples polimorfismo de nucleótido único (SNP). Utiliza el mismo modelo estadístico que el software STRUCTURE pero el algoritmo de optimización numerico que utiliza realiza estimaciones con mayor rapidez [(ADMIXTURE)](https://bioinformaticshome.com/tools/descriptions/ADMIXTURE.html).
 
 LIBRERÍAS de RStudio
 * ggplot2
