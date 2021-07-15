@@ -1,10 +1,19 @@
 ## PRÁCTICA 4: INTRODUCCIÓN AL ANÁLISIS DE SECUENCIAS NGS-ALINEAMIENTO
 
-### :white_check_mark: INTRODUCCIÓN
+## :white_check_mark: INTRODUCCIÓN
 El alineamiento o mapeo de las secuencias cortas reads que se obtiene de la secuenciacion NGS con un genoma de referencia se considera una parte integral de los análisis de genomas [(Pham-Quoc et al., 2019)](https://onlinelibrary.wiley.com/doi/abs/10.1002/cpe.5328). 
 El problema del mapeo de reads consiste en ubicar o alinear dentro de un genoma de referencia previamente secuenciado los millones de reads para luego ensamblarlas a un nuevo genoma [(Bak et al., 2020)](https://apcz.umk.pl/czasopisma/index.php/TRVS/article/view/TRVS.2020.005) o en el caso de que no exista un genoma de referencia realizar un ensamble de novo.
 Para realizar esta tarea se han desarrollado varios programas como lo son, BWA [(Li and Durbin, 2009)](https://academic.oup.com/bioinformatics/article/25/14/1754/225615), Bowtie 2 [(JHU, 2016)](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml) y otros, cuya función principal es hacer coincidir secuencias cortas provenientes de NGS con secuencias de referencia [(Bak et al., 2020)](https://apcz.umk.pl/czasopisma/index.php/TRVS/article/view/TRVS.2020.005). Actualmente, BWA es un software muy popular para fines de alineamiento, debido a su compatibilidad con datos de Illumina y la integración de distintos algoritmos de alineamiento con mayor rendimiento para reads de distintas longitudes [(Li and Durbin, 2009)](https://academic.oup.com/bioinformatics/article/25/14/1754/225615).
 El resultado del mapeo o alineamiento se guarda en un archivo de texto plano con formato SAM (Sequence Alignment Map) o su equivalente comprimido en binario (BAM). Este archivo contiene de forma codificada toda la información de dónde y cómo cada read se alineo al genoma de referencia. De este archivo posteriormente se puede extraer información de variantes para análisis poblacional, estudios de asociación genómica o información de conteo de reads en regiones codificantes para en análisis de expresión de genes.
+
+**FORMATO SAM** 
+El formato SAM consta de un encabezado que comienza con el símbolo @ y una sección de alineamiento que contiene la información de cada uno de los reads que alineo al genoma de referencia. Para conocer más acerca del formato SAM puedes revisar el paper que describe el formato o simplmente en wikipedia. Los archivos SAM se pueden analizar y editar con el software SAMtools. A continuación se muestra un ejemplo del formato SAM con los 11 campos obligatorios del alineamiento y 1 campo opcional.
+
+<div align="center">
+<p>FORMATO SAM</p>
+<img src="https://user-images.githubusercontent.com/84527634/125715781-427b9bae-3928-4a77-b629-29e146d22628.png" height="400">
+</div>
+
 
 **SOFTWARES DE BIOINFORMÁTICA**
 
@@ -16,12 +25,12 @@ Puedes visualizar las opciones y más información de bwa [Aquí](http://bio-bwa
 Es un conjunto de utilidades que manipulan alineaciones en los formatos SAM (Sequence Alignment Map), BAM y CRAM. Convierte entre los formatos, clasifica, fusiona e indexa, y puede recuperar lecturas en cualquier región rápidamente.
 Puedes tener más información sobre este programa [Aquí](https://www.htslib.org/doc/samtools.html)
 
-### :white_check_mark: OBJETIVOS 
+## :white_check_mark: OBJETIVOS 
 
 1. Realizar el alineamiento de una muestra en formato .fastq a un genoma de referencia.
 
 
-### :white_check_mark: TRABAJO PRÁCTICO
+## :white_check_mark: TRABAJO PRÁCTICO
 
 ### 1. Conectar a servidor Pomeo
 Para Windows es posible conectarse con el software PuTTy utilizando usuario y contraseña correspondiente, tal como se detalló en las prácticas 2 y 3. <br />
@@ -83,20 +92,28 @@ ls
 :green_book: PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/e79bb127fc765a9d7f93babfb6cfb5cb3c55ab49/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/4.1%20Creaci%C3%B3n%20de%20directorio%20de%20trabajo%20y%20Obtenci%C3%B3n%20de%20las%20secuencias%20Fastq)
 
 #### **4.2 Descargar genoma mitocondrial desde NCBI**
-Para descargar el genoma de referencia de la mitocondria de *Salmo salar* lo puedes hacer a través del siguiente link
+Para descargar el genoma de referencia de la mitocondria de *Salmo salar* lo puedes hacer a través del siguiente link <br />
 [genoma mitocondrial del *Salmo salar*](https://www.ncbi.nlm.nih.gov/genome/?term=salmo+salar)
 
 Entraras a la siguiente página web
-![genoma de la mitocondria](https://user-images.githubusercontent.com/84527634/123015501-8d0e1e80-d396-11eb-8039-c4968cfc6224.png)
+<div align=" leftAlign ">
+<img src="https://user-images.githubusercontent.com/84527634/123015501-8d0e1e80-d396-11eb-8039-c4968cfc6224.png" height="400">
+</div>
 
 Al bajar dentro de la página, encontrarás una tabla con el listado del genoma de referencia donde se incluyen todos los cromosomas y el genoma de la mitocondria cuyo identificardor RefSeq NC_001960.1 donde debes hacer clic, tal como se muestra en la siguiente imagen. 
-![genoma de la mitocondria 2](https://user-images.githubusercontent.com/84527634/123015776-17ef1900-d397-11eb-80c1-e6eadd282d8a.png)
+<div align=" leftAlign ">
+<img src="https://user-images.githubusercontent.com/84527634/123015776-17ef1900-d397-11eb-80c1-e6eadd282d8a.png" height="400">
+</div>
 
 Posteriormente se abrira la siguiente página, donde deberás hacer clic en la opción FASTA localizada bajo el título e identificador RefSeq de la referencia.
-![genoma de la mitocondria 3](https://user-images.githubusercontent.com/84527634/123015900-71efde80-d397-11eb-896c-a17da450a58d.png)
+<div align=" leftAlign ">
+<img src="https://user-images.githubusercontent.com/84527634/123015900-71efde80-d397-11eb-896c-a17da450a58d.png" height="400">
+</div>
 
 Posteriormente para descargar la secuencia FASTA debes seguir las instrucciones de la siguiente imagen:
-![genoma de la mitocondria 4](https://user-images.githubusercontent.com/84527634/123016198-0fe3a900-d398-11eb-8563-59828506a684.png)
+<div align=" leftAlign ">
+<img src="https://user-images.githubusercontent.com/84527634/123016198-0fe3a900-d398-11eb-8563-59828506a684.png" height="400">
+</div>
 
 Luego debes ir a tu carpeta de descargas en tu computador y encontrarás el archivo denominado “sequence.fasta” al que debes renombrar como “mt.fasta” y subirlo a POMEO en tu carpeta de alineamiento.
 
@@ -178,7 +195,9 @@ samtools flagstat SRR2006763.bam > muestra_stat.txt
 ### **5. Exploración de archivos de salida en cada etapa**
 El analisis de alineamiento entregará un archivo en formato SAM, el cual consta de un encabezado que comienza con el símbolo @ y una sección de alineamiento que contiene la información de cada uno de los reads que alineo al genoma de referencia. Para conocer más acerca del formato SAM puedes revisar el paper que describe el formato o simplmente en wikipedia. Los archivos SAM se pueden analizar y editar con el software SAMtools. 
 A continuación se muestra un ejemplo del formato SAM con los 11 campos obligatorios del alineamiento y 1 campo opcional.
-![FORMATO SAM](https://user-images.githubusercontent.com/84527634/123136376-dc992c80-d420-11eb-8927-2c3f7162510f.png)
+<div align=" leftAlign ">
+<img src="https://user-images.githubusercontent.com/84527634/123136376-dc992c80-d420-11eb-8927-2c3f7162510f.png" height="400">
+</div>
 
 En la terminal el formato SAM se verá de la siguiente forma:
 
@@ -204,7 +223,7 @@ Para Cargar el genoma de referencia en IGV se deben seguir los siguientes pasos
 ![cargar el genoma de la mitocondria](https://user-images.githubusercontent.com/84527634/123189797-720dde00-d46c-11eb-997f-8ba1b7a9b89e.png)
 ![genoma cargado](https://user-images.githubusercontent.com/84527634/123189809-776b2880-d46c-11eb-8209-851737c734f9.png)
 
-### :white_check_mark: REFERENCIAS Y LINK DE INTERÉS
+## :white_check_mark: REFERENCIAS Y LINK DE INTERÉS
 1. Pham-Quoc, C., Kieu-Do, B., & Thinh, T. N. (2019). A high-performance FPGA-based BWA-MEM DNA sequence alignment. Wiley, 1-12.
 2. Li, H., & Durbin, R. (2009). Fast and accurate short read alignment with Burrows-Wheeler Transform. Bioinformatics, 1754-60.
 3. JHU. (2016). Johns Hopkins University. Obtenido de Manual of Bowtie 2 - Fast and sensitive read alignment.
