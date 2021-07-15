@@ -1,8 +1,8 @@
 ## PRÁCTICA 7: INTRODUCCIÓN A LOS ESTUDIOS DE ASOCIACIÓN GENÓMICA
 
 ## :white_check_mark: INTRODUCCIÓN
-
-
+* Locus que afecta un rasgo cuantitativo (QTLs), es una región o segmento de un cromosoma (locus) cuya variación (alelos) explica la variacion de fenotipos de un rasgo cuantitativo. 
+* Polimorﬁsmo de nucleótido único (SNP), son marcadores genéticos usados para identificar QTL y para estimar Breeding value (valor genético aditivo o mejorante de un individuo)
 
 ## :white_check_mark: OBJETIVOS 
 1. Realizar un análisis de asociación genómico usando datos simulados de genotipos y fenotipos
@@ -22,6 +22,7 @@ La importación de los datos y los análisis serán realizados con RStudio.cloud
 4. 
 
 ### 1. CONEXIÓN CON RStudio.cloud
+
 
 ### 2. COMANDOS PARA SER EJECUTADOS EN R PARA EL ANÁLISIS 
 #### 2.1 IMPORTAR Y EXPLORAR ARCHIVOS DE GENOTIPOS Y FENOTIPOS
@@ -47,7 +48,7 @@ Para realizar el histograma use el siguiente comando:
 ```
 hist(pheno$y)
 ```
-#### 2.2 GWAS
+#### 2.2 Estudio de asociación de genoma completo (GWAS)
 a) Investigue el uso de la función A.mat de la librería rrBLUP y calcule la matriz de parentesco genómico para el set de datos geno. Explore la matriz con las funciones dim(), head() y hist().
 ```
 # Calcula y grafica matriz de parentesco genómico según método de Van Raden para los 200 animales
