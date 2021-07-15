@@ -16,9 +16,9 @@ En esta práctica trabajaremos con datos de genotipos y fenotipos que fueron sim
 - **heredabilidad**: 0.5 <br />
 
 La importación de los datos y los análisis serán realizados con RStudio.cloud con las siguientes librerías<br />
-1. **utils**: Utilizada para importar big data usando la función read.delim().
+1. **utils**: Utilizada para importar big data usando la función read.delim [Libreria utils](https://cran.r-project.org/web/packages/R.utils/R.utils.pdf).
 2. **rrBLUP**: Software for genomic prediction with the RR-BLUP mixed model [Endelman 2011](https://doi.org/10.3835/plantgenome2011.08.0024).
-3. **ggplot2**: Para realizar gráficas avanzadas. 
+3. **ggplot2**: Para realizar gráficas avanzadas. [librería ggplot2](https://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf)
 4. 
 
 ### 1. CONEXIÓN CON RStudio.cloud
