@@ -44,7 +44,7 @@ link [SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolki
 3. Instalar MINICONDA Y NANO a través de comandos en la terminal
 4. crear scripts usando el editor de texto nano
 
-## :white_check_mark: PRÁCTICA: CONEXIÓN VÍA SSH A UN SERVIDOR LINUX
+## :white_check_mark: TRABAJO PRACTICO: CONEXIÓN VÍA SSH A UN SERVIDOR LINUX
 
 ### **1. INSTALACIÓN Y CONFIGURACIÓN DE SOFTWARE PARA ACCESO REMOTO Y TRANSFERENCIA DE ARCHIVOS**
 **DESCARGAR E INSTALAR PuTTY** <br />
