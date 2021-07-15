@@ -25,3 +25,7 @@ Este proyecto está basado en la investigación reproducible, donde a través de
 
 :pushpin:**Si te interesa ver el detalle de cada práctica, sólo tienes que hacer clic en el índice.**
 
+#### :white_check_mark: PROFESOR DEL CURSO: **Jose Gallardo Matus**
+- Profesor de genética y genómica aplicada [PUCV](https://www.pucv.cl/)
+- https://github.com/DrJoseGallardo
+- jose.gallardo@pucv.cl
