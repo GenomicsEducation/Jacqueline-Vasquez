@@ -1,4 +1,4 @@
-## PRÁCTICA 1: INTRODUCCIÓN A LA GENÓMICA POBLACIONAL Y ANCESTRÍA 
+## PRÁCTICA 6: INTRODUCCIÓN A LA GENÓMICA POBLACIONAL Y ANCESTRÍA 
 
 ## INTRODUCCIÓN
 
@@ -6,18 +6,22 @@ SOFTWARES DE BIOINFORMATICA
 * PLINK es un conjunto de herramientas de analisis de asociación de genoma completo de codigo abierto y gratuito, disenado para realizar una variedad de análisis genéticos básicos a gran escala de forma eficiente (https://www.cog-genomics.org/plink2).
 * ADMIXTURE es un software para estimar la maxima probabilidad de ancestria individual e inferir poblaciones a partir de un conjunto de datos de genotipos de multiples SNP. Utiliza el mismo modelo estadistico que el software STRUCTURE pero el algoritmo de optimizacion numerico que utiliza realiza estimaciones con mayor rapidez (https://bioinformaticshome.com/tools/descriptions/ADMIXTURE.html).
 
-LIBRERÍAS R
+LIBRERÍAS de RStudio
 * ggplot2
 * readr
 * dplyr
 * tidyverse
 * cowplot
 
-### OBJETIVOS 
+## OBJETIVOS 
 
-1. Realizar un análisis de genómica poblacional y ancestría en *Salmo salar* a partir de archivo de variantes VCF.
+1. Realizar un análisis de genómica poblacional y ancestría en *Salmo salar* a partir del archivo de variantes VCF.
 
-### TRABAJO PRÁCTICO
+## ORIGEN DE LAS MUESTRAS
+
+El archivo vcf contiene muestras provenientes de tres poblaciones domesticadas del salmón del Atlántico (*Salmo salar*) provenientes de Europa, Oceanía y Norteamerica.
+
+## TRABAJO PRÁCTICO
 
 ### 1. CONEXIÓN CON EL SERVIDOR POMEO
 
@@ -111,7 +115,7 @@ PARA VER EL EJEMPLO EN LA TERMINAL [HACER CLIC AQUÍ](https://github.com/Genomic
 Los siguientes gráficos fueron hechos utilizando el lenguaje de programación R en [Rstudio](https://www.rstudio.com/)
 Puedes ver el script [aquí]
 
-![GRAFICOS DE ANALISIS DE DIVERSIDAD](https://user-images.githubusercontent.com/84527634/124191764-443f1f80-da92-11eb-83ce-01c331d17715.png)
+![GRAFICOS DE ANÁLISIS DE DIVERSIDAD](https://user-images.githubusercontent.com/84527634/124191764-443f1f80-da92-11eb-83ce-01c331d17715.png)
 
 ### 5. ANÁLISIS DE ESTRUCTURA POBLACIONAL 
 5.1 - Generar el archivo de entrada en formato plink
@@ -144,7 +148,8 @@ plink --bfile EU_OC_US.FilteredPrunedUnrel --pca 4 --out EU_OC_US.FilteredPruned
 ```
 PARA VER EL EJEMPLO EN LA TERMINAL [HACER CLIC AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/49bec791af1034f77767a652dbb1adb3579c3430/PR%C3%81CTICA%206/EJEMPLOS%20EN%20LA%20TERMINAL/5%20-%20Analisis%20de%20estructura%20poblacional.txt)
 
-5.7 - Gráficos de PCA con R
+5.7 - Gráfico de PCA con R
+![grafico PCA](https://user-images.githubusercontent.com/84527634/125709415-afcf0903-5025-414e-996c-2c485ea1ed35.png)
 
 ### 6. ANÁLISIS DE ADMIXTURE 
 
