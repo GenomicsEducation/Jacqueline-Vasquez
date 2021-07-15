@@ -60,7 +60,7 @@ conda install -c bioconda vcftools
 ```
 **Cabe señalar que en esa práctica también se utilizará Samtools (que fue instalado en la práctica anterior)**
 
-PARA VER EJEMPLO EN LA TERMINAL HACER CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/e9ead1405d9be40f12b25204429870da3e0c9cfd/PR%C3%81CTICA%205/EJEMPLOS%20EN%20LA%20TERMINAL/2.%20Configurar%20bioconda%20e%20instalar%20programas%20para%20los%20an%C3%A1lisis)
+:green_book: PARA VER EJEMPLO EN LA TERMINAL HACER CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/e9ead1405d9be40f12b25204429870da3e0c9cfd/PR%C3%81CTICA%205/EJEMPLOS%20EN%20LA%20TERMINAL/2.%20Configurar%20bioconda%20e%20instalar%20programas%20para%20los%20an%C3%A1lisis)
 
 ### 3. Directorio de trabajo “variant_call” y preparación de los archivos para el llamado de variantes
 El directorio y los archivos necesarios para ejecutar esta práctica fueron creados e instalados en el directorio personal previamente. Es por ello, que solo es necesario ingresar al directorio “variant_call” y explorar los archivos de trabajo.
@@ -118,7 +118,7 @@ grep -c 'NW_' ref_genome.fna
 grep -c 'NW_' ref_genome.fna.fai
 ```
 **Note que en todos los casos el comando trabaja más rápido en el archivo indexado .fai** <br />
-PARA VER EJEMPLO EN LA TERMINAL HACER CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/b57166f67a05c3ef25e05ded28d2ae838d76fabf/PR%C3%81CTICA%205/EJEMPLOS%20EN%20LA%20TERMINAL/3.%20Directorio%20de%20trabajo%20%E2%80%9Cvariant_call%E2%80%9D%20y%20preparaci%C3%B3n%20de%20los%20archivos%20para%20el%20llamado%20de%20variantes.txt)
+:green_book: PARA VER EJEMPLO EN LA TERMINAL HACER CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/b57166f67a05c3ef25e05ded28d2ae838d76fabf/PR%C3%81CTICA%205/EJEMPLOS%20EN%20LA%20TERMINAL/3.%20Directorio%20de%20trabajo%20%E2%80%9Cvariant_call%E2%80%9D%20y%20preparaci%C3%B3n%20de%20los%20archivos%20para%20el%20llamado%20de%20variantes.txt)
 
 ### 4.  Llamado de variantes
 Para realizar el llamado de variantes debe obtener primero un archivo que representará un “diccionario de referencias” del genoma de referencia, para ello deberá ejecutar el siguiente comando
@@ -195,7 +195,7 @@ grep "NC_" -c -v hq_variant.txt
 grep "NW_" -c -v hq_variant.txt
 ```
 
-PARA VER EJEMPLO EN LA TERMINAL HACER CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/aed60cf01e1b33bca58941b037571b62839aa25e/PR%C3%81CTICA%205/EJEMPLOS%20EN%20LA%20TERMINAL/4.%20LLamado%20de%20variantes.txt)
+:green_book: PARA VER EJEMPLO EN LA TERMINAL HACER CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/aed60cf01e1b33bca58941b037571b62839aa25e/PR%C3%81CTICA%205/EJEMPLOS%20EN%20LA%20TERMINAL/4.%20LLamado%20de%20variantes.txt)
 
 ### 5. Análisis de variantes con linux y vcftools
 
@@ -221,7 +221,7 @@ vcftools --vcf raw_variants.vcf --freq -c --not-chr NC_001960.1
  vcftools --vcf raw_variants.vcf --freq -c --chr NC_027300.1 --keep-only-indels
 vcftools --vcf raw_variants.vcf --freq -c --chr NC_027300.1 --remove-indels
  ```
- PARA VER EJEMPLO EN LA TERMINAL HACER CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/aed60cf01e1b33bca58941b037571b62839aa25e/PR%C3%81CTICA%205/EJEMPLOS%20EN%20LA%20TERMINAL/5%20.%20An%C3%A1lisis%20de%20variantes%20con%20vcftools.txt)
+ :green_book: PARA VER EJEMPLO EN LA TERMINAL HACER CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/aed60cf01e1b33bca58941b037571b62839aa25e/PR%C3%81CTICA%205/EJEMPLOS%20EN%20LA%20TERMINAL/5%20.%20An%C3%A1lisis%20de%20variantes%20con%20vcftools.txt)
  
  ### 6. Visualización de variantes con IGV
 Posteriormente se descargo el arrchivo raw_variants.vcf iniciando sesión online en el servidor POMEO a través de [Rstudio server](http://200.54.220.141:8787/auth-sign-in) 
