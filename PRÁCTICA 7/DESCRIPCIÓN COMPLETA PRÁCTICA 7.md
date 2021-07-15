@@ -81,6 +81,16 @@ score <- GWAS(pheno,geno, plot=TRUE)
 ```
 class(score)
 ```
+Calcula la probabilidad de significancia a partir del inverso de y=-log10(p).
+
+```
+score$p <- 1/(10^score$y)
+```
+Grafica manhattan plot
+```
+manhattan(score, chr="chrom", bp="pos", snp="marker", p="p" )
+```
+
 ### 2.3 Locus que afecta un rasgo cuantitativo (QTLs)
 
 Ahora exploraremos el efecto de los QTLs detectados por el GWAS
@@ -94,18 +104,13 @@ head(score)
 ```
 dplyr::filter(score, y > 5)
 ```
-**Sugerencia** note que el score corresponde a -log(p), donde p es la probabilidad o significancia. Transforme el score a p usando exp()
+**Sugerencia** note que el score corresponde a -log10(p), donde p es la probabilidad o significancia. Transforme el score a p usando 1/(10^score$y)
 ```
-# snp300
-exp(-7.5047236) 
-```
-```
-# pruebe calcular log(-0.000550478)
-# snp1000
-exp(-8.5080997)
-```
-```
-# pruebe calcular log(-0.000201827)
+score$p<-1/(10^score$y)
+
+1/(10^6.09691)
+
+-log10(0.0000008)
 ```
 b) Realice un gráfico de regresión lineal de fenotipo en función de los genotipo para cada SNP significativo.
 
@@ -148,3 +153,4 @@ Para ver el reporte completo en formato PDF, haz clic [AQUÍ](https://github.com
 2. Endelman J.B and Jannink J-L. (2012). Shrinkage Estimation of the Realized Relationship Matrix. G3: GENES, GENOMES, GENETICS November 1, 2012 vol. 2 no. 11 1405-1413;(https://www.g3journal.org/content/2/11/1405)
 3. https://zzz.bwh.harvard.edu/plink/dataman.shtml
 4. https://support.illumina.com/bulletins/2016/06/simple-guidelines-for-identifying-topbottom-topbot-strand-and-ab-allele.html
+5. https://www.r-graph-gallery.com/101_Manhattan_plot.html
