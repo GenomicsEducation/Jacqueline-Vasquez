@@ -1,6 +1,6 @@
 ## PRÁCTICA 4: INTRODUCCIÓN AL ANÁLISIS DE SECUENCIAS NGS-ALINEAMIENTO
 
-### INTRODUCCIÓN
+### :white_check_mark: INTRODUCCIÓN
 El alineamiento o mapeo de las secuencias cortas reads que se obtiene de la secuenciacion NGS con un genoma de referencia se considera una parte integral de los análisis de genomas [(Pham-Quoc et al., 2019)](https://onlinelibrary.wiley.com/doi/abs/10.1002/cpe.5328). 
 El problema del mapeo de reads consiste en ubicar o alinear dentro de un genoma de referencia previamente secuenciado los millones de reads para luego ensamblarlas a un nuevo genoma [(Bak et al., 2020)](https://apcz.umk.pl/czasopisma/index.php/TRVS/article/view/TRVS.2020.005) o en el caso de que no exista un genoma de referencia realizar un ensamble de novo.
 Para realizar esta tarea se han desarrollado varios programas como lo son, BWA [(Li and Durbin, 2009)](https://academic.oup.com/bioinformatics/article/25/14/1754/225615), Bowtie 2 [(JHU, 2016)](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml) y otros, cuya función principal es hacer coincidir secuencias cortas provenientes de NGS con secuencias de referencia [(Bak et al., 2020)](https://apcz.umk.pl/czasopisma/index.php/TRVS/article/view/TRVS.2020.005). Actualmente, BWA es un software muy popular para fines de alineamiento, debido a su compatibilidad con datos de Illumina y la integración de distintos algoritmos de alineamiento con mayor rendimiento para reads de distintas longitudes [(Li and Durbin, 2009)](https://academic.oup.com/bioinformatics/article/25/14/1754/225615).
@@ -16,12 +16,12 @@ Puedes visualizar las opciones y más información de bwa [Aquí](http://bio-bwa
 Es un conjunto de utilidades que manipulan alineaciones en los formatos SAM (Sequence Alignment Map), BAM y CRAM. Convierte entre los formatos, clasifica, fusiona e indexa, y puede recuperar lecturas en cualquier región rápidamente.
 Puedes tener más información sobre este programa [Aquí](https://www.htslib.org/doc/samtools.html)
 
-### OBJETIVOS 
+### :white_check_mark: OBJETIVOS 
 
 1. Realizar el alineamiento de una muestra en formato .fastq a un genoma de referencia.
 
 
-### TRABAJO PRÁCTICO
+### :white_check_mark: TRABAJO PRÁCTICO
 
 ### 1. Conectar a servidor Pomeo
 Para Windows es posible conectarse con el software PuTTy utilizando usuario y contraseña correspondiente, tal como se detalló en las prácticas 2 y 3. <br />
@@ -47,7 +47,7 @@ conda config --add channels conda-forge
 
 conda install samtools==1.11
 ```
-PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/0c980d5580e3915d5bb8a1ce0e4f16903acef194/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/2.%20Instalaci%C3%B3n%20y%20configuraci%C3%B3n%20de%20softwares%20BWA%20-%20Samtools)
+:green_book: PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/0c980d5580e3915d5bb8a1ce0e4f16903acef194/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/2.%20Instalaci%C3%B3n%20y%20configuraci%C3%B3n%20de%20softwares%20BWA%20-%20Samtools)
 
 ### 3. Verificar directorios de instalación
 Si desea constatar la ruta de instalación de un programa determinado puedes colocar el comando “whereis” en la terminal más el programa del que desea obtener la ruta.
@@ -61,7 +61,7 @@ whereis sratoolkit
  ```
  /home2/usuario/miniconda3/bin/bwa
   ```
-PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/0c980d5580e3915d5bb8a1ce0e4f16903acef194/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/3.%20Verificar%20directorios%20de%20instalaci%C3%B3n)
+:green_book: PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/0c980d5580e3915d5bb8a1ce0e4f16903acef194/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/3.%20Verificar%20directorios%20de%20instalaci%C3%B3n)
  
 ### 4. ETAPAS DE ALINEAMIENTO
 
@@ -80,7 +80,7 @@ Para listar debes ejecutar el siguiente comando
 ```
 ls
 ```
-PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/e79bb127fc765a9d7f93babfb6cfb5cb3c55ab49/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/4.1%20Creaci%C3%B3n%20de%20directorio%20de%20trabajo%20y%20Obtenci%C3%B3n%20de%20las%20secuencias%20Fastq)
+:green_book: PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/e79bb127fc765a9d7f93babfb6cfb5cb3c55ab49/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/4.1%20Creaci%C3%B3n%20de%20directorio%20de%20trabajo%20y%20Obtenci%C3%B3n%20de%20las%20secuencias%20Fastq)
 
 #### **4.2 Descargar genoma mitocondrial desde NCBI**
 Para descargar el genoma de referencia de la mitocondria de *Salmo salar* lo puedes hacer a través del siguiente link
@@ -111,7 +111,7 @@ Al conectar te volverá a pedir tu contraseña como se muestra en la siguiente i
 
 Alternativamente puedes cargar el genoma iniciando sesión online en el servidor POMEO a través de [Rstudio server](http://200.54.220.141:8787/auth-sign-in)
 
-PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/e79bb127fc765a9d7f93babfb6cfb5cb3c55ab49/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/4.3%20comprobar%20que%20el%20genoma%20descargado%20este%20en%20la%20carpeta%20alineamiento%20desde%20la%20terminal)
+:green_book: PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/e79bb127fc765a9d7f93babfb6cfb5cb3c55ab49/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/4.3%20comprobar%20que%20el%20genoma%20descargado%20este%20en%20la%20carpeta%20alineamiento%20desde%20la%20terminal)
 
 #### **4.4 Indexación del genoma Mitocondrial.**
 Una vez que incluiste en tu carpeta de alineamiento todos los archivos descritos en pasos anteriores podemos proceder a la etapa inicial del alineamiento, que corresponde a la indexación del genoma de referencia con BWA usando el siguiente comando:
@@ -120,7 +120,7 @@ bwa index mt.fasta
 ```
 La salida del comando dará como resultado 5 archivos con extensiones “amb”,“ann”,“bwt”,“pac” y “sa”
 
-PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/e79bb127fc765a9d7f93babfb6cfb5cb3c55ab49/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/4.4%20Indexaci%C3%B3n%20del%20genoma%20Mitocondrial)
+:green_book: PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/e79bb127fc765a9d7f93babfb6cfb5cb3c55ab49/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/4.4%20Indexaci%C3%B3n%20del%20genoma%20Mitocondrial)
 
 #### **4.5 Alineamiento de las secuencias contra el genoma mitocondrial** <br />
 
@@ -147,7 +147,7 @@ Para ejecutar todas las etapas anteriores en ese orden se debe crear un script c
 ```
 nano aln_mt.sh
 ```
-Para ver el script puedes hacer clic [Aquí](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/835441c873495740402d0612091c80f38e61ae9c/PR%C3%81CTICA%204/SCRIPT/aln_mt.sh)
+:page_with_curl: Para ver el script puedes hacer clic [Aquí](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/835441c873495740402d0612091c80f38e61ae9c/PR%C3%81CTICA%204/SCRIPT/aln_mt.sh)
 
 En el script coloca las siguientes instrucciones:
 ```
@@ -173,7 +173,7 @@ también puedes realizar un análisis estadístico estandar con los siguientes c
 ```
 samtools flagstat SRR2006763.bam > muestra_stat.txt
 ```
-PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL UTILIZANDO EL SCRIPT HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/e79bb127fc765a9d7f93babfb6cfb5cb3c55ab49/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/4.5%20Alineamiento%20de%20las%20secuencias%20contra%20el%20genoma%20mitocondrial)
+:green_book: PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL UTILIZANDO EL SCRIPT HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/e79bb127fc765a9d7f93babfb6cfb5cb3c55ab49/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/4.5%20Alineamiento%20de%20las%20secuencias%20contra%20el%20genoma%20mitocondrial)
 
 ### **5. Exploración de archivos de salida en cada etapa**
 El analisis de alineamiento entregará un archivo en formato SAM, el cual consta de un encabezado que comienza con el símbolo @ y una sección de alineamiento que contiene la información de cada uno de los reads que alineo al genoma de referencia. Para conocer más acerca del formato SAM puedes revisar el paper que describe el formato o simplmente en wikipedia. Los archivos SAM se pueden analizar y editar con el software SAMtools. 
@@ -194,7 +194,7 @@ Para explorar el alineamiento del formato SAM es posible con samtools a través 
  |samtools flags 99                               | Reverse de un read 1 adecuadamente emparejado |
  |samtools view -f 66 SRR2006763.bam  head -n 10  | Busca solo reads emparejados en el archivo bam |
  
- PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/24f02f41a75e21962647b0827aeba03bf13cc741/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/5.%20Exploraci%C3%B3n%20de%20archivos%20de%20salida%20con%20los%20comandos%20samtools)
+:green_book: PARA VER LA EJECUCIÓN DE COMANDOS EN LA TERMINAL HAZ CLIC [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/24f02f41a75e21962647b0827aeba03bf13cc741/PR%C3%81CTICA%204/EJEMPLO%20DE%20LA%20TERMINAL/5.%20Exploraci%C3%B3n%20de%20archivos%20de%20salida%20con%20los%20comandos%20samtools)
 
 ### 6. Visualizar alineamiento con IGV.
 Para visualizar los alineamientos, debemos descargar el software IGV en el siguiente [link](https://software.broadinstitute.org/software/igv/download) y posteriormente instalarlo. 
@@ -204,7 +204,7 @@ Para Cargar el genoma de referencia en IGV se deben seguir los siguientes pasos
 ![cargar el genoma de la mitocondria](https://user-images.githubusercontent.com/84527634/123189797-720dde00-d46c-11eb-997f-8ba1b7a9b89e.png)
 ![genoma cargado](https://user-images.githubusercontent.com/84527634/123189809-776b2880-d46c-11eb-8209-851737c734f9.png)
 
-### REFERENCIAS Y LINK DE INTERÉS
+### :white_check_mark: REFERENCIAS Y LINK DE INTERÉS
 1. Pham-Quoc, C., Kieu-Do, B., & Thinh, T. N. (2019). A high-performance FPGA-based BWA-MEM DNA sequence alignment. Wiley, 1-12.
 2. Li, H., & Durbin, R. (2009). Fast and accurate short read alignment with Burrows-Wheeler Transform. Bioinformatics, 1754-60.
 3. JHU. (2016). Johns Hopkins University. Obtenido de Manual of Bowtie 2 - Fast and sensitive read alignment.
