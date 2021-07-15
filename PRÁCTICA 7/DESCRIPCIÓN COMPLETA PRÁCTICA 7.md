@@ -22,7 +22,8 @@ La importación de los datos y los análisis serán realizados con RStudio.cloud
 4. 
 
 ### 1. CONEXIÓN CON RStudio.cloud
-
+Si tienes cuenta en la nube de RStudio puedes conectarte usando el siguiente [link](https://www.rstudio.com/products/cloud/)<div/>
+Si no tienes cuenta, te recomiendo descargar RStudio en el siguiente [link](https://www.rstudio.com/products/rstudio/) e instalarla en tu computadora. <div/>
 
 ### 2. COMANDOS PARA SER EJECUTADOS EN R PARA EL ANÁLISIS 
 #### 2.1 IMPORTAR Y EXPLORAR ARCHIVOS DE GENOTIPOS Y FENOTIPOS
