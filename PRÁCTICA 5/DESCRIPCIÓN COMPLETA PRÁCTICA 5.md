@@ -6,6 +6,13 @@ Dentro de los principales usos de la secuenciación de próxima generación es d
 Uno de los softwares más empleados para realizar esta tarea denominada “llamado de variantes”, es GATK, que se comprende como un kit de herramientas de análisis de genomas desarrollado por el Broad Institute de los Estados Unidos, que tiene la capacidad de realizar gran parte del análisis requerido para llamar variantes genómicas [(Deatherage, 2020)](https://wikis.utexas.edu/display/bioiteam/Genome+Analysis+Toolkit+%28GATK%29+.+--+GVA2020)
 El presente trabajo tiene por objeto realizar el llamado de variantes y la anotación de una muestra secuenciada mediante el uso de GATK, Linux, vcftools y otras herramientas de anotación y visualización de la región blanco.
 
+<div align="center">
+<p>FORMATO LLAMADO DE VARIANTES (VCF)</p>
+<img src="https://user-images.githubusercontent.com/84527634/125718115-3cd10a66-cfbc-42a9-a425-0ba6220e33b5.png" height="400">
+</div>
+
+
+
 **SOFTWARES DE BIOINFORMÁTICA**
 
 **1. GATK O Genome Analysis Toolkit** es un software que presenta ciertas ventajas para el llamado de variantes, tales como, la integración de evidencia de variantes de múltiples muestras con genotipado conjunto, permite el uso de polimorfismos de un solo nucleótido (SNP) e Indels validados para mejorar la precisión de la llamada de variante y sus métodos se implementan de una manera susceptible a lecturas que se originan en una variedad de preparación de plantillas (McCormick, Truong, & Mullet, 2015). Sin embargo y aunque, como se ha visto, la precisión de esta tubería ya es alta, los falsos positivos (FP) siguen siendo inevitables, por lo que, después de la llamada de variantes, se recomienda filtrar los FP como parte de las buenas prácticas del software [(Tan et al., 2020)](https://www.biorxiv.org/content/10.1101/2020.03.23.003525v1).
@@ -237,3 +244,4 @@ Para ver el archivo raw_variants.vcf descargado haz clic [AQUÍ](https://github.
 4. Liu, X., White, S., Peng, B., Johnson, A., Brody, J., Li, A., . . . Klein, B. E. (2015). WGSA: an annotation pipeline for human genome sequencing studies. JMG, 1-3.
 5. McCormick, R., Truong, S., & Mullet, J. (2015). RIG: Recalibration and Interrelation of Genomic Sequence Data with the GATK. G3: Genes, Genomes, Genetics, 655 - 665.
 6. Tan, Y., Zhang, Y., Yang, H., & Yin, Z. (2020). FPfilter: A false-positive-specific filter for whole-genome sequencing variant calling from GATK. bioRxiv, 1-16.
+7. Estructura formato VCF, tomado de: https://www.slideshare.net/AmazonWebServices/dat311-largescale-genomic-analysis-with-amazon-redshift
