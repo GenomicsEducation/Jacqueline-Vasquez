@@ -1,7 +1,7 @@
 
 ## PRÁCTICA 5: INTRODUCCIÓN AL ANÁLISIS DE SECUENCIAS NGS - LLAMADO DE VARIANTES
 
-### INTRODUCCIÓN
+## :white_check_mark: INTRODUCCIÓN
 Dentro de los principales usos de la secuenciación de próxima generación es descubrir variantes genéticas o mutaciones entre individuos que pertenecen a diferentes poblaciones [(Danecek et al., 2011)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3137218/). Con este fin, se han desarrollado tuberías que incluyen el procesamiento de grandes volúmenes de datos como el proyecto internacional 1000 genomas humanos, o el proyecto chileno de 1000 genomas que pretende secuenciar e identificar varianes en 1000 personas y en algunas especies endémicas de interes.
 Uno de los softwares más empleados para realizar esta tarea denominada “llamado de variantes”, es GATK, que se comprende como un kit de herramientas de análisis de genomas desarrollado por el Broad Institute de los Estados Unidos, que tiene la capacidad de realizar gran parte del análisis requerido para llamar variantes genómicas [(Deatherage, 2020)](https://wikis.utexas.edu/display/bioiteam/Genome+Analysis+Toolkit+%28GATK%29+.+--+GVA2020)
 El presente trabajo tiene por objeto realizar el llamado de variantes y la anotación de una muestra secuenciada mediante el uso de GATK, Linux, vcftools y otras herramientas de anotación y visualización de la región blanco.
@@ -17,13 +17,13 @@ El presente trabajo tiene por objeto realizar el llamado de variantes y la anota
 **4. vcftools** es un software diseñado para trabajar con archivos VCF, como los generados por el Proyecto 1000 Genomas. El objetivo de VCFtools es proporcionar métodos de fácil acceso para trabajar con datos complejos de variación genética en forma de archivos VCF. El manual actualizado de comandos se puede encontrar en este [link](https://vcftools.github.io/man_latest.html)
 
 
-### OBJETIVOS 
+## :white_check_mark: OBJETIVOS 
 1. Realizar el llamado de variantes de una secuencia de Salmo salar obtenida por secuenciación de extremos emparejados.
 
-### ORIGEN DE LAS MUESTRAS UTILIZADAS
+## :white_check_mark: ORIGEN DE LAS MUESTRAS UTILIZADAS
 Las muestras SRR2009653.fastq_1, SRR2009653.fastq_2. Provienen de un set de 45 secuencias de salmón del atlántico obtenidas por secuenciación de extremos emparejados con Illumina HiSeq2000 para analizar la resistencia a la necrosis pancreática infecciosa (IPN), con el fin de identificar polimorfismos que mostraban un gran contraste entre peces resistentes o susceptibles al IPN.
 
-### ETAPAS DEL LLAMADO DE VARIANTES 
+## :white_check_mark: ETAPAS DEL LLAMADO DE VARIANTES 
 1. Descarga de secuencia y genoma de referencia
 2. Indexación del genoma de referencia
 3. Descarga, filtrado y alineamiento de secuencia de estudio (Secuencia sort.bam)
@@ -33,7 +33,7 @@ Las muestras SRR2009653.fastq_1, SRR2009653.fastq_2. Provienen de un set de 45 s
 7. Análisis de variantes con linux y vcftools
 8. Visualización de variantes con IGV
 
-### TRABAJO PRÁCTICO
+## :white_check_mark: TRABAJO PRÁCTICO
 
 ### 1. Conectar a servidor Pomeo
 Recordar que como estamos trabajando con Windows , usamos el software PuTTy para hacer la conexión con el servidor Pomeo, utilizando el usuario y contraseña correspondiente.  <br />
@@ -230,9 +230,7 @@ Para ver el archivo raw_variants.vcf descargado haz clic [AQUÍ](https://github.
 ![ARCHIVO RAW_VARIANTS VCF CARGADO EN IGV](https://user-images.githubusercontent.com/84527634/123698125-c37eea00-d82b-11eb-9078-abd5c7f53b87.png)
 
 
-
-
-### REFERENCIAS Y LINK DE INTERÉS
+## :white_check_mark: REFERENCIAS Y LINK DE INTERÉS
 1. Danecek, P., Auton, A., Abecasis, G., Albers, C., Banks, E., DePristo, M., . . . Durbin, R. (2011). The variant call format and VCFtools. Bioinformatics, 2156–2158.
 2. Deatherage, E. (2020). Genome Analysis Toolkit (GATK). Obtenido de https://wikis.utexas.edu/display/bioiteam/Genome+Analysis+Toolkit+%28GATK%29+.+--+GVA2020
 3. Cingolani, P., Platts, A., Wang, L., Coon, M., Nguyen, T., Wang, L., . . . Ruden, D. (2012). A program for annotating and predicting the effects of single nucleotide polymorphisms, SnpEff. Fly, 80-92.
