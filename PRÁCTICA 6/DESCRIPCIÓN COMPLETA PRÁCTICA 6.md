@@ -2,11 +2,16 @@
 
 ## :white_check_mark: INTRODUCCIÓN
 
-SOFTWARES DE BIOINFORMATICA
+**SOFTWARES DE BIOINFORMATICA**
 * PLINK es un conjunto de herramientas de analisis de asociación de genoma completo de codigo abierto y gratuito, disenado para realizar una variedad de análisis genéticos básicos a gran escala de forma eficiente [(PLINK)](https://www.cog-genomics.org/plink2).
 * ADMIXTURE es un software para estimar la máxima probabilidad de ancestría individual e inferir poblaciones a partir de un conjunto de datos de genotipos de múltiples polimorfismo de nucleótido único (SNP). Utiliza el mismo modelo estadístico que el software STRUCTURE pero el algoritmo de optimización numerico que utiliza realiza estimaciones con mayor rapidez [(ADMIXTURE)](https://bioinformaticshome.com/tools/descriptions/ADMIXTURE.html).
 
-LIBRERÍAS de RStudio
+<div align="center">
+<p>FORMATO DE PLINK</p>
+<img src="https://user-images.githubusercontent.com/84527634/125720168-a4ca6f65-c02f-4721-bf92-979975659dc4.png" height="400">
+</div>
+
+**LIBRERÍAS de RStudio**
 * ggplot2
 * readr
 * dplyr
@@ -179,3 +184,4 @@ ADMIXTURE genera 2 archivos: .Q que contiene asignaciones de grupos para cada in
 1. Marees A., de Kluiver H., Stringer S., Vorspan F., Curis E., Marie-Claire C., Derks E. (2018). A tutorial on conducting genome-wide association studies: Quality control and statistical analysis. International Journal of Methods in Psychiatric Research. 27. e1608. 10.1002/mpr.1608.
 2. A PLINK tutorial: https://zzz.bwh.harvard.edu/plink/tutorial.shtml
 3. Speciation & Population Genomics: a how-to-guide: https://speciationgenomics.github.io/ADMIXTURE/
+4. Estructura formato PLINK, tomado de: https://www.researchgate.net/figure/Overview-of-various-commonly-used-PLINK-files-SNP-single-nucleotide-polymorphism_fig3_323424714
