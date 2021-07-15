@@ -146,7 +146,7 @@ summary(lm.qtl.1000)
 cat("El efecto del snp1000 sobre el rasgo cuantitativo 1.8549")
 ```
 ### 3. REPORTE COMPLETO DEL ANÁLISIS EN R E INTERPRETACIÓN DE LOS RESULTADOS 
-Para ver el reporte completo en formato PDF, haz clic [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/065abc2ee998c6ab8050d733d1ef59b364ab7c48/PR%C3%81CTICA%207/REPORTE%20COMPLETO%20PR%C3%81CTICA%207.pdf)
+Para ver el reporte completo en formato PDF, haz clic [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/ab44d4ca729b5e90e216f087b1ea7f8b6be0fefa/PR%C3%81CTICA%207/REPORTE%20COMPLETO%20PRACTICA%207%20EN%20RStudio.pdf)
 
 ## :white_check_mark: REFERENCIAS Y LINK DE INTERES 
 1. B. Endelman 2011. Ridge Regression and Other Kernels for Genomic Selection with R Package rrBLUP. https://doi.org/10.3835/plantgenome2011.08.0024
