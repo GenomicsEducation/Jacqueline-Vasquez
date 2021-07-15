@@ -135,8 +135,8 @@ nano fdump.sh
  #SBATCH - J fdump_usuario
  /home2/usuario/sratoolkit.2.11.0-centos_linux64/bin/fasterq-dump /home2/usuario/SRA_samples/SRR2006763/*.sra -O /home2/usuario/SRA_samples/SRR2006763/
 ```
-- **Recordar cambiar usuario por jacqueline.vasquez**
-- **Recordar guardar el script usando** **Ctrl+O**, luego salir de nano usando **Ctrl+X.**
+- **Recordar cambiar usuario por jacqueline.vasquez** <br />
+- **Recordar guardar el script usando** **Ctrl+O**, luego salir de nano usando **Ctrl+X.** <br />
 :page_with_curl: PUEDES VER EL SCRIPT fdump.sh [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SCRIPT.sh/fdump.sh) 
 
 Correr el script mediante el siguiente comando
@@ -184,8 +184,8 @@ Con lo que se comprueba la integridad de los archivos descargados.
 ### **5. REALIZAR ANÁLISIS DEL CONTROL DE CALIDAD**
 
 Para el análisis de control de calidad de secuencias fastq que provienen de secuenciadores NGS, en el directorio SRR2006763 crear y correr el siguiente script (nano fastqc.sh)
-- **cambiar usuario por jacqueline.vasquez**
-- **guardar el script usando** **Ctrl+O**, luego salir de nano usando **Ctrl+X.**
+- **cambiar usuario por jacqueline.vasquez**<br />
+- **guardar el script usando** **Ctrl+O**, luego salir de nano usando **Ctrl+X.**<br />
 :page_with_curl: PUEDES VER EL SCRIPT fastqc.sh [AQUÍ](https://github.com/GenomicsEducation/Jacqueline-Vasquez/blob/2f5afe2fbc90bfcd7a3df52898098b12433a0d49/PR%C3%81CTICA%203/SCRIPT.sh/fastqc.sh) 
 ```
   #!/bin/bash
